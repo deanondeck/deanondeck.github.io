@@ -2,6 +2,41 @@
 
 import { useEffect, useState } from "react";
 
+/* ── Hero background video ──────────────────────────────────────────
+   Cinematic, muted, looping YouTube clip behind the hero (no controls,
+   no chrome) — the static night-ship photo stays as the instant poster
+   and the reduced-motion fallback.
+
+   TODO(Dean): paste your own clip here. Accepts a full YouTube URL OR a
+   bare 11-char video ID — swapping it is this one line. Until then this
+   is a Virgin Voyages adults-only placeholder.                          */
+const HERO_VIDEO = "e6VxAdd7-iQ";
+
+function ytId(input: string) {
+  const m = input.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : input.trim();
+}
+
+function heroEmbedSrc(idOrUrl: string) {
+  const id = ytId(idOrUrl);
+  const p = new URLSearchParams({
+    autoplay: "1",
+    mute: "1",
+    controls: "0",
+    loop: "1",
+    playlist: id, // loop=1 needs the id echoed here
+    playsinline: "1",
+    rel: "0",
+    modestbranding: "1",
+    showinfo: "0",
+    disablekb: "1",
+    fs: "0",
+    iv_load_policy: "3",
+    cc_load_policy: "0",
+  });
+  return `https://www.youtube-nocookie.com/embed/${id}?${p.toString()}`;
+}
+
 const NAV = [
   ["The Difference", "#difference"],
   ["Adults Only", "#adults"],
@@ -90,7 +125,16 @@ const img = (name: string, ext = "jpg") => `/img/${name}.${ext}`;
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [playVideo, setPlayVideo] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   useReveal();
+
+  // Mount the background video only after first paint, and never when the
+  // sailor has asked for reduced motion — the poster photo carries the hero.
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce) setPlayVideo(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -166,9 +210,22 @@ export default function Home() {
       <main id="top">
         {/* ---------------- HERO ---------------- */}
         <section className="hero">
-          <div className="hero-media">
-            <img src={img("hero-ship-night")} alt="A Virgin Voyages ship lit up against a night skyline" />
+          <div className="hero-media" aria-hidden="true">
+            <img src={img("hero-ship-night")} alt="" />
           </div>
+          {playVideo && (
+            <div className={`hero-video${videoReady ? " ready" : ""}`} aria-hidden="true">
+              <iframe
+                src={heroEmbedSrc(HERO_VIDEO)}
+                title="Virgin Voyages at sea"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                referrerPolicy="strict-origin-when-cross-origin"
+                tabIndex={-1}
+                onLoad={() => window.setTimeout(() => setVideoReady(true), 600)}
+              />
+            </div>
+          )}
+          <div className="hero-scrim" aria-hidden="true" />
           <div className="hero-content wrap">
             <p className="log">Gold-Certified Virgin Voyages First Mate</p>
             <h1>
