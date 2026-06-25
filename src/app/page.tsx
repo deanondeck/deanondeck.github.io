@@ -85,7 +85,7 @@ function useReveal() {
   }, []);
 }
 
-const img = (name: string) => `/img/${name}.jpg`;
+const img = (name: string, ext = "jpg") => `/img/${name}.${ext}`;
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -109,7 +109,7 @@ export default function Home() {
       <header className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="nav-inner">
           <a href="#top" className="brand" aria-label="Dean on Deck — home">
-            <img src={img("logo")} alt="Dean on Deck" />
+            <img src={img("mark", "svg")} alt="Dean on Deck" />
             <span>
               <span className="brand-name">Dean on Deck</span>
               <span className="brand-sub" style={{ display: "block" }}>
@@ -519,7 +519,7 @@ export default function Home() {
           <div className="foot-top">
             <div>
               <div className="brand">
-                <img src={img("logo")} alt="" style={{ width: 52, height: 52, borderRadius: "50%" }} />
+                <img src={img("mark", "svg")} alt="" style={{ width: 52, height: 52 }} />
                 <span className="brand-name">Dean on Deck</span>
               </div>
               <p className="foot-tag">No kids. No stress. Just you.</p>

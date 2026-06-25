@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "Dean on Deck — Virgin Voyages First Mate | Adults-Only Luxury Cruises",
   description:
     "I'm Dean, your Gold-Certified Virgin Voyages First Mate. Adults-only sailings, Michelin-inspired dining, RockStar perks, and zero booking fees. No kids. No stress. Just you.",
-  icons: { icon: "/img/logo.jpg" },
+  icons: { icon: "/img/mark.svg" },
   openGraph: {
     title: "Dean on Deck — Sail like a grown-up",
     description:

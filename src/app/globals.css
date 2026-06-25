@@ -200,7 +200,7 @@ section[id] { scroll-margin-top: 88px; }
   gap: 1rem;
 }
 .brand { display: flex; align-items: center; gap: 0.7rem; }
-.brand img { width: 46px; height: 46px; border-radius: 50%; }
+.brand img { width: 46px; height: 46px; }
 .brand-name {
   font-family: var(--font-display);
   font-weight: 600;
