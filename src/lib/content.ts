@@ -26,13 +26,15 @@ export const SHOWCASE = [
   { img: "breakfast", tag: "Mornings", t: "Wake Up at Sea", d: "Slow mornings, room service, and a horizon that changes every day." },
 ];
 
+// `q` = Virgin Voyages search filter for this destination (each validated to
+// return live results). Region codes via selectedRegions; ports via selectedPorts.
 export const PORTS = [
-  { img: "port-caribbean", c: "Caribbean", t: "Sun & White Sand" },
-  { img: "port-greece", c: "Greece & Croatia", t: "The Adriatic" },
-  { img: "port-italy", c: "Italy & the Med", t: "Old-World Coast" },
-  { img: "port-spain", c: "Spain", t: "Iberian Nights" },
-  { img: "port-tropical", c: "Tropical Escapes", t: "Endless Summer" },
-  { img: "port-halong", c: "Far Horizons", t: "On Request" },
+  { img: "port-caribbean", c: "Caribbean", t: "Sun & White Sand", q: "selectedRegions=CARIBBEAN" },
+  { img: "port-greece", c: "Greece & Croatia", t: "The Adriatic", q: "selectedPorts=DBV,SPU,KTR,JTR,JMK,ATH,CFU" },
+  { img: "port-italy", c: "Italy & the Med", t: "Old-World Coast", q: "selectedPorts=CIV,NAP,FLR,SAL,CTA,PMO,MLA" },
+  { img: "port-spain", c: "Spain", t: "Iberian Nights", q: "selectedPorts=BCN,PMI,IBZ,AGP,VLC,ALC,CAD" },
+  { img: "port-tropical", c: "Tropical Escapes", t: "Endless Summer", q: "selectedPorts=CMA,RTB,CTG,AUA,WIL,KRA,CZM,POP" },
+  { img: "port-halong", c: "Far Horizons", t: "On Request", q: "selectedRegions=TRANSATLANTIC" },
 ];
 
 export const BOARD = [

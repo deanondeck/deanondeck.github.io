@@ -1,5 +1,6 @@
 import { BOARD, PORTS } from "@/lib/content";
 import { img } from "@/lib/media";
+import { voyageSearch } from "@/lib/voyages";
 
 export default function Ports() {
   return (
@@ -26,11 +27,18 @@ export default function Ports() {
       <div className="wrap">
         <div className="ports">
           {PORTS.map((p, i) => (
-            <article className={`port reveal d${(i % 3) + 1}`} key={p.c}>
+            <a
+              className={`port reveal d${(i % 3) + 1}`}
+              key={p.c}
+              href={voyageSearch(p.q)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Explore ${p.c} voyages on Virgin Voyages`}
+            >
               <img src={img(p.img)} alt={p.c} />
               <span className="coord">{p.t}</span>
               <h3>{p.c}</h3>
-            </article>
+            </a>
           ))}
         </div>
       </div>
