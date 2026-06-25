@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 import { NAV } from "@/lib/content";
 import { img } from "@/lib/media";
 
-export default function SiteHeader() {
+export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
+
+  // On sub-pages the in-page anchors live on the home route, so point them
+  // back to "/#…". On the home page they stay as plain hashes.
+  const home = subpage ? "/" : "#top";
+  const to = (href: string) => (subpage ? `/${href}` : href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -24,7 +29,7 @@ export default function SiteHeader() {
       {/* ---------------- NAV ---------------- */}
       <header className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="nav-inner">
-          <a href="#top" className="brand" aria-label="Dean on Deck — home">
+          <a href={home} className="brand" aria-label="Dean on Deck — home">
             <img src={img("mark", "svg")} alt="Dean on Deck" />
             <span>
               <span className="brand-name">Dean on Deck</span>
@@ -37,13 +42,16 @@ export default function SiteHeader() {
             <ul className="nav-links">
               {NAV.map(([label, href]) => (
                 <li key={href}>
-                  <a href={href}>{label}</a>
+                  <a href={to(href)}>{label}</a>
                 </li>
               ))}
+              <li>
+                <a href="/manage">Manage Booking</a>
+              </li>
             </ul>
           </nav>
           <div className="nav-cta">
-            <a href="#contact" className="btn btn-scarlet btn-desktop">
+            <a href={to("#contact")} className="btn btn-scarlet btn-desktop">
               Book a voyage
             </a>
           </div>
@@ -69,12 +77,16 @@ export default function SiteHeader() {
       {/* mobile drawer */}
       <div className={`drawer${menu ? " open" : ""}`} role="dialog" aria-modal="true">
         {NAV.map(([label, href], i) => (
-          <a key={href} href={href} onClick={() => setMenu(false)}>
+          <a key={href} href={to(href)} onClick={() => setMenu(false)}>
             <span className="idx">{String(i + 1).padStart(2, "0")}</span>
             {label}
           </a>
         ))}
-        <a href="#contact" onClick={() => setMenu(false)} className="scarlet">
+        <a href="/manage" onClick={() => setMenu(false)}>
+          <span className="idx">{String(NAV.length + 1).padStart(2, "0")}</span>
+          Manage Booking
+        </a>
+        <a href={to("#contact")} onClick={() => setMenu(false)} className="scarlet">
           <span className="idx">→</span>Book a voyage
         </a>
       </div>

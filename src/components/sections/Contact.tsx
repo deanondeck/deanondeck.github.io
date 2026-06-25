@@ -71,7 +71,7 @@ export default function Contact() {
             </div>
             <div className="line">
               <span className="k">Manage</span>
-              <span>Existing MNVV booking? I can take it over.</span>
+              <a href="/manage">Existing MNVV booking? I can take it over →</a>
             </div>
           </aside>
         </div>

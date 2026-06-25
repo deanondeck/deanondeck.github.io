@@ -818,6 +818,101 @@ section[id] { scroll-margin-top: 88px; }
 .contact-aside .line a:hover { color: var(--scarlet-soft); }
 
 /* ===================================================================
+   MANAGE BOOKING  (/manage — MNVV transfer)
+   =================================================================== */
+.manage { overflow: hidden; padding-top: clamp(7rem, 12vw, 10rem); }
+.manage-media { position: absolute; inset: 0; z-index: 0; }
+.manage-media img { width: 100%; height: 100%; object-fit: cover; }
+.manage-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6,14,24,0.86), rgba(6,14,24,0.95));
+}
+.manage .wrap { position: relative; z-index: 1; }
+.manage .sec-head { max-width: 64ch; }
+.manage-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+  margin-top: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+/* custom checkbox row */
+.check {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  cursor: pointer;
+  color: var(--mist);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  padding: 0.4rem 0;
+}
+.check strong { color: var(--shell); font-weight: 600; }
+.check input {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 4px;
+  background: rgba(255,255,255,0.05);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.check input::before {
+  content: "";
+  width: 0.62rem;
+  height: 0.62rem;
+  transform: scale(0);
+  transition: transform 0.15s ease;
+  box-shadow: inset 1rem 1rem var(--scarlet);
+  clip-path: polygon(14% 44%, 0 65%, 40% 100%, 100% 16%, 84% 0, 38% 71%);
+}
+.check input:checked { border-color: var(--scarlet); background: rgba(225,29,42,0.12); }
+.check input:checked::before { transform: scale(1); }
+
+/* "how it works" aside */
+.manage-aside .log { margin-bottom: 1.2rem; }
+.steps { list-style: none; margin: 0 0 1.6rem; padding: 0; display: grid; gap: 1.2rem; }
+.steps li { display: flex; gap: 1rem; align-items: flex-start; }
+.steps .step-n {
+  flex: 0 0 auto;
+  font-family: var(--font-log);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--scarlet);
+  border: 1px solid var(--brass-dim);
+  border-radius: 50%;
+  width: 2.1rem; height: 2.1rem;
+  display: grid; place-content: center;
+}
+.steps li strong { display: block; color: var(--shell); margin-bottom: 0.2rem; }
+.steps li span:last-child { color: var(--mist); font-size: 0.94rem; line-height: 1.55; }
+.manage-note { color: var(--mist); max-width: 38ch; }
+.manage-aside .line {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.manage-aside .line .k {
+  font-family: var(--font-log);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  min-width: 6rem;
+}
+.manage-aside .line a:hover { color: var(--scarlet-soft); }
+
+/* ===================================================================
    FOOTER
    =================================================================== */
 .foot { background: var(--ink-deep); color: var(--mist); padding-block: clamp(3rem, 6vw, 5rem) 2rem; }
@@ -881,7 +976,7 @@ section[id] { scroll-margin-top: 88px; }
   .nav-links { display: none; }
   .nav-cta .btn-desktop { display: none; }
   .nav-toggle { display: block; }
-  .about-grid, .split, .contact-grid { grid-template-columns: 1fr; }
+  .about-grid, .split, .contact-grid, .manage-grid { grid-template-columns: 1fr; }
   .about-photo { aspect-ratio: 4 / 3; max-height: 480px; }
   .split-media { aspect-ratio: 4 / 3; }
   .showcase, .ports, .reviews { grid-template-columns: repeat(2, 1fr); }

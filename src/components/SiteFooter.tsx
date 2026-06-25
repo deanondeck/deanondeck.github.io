@@ -1,7 +1,8 @@
 import { NAV } from "@/lib/content";
 import { img } from "@/lib/media";
 
-export default function SiteFooter() {
+export default function SiteFooter({ subpage = false }: { subpage?: boolean }) {
+  const to = (href: string) => (subpage ? `/${href}` : href);
   return (
     <footer className="foot">
       <div className="wrap">
@@ -37,11 +38,14 @@ export default function SiteFooter() {
             <ul>
               {NAV.map(([label, href]) => (
                 <li key={href}>
-                  <a href={href}>{label}</a>
+                  <a href={to(href)}>{label}</a>
                 </li>
               ))}
               <li>
-                <a href="#contact">Book a voyage</a>
+                <a href={to("#contact")}>Book a voyage</a>
+              </li>
+              <li>
+                <a href="/manage">Manage a booking</a>
               </li>
             </ul>
           </div>
