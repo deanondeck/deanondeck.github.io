@@ -54,7 +54,7 @@ export default function Hero() {
           fees. No kids. No stress. Just you and the horizon.
         </p>
         <div className="hero-actions">
-          <a href="#contact" className="btn btn-scarlet">
+          <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank" className="btn btn-scarlet">
             Book your voyage <span className="arrow">→</span>
           </a>
           <a href="#difference" className="btn btn-ghost">

@@ -51,7 +51,7 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
             </ul>
           </nav>
           <div className="nav-cta">
-            <a href={to("#contact")} className="btn btn-scarlet btn-desktop">
+            <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank" className="btn btn-scarlet btn-desktop">
               Book a voyage
             </a>
           </div>
@@ -86,7 +86,7 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
           <span className="idx">{String(NAV.length + 1).padStart(2, "0")}</span>
           Manage Booking
         </a>
-        <a href={to("#contact")} onClick={() => setMenu(false)} className="scarlet">
+        <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank" onClick={() => setMenu(false)} className="scarlet">
           <span className="idx">→</span>Book a voyage
         </a>
       </div>
