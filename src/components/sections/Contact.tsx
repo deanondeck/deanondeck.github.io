@@ -100,6 +100,10 @@ export default function Contact() {
               </a>
             </div>
             <div className="line">
+              <span className="k">Plan</span>
+              <a href="/plan">Ready to book? Send me your full trip details →</a>
+            </div>
+            <div className="line">
               <span className="k">Manage</span>
               <a href="/manage">Existing MNVV booking? I can take it over →</a>
             </div>

@@ -46,6 +46,9 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
                 </li>
               ))}
               <li>
+                <a href="/plan">Plan a Voyage</a>
+              </li>
+              <li>
                 <a href="/manage">Manage Booking</a>
               </li>
             </ul>
@@ -82,8 +85,12 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
             {label}
           </a>
         ))}
-        <a href="/manage" onClick={() => setMenu(false)}>
+        <a href="/plan" onClick={() => setMenu(false)}>
           <span className="idx">{String(NAV.length + 1).padStart(2, "0")}</span>
+          Plan a Voyage
+        </a>
+        <a href="/manage" onClick={() => setMenu(false)}>
+          <span className="idx">{String(NAV.length + 2).padStart(2, "0")}</span>
           Manage Booking
         </a>
         <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank" onClick={() => setMenu(false)} className="scarlet">

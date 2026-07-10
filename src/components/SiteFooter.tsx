@@ -45,6 +45,9 @@ export default function SiteFooter({ subpage = false }: { subpage?: boolean }) {
                 <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank">Book a voyage</a>
               </li>
               <li>
+                <a href="/plan">Plan a voyage</a>
+              </li>
+              <li>
                 <a href="/manage">Manage a booking</a>
               </li>
             </ul>
