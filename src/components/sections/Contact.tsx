@@ -1,6 +1,33 @@
+"use client";
+
+import { useState } from "react";
 import { img } from "@/lib/media";
+import { submitForm } from "@/lib/forms";
+
+type Status = "idle" | "submitting" | "success" | "error";
 
 export default function Contact() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("submitting");
+    setError("");
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    const result = await submitForm("Contact form", data);
+
+    if (result.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setError(result.error);
+      setStatus("error");
+    }
+  }
+
   return (
     <section className="band contact" id="contact">
       <div className="contact-media">
@@ -14,17 +41,7 @@ export default function Contact() {
           </h2>
         </div>
         <div className="contact-grid">
-          {/*
-            NOTE FOR DEAN: wire this form to your inbox before launch.
-            Easiest path with a static site — set the `action` below to a
-            Formspree/Basin endpoint (https://formspree.io) and keep method="POST".
-            Then drop in your real phone/email in the aside on the right.
-          */}
-          <form
-            className="form reveal d1"
-            action="https://formspree.io/f/your-form-id"
-            method="POST"
-          >
+          <form className="form reveal d1" onSubmit={handleSubmit}>
             <div className="row">
               <div className="field">
                 <label htmlFor="name">Name</label>
@@ -49,9 +66,22 @@ export default function Contact() {
               <label htmlFor="msg">What&apos;s sparking your interest?</label>
               <textarea id="msg" name="message" placeholder="Tell me about the trip you're dreaming up…" />
             </div>
-            <button type="submit" className="btn btn-scarlet">
-              Send Dean a message <span className="arrow">→</span>
+            <button type="submit" className="btn btn-scarlet" disabled={status === "submitting"}>
+              {status === "submitting" ? "Sending…" : "Send Dean a message"}{" "}
+              <span className="arrow">→</span>
             </button>
+
+            {status === "success" && (
+              <p className="form-status is-success" role="status" aria-live="polite">
+                Thanks — your message is on its way to Dean. Expect a reply soon,
+                usually the same day.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="form-status is-error" role="alert" aria-live="assertive">
+                {error}
+              </p>
+            )}
           </form>
           <aside className="contact-aside reveal d2">
             <p style={{ marginTop: 0 }}>

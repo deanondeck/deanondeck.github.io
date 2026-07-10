@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import { img } from "@/lib/media";
+import { submitForm } from "@/lib/forms";
 
 const STEPS: [string, string, string][] = [
   ["01", "Send the details", "Drop your booking or MNVV voucher number below — that's all I need to find it."],
@@ -6,7 +10,30 @@ const STEPS: [string, string, string][] = [
   ["03", "Perks switched on", "Sailor Loot, priority windows, and hands-on planning kick in for a trip you've already started."],
 ];
 
+type Status = "idle" | "submitting" | "success" | "error";
+
 export default function ManageBooking() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("submitting");
+    setError("");
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    const result = await submitForm("Manage existing booking / MNVV", data);
+
+    if (result.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setError(result.error);
+      setStatus("error");
+    }
+  }
+
   return (
     <section className="band band--ink manage" id="manage">
       <div className="manage-media">
@@ -32,12 +59,7 @@ export default function ManageBooking() {
             the main contact form. Set the `action` to your Formspree/Basin
             endpoint (https://formspree.io) and keep method="POST".
           */}
-          <form
-            className="form reveal d1"
-            action="https://formspree.io/f/your-form-id"
-            method="POST"
-          >
-            <input type="hidden" name="_subject" value="Manage existing booking / MNVV" />
+          <form className="form reveal d1" onSubmit={handleSubmit}>
             <div className="field">
               <label htmlFor="fullname">Full name (as on passport or ID)</label>
               <input id="fullname" name="fullname" type="text" autoComplete="name" required />
@@ -80,9 +102,22 @@ export default function ManageBooking() {
               />
             </div>
 
-            <button type="submit" className="btn btn-scarlet">
-              Request the handover <span className="arrow">→</span>
+            <button type="submit" className="btn btn-scarlet" disabled={status === "submitting"}>
+              {status === "submitting" ? "Sending…" : "Request the handover"}{" "}
+              <span className="arrow">→</span>
             </button>
+
+            {status === "success" && (
+              <p className="form-status is-success" role="status" aria-live="polite">
+                Got it — your handover request is in. I&apos;ll confirm the
+                transfer with Virgin and be in touch shortly.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="form-status is-error" role="alert" aria-live="assertive">
+                {error}
+              </p>
+            )}
           </form>
 
           <aside className="manage-aside reveal d2">
