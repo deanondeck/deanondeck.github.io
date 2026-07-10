@@ -2,9 +2,7 @@
 
 export const NAV: [string, string][] = [
   ["The Difference", "#difference"],
-  ["Adults Only", "#adults"],
   ["Ports", "#ports"],
-  ["RockStar", "#rockstar"],
   ["Reviews", "#reviews"],
 ];
 
