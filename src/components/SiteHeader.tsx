@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CRUISE_LINES, NAV } from "@/lib/content";
+import { CRUISE_LINES } from "@/lib/content";
 import { img } from "@/lib/media";
 
 /* Dropdown items: each line books out like the Virgin link; river cruising
@@ -14,10 +14,9 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
   const [book, setBook] = useState(false);
   const bookRef = useRef<HTMLDivElement>(null);
 
-  // On sub-pages the in-page anchors live on the home route, so point them
-  // back to "/#…". On the home page they stay as plain hashes.
+  // The brand link returns to the top of the home route from a sub-page,
+  // or scrolls to the top anchor when already on the home page.
   const home = subpage ? "/" : "#top";
-  const to = (href: string) => (subpage ? `/${href}` : href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -63,11 +62,6 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
           </a>
           <nav>
             <ul className="nav-links">
-              {NAV.map(([label, href]) => (
-                <li key={href}>
-                  <a href={to(href)}>{label}</a>
-                </li>
-              ))}
               <li>
                 <a href="/about">About</a>
               </li>
@@ -138,26 +132,20 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
 
       {/* mobile drawer */}
       <div className={`drawer${menu ? " open" : ""}`} role="dialog" aria-modal="true">
-        {NAV.map(([label, href], i) => (
-          <a key={href} href={to(href)} onClick={() => setMenu(false)}>
-            <span className="idx">{String(i + 1).padStart(2, "0")}</span>
-            {label}
-          </a>
-        ))}
         <a href="/about" onClick={() => setMenu(false)}>
-          <span className="idx">{String(NAV.length + 1).padStart(2, "0")}</span>
+          <span className="idx">01</span>
           About Dean
         </a>
         <a href="/cruises" onClick={() => setMenu(false)}>
-          <span className="idx">{String(NAV.length + 2).padStart(2, "0")}</span>
+          <span className="idx">02</span>
           Cruises
         </a>
         <a href="/plan" onClick={() => setMenu(false)}>
-          <span className="idx">{String(NAV.length + 3).padStart(2, "0")}</span>
+          <span className="idx">03</span>
           Plan a Voyage
         </a>
         <a href="/manage" onClick={() => setMenu(false)}>
-          <span className="idx">{String(NAV.length + 4).padStart(2, "0")}</span>
+          <span className="idx">04</span>
           Manage Booking
         </a>
         <div className="drawer-book">
