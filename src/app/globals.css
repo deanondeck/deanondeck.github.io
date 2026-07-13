@@ -301,7 +301,7 @@ section[id] { scroll-margin-top: 96px; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -309,7 +309,7 @@ section[id] { scroll-margin-top: 96px; }
 .nav-links a {
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   position: relative;
@@ -347,9 +347,11 @@ section[id] { scroll-margin-top: 96px; }
   backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1.6rem;
-  padding: var(--gutter);
+  /* top-aligned, not centered — the list can outgrow short viewports and
+     centered flex overflow would clip the first links unreachably */
+  justify-content: flex-start;
+  gap: 1.4rem;
+  padding: calc(4.5rem + var(--gutter)) var(--gutter) var(--gutter);
   transform: translateY(-100%);
   transition: transform 0.45s cubic-bezier(0.7, 0, 0.2, 1);
 }
@@ -1614,6 +1616,147 @@ section[id] { scroll-margin-top: 96px; }
 .foot-bottom .disc { max-width: 72ch; opacity: 0.7; font-size: 0.74rem; }
 
 /* ===================================================================
+   BOOK A VOYAGE — nav dropdown (one entry per cruise line)
+   =================================================================== */
+.book { position: relative; }
+.book-btn .chev { transition: transform 0.25s ease; }
+.book.open .book-btn .chev { transform: rotate(180deg); }
+.book-menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  min-width: 16.5rem;
+  margin: 0;
+  padding: 0.55rem;
+  list-style: none;
+  background: rgba(10, 13, 18, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+.book.open .book-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.book-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 0.72rem 0.95rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.book-menu a:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+.book-menu a .ext { color: var(--gold); font-size: 0.85em; }
+.book-menu .all { border-top: 1px solid rgba(255, 255, 255, 0.12); margin-top: 0.45rem; padding-top: 0.45rem; }
+.book-menu .all a { justify-content: center; color: var(--gold); }
+
+/* drawer — compact booking group under the page links */
+.drawer { overflow-y: auto; }
+.drawer-book { border-top: 1px solid rgba(255, 255, 255, 0.14); padding-top: 1.3rem; }
+.drawer-book .bk {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.7rem;
+}
+.drawer .drawer-book a {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  padding-block: 0.35rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+.drawer-book a .ext { color: var(--gold); }
+
+/* ===================================================================
+   CRUISES — /cruises fleet page
+   =================================================================== */
+.cruises-hero { padding-top: clamp(8rem, 15vw, 11rem); }
+.cruises-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2.4rem;
+}
+.cruises-index a {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.55em 1.3em;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.cruises-index a:hover { color: var(--navy); background: var(--gold); border-color: var(--gold); }
+
+.cl-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(2.2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.cl-grid.flip .cl-media { order: 2; }
+.cl-media {
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 30px 70px -30px rgba(7, 17, 34, 0.55);
+}
+.cl-media img { width: 100%; height: 100%; object-fit: cover; }
+.cl-body .h-lg { margin-bottom: 1.1rem; }
+.cl-copy { max-width: 52ch; margin: 0 0 1.8rem; }
+.band--ink .cl-copy { color: var(--mist); }
+.band--shell .cl-copy,
+.band--shell2 .cl-copy { color: var(--mist-on-paper); }
+.cl .checklist { margin-top: 0; max-width: 46ch; }
+.cl-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; }
+.cl-alt {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+.band--ink .cl-alt { color: var(--mist); }
+.band--ink .cl-alt:hover { color: #fff; }
+.band--shell .cl-alt,
+.band--shell2 .cl-alt { color: var(--mist-on-paper); }
+.band--shell .cl-alt:hover,
+.band--shell2 .cl-alt:hover { color: var(--navy); }
+
+.cl-cta .sec-head { max-width: 58ch; }
+.cl-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.2rem;
+}
+
+.fleet-cta { margin-top: 2.4rem; }
+
+/* ===================================================================
    SCROLL REVEAL
    =================================================================== */
 .reveal {
@@ -1631,13 +1774,17 @@ section[id] { scroll-margin-top: 96px; }
 /* ===================================================================
    RESPONSIVE
    =================================================================== */
-@media (max-width: 1080px) {
+/* the link capsule no longer fits beside the brand + CTA below ~1380px —
+   hand over to the burger drawer as soon as it goes */
+@media (max-width: 1380px) {
   .nav nav { display: none; }
+  .nav-toggle { display: block; }
 }
 @media (max-width: 980px) {
   .nav-cta .btn-desktop { display: none; }
-  .nav-toggle { display: block; }
-  .about-grid, .split, .contact-grid, .manage-grid, .plan-grid, .ways, .insta-grid { grid-template-columns: 1fr; }
+  .about-grid, .split, .contact-grid, .manage-grid, .plan-grid, .ways, .insta-grid, .cl-grid { grid-template-columns: 1fr; }
+  .cl-grid.flip .cl-media { order: 0; }
+  .cl-media { aspect-ratio: 16 / 10; }
   .about-photo { aspect-ratio: 4 / 3; max-height: 480px; }
   .insta-photo { aspect-ratio: 16 / 10; }
   .split-media { aspect-ratio: 4 / 3; }

@@ -1,12 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { NAV } from "@/lib/content";
+import { useEffect, useRef, useState } from "react";
+import { CRUISE_LINES, NAV } from "@/lib/content";
 import { img } from "@/lib/media";
+
+/* Dropdown items: each line books out like the Virgin link; river cruising
+   has no single line, so it routes to the trip-intake form instead. */
+const bookHref = (book: string | null) => book ?? "/plan";
 
 export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [book, setBook] = useState(false);
+  const bookRef = useRef<HTMLDivElement>(null);
 
   // On sub-pages the in-page anchors live on the home route, so point them
   // back to "/#…". On the home page they stay as plain hashes.
@@ -23,6 +29,23 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
   useEffect(() => {
     document.body.style.overflow = menu ? "hidden" : "";
   }, [menu]);
+
+  // Close the book menu on outside click / Escape.
+  useEffect(() => {
+    if (!book) return;
+    const onDown = (e: PointerEvent) => {
+      if (!bookRef.current?.contains(e.target as Node)) setBook(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setBook(false);
+    };
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [book]);
 
   return (
     <>
@@ -46,6 +69,9 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
                 </li>
               ))}
               <li>
+                <a href="/cruises">Cruises</a>
+              </li>
+              <li>
                 <a href="/plan">Plan a Voyage</a>
               </li>
               <li>
@@ -54,9 +80,39 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
             </ul>
           </nav>
           <div className="nav-cta">
-            <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank" className="btn btn-scarlet btn-desktop">
-              Book a voyage
-            </a>
+            <div className={`book${book ? " open" : ""}`} ref={bookRef}>
+              <button
+                type="button"
+                className="btn btn-scarlet btn-desktop book-btn"
+                aria-expanded={book}
+                aria-haspopup="true"
+                onClick={() => setBook((b) => !b)}
+              >
+                Book a voyage
+                <svg className="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+                  <path d="M5 9l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <ul className="book-menu" aria-label="Book a voyage — pick a cruise line">
+                {CRUISE_LINES.map((l) => (
+                  <li key={l.id}>
+                    <a
+                      href={bookHref(l.book)}
+                      {...(l.book ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      onClick={() => setBook(false)}
+                    >
+                      {l.name}
+                      {l.book && <span className="ext" aria-hidden="true">↗</span>}
+                    </a>
+                  </li>
+                ))}
+                <li className="all">
+                  <a href="/cruises" onClick={() => setBook(false)}>
+                    Compare every line
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <button
             className="nav-toggle"
@@ -85,17 +141,32 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
             {label}
           </a>
         ))}
-        <a href="/plan" onClick={() => setMenu(false)}>
+        <a href="/cruises" onClick={() => setMenu(false)}>
           <span className="idx">{String(NAV.length + 1).padStart(2, "0")}</span>
+          Cruises
+        </a>
+        <a href="/plan" onClick={() => setMenu(false)}>
+          <span className="idx">{String(NAV.length + 2).padStart(2, "0")}</span>
           Plan a Voyage
         </a>
         <a href="/manage" onClick={() => setMenu(false)}>
-          <span className="idx">{String(NAV.length + 2).padStart(2, "0")}</span>
+          <span className="idx">{String(NAV.length + 3).padStart(2, "0")}</span>
           Manage Booking
         </a>
-        <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank" onClick={() => setMenu(false)} className="scarlet">
-          <span className="idx">→</span>Book a voyage
-        </a>
+        <div className="drawer-book">
+          <span className="bk">Book a voyage</span>
+          {CRUISE_LINES.map((l) => (
+            <a
+              key={l.id}
+              href={bookHref(l.book)}
+              {...(l.book ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              onClick={() => setMenu(false)}
+            >
+              {l.name}
+              {l.book && <span className="ext" aria-hidden="true"> ↗</span>}
+            </a>
+          ))}
+        </div>
       </div>
     </>
   );

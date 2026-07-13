@@ -1,4 +1,4 @@
-import { NAV } from "@/lib/content";
+import { NAV, VIRGIN_BOOKING_URL } from "@/lib/content";
 import { img } from "@/lib/media";
 
 export default function SiteFooter({ subpage = false }: { subpage?: boolean }) {
@@ -42,7 +42,10 @@ export default function SiteFooter({ subpage = false }: { subpage?: boolean }) {
                 </li>
               ))}
               <li>
-                <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank">Book a voyage</a>
+                <a href="/cruises">Cruises</a>
+              </li>
+              <li>
+                <a href={VIRGIN_BOOKING_URL} target="_blank">Book a voyage</a>
               </li>
               <li>
                 <a href="/plan">Plan a voyage</a>

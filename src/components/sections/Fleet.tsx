@@ -31,6 +31,11 @@ export default function Fleet() {
           Princess Cruises join the lineup — plus one special line. Stay tuned,
           or email me with questions and bookings in the meantime.
         </p>
+        <div className="fleet-cta reveal">
+          <a className="btn btn-ink" href="/cruises">
+            Compare every line <span className="arrow">→</span>
+          </a>
+        </div>
       </div>
     </section>
   );

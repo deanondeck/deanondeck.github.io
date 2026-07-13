@@ -1,5 +1,85 @@
 /* Site content — copy + data driving each section. Edit text here. */
 
+/* Dean's First Mate booking link — carries his agent + agency IDs so the
+   booking credits him. Used by the nav "Book a voyage" menu and /cruises. */
+export const VIRGIN_BOOKING_URL =
+  "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK";
+
+/* The booking portfolio — drives the "Book a voyage" dropdown and the
+   /cruises page. NOTE: only the Virgin link carries Dean's advisor ID;
+   swap the other `book` URLs for agent-credited links when he has them.
+   River cruising spans several lines, so it books through /plan instead. */
+export type CruiseLine = {
+  id: string;
+  name: string;
+  k: string; // eyebrow
+  img: string;
+  alt: string;
+  d: string;
+  points?: string[];
+  book: string | null; // external search/booking URL (null → route to /plan)
+  bookLabel: string;
+};
+
+export const CRUISE_LINES: CruiseLine[] = [
+  {
+    id: "virgin",
+    name: "Virgin Voyages",
+    k: "The specialty · adults only",
+    img: "virgin-scarlet-ship",
+    alt: "A Virgin Voyages ship at sea, its scarlet-red funnel catching the light",
+    d: "This is the line I know bow to stern. Adults-only ships, 20+ eateries included, and nights that end at a pool party instead of a kids' club. As a Gold-certified First Mate I book it daily — my link costs you nothing extra and I stack every perk you're owed.",
+    points: [
+      "Adults only — every sailor is 18+",
+      "Michelin-inspired dining included, zero buffets",
+      "RockStar suites & Richard's Rooftop",
+      "MNVV discounts + Sailor Loot when you book with me",
+    ],
+    book: VIRGIN_BOOKING_URL,
+    bookLabel: "Find a Virgin voyage",
+  },
+  {
+    id: "royal-caribbean",
+    name: "Royal Caribbean",
+    k: "For the whole crew",
+    img: "port-caribbean",
+    alt: "A white-sand Caribbean beach with turquoise water",
+    d: "The biggest ships at sea and the easy answer for multi-generational trips — surf simulators, water slides, Broadway-scale shows, and Perfect Day at CocoCay. When grandparents, parents, and kids all sail together, this is the line I reach for.",
+    book: "https://www.royalcaribbean.com/cruises",
+    bookLabel: "Browse Royal Caribbean",
+  },
+  {
+    id: "celebrity",
+    name: "Celebrity Cruises",
+    k: "Modern luxury",
+    img: "port-greece",
+    alt: "White-washed houses stacked above the blue Aegean in Greece",
+    d: "Resort-style ships with real design pedigree, elevated dining, and curated itineraries across the globe — the Greek Isles are a signature. For travelers who want polish and quiet luxury without the formality.",
+    book: "https://www.celebritycruises.com/cruises",
+    bookLabel: "Browse Celebrity Cruises",
+  },
+  {
+    id: "silversea",
+    name: "Silversea",
+    k: "Ultra-luxury",
+    img: "port-halong",
+    alt: "Limestone karsts rising from still emerald water at dawn",
+    d: "Intimate, all-inclusive ships where a butler comes with every suite and the fare covers nearly everything — plus expedition routes that reach Antarctica, the Galápagos, and the ends of the earth.",
+    book: "https://www.silversea.com/find-a-cruise",
+    bookLabel: "Browse Silversea",
+  },
+  {
+    id: "river",
+    name: "River Boat Cruises",
+    k: "Europe's rivers & beyond",
+    img: "voyages/culture-amsterdam",
+    alt: "Dean on a canal boat gliding past the gabled houses of Amsterdam",
+    d: "Small vessels that dock in the heart of town — the Danube, the Rhine, the Douro, the Mekong. I work across the leading river lines (AmaWaterways, Avalon, Uniworld, and more) to match the boat to the journey. Tell me the river; I'll handle the rest.",
+    book: null,
+    bookLabel: "Plan a river cruise",
+  },
+];
+
 export const NAV: [string, string][] = [
   ["The Difference", "#difference"],
   ["Ports", "#ports"],
