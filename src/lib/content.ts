@@ -68,24 +68,26 @@ export const REVIEWS = [
   { q: "Dean elevated our Virgin Voyages experience beyond expectations — from RockStar service to unique excursions, every detail tailored perfectly.", who: "Ethan", when: "Sailor" },
 ];
 
-/* "Voyage Distinction" — the old site's six signature experience cards. */
+/* "Voyage Distinction" — the old site's six signature experience cards,
+   photographed by Dean on his own sailings (carried over from deanondeck.com). */
 export const EXPERIENCES = [
-  { img: "port-tropical", k: "Hidden gems", t: "Excursion Tours", d: "Itineraries that showcase hidden gems and must-see spots — think the Dominican Republic, done right." },
-  { img: "port-sail", k: "Premium at sea", t: "Luxury Sailing Adventures", d: "Exclusive sailing experiences aboard Virgin Voyages with premium amenities and stunning ocean views. Greece, anyone?" },
-  { img: "dining", k: "On & off ship", t: "Culinary Delights", d: "Savor local flavors with gourmet dining experiences crafted by top chefs on and off the ship." },
-  { img: "port-greece", k: "Guided", t: "Cultural Immersion", d: "Engage with the rich history and vibrant culture of every region through guided tours and local interactions. Amsterdam awaits." },
-  { img: "spa", k: "Recharge", t: "Wellness Retreats", d: "Relax and rejuvenate with yoga, spa treatments, and meditation. Sky Lagoon, Iceland is calling." },
-  { img: "palm", k: "Thrill-seekers", t: "Adventure Excursions", d: "Snorkeling, hiking, and more — tailored to your interests and skill level. Anguilla sets the bar." },
+  { img: "voyages/excursion-dr", alt: "Dean in a helmet and harness on a zipline platform above the Dominican Republic coast", pos: "50% 30%", k: "Hidden gems", t: "Excursion Tours", d: "Itineraries that showcase hidden gems and must-see spots — think the Dominican Republic, done right." },
+  { img: "voyages/sailing-greece", alt: "Dean on a Santorini terrace with the caldera and a Virgin ship anchored below", k: "Premium at sea", t: "Luxury Sailing Adventures", d: "Exclusive sailing experiences aboard Virgin Voyages with premium amenities and stunning ocean views. Greece, anyone?" },
+  { img: "voyages/culinary", alt: "A glass of champagne beside the printed tasting menu at Test Kitchen on board", k: "On & off ship", t: "Culinary Delights", d: "Savor local flavors with gourmet dining experiences crafted by top chefs on and off the ship." },
+  { img: "voyages/culture-amsterdam", alt: "Dean on a canal boat gliding past the gabled houses of Amsterdam", k: "Guided", t: "Cultural Immersion", d: "Engage with the rich history and vibrant culture of every region through guided tours and local interactions. Amsterdam awaits." },
+  { img: "voyages/wellness-iceland", alt: "Feet up on the warm deck at Sky Lagoon, looking out over the still Icelandic sea", k: "Recharge", t: "Wellness Retreats", d: "Relax and rejuvenate with yoga, spa treatments, and meditation. Sky Lagoon, Iceland is calling." },
+  { img: "voyages/adventure-anguilla", alt: "Dean in a snorkel mask reaching toward the camera in the turquoise water off Anguilla", pos: "50% 25%", k: "Thrill-seekers", t: "Adventure Excursions", d: "Snorkeling, hiking, and more — tailored to your interests and skill level. Anguilla sets the bar." },
 ];
 
-/* "From the Deck" — dispatches carried over from the old site's story wall. */
+/* "From the Deck" — dispatches carried over from the old site's story wall,
+   each with Dean's own snapshot from that stop. */
 export const JOURNAL = [
-  { k: "Pacific Northwest", t: "Waterfalls & Pike Place", d: "Seattle is incredible — Pike Place Market and the Space Needle define the skyline, and beyond the city you'll find breathtaking waterfalls and a world-class culinary scene.", sea: "Seattle, WA" },
-  { k: "Shore things", t: "Whale Watching on the Swiftsure", d: "Out of Port Townsend, the Swiftsure is a high-speed, wave-piercing catamaran with a wrap-around viewing deck — prime territory for getting up close with the whales.", sea: "Port Townsend, WA" },
-  { k: "Latest experience", t: "Sitka, Alaska", d: "Wildlife cruises past sea otters, whales, and bears; an Alaskan seafood feast at Fin Island Lodge; kayaking glacier-carved fjords. A bucket-list stop — book Shore Things early.", sea: "Sitka, AK ⚓" },
-  { k: "Signature night", t: "Scarlet Night", d: "Virgin's ship-wide immersive party replaces stuffy formal nights — pop-up performances, flash mobs, and acrobatics, ending in a late-night pool party. Express yourself.", sea: "Every voyage" },
-  { k: "The view", t: "The Space Needle", d: "A must-see that truly stands out. From the scenery to the atmosphere, it's the kind of place that stays with you long after you leave.", sea: "Seattle, WA ⚓🔱" },
-  { k: "Why I sail", t: "Life Is Great", d: "Nothing beats touching down somewhere new. Meeting people and diving into vibrant cultures enriches life in ways words can't capture. Now it's your turn to chase the horizon.", sea: "— Dean" },
+  { img: "deck/seattle-falls", alt: "A waterfall thundering into a green gorge outside Seattle", k: "Pacific Northwest", t: "Waterfalls & Pike Place", d: "Seattle is incredible — Pike Place Market and the Space Needle define the skyline, and beyond the city you'll find breathtaking waterfalls and a world-class culinary scene.", sea: "Seattle, WA" },
+  { img: "deck/whale-watching", alt: "Dean dockside in front of the Swiftsure catamaran in Port Townsend", k: "Shore things", t: "Whale Watching on the Swiftsure", d: "Out of Port Townsend, the Swiftsure is a high-speed, wave-piercing catamaran with a wrap-around viewing deck — prime territory for getting up close with the whales.", sea: "Port Townsend, WA" },
+  { img: "deck/sitka", alt: "Dean beside the carved eagle at the Sitka, Alaska welcome sign", k: "Latest experience", t: "Sitka, Alaska", d: "Wildlife cruises past sea otters, whales, and bears; an Alaskan seafood feast at Fin Island Lodge; kayaking glacier-carved fjords. A bucket-list stop — book Shore Things early.", sea: "Sitka, AK ⚓" },
+  { img: "deck/scarlet-night", alt: "Dean in red light under the Scarlet Night neon sign on board", k: "Signature night", t: "Scarlet Night", d: "Virgin's ship-wide immersive party replaces stuffy formal nights — pop-up performances, flash mobs, and acrobatics, ending in a late-night pool party. Express yourself.", sea: "Every voyage" },
+  { img: "deck/space-needle", alt: "Dean's selfie beneath the Space Needle against a clear blue sky", k: "The view", t: "The Space Needle", d: "A must-see that truly stands out. From the scenery to the atmosphere, it's the kind of place that stays with you long after you leave.", sea: "Seattle, WA ⚓🔱" },
+  { img: "deck/life-is-great", alt: "Dean waving from the pier with a Virgin Voyages ship towering behind him", k: "Why I sail", t: "Life Is Great", d: "Nothing beats touching down somewhere new. Meeting people and diving into vibrant cultures enriches life in ways words can't capture. Now it's your turn to chase the horizon.", sea: "— Dean" },
 ];
 
 /* Essential FAQs — Virgin fare tiers and the Pay-In-Full discount. */

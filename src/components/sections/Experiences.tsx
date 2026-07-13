@@ -11,14 +11,18 @@ export default function Experiences() {
           <span className="script">beyond the waves</span>
           <h2 className="display h-lg">Unforgettable Virgin Voyages.</h2>
           <p className="lede" style={{ marginInline: "auto" }}>
-            Discover captivating adventures beyond the waves — excursions and
-            experiences I&apos;ll help you find, book, and love.
+            Discover captivating adventures beyond the waves — every photo
+            below is from Dean&apos;s own sailings.
           </p>
         </div>
         <div className="xp">
           {EXPERIENCES.map((x, i) => (
             <article className={`xp-card reveal d${(i % 3) + 1}`} key={x.t}>
-              <img src={img(x.img)} alt={x.t} />
+              <img
+                src={img(x.img)}
+                alt={x.alt}
+                style={x.pos ? { objectPosition: x.pos } : undefined}
+              />
               <div className="xp-body">
                 <span className="k">{x.k}</span>
                 <h3>{x.t}</h3>

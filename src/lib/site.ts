@@ -10,3 +10,7 @@ export const SITE_DESCRIPTION =
 export const OG_IMAGE = `${SITE_URL}/img/hero-ship-night.jpg`;
 
 export const INSTAGRAM_URL = "https://instagram.com/dean__on__deck";
+
+/* Dean's Google Business profile — the live source of the review quotes. */
+export const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/maps?cid=0x27bff539e2a886e5:0x6563ddb20bd8046f";
