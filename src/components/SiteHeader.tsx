@@ -30,7 +30,7 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
       <header className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="nav-inner">
           <a href={home} className="brand" aria-label="Dean on Deck — home">
-            <img src={img("mark", "svg")} alt="Dean on Deck" />
+            <img src={img("logo")} alt="Dean on Deck" />
             <span>
               <span className="brand-name">Dean on Deck</span>
               <span className="brand-sub" style={{ display: "block" }}>

@@ -17,7 +17,7 @@ export default function StructuredData() {
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     image: OG_IMAGE,
-    logo: `${SITE_URL}/img/mark.svg`,
+    logo: `${SITE_URL}/img/logo.jpg`,
     founder: { "@type": "Person", name: "Dean Satterfield" },
     areaServed: "Worldwide",
     sameAs: [INSTAGRAM_URL],

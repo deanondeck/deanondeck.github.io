@@ -9,7 +9,7 @@ export default function SiteFooter({ subpage = false }: { subpage?: boolean }) {
         <div className="foot-top">
           <div>
             <div className="brand">
-              <img src={img("mark", "svg")} alt="" style={{ width: 52, height: 52 }} />
+              <img src={img("logo")} alt="" />
               <span className="brand-name">Dean on Deck</span>
             </div>
             <p className="foot-tag">No kids. No stress. Just you.</p>
@@ -66,9 +66,11 @@ export default function SiteFooter({ subpage = false }: { subpage?: boolean }) {
         <div className="foot-bottom">
           <span>© {new Date().getFullYear()} Dean on Deck Cruise Travel</span>
           <span className="disc">
-            Dean On Deck Cruise Travel was created by Dean Satterfield. The Virgin
-            Voyages name, logo, and associated brand elements are trademarks of
-            Virgin Enterprises Limited.
+            Dean On Deck Cruise Travel Agency was created by Dean Satterfield,
+            does not claim to represent, is not affiliated with, endorsed by,
+            employed by, authorized by, or officially connected with Virgin
+            Voyages or Virgin Group Ltd. All product and company names are
+            trademarks™ or registered® trademarks of their respective holders.
           </span>
         </div>
       </div>

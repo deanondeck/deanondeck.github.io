@@ -1,25 +1,23 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Geist_Mono } from "next/font/google";
+import { Noto_Serif, Corinthia } from "next/font/google";
 import StructuredData from "@/components/StructuredData";
 import { OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-display",
+/* Reference pairing (happyjetsetter.com): Noto Serif carries every heading,
+   Corinthia supplies the handwritten flourishes; body copy rides the system
+   sans stack (set in globals.css — no webfont needed). */
+const notoSerif = Noto_Serif({
+  variable: "--font-noto-serif",
   subsets: ["latin"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-sans",
+const corinthia = Corinthia({
+  variable: "--font-corinthia",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -37,7 +35,6 @@ export const metadata: Metadata = {
     "no booking fees cruise",
   ],
   alternates: { canonical: "/" },
-  icons: { icon: "/img/mark.svg" },
   openGraph: {
     title: "Dean on Deck — Sail like a grown-up",
     description:
@@ -64,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable} ${geistMono.variable} antialiased`}
+      className={`${notoSerif.variable} ${corinthia.variable} antialiased`}
     >
       <body>
         <StructuredData />

@@ -1,6 +1,6 @@
 export default function DeanDifference() {
   return (
-    <section className="band band--ink2">
+    <section className="band band--ink2" id="philosophy">
       <div className="wrap">
         <div className="sec-head reveal">
           <p className="log">No Stress. Just Fun.</p>
@@ -21,12 +21,40 @@ export default function DeanDifference() {
             <div className="lab">Booking fees, always</div>
           </div>
           <div className="stat reveal d2">
-            <div className="num">Loot</div>
-            <div className="lab">Onboard credit on most sailings</div>
+            <div className="num">$300</div>
+            <div className="lab">Instant MNVV discount + Sailor Loot</div>
           </div>
           <div className="stat reveal d3">
             <div className="num">135<span style={{ fontSize: "1.4rem" }}>d</span></div>
             <div className="lab">Priority Shore Things access</div>
+          </div>
+        </div>
+        <div className="pillars">
+          <div className="pillar reveal d1">
+            <span className="k">Adventure awaits</span>
+            <h3>Every journey, an adventure</h3>
+            <p>
+              Unique travel experiences that ignite your sense of wonder —
+              every voyage crafted to be filled with unforgettable moments.
+            </p>
+          </div>
+          <div className="pillar reveal d2">
+            <span className="k">MNVV advantage</span>
+            <h3>Placeholder perks, unlocked</h3>
+            <p>
+              I keep a supply of My Next Virgin Voyage certificates: book
+              through me and take an immediate $300 off your fare plus Sailor
+              Loot, stackable with group bonuses and online promotions.
+            </p>
+          </div>
+          <div className="pillar reveal d3">
+            <span className="k">Excursions &amp; experiences</span>
+            <h3>The finest Shore Things</h3>
+            <p>
+              I&apos;ll help you find and book the excursions that elevate the
+              trip — cultural deep-dives or pure adrenaline, truly memorable
+              either way.
+            </p>
           </div>
         </div>
       </div>

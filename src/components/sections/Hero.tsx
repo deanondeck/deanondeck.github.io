@@ -2,16 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { heroEmbedSrc, img } from "@/lib/media";
+import { INSTAGRAM_URL } from "@/lib/site";
+import { voyageSearch } from "@/lib/voyages";
 
 /* ── Hero background video ──────────────────────────────────────────
    Cinematic, muted, looping YouTube clip behind the hero (no controls,
    no chrome) — the static night-ship photo stays as the instant poster
-   and the reduced-motion fallback.
-
-   TODO(Dean): paste your own clip here. Accepts a full YouTube URL OR a
-   bare 11-char video ID — swapping it is this one line. Until then this
-   is a Virgin Voyages adults-only placeholder.                          */
-const HERO_VIDEO = "e6VxAdd7-iQ";
+   and the reduced-motion fallback. Accepts a full YouTube URL OR a
+   bare 11-char video ID — swapping it is this one line. */
+const HERO_VIDEO = "gJntKcGKsB4";
 
 export default function Hero() {
   const [playVideo, setPlayVideo] = useState(false);
@@ -44,17 +43,15 @@ export default function Hero() {
       <div className="hero-scrim" aria-hidden="true" />
       <div className="hero-content wrap">
         <p className="log">Gold-Certified Virgin Voyages First Mate</p>
-        <h1>
-          Sail like a{" "}
-          <em style={{ whiteSpace: "nowrap" }}>grown-up.</em>
-        </h1>
+        <h1>Experience Luxe Virgin Voyages. Every Time.</h1>
+        <p className="hero-script">No kids. No stress. Just you.</p>
         <p className="hero-sub">
           I&apos;m Dean — and I book one thing brilliantly: adults-only Virgin
           Voyages cruises. Michelin-grade dining, RockStar perks, zero booking
-          fees. No kids. No stress. Just you and the horizon.
+          fees. From Iceland to the Caribbean, choose your adventure.
         </p>
         <div className="hero-actions">
-          <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK" target="_blank" className="btn btn-scarlet">
+          <a href={voyageSearch()} target="_blank" rel="noopener noreferrer" className="btn btn-light">
             Book your voyage <span className="arrow">→</span>
           </a>
           <a href="#difference" className="btn btn-ghost">
@@ -69,9 +66,31 @@ export default function Hero() {
             Sails <b>worldwide</b>
           </span>
           <span>
-            <b>Virgin Voyages</b> only
+            <b>Virgin Voyages</b> specialist
           </span>
         </div>
+      </div>
+      <div className="hero-rail">
+        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-1c0-.6.4-1 1-1z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 4c.3 2 1.6 3.4 3.5 3.6V10c-1.3 0-2.5-.4-3.5-1.1V15a5 5 0 11-5-5v2.6a2.4 2.4 0 102.4 2.4V4H16z" />
+          </svg>
+        </a>
+      </div>
+      <div className="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
       </div>
     </section>
   );
