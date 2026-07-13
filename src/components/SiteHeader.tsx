@@ -69,6 +69,9 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
                 </li>
               ))}
               <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
                 <a href="/cruises">Cruises</a>
               </li>
               <li>
@@ -141,16 +144,20 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
             {label}
           </a>
         ))}
-        <a href="/cruises" onClick={() => setMenu(false)}>
+        <a href="/about" onClick={() => setMenu(false)}>
           <span className="idx">{String(NAV.length + 1).padStart(2, "0")}</span>
+          About Dean
+        </a>
+        <a href="/cruises" onClick={() => setMenu(false)}>
+          <span className="idx">{String(NAV.length + 2).padStart(2, "0")}</span>
           Cruises
         </a>
         <a href="/plan" onClick={() => setMenu(false)}>
-          <span className="idx">{String(NAV.length + 2).padStart(2, "0")}</span>
+          <span className="idx">{String(NAV.length + 3).padStart(2, "0")}</span>
           Plan a Voyage
         </a>
         <a href="/manage" onClick={() => setMenu(false)}>
-          <span className="idx">{String(NAV.length + 3).padStart(2, "0")}</span>
+          <span className="idx">{String(NAV.length + 4).padStart(2, "0")}</span>
           Manage Booking
         </a>
         <div className="drawer-book">

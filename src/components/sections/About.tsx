@@ -29,6 +29,11 @@ export default function About() {
               do this.
             </p>
             <p className="sig">— Dean</p>
+            <p>
+              <a className="cl-alt" href="/about">
+                Read my full story →
+              </a>
+            </p>
           </div>
         </div>
       </div>

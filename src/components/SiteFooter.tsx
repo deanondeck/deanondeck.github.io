@@ -42,6 +42,9 @@ export default function SiteFooter({ subpage = false }: { subpage?: boolean }) {
                 </li>
               ))}
               <li>
+                <a href="/about">About Dean</a>
+              </li>
+              <li>
                 <a href="/cruises">Cruises</a>
               </li>
               <li>
