@@ -32,7 +32,14 @@
           "**Virgin Voyages** specialist"
         ]
       },
-      "hidden": false
+      "hidden": false,
+      "fieldStyles": {
+        "eyebrow": {
+          "props": {
+            "color": "#00ff00"
+          }
+        }
+      }
     },
     {
       "id": "ticker",
