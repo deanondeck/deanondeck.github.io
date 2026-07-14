@@ -24,7 +24,7 @@ type HeroContent = {
   metaItems: string[];
 };
 
-export default function Hero({ content, site }: SectionProps) {
+export default function Hero({ id, content, site }: SectionProps) {
   const c = content as HeroContent;
   const [playVideo, setPlayVideo] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
@@ -37,13 +37,14 @@ export default function Hero({ content, site }: SectionProps) {
   }, []);
 
   return (
-    <section className="hero">
+    <section className="hero" data-cms-id={id}>
       <div className="hero-media" aria-hidden="true">
-        <img src={img(c.posterImg)} alt="" />
+        <img src={img(c.posterImg)} alt="" data-cms-field="posterImg" />
       </div>
       {playVideo && (
         <div className={`hero-video${videoReady ? " ready" : ""}`} aria-hidden="true">
           <iframe
+            data-cms-field="video"
             src={heroEmbedSrc(c.video)}
             title="Virgin Voyages at sea"
             allow="autoplay; encrypted-media; picture-in-picture"
@@ -55,19 +56,19 @@ export default function Hero({ content, site }: SectionProps) {
       )}
       <div className="hero-scrim" aria-hidden="true" />
       <div className="hero-content wrap">
-        <p className="log">{c.eyebrow}</p>
-        <h1>{c.heading}</h1>
-        <p className="hero-script">{c.script}</p>
-        <p className="hero-sub">{c.sub}</p>
+        <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
+        <h1 data-cms-field="heading">{c.heading}</h1>
+        <p className="hero-script" data-cms-field="script">{c.script}</p>
+        <p className="hero-sub" data-cms-field="sub">{c.sub}</p>
         <div className="hero-actions">
-          <a href={c.primaryCta.href} target="_blank" rel="noopener noreferrer" className="btn btn-light">
+          <a href={c.primaryCta.href} target="_blank" rel="noopener noreferrer" className="btn btn-light" data-cms-field="primaryCta">
             {c.primaryCta.label} <span className="arrow">→</span>
           </a>
-          <a href={c.secondaryCta.href} className="btn btn-ghost">
+          <a href={c.secondaryCta.href} className="btn btn-ghost" data-cms-field="secondaryCta">
             {c.secondaryCta.label}
           </a>
         </div>
-        <div className="hero-meta">
+        <div className="hero-meta" data-cms-field="metaItems">
           {c.metaItems.map((item, i) => (
             <span key={i}>{renderInline(item)}</span>
           ))}

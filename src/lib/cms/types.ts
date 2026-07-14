@@ -6,6 +6,17 @@
    `content/sections.schema.json`. The admin panel reads that same schema to
    render editing forms, so this file and the schema JSON must agree. */
 
+/** Per-instance styling authored in the CMS. Compiled into a scoped `<style>`
+    block at render time (see `styles.ts`) — never applied inline. Used
+    identically for a whole section and for a single field. */
+export type CmsStyle = {
+  /** Discrete CSS declarations, e.g. `{ color: "#e11d2a", "text-align": "center" }`. */
+  props?: Record<string, string>;
+  /** Advanced escape hatch: a raw CSS DECLARATION list (no selectors/braces),
+      sanitized and auto-scoped to the section/field. */
+  css?: string;
+};
+
 export type SectionInstance = {
   /** Stable unique id within the page — survives reorder, used as React key. */
   id: string;
@@ -15,6 +26,10 @@ export type SectionInstance = {
   hidden?: boolean;
   /** Editable values, shape defined by the type's schema entry. */
   content: Record<string, unknown>;
+  /** CMS styling for the whole section. */
+  style?: CmsStyle;
+  /** CMS styling per top-level field, keyed by the schema field key. */
+  fieldStyles?: Record<string, CmsStyle>;
 };
 
 export type PageMeta = {
@@ -113,6 +128,9 @@ export type SiteConfig = {
 
 /** Props every section component receives. */
 export type SectionProps = {
+  /** Instance id — emitted as `data-cms-id` on the root element so the
+      generated per-instance style block (see `styles.ts`) can target it. */
+  id: string;
   content: Record<string, unknown>;
   site: SiteConfig;
 };

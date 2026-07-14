@@ -48,14 +48,14 @@ type AboutMeContent = {
 
 const btnClass = (v: Action["variant"]) => `btn btn-${v}`;
 
-export default function AboutMe({ content }: SectionProps) {
+export default function AboutMe({ id, content }: SectionProps) {
   const c = content as AboutMeContent;
   const { hero, letter, proof, cta } = c;
 
   return (
     <>
       {/* ---- hero: the letter's opening line ---- */}
-      <section className="band band--black about-hero" id="about-dean">
+      <section className="band band--black about-hero" id="about-dean" data-cms-id={id} data-cms-field="hero">
         <div className="wrap ah-grid">
           <div className="ah-body">
             <p className="log">{hero.eyebrow}</p>
@@ -71,7 +71,7 @@ export default function AboutMe({ content }: SectionProps) {
       </section>
 
       {/* ---- the letter ---- */}
-      <section className="band band--shell2">
+      <section className="band band--shell2" data-cms-id={id} data-cms-field="letter">
         <div className="wrap">
           <div className="letter">
             <p className="reveal">{renderInline(letter.intro)}</p>
@@ -107,7 +107,7 @@ export default function AboutMe({ content }: SectionProps) {
       </section>
 
       {/* ---- proof: his own deck, not a stock library ---- */}
-      <section className="band band--ink">
+      <section className="band band--ink" data-cms-id={id} data-cms-field="proof">
         <div className="wrap">
           <div className="sec-head reveal">
             <p className="log">{proof.eyebrow}</p>
@@ -135,7 +135,7 @@ export default function AboutMe({ content }: SectionProps) {
       </section>
 
       {/* ---- closing CTA (shared closing-band styles from /cruises) ---- */}
-      <section className="band band--black cl-cta">
+      <section className="band band--black cl-cta" data-cms-id={id} data-cms-field="cta">
         <div className="wrap">
           <div className="sec-head center reveal">
             <p className="log log--center">{cta.eyebrow}</p>

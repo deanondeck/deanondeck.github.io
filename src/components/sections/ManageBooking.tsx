@@ -20,7 +20,7 @@ type ManageContent = {
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function ManageBooking({ content }: SectionProps) {
+export default function ManageBooking({ id, content }: SectionProps) {
   const c = content as ManageContent;
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
@@ -44,15 +44,15 @@ export default function ManageBooking({ content }: SectionProps) {
   }
 
   return (
-    <section className="band band--ink manage" id="manage">
+    <section className="band band--ink manage" id="manage" data-cms-id={id}>
       <div className="manage-media">
-        <img src={img(c.image)} alt="" />
+        <img src={img(c.image)} alt="" data-cms-field="image" />
       </div>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">{c.eyebrow}</p>
-          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
-          <p className="lede">{c.lede}</p>
+          <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
+          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
+          <p className="lede" data-cms-field="lede">{c.lede}</p>
         </div>
 
         <div className="manage-grid">
@@ -84,7 +84,7 @@ export default function ManageBooking({ content }: SectionProps) {
 
             <label className="check">
               <input type="checkbox" name="assign_request" value="yes" required />
-              <span>{renderInline(c.checkboxLabel)}</span>
+              <span data-cms-field="checkboxLabel">{renderInline(c.checkboxLabel)}</span>
             </label>
 
             <div className="field">
@@ -114,9 +114,9 @@ export default function ManageBooking({ content }: SectionProps) {
             )}
           </form>
 
-          <aside className="manage-aside reveal d2">
+          <aside className="manage-aside reveal d2" data-cms-field="aside">
             <p className="log">{c.aside.log}</p>
-            <ol className="steps">
+            <ol className="steps" data-cms-field="steps">
               {c.steps.map((s) => (
                 <li key={s.n}>
                   <span className="step-n">{s.n}</span>

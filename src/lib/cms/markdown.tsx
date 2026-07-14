@@ -57,19 +57,23 @@ export function renderInline(input: string, keyPrefix = "i"): ReactNode[] {
   return out;
 }
 
-/** Render block Markdown copy: blank lines → paragraphs, `\n` → <br/>. */
+/** Render block Markdown copy: blank lines → paragraphs, `\n` → <br/>.
+    `fieldId`, when set, is emitted as `data-cms-field` on every paragraph so
+    the CMS style layer can target this block (it has no single wrapper). */
 export function RichText({
   markdown,
   className,
+  fieldId,
 }: {
   markdown: string;
   className?: string;
+  fieldId?: string;
 }) {
   const paragraphs = markdown.trim().split(/\n{2,}/);
   return (
     <>
       {paragraphs.map((para, pi) => (
-        <p key={pi} className={className}>
+        <p key={pi} className={className} data-cms-field={fieldId}>
           {para.split("\n").map((line, li) => (
             <Fragment key={li}>
               {li > 0 && <br />}

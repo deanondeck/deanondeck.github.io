@@ -16,17 +16,17 @@ type TwoWaysContent = {
 };
 
 /* The old site's "Two Ways to Book" — self-serve link vs. full service. */
-export default function TwoWays({ content }: SectionProps) {
+export default function TwoWays({ id, content }: SectionProps) {
   const c = content as TwoWaysContent;
   return (
-    <section className="band band--ink" id="book">
+    <section className="band band--ink" id="book" data-cms-id={id}>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">{c.eyebrow}</p>
-          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
+          <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
+          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
         </div>
         <div className="ways">
-          <div className="way reveal d1">
+          <div className="way reveal d1" data-cms-field="way1">
             <span className="k">{c.way1.k}</span>
             <h3>{c.way1.title}</h3>
             <p>{c.way1.body}</p>
@@ -34,7 +34,7 @@ export default function TwoWays({ content }: SectionProps) {
               {c.way1.ctaLabel} <span className="arrow">→</span>
             </a>
           </div>
-          <div className="way gold reveal d2">
+          <div className="way gold reveal d2" data-cms-field="way2">
             <span className="k">{c.way2.k}</span>
             <h3>{c.way2.title}</h3>
             <p>{c.way2.body}</p>

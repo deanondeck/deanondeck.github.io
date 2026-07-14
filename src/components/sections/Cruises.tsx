@@ -18,14 +18,14 @@ type CruisesContent = {
   cta: { eyebrow: string; heading: string; lede: string; actions: Action[] };
 };
 
-export default function Cruises({ content, site }: SectionProps) {
+export default function Cruises({ id, content, site }: SectionProps) {
   const c = content as CruisesContent;
   const lines = site.cruiseLines;
 
   return (
     <>
       {/* ---- intro ---- */}
-      <section className="band band--black cruises-hero" id="top-cruises">
+      <section className="band band--black cruises-hero" id="top-cruises" data-cms-id={id} data-cms-field="hero">
         <div className="wrap">
           <div className="sec-head reveal">
             <p className="log">{c.hero.eyebrow}</p>
@@ -91,7 +91,7 @@ export default function Cruises({ content, site }: SectionProps) {
       })}
 
       {/* ---- closing CTA ---- */}
-      <section className="band band--black cl-cta">
+      <section className="band band--black cl-cta" data-cms-id={id} data-cms-field="cta">
         <div className="wrap">
           <div className="sec-head center reveal">
             <p className="log log--center">{c.cta.eyebrow}</p>

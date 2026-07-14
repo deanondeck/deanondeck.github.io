@@ -17,7 +17,7 @@ type ContactContent = {
   lines: ContactLine[];
 };
 
-export default function Contact({ content }: SectionProps) {
+export default function Contact({ id, content }: SectionProps) {
   const c = content as ContactContent;
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
@@ -41,14 +41,14 @@ export default function Contact({ content }: SectionProps) {
   }
 
   return (
-    <section className="band contact" id="contact">
+    <section className="band contact" id="contact" data-cms-id={id}>
       <div className="contact-media">
-        <img src={img(c.image)} alt="" />
+        <img src={img(c.image)} alt="" data-cms-field="image" />
       </div>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">{c.eyebrow}</p>
-          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
+          <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
+          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
         </div>
         <div className="contact-grid">
           <form className="form reveal d1" onSubmit={handleSubmit}>
@@ -93,8 +93,8 @@ export default function Contact({ content }: SectionProps) {
               </p>
             )}
           </form>
-          <aside className="contact-aside reveal d2">
-            <p style={{ marginTop: 0 }}>{c.asideIntro}</p>
+          <aside className="contact-aside reveal d2" data-cms-field="lines">
+            <p style={{ marginTop: 0 }} data-cms-field="asideIntro">{c.asideIntro}</p>
             {c.lines.map((line) => (
               <div className="line" key={line.k}>
                 <span className="k">{line.k}</span>

@@ -12,26 +12,26 @@ type PortsContent = {
   items: PortItem[];
 };
 
-export default function Ports({ content }: SectionProps) {
+export default function Ports({ id, content }: SectionProps) {
   const c = content as PortsContent;
   return (
-    <section className="band band--shell" id="ports">
+    <section className="band band--shell" id="ports" data-cms-id={id}>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">{c.eyebrow}</p>
-          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
-          <p className="lede">{c.lede}</p>
+          <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
+          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
+          <p className="lede" data-cms-field="lede">{c.lede}</p>
         </div>
       </div>
       <div className="board" aria-hidden="true">
-        <div className="board-track">
+        <div className="board-track" data-cms-field="board">
           {[...c.board, ...c.board].map((p, i) => (
             <span key={i}>{p}</span>
           ))}
         </div>
       </div>
       <div className="wrap">
-        <div className="ports">
+        <div className="ports" data-cms-field="items">
           {c.items.map((p, i) => (
             <a
               className={`port reveal d${(i % 3) + 1}`}

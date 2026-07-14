@@ -9,16 +9,16 @@ type FaqContent = {
 };
 
 /* Essential FAQs for travelers — fare tiers, Pay-In-Full, MNVV, transfers. */
-export default function Faq({ content }: SectionProps) {
+export default function Faq({ id, content }: SectionProps) {
   const c = content as FaqContent;
   return (
-    <section className="band band--shell" id="faq">
+    <section className="band band--shell" id="faq" data-cms-id={id}>
       <div className="wrap">
         <div className="sec-head center reveal">
-          <p className="log log--center">{c.eyebrow}</p>
-          <h2 className="display h-lg">{c.heading}</h2>
+          <p className="log log--center" data-cms-field="eyebrow">{c.eyebrow}</p>
+          <h2 className="display h-lg" data-cms-field="heading">{c.heading}</h2>
         </div>
-        <div className="faq reveal d1">
+        <div className="faq reveal d1" data-cms-field="items">
           {c.items.map((f) => (
             <details key={f.q}>
               <summary>{f.q}</summary>

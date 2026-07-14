@@ -33,7 +33,7 @@ type PlanContent = {
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function PlanVoyage({ content }: SectionProps) {
+export default function PlanVoyage({ id, content }: SectionProps) {
   const c = content as PlanContent;
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
@@ -73,15 +73,15 @@ export default function PlanVoyage({ content }: SectionProps) {
   }
 
   return (
-    <section className="band band--ink plan" id="plan">
+    <section className="band band--ink plan" id="plan" data-cms-id={id}>
       <div className="plan-media">
-        <img src={img(c.image)} alt="" />
+        <img src={img(c.image)} alt="" data-cms-field="image" />
       </div>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">{c.eyebrow}</p>
-          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
-          <p className="lede">{c.lede}</p>
+          <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
+          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
+          <p className="lede" data-cms-field="lede">{c.lede}</p>
         </div>
 
         <div className="plan-grid">
@@ -135,7 +135,7 @@ export default function PlanVoyage({ content }: SectionProps) {
                 <span className="leg-n">03</span> The cabin
               </legend>
               <p className="leg-note">Pick every style you&apos;d consider.</p>
-              <div className="choices">
+              <div className="choices" data-cms-field="cabins">
                 {c.cabins.map((choice) => (
                   <label className="choice" key={choice.value}>
                     <input type="checkbox" name="cabin" value={choice.value} />
@@ -159,7 +159,7 @@ export default function PlanVoyage({ content }: SectionProps) {
                 Virgin&apos;s VoyageFair Choices — three tiers for Sea Terrace
                 cabins and below. RockStar Quarters skip this entirely.
               </p>
-              <div className="choices">
+              <div className="choices" data-cms-field="fares">
                 {c.fares.map((choice) => (
                   <label className="choice" key={choice.value}>
                     <input type="radio" name="fare" value={choice.value} required />
@@ -183,7 +183,7 @@ export default function PlanVoyage({ content }: SectionProps) {
                 Since October 2025 gratuities are a separate, mandatory charge —
                 prepaying is cheaper and covers all service staff.
               </p>
-              <div className="choices">
+              <div className="choices" data-cms-field="gratuities">
                 {c.gratuities.map((choice) => (
                   <label className="choice" key={choice.value}>
                     <input type="radio" name="gratuities" value={choice.value} required />
@@ -244,7 +244,7 @@ export default function PlanVoyage({ content }: SectionProps) {
             )}
           </form>
 
-          <aside className="plan-aside reveal d2">
+          <aside className="plan-aside reveal d2" data-cms-field="aside">
             <p className="log">{c.aside.log}</p>
             <ul className="plan-notes">
               {c.aside.notes.map((n) => (

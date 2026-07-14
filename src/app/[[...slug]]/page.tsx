@@ -3,6 +3,7 @@ import RevealObserver from "@/components/RevealObserver";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { getSectionComponent } from "@/lib/sections/registry";
+import { buildPageStyleCss } from "@/lib/cms/styles";
 import {
   listPageSlugs,
   loadPage,
@@ -75,9 +76,16 @@ export default async function Page({
   const page = loadPage(key);
   const site = loadSite();
   const isSubpage = key !== "index";
+  const cmsCss = buildPageStyleCss(page.sections);
 
   return (
     <>
+      {cmsCss ? (
+        <style
+          data-cms-styles=""
+          dangerouslySetInnerHTML={{ __html: cmsCss }}
+        />
+      ) : null}
       <SiteHeader subpage={isSubpage} site={site} />
       <main id="top">
         {page.sections
@@ -86,7 +94,12 @@ export default async function Page({
             const Section = getSectionComponent(section.type);
             if (!Section) return null;
             return (
-              <Section key={section.id} content={section.content} site={site} />
+              <Section
+                key={section.id}
+                id={section.id}
+                content={section.content}
+                site={site}
+              />
             );
           })}
       </main>

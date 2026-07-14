@@ -10,17 +10,17 @@ type ShowcaseContent = {
   items: ShowcaseItem[];
 };
 
-export default function Showcase({ content }: SectionProps) {
+export default function Showcase({ id, content }: SectionProps) {
   const c = content as ShowcaseContent;
   return (
-    <section className="band band--ink" id="adults">
+    <section className="band band--ink" id="adults" data-cms-id={id}>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">{c.eyebrow}</p>
-          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
-          <p className="lede">{c.lede}</p>
+          <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
+          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
+          <p className="lede" data-cms-field="lede">{c.lede}</p>
         </div>
-        <div className="showcase">
+        <div className="showcase" data-cms-field="items">
           {c.items.map((s, i) => (
             <article className={`card reveal d${(i % 3) + 1}`} key={s.t}>
               <img src={img(s.img)} alt={s.t} />
