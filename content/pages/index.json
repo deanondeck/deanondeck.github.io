@@ -31,7 +31,8 @@
           "Sails **worldwide**",
           "**Virgin Voyages** specialist"
         ]
-      }
+      },
+      "hidden": true
     },
     {
       "id": "ticker",
