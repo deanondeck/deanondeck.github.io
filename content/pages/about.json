@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "About Dean · A Sailor Just Like You | Dean on Deck",
+    "description": "I'm Dean, a Sailor just like you. My Virgin experience changed my life — now I'm a Gold-Certified First Mate helping pros and first-timers alike sail better, with zero booking fees.",
+    "ogTitle": "Meet Dean — your Virgin Voyages First Mate",
+    "ogDescription": "A Sailor first. Booked in the last 30 days? Dean can run the numbers on adding him as your First Mate — and he books other cruise lines too.",
+    "ogType": "profile",
+    "inNav": true,
+    "navLabel": "About"
+  },
+  "sections": [
+    {
+      "id": "aboutMe",
+      "type": "aboutMe",
+      "content": {
+        "hero": {
+          "eyebrow": "About me · Your First Mate",
+          "script": "Ahoy, Sailor —",
+          "heading": "I'm Dean, a Sailor *just like you.*",
+          "lede": "My Virgin experience honestly changed my life, and it's the reason I became a Travel Advisor (First Mate).",
+          "photo": "deck/life-is-great",
+          "photoAlt": "Dean waving from the pier with a Virgin Voyages ship towering behind him",
+          "stamp": "Dean Satterfield · Gold-Certified First Mate"
+        },
+        "letter": {
+          "intro": "If your current First Mate isn't quite meeting your needs, I would love the opportunity to earn your trust and your business.",
+          "flag": {
+            "heading": "Did you book a voyage in the last 30 days?",
+            "body": "If you haven't paid in full yet, I'd be happy to run the numbers to see if adding me as your First Mate offers you a better advantage.",
+            "ctaLabel": "Run the numbers",
+            "ctaHref": "/manage",
+            "fine": "You keep your cabin, rate, and confirmation number — only the agency of record changes."
+          },
+          "afterFlag": "Whether you are a seasoned sailor who prefers booking independently or a first-timer, I am here to help:",
+          "duo": [
+            {
+              "k": "For the Pros",
+              "body": "Let me handle the unexpected stress and phone calls so you don't have to."
+            },
+            {
+              "k": "For the First-Timers",
+              "body": "I'll listen and guide you to an itinerary that creates lifelong memories and new friends."
+            }
+          ],
+          "other": "Not looking at Virgin Voyages right now? I also book with [other cruise lines](/cruises) for your cruising adventures!",
+          "thanks": "Thank you for considering me and for suggesting my services to your fellow sailors. Let's set sail! ⚓",
+          "signature": "— Dean",
+          "role": "Dean Satterfield · Gold-Certified Virgin Voyages First Mate"
+        },
+        "proof": {
+          "eyebrow": "The receipts",
+          "heading": "I sail the ships *I sell.*",
+          "lede": "Every photo on this site is from my own sailings. When I recommend a ship, a cabin, or a Shore Thing, it's because I've stood there — camera in hand.",
+          "strip": [
+            {
+              "img": "deck/sitka",
+              "alt": "Dean beside the carved eagle at the Sitka, Alaska welcome sign",
+              "cap": "Sitka, Alaska"
+            },
+            {
+              "img": "deck/scarlet-night",
+              "alt": "Dean in red light under the Scarlet Night neon sign on board",
+              "cap": "Scarlet Night"
+            },
+            {
+              "img": "deck/whale-watching",
+              "alt": "Dean dockside in front of the Swiftsure catamaran in Port Townsend",
+              "cap": "Port Townsend, WA"
+            },
+            {
+              "img": "deck/space-needle",
+              "alt": "Dean's selfie beneath the Space Needle against a clear blue sky",
+              "cap": "Seattle, WA"
+            }
+          ],
+          "ratingNum": "5.0",
+          "reviewsLabel": "Read the Google reviews",
+          "reviewsHref": "https://www.google.com/maps?cid=0x27bff539e2a886e5:0x6563ddb20bd8046f"
+        },
+        "cta": {
+          "eyebrow": "Ready when you are",
+          "heading": "Let's find *your voyage.*",
+          "lede": "Call or text with a question, or send me your trip and I'll come back with real numbers — usually the same day.",
+          "actions": [
+            {
+              "label": "Call (617) 899-9774",
+              "href": "tel:+16178999774",
+              "variant": "scarlet"
+            },
+            {
+              "label": "Start planning",
+              "href": "/plan",
+              "variant": "ghost",
+              "arrow": true
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

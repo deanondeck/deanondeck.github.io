@@ -3,16 +3,25 @@
 import { useState } from "react";
 import { img } from "@/lib/media";
 import { submitForm } from "@/lib/forms";
+import { renderInline } from "@/lib/cms/markdown";
+import type { SectionProps } from "@/lib/cms/types";
 
-const STEPS: [string, string, string][] = [
-  ["01", "Send the details", "Drop your booking or MNVV voucher number below — that's all I need to find it."],
-  ["02", "I request the transfer", "Virgin moves your reservation under me as your First Mate. Your price and itinerary don't change."],
-  ["03", "Perks switched on", "Sailor Loot, priority windows, and hands-on planning kick in for a trip you've already started."],
-];
+type Step = { n: string; t: string; d: string };
+type AsideLine = { k: string; label: string; href: string; external?: boolean };
+type ManageContent = {
+  eyebrow: string;
+  heading: string;
+  lede: string;
+  image: string;
+  checkboxLabel: string;
+  steps: Step[];
+  aside: { log: string; note: string; lines: AsideLine[] };
+};
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function ManageBooking() {
+export default function ManageBooking({ content }: SectionProps) {
+  const c = content as ManageContent;
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -37,28 +46,16 @@ export default function ManageBooking() {
   return (
     <section className="band band--ink manage" id="manage">
       <div className="manage-media">
-        <img src={img("cta-sunset")} alt="" />
+        <img src={img(c.image)} alt="" />
       </div>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">Already booked?</p>
-          <h2 className="display h-lg">
-            Make me your <em>First Mate.</em>
-          </h2>
-          <p className="lede">
-            Already holding a Virgin Voyages reservation or a My Next Virgin
-            Voyage (MNVV) voucher? Hand it over — no rebooking, no fees, and your
-            fare stays exactly the same. I&apos;ll take it from here and unlock
-            the Sailor Loot and perks you should be getting.
-          </p>
+          <p className="log">{c.eyebrow}</p>
+          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
+          <p className="lede">{c.lede}</p>
         </div>
 
         <div className="manage-grid">
-          {/*
-            NOTE FOR DEAN: wire this form to your inbox before launch — same as
-            the main contact form. Set the `action` to your Formspree/Basin
-            endpoint (https://formspree.io) and keep method="POST".
-          */}
           <form className="form reveal d1" onSubmit={handleSubmit}>
             <div className="field">
               <label htmlFor="fullname">Full name (as on passport or ID)</label>
@@ -87,10 +84,7 @@ export default function ManageBooking() {
 
             <label className="check">
               <input type="checkbox" name="assign_request" value="yes" required />
-              <span>
-                I request that <strong>Dean Satterfield (On Deck)</strong> be
-                assigned as my First Mate / Travel Advisor for this booking.
-              </span>
+              <span>{renderInline(c.checkboxLabel)}</span>
             </label>
 
             <div className="field">
@@ -121,37 +115,32 @@ export default function ManageBooking() {
           </form>
 
           <aside className="manage-aside reveal d2">
-            <p className="log">How it works</p>
+            <p className="log">{c.aside.log}</p>
             <ol className="steps">
-              {STEPS.map(([n, t, d]) => (
-                <li key={n}>
-                  <span className="step-n">{n}</span>
+              {c.steps.map((s) => (
+                <li key={s.n}>
+                  <span className="step-n">{s.n}</span>
                   <span>
-                    <strong>{t}</strong>
-                    {d}
+                    <strong>{s.t}</strong>
+                    {s.d}
                   </span>
                 </li>
               ))}
             </ol>
-            <p className="manage-note">
-              Prefer to talk it through first? Reach me directly and I&apos;ll
-              walk you through the transfer.
-            </p>
-            <div className="line">
-              <span className="k">Call</span>
-              {/* TODO: replace with Dean's real number */}
-              <a href="tel:+10000000000">Tap to call Dean</a>
-            </div>
-            <div className="line">
-              <span className="k">Instagram</span>
-              <a
-                href="https://instagram.com/dean__on__deck"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @dean__on__deck
-              </a>
-            </div>
+            <p className="manage-note">{c.aside.note}</p>
+            {c.aside.lines.map((line) => (
+              <div className="line" key={line.k}>
+                <span className="k">{line.k}</span>
+                <a
+                  href={line.href}
+                  {...(line.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {line.label}
+                </a>
+              </div>
+            ))}
           </aside>
         </div>
       </div>

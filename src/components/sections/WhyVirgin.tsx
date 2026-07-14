@@ -1,35 +1,47 @@
 import { img } from "@/lib/media";
+import { renderInline } from "@/lib/cms/markdown";
+import type { SectionProps } from "@/lib/cms/types";
 
-export default function WhyVirgin() {
+type WhyVirginContent = {
+  image: string;
+  imageAlt: string;
+  badgeTop: string;
+  badgeMain: string;
+  eyebrow: string;
+  heading: string;
+  lede: string;
+  checklist: string[];
+  ctaLabel: string;
+  ctaHref: string;
+};
+
+export default function WhyVirgin({ content }: SectionProps) {
+  const c = content as WhyVirginContent;
   return (
     <section className="band band--ink2">
       <div className="wrap split">
         <div className="split-media reveal">
-          <img src={img("virgin-scarlet-ship")} alt="The scarlet-hulled Virgin Voyages ship at sea" />
+          <img src={img(c.image)} alt={c.imageAlt} />
           <div className="badge-float">
-            <div className="bt">Signature event</div>
-            <div className="bm">Scarlet Night</div>
+            <div className="bt">{c.badgeTop}</div>
+            <div className="bm">{c.badgeMain}</div>
           </div>
         </div>
         <div>
-          <p className="log">The Ship</p>
+          <p className="log">{c.eyebrow}</p>
           <h2 className="display h-lg reveal">
-            Virgin reinvented what cruising means.
+            {renderInline(c.heading)}
           </h2>
           <p className="lede reveal d1" style={{ marginTop: "1.2rem" }}>
-            Smaller ships. Bolder design. An energy that feels more boutique
-            hotel than floating buffet — and absolutely no one under 18.
+            {c.lede}
           </p>
           <ul className="checklist reveal d2">
-            <li>Kid-free sailings with a genuinely sophisticated crowd</li>
-            <li>Michelin-inspired dining included — no surcharges, no buffets</li>
-            <li>Stylish, modern ships built by designers, not committees</li>
-            <li>Premium entertainment and a real after-dark scene</li>
-            <li>Wellness-forward: spa, fitness, and sea-air everything</li>
-            <li>Caribbean, Mediterranean, and beyond</li>
+            {c.checklist.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
-          <a href="#contact" className="btn btn-scarlet reveal d3">
-            Start planning <span className="arrow">→</span>
+          <a href={c.ctaHref} className="btn btn-scarlet reveal d3">
+            {c.ctaLabel} <span className="arrow">→</span>
           </a>
         </div>
       </div>

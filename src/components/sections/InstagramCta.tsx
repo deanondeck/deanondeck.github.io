@@ -1,31 +1,42 @@
-import { INSTAGRAM_URL } from "@/lib/site";
 import { img } from "@/lib/media";
+import type { SectionProps } from "@/lib/cms/types";
+
+type InstagramCtaContent = {
+  image: string;
+  imageAlt: string;
+  stamp: string;
+  script: string;
+  heading: string;
+  body: string;
+  ctaLabel: string;
+  ctaHref: string;
+};
 
 /* The old site's "Follow the journey 🌊" Instagram band, anchored by
    Dean's shot from the scarlet balcony hammock. */
-export default function InstagramCta() {
+export default function InstagramCta({ content }: SectionProps) {
+  const c = content as InstagramCtaContent;
   return (
     <section className="band band--black insta">
       <div className="wrap insta-grid reveal">
         <div className="insta-photo">
           <img
-            src={img("dean-hero")}
-            alt="Dean relaxing in the red rope hammock on his Virgin Voyages balcony"
+            src={img(c.image)}
+            alt={c.imageAlt}
             loading="lazy"
           />
-          <span className="stamp">The balcony hammock · at sea</span>
+          <span className="stamp">{c.stamp}</span>
         </div>
         <div className="insta-body">
-          <span className="script">Follow the journey</span>
+          <span className="script">{c.script}</span>
           <h2 className="display h-md" style={{ marginBottom: "1rem" }}>
-            Life at sea, on the feed.
+            {c.heading}
           </h2>
           <p>
-            Cruise moments, the latest deals, and life at sea with Dean on Deck
-            — new ports every week.
+            {c.body}
           </p>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn btn-light">
-            @dean__on__deck <span className="arrow">→</span>
+          <a href={c.ctaHref} target="_blank" rel="noopener noreferrer" className="btn btn-light">
+            {c.ctaLabel} <span className="arrow">→</span>
           </a>
         </div>
       </div>

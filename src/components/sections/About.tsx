@@ -1,37 +1,39 @@
 import { img } from "@/lib/media";
+import { renderInline, RichText } from "@/lib/cms/markdown";
+import type { SectionProps } from "@/lib/cms/types";
 
-export default function About() {
+type AboutContent = {
+  eyebrow: string;
+  heading: string;
+  body: string;
+  signature: string;
+  ctaLabel: string;
+  ctaHref: string;
+  photo: string;
+  photoAlt: string;
+  stamp: string;
+};
+
+export default function About({ content }: SectionProps) {
+  const c = content as AboutContent;
   return (
     <section className="band band--shell" id="difference">
       <div className="wrap about-grid">
         <div className="about-photo reveal">
-          <img src={img("dean")} alt="Dean Satterfield with fellow sailors" />
-          <span className="stamp">Dean Satterfield · First Mate</span>
+          <img src={img(c.photo)} alt={c.photoAlt} />
+          <span className="stamp">{c.stamp}</span>
         </div>
         <div className="about-body">
-          <p className="log">Your First Mate</p>
+          <p className="log">{c.eyebrow}</p>
           <h2 className="display h-lg reveal">
-            Ahoy — I&apos;m Dean.
+            {renderInline(c.heading)}
           </h2>
           <div className="reveal d1">
+            <RichText markdown={c.body} />
+            <p className="sig">{c.signature}</p>
             <p>
-              Better known as <b>Dean on Deck</b>. Whether you&apos;re sailing
-              solo or rallying the whole crew for a celebration, I make booking
-              your Virgin Voyages cruise effortless — start to gangway.
-            </p>
-            <p>
-              As a Gold-Certified Virgin Voyages First Mate, I&apos;ll handle the
-              details, unlock the perks, and point you to the best spots onboard.
-              You just show up and sail.
-            </p>
-            <p>
-              Ready to chase the horizon? Pure happiness, zero stress. Let&apos;s
-              do this.
-            </p>
-            <p className="sig">— Dean</p>
-            <p>
-              <a className="cl-alt" href="/about">
-                Read my full story →
+              <a className="cl-alt" href={c.ctaHref}>
+                {c.ctaLabel}
               </a>
             </p>
           </div>

@@ -1,6 +1,11 @@
 /* Image + YouTube helpers shared across the site. */
 
-export const img = (name: string, ext = "jpg") => `/img/${name}.${ext}`;
+// Names may be stored with or without an extension. Legacy content stores a
+// bare name ("hero-ship-night") and relies on the default `.jpg`; admin-uploaded
+// images store a full filename with extension ("suite-a1b2.webp"), which is
+// passed through untouched so non-jpg formats resolve correctly.
+export const img = (name: string, ext = "jpg") =>
+  /\.[a-z0-9]+$/i.test(name) ? `/img/${name}` : `/img/${name}.${ext}`;
 
 export function ytId(input: string) {
   const m = input.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);

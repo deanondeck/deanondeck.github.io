@@ -1,18 +1,26 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CRUISE_LINES } from "@/lib/content";
 import { img } from "@/lib/media";
+import type { SiteConfig } from "@/lib/cms/types";
 
 /* Dropdown items: each line books out like the Virgin link; river cruising
    has no single line, so it routes to the trip-intake form instead. */
 const bookHref = (book: string | null) => book ?? "/plan";
 
-export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
+export default function SiteHeader({
+  subpage = false,
+  site,
+}: {
+  subpage?: boolean;
+  site: SiteConfig;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
   const [book, setBook] = useState(false);
   const bookRef = useRef<HTMLDivElement>(null);
+
+  const { brand, nav, cruiseLines } = site;
 
   // The brand link returns to the top of the home route from a sub-page,
   // or scrolls to the top anchor when already on the home page.
@@ -51,29 +59,22 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
       {/* ---------------- NAV ---------------- */}
       <header className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="nav-inner">
-          <a href={home} className="brand" aria-label="Dean on Deck — home">
-            <img src={img("logo")} alt="Dean on Deck" />
+          <a href={home} className="brand" aria-label={`${brand.name} — home`}>
+            <img src={img(brand.logo)} alt={brand.name} />
             <span>
-              <span className="brand-name">Dean on Deck</span>
+              <span className="brand-name">{brand.name}</span>
               <span className="brand-sub" style={{ display: "block" }}>
-                Cruise Travel
+                {brand.sub}
               </span>
             </span>
           </a>
           <nav>
             <ul className="nav-links">
-              <li>
-                <a href="/about">About</a>
-              </li>
-              <li>
-                <a href="/cruises">Cruises</a>
-              </li>
-              <li>
-                <a href="/plan">Plan a Voyage</a>
-              </li>
-              <li>
-                <a href="/manage">Manage Booking</a>
-              </li>
+              {nav.map((n) => (
+                <li key={n.href}>
+                  <a href={n.href}>{n.label}</a>
+                </li>
+              ))}
             </ul>
           </nav>
           <div className="nav-cta">
@@ -91,7 +92,7 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
                 </svg>
               </button>
               <ul className="book-menu" aria-label="Book a voyage — pick a cruise line">
-                {CRUISE_LINES.map((l) => (
+                {cruiseLines.map((l) => (
                   <li key={l.id}>
                     <a
                       href={bookHref(l.book)}
@@ -132,25 +133,15 @@ export default function SiteHeader({ subpage = false }: { subpage?: boolean }) {
 
       {/* mobile drawer */}
       <div className={`drawer${menu ? " open" : ""}`} role="dialog" aria-modal="true">
-        <a href="/about" onClick={() => setMenu(false)}>
-          <span className="idx">01</span>
-          About Dean
-        </a>
-        <a href="/cruises" onClick={() => setMenu(false)}>
-          <span className="idx">02</span>
-          Cruises
-        </a>
-        <a href="/plan" onClick={() => setMenu(false)}>
-          <span className="idx">03</span>
-          Plan a Voyage
-        </a>
-        <a href="/manage" onClick={() => setMenu(false)}>
-          <span className="idx">04</span>
-          Manage Booking
-        </a>
+        {nav.map((n, i) => (
+          <a key={n.href} href={n.href} onClick={() => setMenu(false)}>
+            <span className="idx">{String(i + 1).padStart(2, "0")}</span>
+            {n.drawerLabel ?? n.label}
+          </a>
+        ))}
         <div className="drawer-book">
           <span className="bk">Book a voyage</span>
-          {CRUISE_LINES.map((l) => (
+          {cruiseLines.map((l) => (
             <a
               key={l.id}
               href={bookHref(l.book)}

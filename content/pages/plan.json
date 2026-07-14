@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "title": "Plan a Voyage · Trip Details | Dean on Deck",
+    "description": "Ready to sail? Share your sailing, cabin, and fare preferences and Dean on Deck will come back with a plan, pricing, and every Virgin Voyages perk you're owed — no booking fees, usually same-day.",
+    "ogTitle": "Chart your course — plan a Virgin Voyages trip with Dean on Deck",
+    "ogDescription": "Tell Dean who's sailing, where, and how you like to travel. Get back a plan, pricing, and perks — no booking fees.",
+    "ogType": "website",
+    "inNav": true,
+    "navLabel": "Plan a Voyage"
+  },
+  "sections": [
+    {
+      "id": "planVoyage",
+      "type": "planVoyage",
+      "content": {
+        "eyebrow": "Ahoy, Sailor",
+        "heading": "Chart *your course.*",
+        "lede": "Tell me who's sailing, where you're dreaming of, and how you like to travel. I'll come back with a plan, pricing, and every perk you're owed — usually the same day.",
+        "image": "port-sail",
+        "cabins": [
+          {
+            "value": "Insider Cabin",
+            "tag": "The base",
+            "desc": "The most affordable way aboard — a smart, modern room without a window."
+          },
+          {
+            "value": "Sea View Room",
+            "tag": "Porthole",
+            "desc": "A comfy cabin with an ocean view and a window seat made for gazing."
+          },
+          {
+            "value": "Sea Terrace",
+            "tag": "The balcony",
+            "desc": "The signature Virgin cabin — private balcony, rainshower, and the famous red hammock."
+          },
+          {
+            "value": "RockStar Quarters",
+            "tag": "The suite",
+            "desc": "Tom Dixon–designed suites with a stocked bar, marble bathroom, and Richard's Rooftop access."
+          }
+        ],
+        "fares": [
+          {
+            "value": "Base Fare",
+            "tag": "Lock it in",
+            "desc": "Lowest price, non-refundable. Basic Wi-Fi and dining reservations 15 days out — for confident planners."
+          },
+          {
+            "value": "Essential Fare",
+            "tag": "The standard",
+            "desc": "Virgin's classic inclusive model. Date changes allowed, classic Wi-Fi, dining opens 45 days out."
+          },
+          {
+            "value": "Premium Fare",
+            "tag": "Best perks",
+            "desc": "Premium Wi-Fi for two devices, a $15 daily bar tab, and the earliest dining access at 60 days."
+          },
+          {
+            "value": "Not sure yet",
+            "tag": "Ask Dean",
+            "desc": "I'll walk you through the tiers and match one to how you actually travel."
+          }
+        ],
+        "gratuities": [
+          {
+            "value": "Prepay",
+            "tag": "$20 / sailor / night",
+            "desc": "Save $2 a night, cover every crew member up front, and step off with no surprises on the final bill."
+          },
+          {
+            "value": "Pay on board",
+            "tag": "$22 / sailor / night",
+            "desc": "Settle gratuities on the ship instead."
+          }
+        ],
+        "aside": {
+          "log": "Good to know",
+          "notes": [
+            {
+              "strong": "Adults only. Absolutely.",
+              "text": "No kids, no chaos — just poolside cocktails, late-night shows, and lie-ins that last as long as you like."
+            },
+            {
+              "strong": "Travel insurance is smart.",
+              "text": "I recommend it in case the unforeseeable happens — ask me when we speak."
+            },
+            {
+              "strong": "No booking fees, ever.",
+              "text": "Same fare as booking direct, plus Sailor Loot and perks you'd otherwise miss."
+            }
+          ],
+          "note": "Prefer to talk it through first? Text or call and we'll chart it live.",
+          "lines": [
+            {
+              "k": "Call / Text",
+              "label": "(617) 899-9774",
+              "href": "tel:+16178999774"
+            },
+            {
+              "k": "Email",
+              "label": "dean@deanondeck.com",
+              "href": "mailto:dean@deanondeck.com"
+            },
+            {
+              "k": "Instagram",
+              "label": "@dean__on__deck",
+              "href": "https://instagram.com/dean__on__deck",
+              "external": true
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

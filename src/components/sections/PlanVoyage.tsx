@@ -3,34 +3,38 @@
 import { useState } from "react";
 import { img } from "@/lib/media";
 import { submitForm } from "@/lib/forms";
+import { renderInline } from "@/lib/cms/markdown";
+import type { SectionProps } from "@/lib/cms/types";
 
 /* Trip-intake form — the on-site replacement for the old "2026 Dean on Deck
-   Travel Contact Information" Google Form. Same questions, same admin inbox
-   as every other form (`submitForm`), redesigned as a ship's manifest. */
+   Travel Contact Information" Google Form. Same questions, same admin inbox as
+   every other form (`submitForm`), redesigned as a ship's manifest. The form
+   fields are fixed; marketing copy and the cabin/fare/gratuity choices are
+   CMS-editable. */
 
-const CABINS: [string, string, string][] = [
-  // [value, tag, description]
-  ["Insider Cabin", "The base", "The most affordable way aboard — a smart, modern room without a window."],
-  ["Sea View Room", "Porthole", "A comfy cabin with an ocean view and a window seat made for gazing."],
-  ["Sea Terrace", "The balcony", "The signature Virgin cabin — private balcony, rainshower, and the famous red hammock."],
-  ["RockStar Quarters", "The suite", "Tom Dixon–designed suites with a stocked bar, marble bathroom, and Richard's Rooftop access."],
-];
-
-const FARES: [string, string, string][] = [
-  ["Base Fare", "Lock it in", "Lowest price, non-refundable. Basic Wi-Fi and dining reservations 15 days out — for confident planners."],
-  ["Essential Fare", "The standard", "Virgin's classic inclusive model. Date changes allowed, classic Wi-Fi, dining opens 45 days out."],
-  ["Premium Fare", "Best perks", "Premium Wi-Fi for two devices, a $15 daily bar tab, and the earliest dining access at 60 days."],
-  ["Not sure yet", "Ask Dean", "I'll walk you through the tiers and match one to how you actually travel."],
-];
-
-const GRATUITIES: [string, string, string][] = [
-  ["Prepay", "$20 / sailor / night", "Save $2 a night, cover every crew member up front, and step off with no surprises on the final bill."],
-  ["Pay on board", "$22 / sailor / night", "Settle gratuities on the ship instead."],
-];
+type Choice = { value: string; tag: string; desc: string };
+type AsideNote = { strong: string; text: string };
+type AsideLine = { k: string; label: string; href: string; external?: boolean };
+type PlanContent = {
+  eyebrow: string;
+  heading: string;
+  lede: string;
+  image: string;
+  cabins: Choice[];
+  fares: Choice[];
+  gratuities: Choice[];
+  aside: {
+    log: string;
+    notes: AsideNote[];
+    note: string;
+    lines: AsideLine[];
+  };
+};
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function PlanVoyage() {
+export default function PlanVoyage({ content }: SectionProps) {
+  const c = content as PlanContent;
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -71,19 +75,13 @@ export default function PlanVoyage() {
   return (
     <section className="band band--ink plan" id="plan">
       <div className="plan-media">
-        <img src={img("port-sail")} alt="" />
+        <img src={img(c.image)} alt="" />
       </div>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">Ahoy, Sailor</p>
-          <h2 className="display h-lg">
-            Chart <em>your course.</em>
-          </h2>
-          <p className="lede">
-            Tell me who&apos;s sailing, where you&apos;re dreaming of, and how
-            you like to travel. I&apos;ll come back with a plan, pricing, and
-            every perk you&apos;re owed — usually the same day.
-          </p>
+          <p className="log">{c.eyebrow}</p>
+          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
+          <p className="lede">{c.lede}</p>
         </div>
 
         <div className="plan-grid">
@@ -138,15 +136,15 @@ export default function PlanVoyage() {
               </legend>
               <p className="leg-note">Pick every style you&apos;d consider.</p>
               <div className="choices">
-                {CABINS.map(([value, tag, desc]) => (
-                  <label className="choice" key={value}>
-                    <input type="checkbox" name="cabin" value={value} />
+                {c.cabins.map((choice) => (
+                  <label className="choice" key={choice.value}>
+                    <input type="checkbox" name="cabin" value={choice.value} />
                     <span className="choice-body">
                       <span className="choice-head">
-                        <strong>{value}</strong>
-                        <span className="choice-tag">{tag}</span>
+                        <strong>{choice.value}</strong>
+                        <span className="choice-tag">{choice.tag}</span>
                       </span>
-                      <span className="choice-desc">{desc}</span>
+                      <span className="choice-desc">{choice.desc}</span>
                     </span>
                   </label>
                 ))}
@@ -162,15 +160,15 @@ export default function PlanVoyage() {
                 cabins and below. RockStar Quarters skip this entirely.
               </p>
               <div className="choices">
-                {FARES.map(([value, tag, desc]) => (
-                  <label className="choice" key={value}>
-                    <input type="radio" name="fare" value={value} required />
+                {c.fares.map((choice) => (
+                  <label className="choice" key={choice.value}>
+                    <input type="radio" name="fare" value={choice.value} required />
                     <span className="choice-body">
                       <span className="choice-head">
-                        <strong>{value}</strong>
-                        <span className="choice-tag">{tag}</span>
+                        <strong>{choice.value}</strong>
+                        <span className="choice-tag">{choice.tag}</span>
                       </span>
-                      <span className="choice-desc">{desc}</span>
+                      <span className="choice-desc">{choice.desc}</span>
                     </span>
                   </label>
                 ))}
@@ -186,15 +184,15 @@ export default function PlanVoyage() {
                 prepaying is cheaper and covers all service staff.
               </p>
               <div className="choices">
-                {GRATUITIES.map(([value, tag, desc]) => (
-                  <label className="choice" key={value}>
-                    <input type="radio" name="gratuities" value={value} required />
+                {c.gratuities.map((choice) => (
+                  <label className="choice" key={choice.value}>
+                    <input type="radio" name="gratuities" value={choice.value} required />
                     <span className="choice-body">
                       <span className="choice-head">
-                        <strong>{value}</strong>
-                        <span className="choice-tag">{tag}</span>
+                        <strong>{choice.value}</strong>
+                        <span className="choice-tag">{choice.tag}</span>
                       </span>
-                      <span className="choice-desc">{desc}</span>
+                      <span className="choice-desc">{choice.desc}</span>
                     </span>
                   </label>
                 ))}
@@ -247,45 +245,28 @@ export default function PlanVoyage() {
           </form>
 
           <aside className="plan-aside reveal d2">
-            <p className="log">Good to know</p>
+            <p className="log">{c.aside.log}</p>
             <ul className="plan-notes">
-              <li>
-                <strong>Adults only. Absolutely.</strong> No kids, no chaos —
-                just poolside cocktails, late-night shows, and lie-ins that
-                last as long as you like.
-              </li>
-              <li>
-                <strong>Travel insurance is smart.</strong> I recommend it in
-                case the unforeseeable happens — ask me when we speak.
-              </li>
-              <li>
-                <strong>No booking fees, ever.</strong>{" "}
-                Same fare as booking direct, plus Sailor Loot and perks
-                you&apos;d otherwise miss.
-              </li>
+              {c.aside.notes.map((n) => (
+                <li key={n.strong}>
+                  <strong>{n.strong}</strong> {n.text}
+                </li>
+              ))}
             </ul>
-            <p className="plan-note">
-              Prefer to talk it through first? Text or call and we&apos;ll
-              chart it live.
-            </p>
-            <div className="line">
-              <span className="k">Call / Text</span>
-              <a href="tel:+16178999774">(617) 899-9774</a>
-            </div>
-            <div className="line">
-              <span className="k">Email</span>
-              <a href="mailto:dean@deanondeck.com">dean@deanondeck.com</a>
-            </div>
-            <div className="line">
-              <span className="k">Instagram</span>
-              <a
-                href="https://instagram.com/dean__on__deck"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @dean__on__deck
-              </a>
-            </div>
+            <p className="plan-note">{c.aside.note}</p>
+            {c.aside.lines.map((line) => (
+              <div className="line" key={line.k}>
+                <span className="k">{line.k}</span>
+                <a
+                  href={line.href}
+                  {...(line.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {line.label}
+                </a>
+              </div>
+            ))}
           </aside>
         </div>
       </div>

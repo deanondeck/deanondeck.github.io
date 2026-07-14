@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "Cruises · Every Line I Book | Dean on Deck",
+    "description": "Virgin Voyages, Royal Caribbean, Celebrity Cruises, Silversea, and river boat cruises — one advisor, every ocean. Request Dean as your travel advisor and sail with zero booking fees.",
+    "ogTitle": "One advisor. Every ocean. — Cruises with Dean on Deck",
+    "ogDescription": "Virgin Voyages, Royal Caribbean, Celebrity Cruises, Silversea, and river cruising — compare the lines Dean books, fee-free.",
+    "ogType": "website",
+    "inNav": true,
+    "navLabel": "Cruises"
+  },
+  "sections": [
+    {
+      "id": "cruises",
+      "type": "cruises",
+      "content": {
+        "hero": {
+          "eyebrow": "The Fleet",
+          "heading": "One advisor. *Every ocean.*",
+          "lede": "Virgin Voyages is my specialty — but it isn't the only ship I sail. Family reunion, ultra-luxury escape, or a slow drift down the Danube: request me as your travel advisor on any of these lines and I handle every detail. No booking fees, ever."
+        },
+        "cta": {
+          "eyebrow": "Anchors aweigh",
+          "heading": "Can't decide? *That's my job.*",
+          "lede": "Tell me who's sailing and what a perfect day at sea looks like — I'll come back with the right line, the right ship, and every perk you're owed. Usually the same day.",
+          "actions": [
+            {
+              "label": "Call (617) 899-9774",
+              "href": "tel:+16178999774",
+              "variant": "scarlet"
+            },
+            {
+              "label": "Start planning",
+              "href": "/plan",
+              "variant": "ghost",
+              "arrow": true
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

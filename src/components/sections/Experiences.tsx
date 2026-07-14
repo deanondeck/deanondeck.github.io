@@ -1,22 +1,39 @@
-import { EXPERIENCES } from "@/lib/content";
 import { img } from "@/lib/media";
+import { renderInline } from "@/lib/cms/markdown";
+import type { SectionProps } from "@/lib/cms/types";
+
+type ExperienceItem = {
+  img: string;
+  alt: string;
+  pos?: string;
+  k: string;
+  t: string;
+  d: string;
+};
+type ExperiencesContent = {
+  eyebrow: string;
+  script: string;
+  heading: string;
+  lede: string;
+  items: ExperienceItem[];
+};
 
 /* The old site's "Dean...on Deck Voyage Distinction" card wall. */
-export default function Experiences() {
+export default function Experiences({ content }: SectionProps) {
+  const c = content as ExperiencesContent;
   return (
     <section className="band band--shell2" id="experiences">
       <div className="wrap">
         <div className="sec-head center reveal">
-          <p className="log log--center">Voyage Distinction</p>
-          <span className="script">beyond the waves</span>
-          <h2 className="display h-lg">Unforgettable Virgin Voyages.</h2>
+          <p className="log log--center">{c.eyebrow}</p>
+          <span className="script">{c.script}</span>
+          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
           <p className="lede" style={{ marginInline: "auto" }}>
-            Discover captivating adventures beyond the waves — every photo
-            below is from Dean&apos;s own sailings.
+            {c.lede}
           </p>
         </div>
         <div className="xp">
-          {EXPERIENCES.map((x, i) => (
+          {c.items.map((x, i) => (
             <article className={`xp-card reveal d${(i % 3) + 1}`} key={x.t}>
               <img
                 src={img(x.img)}

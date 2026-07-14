@@ -1,0 +1,1901 @@
+{
+  "hero": {
+    "label": "Hero",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "text",
+        "label": "Heading"
+      },
+      {
+        "key": "script",
+        "kind": "text",
+        "label": "Script accent line"
+      },
+      {
+        "key": "sub",
+        "kind": "text",
+        "label": "Subheading",
+        "multiline": true
+      },
+      {
+        "key": "posterImg",
+        "kind": "image",
+        "label": "Poster image (behind video)"
+      },
+      {
+        "key": "video",
+        "kind": "text",
+        "label": "YouTube video ID or URL"
+      },
+      {
+        "key": "primaryCta",
+        "kind": "link",
+        "label": "Primary button"
+      },
+      {
+        "key": "secondaryCta",
+        "kind": "link",
+        "label": "Secondary button"
+      },
+      {
+        "key": "metaItems",
+        "kind": "list",
+        "of": "richtext",
+        "label": "Meta strip (bold with **)"
+      }
+    ]
+  },
+  "ticker": {
+    "label": "Ticker — scrolling marquee",
+    "group": "home",
+    "fields": [
+      {
+        "key": "items",
+        "kind": "list",
+        "of": "text",
+        "label": "Ticker phrases"
+      }
+    ],
+    "defaults": {
+      "items": [
+        "No booking fees",
+        "Sailor Loot included",
+        "Priority boarding",
+        "Gold-certified first mate",
+        "Adults only · 18+",
+        "5-star sailor reviews"
+      ]
+    }
+  },
+  "about": {
+    "label": "About — meet Dean",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "body",
+        "kind": "richtext",
+        "label": "Body",
+        "multiline": true
+      },
+      {
+        "key": "signature",
+        "kind": "text",
+        "label": "Signature"
+      },
+      {
+        "key": "ctaLabel",
+        "kind": "text",
+        "label": "CTA label"
+      },
+      {
+        "key": "ctaHref",
+        "kind": "text",
+        "label": "CTA link"
+      },
+      {
+        "key": "photo",
+        "kind": "image",
+        "label": "Photo"
+      },
+      {
+        "key": "photoAlt",
+        "kind": "text",
+        "label": "Photo alt text"
+      },
+      {
+        "key": "stamp",
+        "kind": "text",
+        "label": "Photo stamp"
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Your First Mate",
+      "heading": "Ahoy — I'm Dean.",
+      "body": "Better known as **Dean on Deck**. Whether you're sailing solo or rallying the whole crew for a celebration, I make booking your Virgin Voyages cruise effortless — start to gangway.\n\nAs a Gold-Certified Virgin Voyages First Mate, I'll handle the details, unlock the perks, and point you to the best spots onboard. You just show up and sail.\n\nReady to chase the horizon? Pure happiness, zero stress. Let's do this.",
+      "signature": "— Dean",
+      "ctaLabel": "Read my full story →",
+      "ctaHref": "/about",
+      "photo": "dean",
+      "photoAlt": "Dean Satterfield with fellow sailors",
+      "stamp": "Dean Satterfield · First Mate"
+    }
+  },
+  "showcase": {
+    "label": "Showcase — adults-only cards",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "items",
+        "kind": "list",
+        "label": "Cards",
+        "itemFields": [
+          {
+            "key": "img",
+            "kind": "image",
+            "label": "Image"
+          },
+          {
+            "key": "tag",
+            "kind": "text",
+            "label": "Tag"
+          },
+          {
+            "key": "t",
+            "kind": "text",
+            "label": "Title"
+          },
+          {
+            "key": "d",
+            "kind": "text",
+            "label": "Description",
+            "multiline": true
+          }
+        ]
+      }
+    ]
+  },
+  "whyVirgin": {
+    "label": "Why Virgin — split feature",
+    "group": "home",
+    "fields": [
+      {
+        "key": "image",
+        "kind": "image",
+        "label": "Image"
+      },
+      {
+        "key": "imageAlt",
+        "kind": "text",
+        "label": "Image alt text"
+      },
+      {
+        "key": "badgeTop",
+        "kind": "text",
+        "label": "Badge top line"
+      },
+      {
+        "key": "badgeMain",
+        "kind": "text",
+        "label": "Badge main line"
+      },
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "checklist",
+        "kind": "list",
+        "of": "text",
+        "label": "Checklist"
+      },
+      {
+        "key": "ctaLabel",
+        "kind": "text",
+        "label": "CTA label"
+      },
+      {
+        "key": "ctaHref",
+        "kind": "text",
+        "label": "CTA link"
+      }
+    ],
+    "defaults": {
+      "image": "virgin-scarlet-ship",
+      "imageAlt": "The scarlet-hulled Virgin Voyages ship at sea",
+      "badgeTop": "Signature event",
+      "badgeMain": "Scarlet Night",
+      "eyebrow": "The Ship",
+      "heading": "Virgin reinvented what cruising means.",
+      "lede": "Smaller ships. Bolder design. An energy that feels more boutique hotel than floating buffet — and absolutely no one under 18.",
+      "checklist": [
+        "Kid-free sailings with a genuinely sophisticated crowd",
+        "Michelin-inspired dining included — no surcharges, no buffets",
+        "Stylish, modern ships built by designers, not committees",
+        "Premium entertainment and a real after-dark scene",
+        "Wellness-forward: spa, fitness, and sea-air everything",
+        "Caribbean, Mediterranean, and beyond"
+      ],
+      "ctaLabel": "Start planning",
+      "ctaHref": "#contact"
+    }
+  },
+  "rockStar": {
+    "label": "RockStar — suite perks",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "coreTag",
+        "kind": "text",
+        "label": "Core tier tag"
+      },
+      {
+        "key": "coreTitle",
+        "kind": "text",
+        "label": "Core tier title"
+      },
+      {
+        "key": "coreItems",
+        "kind": "list",
+        "of": "text",
+        "label": "Core tier perks"
+      },
+      {
+        "key": "megaTag",
+        "kind": "text",
+        "label": "Mega tier tag"
+      },
+      {
+        "key": "megaTitle",
+        "kind": "text",
+        "label": "Mega tier title"
+      },
+      {
+        "key": "megaItems",
+        "kind": "list",
+        "of": "text",
+        "label": "Mega tier perks"
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Cruise Like a RockStar",
+      "heading": "RockStar perks, *handled.*",
+      "lede": "RockStar Quarters are Virgin's VIP experience — and it starts the moment you reach the terminal. I'll match you to the right tier and lock in the early booking windows.",
+      "coreTag": "All suites",
+      "coreTitle": "Core RockStar",
+      "coreItems": [
+        "Richard's Rooftop — private sundeck, bar & nightly happy hour",
+        "A dedicated RockStar Agent for dining, shows & requests",
+        "Priority dining (120 days) & Shore Things (135 days)",
+        "VIP boarding through a private entrance + priority off",
+        "In-room bar — first round of full-size bottles on the house",
+        "Private section at the Beach Club at Bimini"
+      ],
+      "megaTag": "Top-tier suites",
+      "megaTitle": "Mega RockStar",
+      "megaItems": [
+        "Unlimited drinks up to $25 + two bottles of wine daily",
+        "Bottomless in-room bar, replenished every day",
+        "Unlimited Redemption Spa thermal access",
+        "Private transfers within 50 miles, or port parking",
+        "Daily laundry, ironing & express service",
+        "Upgraded \"Work from Sea\" Wi-Fi"
+      ]
+    }
+  },
+  "deanDifference": {
+    "label": "The Dean Difference — stats & pillars",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "stats",
+        "kind": "list",
+        "label": "Stats",
+        "itemFields": [
+          {
+            "key": "num",
+            "kind": "text",
+            "label": "Number"
+          },
+          {
+            "key": "unit",
+            "kind": "text",
+            "label": "Unit"
+          },
+          {
+            "key": "lab",
+            "kind": "text",
+            "label": "Label"
+          }
+        ]
+      },
+      {
+        "key": "pillars",
+        "kind": "list",
+        "label": "Pillars",
+        "itemFields": [
+          {
+            "key": "k",
+            "kind": "text",
+            "label": "Eyebrow"
+          },
+          {
+            "key": "title",
+            "kind": "text",
+            "label": "Title"
+          },
+          {
+            "key": "body",
+            "kind": "text",
+            "label": "Body",
+            "multiline": true
+          }
+        ]
+      }
+    ],
+    "defaults": {
+      "eyebrow": "No Stress. Just Fun.",
+      "heading": "Your money. *Your vacation.*",
+      "lede": "No booking fees — ever. Where other agencies pile service charges on top of supplier rates, I work to land the best price and pass the savings straight to you. Most bookings come with extras like Sailor Loot and priority boarding. You work hard so you can play hard — I'll handle the rest.",
+      "stats": [
+        {
+          "num": "$0",
+          "lab": "Booking fees, always"
+        },
+        {
+          "num": "$300",
+          "lab": "Instant MNVV discount + Sailor Loot"
+        },
+        {
+          "num": "135",
+          "unit": "d",
+          "lab": "Priority Shore Things access"
+        }
+      ],
+      "pillars": [
+        {
+          "k": "Adventure awaits",
+          "title": "Every journey, an adventure",
+          "body": "Unique travel experiences that ignite your sense of wonder — every voyage crafted to be filled with unforgettable moments."
+        },
+        {
+          "k": "MNVV advantage",
+          "title": "Placeholder perks, unlocked",
+          "body": "I keep a supply of My Next Virgin Voyage certificates: book through me and take an immediate $300 off your fare plus Sailor Loot, stackable with group bonuses and online promotions."
+        },
+        {
+          "k": "Excursions & experiences",
+          "title": "The finest Shore Things",
+          "body": "I'll help you find and book the excursions that elevate the trip — cultural deep-dives or pure adrenaline, truly memorable either way."
+        }
+      ]
+    }
+  },
+  "ports": {
+    "label": "Ports — ports of call marquee & grid",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "board",
+        "kind": "list",
+        "label": "Marquee board",
+        "of": "text"
+      },
+      {
+        "key": "items",
+        "kind": "list",
+        "label": "Ports",
+        "itemFields": [
+          {
+            "key": "img",
+            "kind": "image",
+            "label": "Image"
+          },
+          {
+            "key": "c",
+            "kind": "text",
+            "label": "Destination"
+          },
+          {
+            "key": "t",
+            "kind": "text",
+            "label": "Coordinate label"
+          },
+          {
+            "key": "q",
+            "kind": "text",
+            "label": "Voyage search filter"
+          }
+        ]
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Ports of Call",
+      "heading": "Where shall we point *the bow?*",
+      "lede": "A few of the routes sailors love. Dreaming of Iceland, Alaska, or somewhere off the map? Just ask — I'll chart it.",
+      "board": [
+        "Bahamas",
+        "San Juan",
+        "Bimini",
+        "Dubrovnik",
+        "Santorini",
+        "Mykonos",
+        "Barcelona",
+        "Mallorca",
+        "Cannes",
+        "Key West",
+        "Costa Maya",
+        "Roatán"
+      ],
+      "items": [
+        {
+          "img": "port-caribbean",
+          "c": "Caribbean",
+          "t": "Sun & White Sand",
+          "q": "selectedRegions=CARIBBEAN"
+        },
+        {
+          "img": "port-greece",
+          "c": "Greece & Croatia",
+          "t": "The Adriatic",
+          "q": "selectedPorts=DBV,SPU,KTR,JTR,JMK,ATH,CFU"
+        },
+        {
+          "img": "port-italy",
+          "c": "Italy & the Med",
+          "t": "Old-World Coast",
+          "q": "selectedPorts=CIV,NAP,FLR,SAL,CTA,PMO,MLA"
+        },
+        {
+          "img": "port-spain",
+          "c": "Spain",
+          "t": "Iberian Nights",
+          "q": "selectedPorts=BCN,PMI,IBZ,AGP,VLC,ALC,CAD"
+        },
+        {
+          "img": "port-tropical",
+          "c": "Tropical Escapes",
+          "t": "Endless Summer",
+          "q": "selectedPorts=CMA,RTB,CTG,AUA,WIL,KRA,CZM,POP"
+        },
+        {
+          "img": "port-halong",
+          "c": "Far Horizons",
+          "t": "On Request",
+          "q": "selectedRegions=TRANSATLANTIC"
+        }
+      ]
+    }
+  },
+  "experiences": {
+    "label": "Experiences — voyage distinction card wall",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "script",
+        "kind": "text",
+        "label": "Script accent"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "items",
+        "kind": "list",
+        "label": "Experiences",
+        "itemFields": [
+          {
+            "key": "img",
+            "kind": "image",
+            "label": "Image"
+          },
+          {
+            "key": "alt",
+            "kind": "text",
+            "label": "Image alt"
+          },
+          {
+            "key": "pos",
+            "kind": "text",
+            "label": "Object position",
+            "hint": "CSS object-position, e.g. \"50% 30%\" (optional)"
+          },
+          {
+            "key": "k",
+            "kind": "text",
+            "label": "Kicker"
+          },
+          {
+            "key": "t",
+            "kind": "text",
+            "label": "Title"
+          },
+          {
+            "key": "d",
+            "kind": "text",
+            "label": "Description",
+            "multiline": true
+          }
+        ]
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Voyage Distinction",
+      "script": "beyond the waves",
+      "heading": "Unforgettable Virgin Voyages.",
+      "lede": "Discover captivating adventures beyond the waves — every photo below is from Dean's own sailings.",
+      "items": [
+        {
+          "img": "voyages/excursion-dr",
+          "alt": "Dean in a helmet and harness on a zipline platform above the Dominican Republic coast",
+          "pos": "50% 30%",
+          "k": "Hidden gems",
+          "t": "Excursion Tours",
+          "d": "Itineraries that showcase hidden gems and must-see spots — think the Dominican Republic, done right."
+        },
+        {
+          "img": "voyages/sailing-greece",
+          "alt": "Dean on a Santorini terrace with the caldera and a Virgin ship anchored below",
+          "k": "Premium at sea",
+          "t": "Luxury Sailing Adventures",
+          "d": "Exclusive sailing experiences aboard Virgin Voyages with premium amenities and stunning ocean views. Greece, anyone?"
+        },
+        {
+          "img": "voyages/culinary",
+          "alt": "A glass of champagne beside the printed tasting menu at Test Kitchen on board",
+          "k": "On & off ship",
+          "t": "Culinary Delights",
+          "d": "Savor local flavors with gourmet dining experiences crafted by top chefs on and off the ship."
+        },
+        {
+          "img": "voyages/culture-amsterdam",
+          "alt": "Dean on a canal boat gliding past the gabled houses of Amsterdam",
+          "k": "Guided",
+          "t": "Cultural Immersion",
+          "d": "Engage with the rich history and vibrant culture of every region through guided tours and local interactions. Amsterdam awaits."
+        },
+        {
+          "img": "voyages/wellness-iceland",
+          "alt": "Feet up on the warm deck at Sky Lagoon, looking out over the still Icelandic sea",
+          "k": "Recharge",
+          "t": "Wellness Retreats",
+          "d": "Relax and rejuvenate with yoga, spa treatments, and meditation. Sky Lagoon, Iceland is calling."
+        },
+        {
+          "img": "voyages/adventure-anguilla",
+          "alt": "Dean in a snorkel mask reaching toward the camera in the turquoise water off Anguilla",
+          "pos": "50% 25%",
+          "k": "Thrill-seekers",
+          "t": "Adventure Excursions",
+          "d": "Snorkeling, hiking, and more — tailored to your interests and skill level. Anguilla sets the bar."
+        }
+      ]
+    }
+  },
+  "journal": {
+    "label": "Journal — from the deck dispatches",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "items",
+        "kind": "list",
+        "label": "Entries",
+        "itemFields": [
+          {
+            "key": "img",
+            "kind": "image",
+            "label": "Image"
+          },
+          {
+            "key": "alt",
+            "kind": "text",
+            "label": "Image alt"
+          },
+          {
+            "key": "k",
+            "kind": "text",
+            "label": "Kicker"
+          },
+          {
+            "key": "t",
+            "kind": "text",
+            "label": "Title"
+          },
+          {
+            "key": "d",
+            "kind": "text",
+            "label": "Description",
+            "multiline": true
+          },
+          {
+            "key": "sea",
+            "kind": "text",
+            "label": "Location tag"
+          }
+        ]
+      }
+    ],
+    "defaults": {
+      "eyebrow": "From the Deck",
+      "heading": "Notes from the *latest sailings.*",
+      "lede": "Ports I've walked, tours I've tested, nights worth staying up for — straight from Dean's deck log, camera roll included.",
+      "items": [
+        {
+          "img": "deck/seattle-falls",
+          "alt": "A waterfall thundering into a green gorge outside Seattle",
+          "k": "Pacific Northwest",
+          "t": "Waterfalls & Pike Place",
+          "d": "Seattle is incredible — Pike Place Market and the Space Needle define the skyline, and beyond the city you'll find breathtaking waterfalls and a world-class culinary scene.",
+          "sea": "Seattle, WA"
+        },
+        {
+          "img": "deck/whale-watching",
+          "alt": "Dean dockside in front of the Swiftsure catamaran in Port Townsend",
+          "k": "Shore things",
+          "t": "Whale Watching on the Swiftsure",
+          "d": "Out of Port Townsend, the Swiftsure is a high-speed, wave-piercing catamaran with a wrap-around viewing deck — prime territory for getting up close with the whales.",
+          "sea": "Port Townsend, WA"
+        },
+        {
+          "img": "deck/sitka",
+          "alt": "Dean beside the carved eagle at the Sitka, Alaska welcome sign",
+          "k": "Latest experience",
+          "t": "Sitka, Alaska",
+          "d": "Wildlife cruises past sea otters, whales, and bears; an Alaskan seafood feast at Fin Island Lodge; kayaking glacier-carved fjords. A bucket-list stop — book Shore Things early.",
+          "sea": "Sitka, AK ⚓"
+        },
+        {
+          "img": "deck/scarlet-night",
+          "alt": "Dean in red light under the Scarlet Night neon sign on board",
+          "k": "Signature night",
+          "t": "Scarlet Night",
+          "d": "Virgin's ship-wide immersive party replaces stuffy formal nights — pop-up performances, flash mobs, and acrobatics, ending in a late-night pool party. Express yourself.",
+          "sea": "Every voyage"
+        },
+        {
+          "img": "deck/space-needle",
+          "alt": "Dean's selfie beneath the Space Needle against a clear blue sky",
+          "k": "The view",
+          "t": "The Space Needle",
+          "d": "A must-see that truly stands out. From the scenery to the atmosphere, it's the kind of place that stays with you long after you leave.",
+          "sea": "Seattle, WA ⚓🔱"
+        },
+        {
+          "img": "deck/life-is-great",
+          "alt": "Dean waving from the pier with a Virgin Voyages ship towering behind him",
+          "k": "Why I sail",
+          "t": "Life Is Great",
+          "d": "Nothing beats touching down somewhere new. Meeting people and diving into vibrant cultures enriches life in ways words can't capture. Now it's your turn to chase the horizon.",
+          "sea": "— Dean"
+        }
+      ]
+    }
+  },
+  "instagramCta": {
+    "label": "Instagram CTA — follow the journey band",
+    "group": "home",
+    "fields": [
+      {
+        "key": "image",
+        "kind": "image",
+        "label": "Image"
+      },
+      {
+        "key": "imageAlt",
+        "kind": "text",
+        "label": "Image alt"
+      },
+      {
+        "key": "stamp",
+        "kind": "text",
+        "label": "Photo stamp"
+      },
+      {
+        "key": "script",
+        "kind": "text",
+        "label": "Script accent"
+      },
+      {
+        "key": "heading",
+        "kind": "text",
+        "label": "Heading"
+      },
+      {
+        "key": "body",
+        "kind": "text",
+        "label": "Body",
+        "multiline": true
+      },
+      {
+        "key": "ctaLabel",
+        "kind": "text",
+        "label": "CTA label"
+      },
+      {
+        "key": "ctaHref",
+        "kind": "text",
+        "label": "CTA link"
+      }
+    ],
+    "defaults": {
+      "image": "dean-hero",
+      "imageAlt": "Dean relaxing in the red rope hammock on his Virgin Voyages balcony",
+      "stamp": "The balcony hammock · at sea",
+      "script": "Follow the journey",
+      "heading": "Life at sea, on the feed.",
+      "body": "Cruise moments, the latest deals, and life at sea with Dean on Deck — new ports every week.",
+      "ctaLabel": "@dean__on__deck",
+      "ctaHref": "https://instagram.com/dean__on__deck"
+    }
+  },
+  "reviews": {
+    "label": "Reviews — Google review wall",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "text",
+        "label": "Heading"
+      },
+      {
+        "key": "ratingNum",
+        "kind": "text",
+        "label": "Rating number"
+      },
+      {
+        "key": "linkLabel",
+        "kind": "text",
+        "label": "Link label"
+      },
+      {
+        "key": "linkHref",
+        "kind": "link",
+        "label": "Link URL"
+      },
+      {
+        "key": "items",
+        "kind": "list",
+        "label": "Reviews",
+        "itemFields": [
+          {
+            "key": "q",
+            "kind": "text",
+            "label": "Quote",
+            "multiline": true
+          },
+          {
+            "key": "who",
+            "kind": "text",
+            "label": "Name"
+          },
+          {
+            "key": "when",
+            "kind": "text",
+            "label": "Source"
+          }
+        ]
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Dean on Deck · Google Reviews",
+      "heading": "What our Sailors are saying.",
+      "ratingNum": "5.0",
+      "linkLabel": "Read the reviews on Google",
+      "linkHref": "https://www.google.com/maps?cid=0x27bff539e2a886e5:0x6563ddb20bd8046f",
+      "items": [
+        {
+          "q": "Dean is the absolute best. He spent hours making sure we got the exact suite I wanted. He genuinely cares — the only first mate we'll ever use.",
+          "who": "Hayley Preston",
+          "when": "Google Review"
+        },
+        {
+          "q": "Dean has made sure to take care of the small details to ensure we always have the best quality and value for our itineraries. Dean has the magic. Highly recommended.",
+          "who": "Colby Hansen",
+          "when": "Google Review"
+        },
+        {
+          "q": "He'll research every question you have and get fast results. Thanks Dean on Deck for making my trips stress-free and a fun vacation.",
+          "who": "Avid Reader",
+          "when": "Google Review"
+        },
+        {
+          "q": "Dean is amazing!!!!!!",
+          "who": "Bob Willford",
+          "when": "Google Review"
+        },
+        {
+          "q": "The attention to detail and personalized experiences were top-notch. I felt pampered and adventurous. Highly recommend.",
+          "who": "Natalie",
+          "when": "Sailor"
+        },
+        {
+          "q": "Dean elevated our Virgin Voyages experience beyond expectations — from RockStar service to unique excursions, every detail tailored perfectly.",
+          "who": "Ethan",
+          "when": "Sailor"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "label": "FAQ — know before you sail",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "text",
+        "label": "Heading"
+      },
+      {
+        "key": "items",
+        "kind": "list",
+        "label": "Questions",
+        "itemFields": [
+          {
+            "key": "q",
+            "kind": "text",
+            "label": "Question"
+          },
+          {
+            "key": "body",
+            "kind": "list",
+            "label": "Answer blocks",
+            "itemFields": [
+              {
+                "key": "h",
+                "kind": "text",
+                "label": "Subheading"
+              },
+              {
+                "key": "text",
+                "kind": "text",
+                "label": "Body",
+                "multiline": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Essential FAQs",
+      "heading": "Know before you sail.",
+      "items": [
+        {
+          "q": "Premium vs Essential vs Base — what's the difference?",
+          "body": [
+            {
+              "h": "Premium",
+              "text": "The most polished non-suite path: Premium WiFi for two devices with streaming, a 60-day dining window, a $15 nightly bar tab per Sailor, priority pre-voyage support, guaranteed cabin selection with changes allowed, and maximum name-change flexibility."
+            },
+            {
+              "h": "Essential",
+              "text": "The balanced middle: Classic WiFi for one device, a 45-day dining window, guaranteed cabin selection with changes allowed, date changes outside 45 days, and fellow-Sailor name changes until 48 hours before sailing."
+            },
+            {
+              "h": "Base & Lock-It-In",
+              "text": "Base is the budget tradeoff, not \"the normal fare\" — stricter rules, a later dining window, and fewer ways to fix the booking later. Lock-It-In only makes sense when savings matter more than cabin choice and flexibility."
+            }
+          ]
+        },
+        {
+          "q": "How does the Pay-In-Full discount work?",
+          "body": [
+            {
+              "h": "Eligibility",
+              "text": "Book at least 365 days before sailing, select Pay-In-Full at checkout, and pay the entire invoice — fare, taxes, fees, and optional protection — within two hours of booking."
+            },
+            {
+              "h": "What you save",
+              "text": "10% off the voyage fare (taxes, fees, and add-ons excluded). It stacks with second-sailor promotions and MNVV placeholder credits."
+            },
+            {
+              "h": "Eligible cabins",
+              "text": "XL Sea Terrace, Central Sea Terrace, Sea Terrace, Limited View Sea Terrace, Sea View, and Insider. Lock-It-In cabins are excluded."
+            }
+          ]
+        },
+        {
+          "q": "What is the MNVV advantage?",
+          "body": [
+            {
+              "h": "My Next Virgin Voyage",
+              "text": "I maintain a supply of MNVV certificates. Book through me with one of these placeholders and you can receive an immediate $300 discount off your voyage fare plus Sailor Loot (onboard credit)."
+            },
+            {
+              "h": "Stack the perks",
+              "text": "MNVV combines with Sailor Bonus Loot, group booking bonuses, and seasonal online promotions — I'll line them all up for you."
+            }
+          ]
+        },
+        {
+          "q": "Already booked? Can Dean take over my booking?",
+          "body": [
+            {
+              "h": "Switching First Mates",
+              "text": "If you booked in the last 30 days and haven't paid in full, I may be able to become your First Mate. You keep the same confirmation number, cabin, and rate — only the agency of record changes."
+            },
+            {
+              "h": "Honest answers",
+              "text": "Transfer rules depend on timing, payment status, and fare type. If it's possible, I'll walk you through it; if not, I'll tell you straight."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "twoWays": {
+    "label": "Two Ways to Book",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "way1",
+        "kind": "group",
+        "label": "Card 1 — self-serve",
+        "itemFields": [
+          {
+            "key": "k",
+            "kind": "text",
+            "label": "Kicker"
+          },
+          {
+            "key": "title",
+            "kind": "text",
+            "label": "Title"
+          },
+          {
+            "key": "body",
+            "kind": "text",
+            "label": "Body",
+            "multiline": true
+          },
+          {
+            "key": "ctaLabel",
+            "kind": "text",
+            "label": "CTA label"
+          },
+          {
+            "key": "ctaHref",
+            "kind": "link",
+            "label": "CTA URL"
+          }
+        ]
+      },
+      {
+        "key": "way2",
+        "kind": "group",
+        "label": "Card 2 — full service",
+        "itemFields": [
+          {
+            "key": "k",
+            "kind": "text",
+            "label": "Kicker"
+          },
+          {
+            "key": "title",
+            "kind": "text",
+            "label": "Title"
+          },
+          {
+            "key": "body",
+            "kind": "text",
+            "label": "Body",
+            "multiline": true
+          },
+          {
+            "key": "ctaLabel",
+            "kind": "text",
+            "label": "CTA label"
+          },
+          {
+            "key": "ctaHref",
+            "kind": "link",
+            "label": "CTA URL"
+          }
+        ]
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Two Ways to Book",
+      "heading": "Book it yourself, *or let me make ship happen.*",
+      "way1": {
+        "k": "Fast & easy",
+        "title": "Book it yourself",
+        "body": "Ready to dive in? Book through my direct link and you still get the extras — qualifying Sea Terrace and RockStar bookings come loaded with Sailor Loot for spa days, cocktails, or whatever floats your boat.",
+        "ctaLabel": "Book with my link",
+        "ctaHref": "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK"
+      },
+      "way2": {
+        "k": "Even better deals",
+        "title": "Book with me",
+        "body": "I can offer exclusive extras beyond the link: personalized cabin picks, an MNVV certificate if you don't have one, and the absolute best deal for a cruise tailored just for you. Tell me where you want to go.",
+        "ctaLabel": "Get in touch",
+        "ctaHref": "#contact"
+      }
+    }
+  },
+  "fleet": {
+    "label": "Fleet — beyond Virgin portfolio",
+    "group": "home",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading",
+        "hint": "*text* renders as an italic accent"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "items",
+        "kind": "list",
+        "label": "Cruise lines",
+        "itemFields": [
+          {
+            "key": "k",
+            "kind": "text",
+            "label": "Kicker"
+          },
+          {
+            "key": "t",
+            "kind": "text",
+            "label": "Title"
+          },
+          {
+            "key": "d",
+            "kind": "text",
+            "label": "Description",
+            "multiline": true
+          }
+        ]
+      },
+      {
+        "key": "coming",
+        "kind": "richtext",
+        "label": "Coming soon",
+        "hint": "**text** renders bold"
+      },
+      {
+        "key": "ctaLabel",
+        "kind": "text",
+        "label": "CTA label"
+      },
+      {
+        "key": "ctaHref",
+        "kind": "link",
+        "label": "CTA URL"
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Beyond Virgin",
+      "heading": "A different kind of *getaway?*",
+      "lede": "We love Virgin's bold, adults-only energy — but it isn't the perfect fit for every traveler. Family reunion, ultra-luxury escape, or specialty charter: request me by name as your Travel Advisor, or reach out and I'll handle every detail.",
+      "items": [
+        {
+          "k": "Families",
+          "t": "Royal Caribbean",
+          "d": "The ultimate choice for multi-generational families — groundbreaking onboard thrills and private island destinations."
+        },
+        {
+          "k": "Modern luxury",
+          "t": "Celebrity Cruises",
+          "d": "Sophisticated resort-style design, elevated dining, and curated global itineraries."
+        },
+        {
+          "k": "Ultra-luxury",
+          "t": "Silversea",
+          "d": "All-inclusive ultra-luxury, intimate small ships, and immersive butler-serviced expeditions."
+        },
+        {
+          "k": "Charters",
+          "t": "Atlantis Events",
+          "d": "The world's premier all-gay resort and cruise charters — unparalleled entertainment, unforgettable community."
+        }
+      ],
+      "coming": "**Coming soon:** Disney Cruise Line, Norwegian Cruise Line, and Princess Cruises join the lineup — plus one special line. Stay tuned, or email me with questions and bookings in the meantime.",
+      "ctaLabel": "Compare every line",
+      "ctaHref": "/cruises"
+    }
+  },
+  "contact": {
+    "label": "Contact form",
+    "group": "home",
+    "note": "The form fields themselves are fixed; edit the surrounding copy and contact details here.",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading"
+      },
+      {
+        "key": "image",
+        "kind": "image",
+        "label": "Background image"
+      },
+      {
+        "key": "asideIntro",
+        "kind": "text",
+        "label": "Aside intro",
+        "multiline": true
+      },
+      {
+        "key": "lines",
+        "kind": "list",
+        "label": "Contact lines",
+        "itemFields": [
+          {
+            "key": "k",
+            "kind": "text",
+            "label": "Label"
+          },
+          {
+            "key": "label",
+            "kind": "text",
+            "label": "Link text"
+          },
+          {
+            "key": "href",
+            "kind": "text",
+            "label": "Link URL"
+          },
+          {
+            "key": "external",
+            "kind": "boolean",
+            "label": "Opens in new tab"
+          }
+        ]
+      }
+    ]
+  },
+  "aboutMe": {
+    "label": "About Dean (full /about page)",
+    "group": "page",
+    "note": "A full multi-band page block: hero letter, proof strip, and closing CTA.",
+    "fields": [
+      {
+        "key": "hero",
+        "kind": "group",
+        "label": "Hero",
+        "fields": [
+          {
+            "key": "eyebrow",
+            "kind": "text",
+            "label": "Eyebrow"
+          },
+          {
+            "key": "script",
+            "kind": "text",
+            "label": "Script salutation"
+          },
+          {
+            "key": "heading",
+            "kind": "richtext",
+            "label": "Heading"
+          },
+          {
+            "key": "lede",
+            "kind": "text",
+            "label": "Lede",
+            "multiline": true
+          },
+          {
+            "key": "photo",
+            "kind": "image",
+            "label": "Photo"
+          },
+          {
+            "key": "photoAlt",
+            "kind": "text",
+            "label": "Photo alt"
+          },
+          {
+            "key": "stamp",
+            "kind": "text",
+            "label": "Photo stamp"
+          }
+        ]
+      },
+      {
+        "key": "letter",
+        "kind": "group",
+        "label": "Letter",
+        "fields": [
+          {
+            "key": "intro",
+            "kind": "richtext",
+            "label": "Intro"
+          },
+          {
+            "key": "flag",
+            "kind": "group",
+            "label": "30-day flag",
+            "fields": [
+              {
+                "key": "heading",
+                "kind": "text",
+                "label": "Heading"
+              },
+              {
+                "key": "body",
+                "kind": "richtext",
+                "label": "Body"
+              },
+              {
+                "key": "ctaLabel",
+                "kind": "text",
+                "label": "Button label"
+              },
+              {
+                "key": "ctaHref",
+                "kind": "text",
+                "label": "Button URL"
+              },
+              {
+                "key": "fine",
+                "kind": "text",
+                "label": "Fine print",
+                "multiline": true
+              }
+            ]
+          },
+          {
+            "key": "afterFlag",
+            "kind": "richtext",
+            "label": "After flag"
+          },
+          {
+            "key": "duo",
+            "kind": "list",
+            "label": "Two cards",
+            "itemFields": [
+              {
+                "key": "k",
+                "kind": "text",
+                "label": "Eyebrow"
+              },
+              {
+                "key": "body",
+                "kind": "richtext",
+                "label": "Body"
+              }
+            ]
+          },
+          {
+            "key": "other",
+            "kind": "richtext",
+            "label": "Other lines note"
+          },
+          {
+            "key": "thanks",
+            "kind": "richtext",
+            "label": "Thanks"
+          },
+          {
+            "key": "signature",
+            "kind": "text",
+            "label": "Signature"
+          },
+          {
+            "key": "role",
+            "kind": "text",
+            "label": "Role line"
+          }
+        ]
+      },
+      {
+        "key": "proof",
+        "kind": "group",
+        "label": "Proof strip",
+        "fields": [
+          {
+            "key": "eyebrow",
+            "kind": "text",
+            "label": "Eyebrow"
+          },
+          {
+            "key": "heading",
+            "kind": "richtext",
+            "label": "Heading"
+          },
+          {
+            "key": "lede",
+            "kind": "text",
+            "label": "Lede",
+            "multiline": true
+          },
+          {
+            "key": "strip",
+            "kind": "list",
+            "label": "Photos",
+            "itemFields": [
+              {
+                "key": "img",
+                "kind": "image",
+                "label": "Image"
+              },
+              {
+                "key": "alt",
+                "kind": "text",
+                "label": "Alt"
+              },
+              {
+                "key": "cap",
+                "kind": "text",
+                "label": "Caption"
+              }
+            ]
+          },
+          {
+            "key": "ratingNum",
+            "kind": "text",
+            "label": "Rating number"
+          },
+          {
+            "key": "reviewsLabel",
+            "kind": "text",
+            "label": "Reviews link label"
+          },
+          {
+            "key": "reviewsHref",
+            "kind": "text",
+            "label": "Reviews link URL"
+          }
+        ]
+      },
+      {
+        "key": "cta",
+        "kind": "group",
+        "label": "Closing CTA",
+        "fields": [
+          {
+            "key": "eyebrow",
+            "kind": "text",
+            "label": "Eyebrow"
+          },
+          {
+            "key": "heading",
+            "kind": "richtext",
+            "label": "Heading"
+          },
+          {
+            "key": "lede",
+            "kind": "text",
+            "label": "Lede",
+            "multiline": true
+          },
+          {
+            "key": "actions",
+            "kind": "list",
+            "label": "Buttons",
+            "itemFields": [
+              {
+                "key": "label",
+                "kind": "text",
+                "label": "Label"
+              },
+              {
+                "key": "href",
+                "kind": "text",
+                "label": "URL"
+              },
+              {
+                "key": "variant",
+                "kind": "text",
+                "label": "Style (scarlet|ghost|ink)"
+              },
+              {
+                "key": "arrow",
+                "kind": "boolean",
+                "label": "Show arrow"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "cruises": {
+    "label": "Cruises (full /cruises page)",
+    "group": "page",
+    "note": "The per-line bands come from the global cruise-line list in Site Settings. Edit the intro and closing CTA here.",
+    "fields": [
+      {
+        "key": "hero",
+        "kind": "group",
+        "label": "Intro",
+        "fields": [
+          {
+            "key": "eyebrow",
+            "kind": "text",
+            "label": "Eyebrow"
+          },
+          {
+            "key": "heading",
+            "kind": "richtext",
+            "label": "Heading"
+          },
+          {
+            "key": "lede",
+            "kind": "text",
+            "label": "Lede",
+            "multiline": true
+          }
+        ]
+      },
+      {
+        "key": "cta",
+        "kind": "group",
+        "label": "Closing CTA",
+        "fields": [
+          {
+            "key": "eyebrow",
+            "kind": "text",
+            "label": "Eyebrow"
+          },
+          {
+            "key": "heading",
+            "kind": "richtext",
+            "label": "Heading"
+          },
+          {
+            "key": "lede",
+            "kind": "text",
+            "label": "Lede",
+            "multiline": true
+          },
+          {
+            "key": "actions",
+            "kind": "list",
+            "label": "Buttons",
+            "itemFields": [
+              {
+                "key": "label",
+                "kind": "text",
+                "label": "Label"
+              },
+              {
+                "key": "href",
+                "kind": "text",
+                "label": "URL"
+              },
+              {
+                "key": "variant",
+                "kind": "text",
+                "label": "Style (scarlet|ghost|ink)"
+              },
+              {
+                "key": "arrow",
+                "kind": "boolean",
+                "label": "Show arrow"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "planVoyage": {
+    "label": "Plan a Voyage (full /plan page)",
+    "group": "page",
+    "note": "The intake form fields are fixed. Edit the intro, the cabin/fare/gratuity choices, and the aside here.",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "image",
+        "kind": "image",
+        "label": "Background image"
+      },
+      {
+        "key": "cabins",
+        "kind": "list",
+        "label": "Cabin choices",
+        "itemFields": [
+          {
+            "key": "value",
+            "kind": "text",
+            "label": "Name"
+          },
+          {
+            "key": "tag",
+            "kind": "text",
+            "label": "Tag"
+          },
+          {
+            "key": "desc",
+            "kind": "text",
+            "label": "Description",
+            "multiline": true
+          }
+        ]
+      },
+      {
+        "key": "fares",
+        "kind": "list",
+        "label": "Fare choices",
+        "itemFields": [
+          {
+            "key": "value",
+            "kind": "text",
+            "label": "Name"
+          },
+          {
+            "key": "tag",
+            "kind": "text",
+            "label": "Tag"
+          },
+          {
+            "key": "desc",
+            "kind": "text",
+            "label": "Description",
+            "multiline": true
+          }
+        ]
+      },
+      {
+        "key": "gratuities",
+        "kind": "list",
+        "label": "Gratuity choices",
+        "itemFields": [
+          {
+            "key": "value",
+            "kind": "text",
+            "label": "Name"
+          },
+          {
+            "key": "tag",
+            "kind": "text",
+            "label": "Tag"
+          },
+          {
+            "key": "desc",
+            "kind": "text",
+            "label": "Description",
+            "multiline": true
+          }
+        ]
+      },
+      {
+        "key": "aside",
+        "kind": "group",
+        "label": "Aside",
+        "fields": [
+          {
+            "key": "log",
+            "kind": "text",
+            "label": "Eyebrow"
+          },
+          {
+            "key": "notes",
+            "kind": "list",
+            "label": "Notes",
+            "itemFields": [
+              {
+                "key": "strong",
+                "kind": "text",
+                "label": "Bold lead"
+              },
+              {
+                "key": "text",
+                "kind": "text",
+                "label": "Text",
+                "multiline": true
+              }
+            ]
+          },
+          {
+            "key": "note",
+            "kind": "text",
+            "label": "Closing note",
+            "multiline": true
+          },
+          {
+            "key": "lines",
+            "kind": "list",
+            "label": "Contact lines",
+            "itemFields": [
+              {
+                "key": "k",
+                "kind": "text",
+                "label": "Label"
+              },
+              {
+                "key": "label",
+                "kind": "text",
+                "label": "Link text"
+              },
+              {
+                "key": "href",
+                "kind": "text",
+                "label": "Link URL"
+              },
+              {
+                "key": "external",
+                "kind": "boolean",
+                "label": "Opens in new tab"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "manageBooking": {
+    "label": "Manage Booking (full /manage page)",
+    "group": "page",
+    "note": "The handover form fields are fixed. Edit the intro, checkbox statement, steps, and aside here.",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Lede",
+        "multiline": true
+      },
+      {
+        "key": "image",
+        "kind": "image",
+        "label": "Background image"
+      },
+      {
+        "key": "checkboxLabel",
+        "kind": "richtext",
+        "label": "Consent checkbox label"
+      },
+      {
+        "key": "steps",
+        "kind": "list",
+        "label": "How it works steps",
+        "itemFields": [
+          {
+            "key": "n",
+            "kind": "text",
+            "label": "Number"
+          },
+          {
+            "key": "t",
+            "kind": "text",
+            "label": "Title"
+          },
+          {
+            "key": "d",
+            "kind": "text",
+            "label": "Description",
+            "multiline": true
+          }
+        ]
+      },
+      {
+        "key": "aside",
+        "kind": "group",
+        "label": "Aside",
+        "fields": [
+          {
+            "key": "log",
+            "kind": "text",
+            "label": "Eyebrow"
+          },
+          {
+            "key": "note",
+            "kind": "text",
+            "label": "Closing note",
+            "multiline": true
+          },
+          {
+            "key": "lines",
+            "kind": "list",
+            "label": "Contact lines",
+            "itemFields": [
+              {
+                "key": "k",
+                "kind": "text",
+                "label": "Label"
+              },
+              {
+                "key": "label",
+                "kind": "text",
+                "label": "Link text"
+              },
+              {
+                "key": "href",
+                "kind": "text",
+                "label": "Link URL"
+              },
+              {
+                "key": "external",
+                "kind": "boolean",
+                "label": "Opens in new tab"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

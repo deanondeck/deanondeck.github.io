@@ -3,10 +3,22 @@
 import { useState } from "react";
 import { img } from "@/lib/media";
 import { submitForm } from "@/lib/forms";
+import { renderInline } from "@/lib/cms/markdown";
+import type { SectionProps } from "@/lib/cms/types";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function Contact() {
+type ContactLine = { k: string; label: string; href: string; external?: boolean };
+type ContactContent = {
+  eyebrow: string;
+  heading: string;
+  image: string;
+  asideIntro: string;
+  lines: ContactLine[];
+};
+
+export default function Contact({ content }: SectionProps) {
+  const c = content as ContactContent;
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -31,14 +43,12 @@ export default function Contact() {
   return (
     <section className="band contact" id="contact">
       <div className="contact-media">
-        <img src={img("cta-sunset")} alt="" />
+        <img src={img(c.image)} alt="" />
       </div>
       <div className="wrap">
         <div className="sec-head reveal">
-          <p className="log">Ready to Set Sail?</p>
-          <h2 className="display h-lg">
-            Let&apos;s plan <em>your voyage.</em>
-          </h2>
+          <p className="log">{c.eyebrow}</p>
+          <h2 className="display h-lg">{renderInline(c.heading)}</h2>
         </div>
         <div className="contact-grid">
           <form className="form reveal d1" onSubmit={handleSubmit}>
@@ -84,29 +94,20 @@ export default function Contact() {
             )}
           </form>
           <aside className="contact-aside reveal d2">
-            <p style={{ marginTop: 0 }}>
-              Send me the destination that&apos;s sparking your interest and
-              I&apos;ll be back in touch fast — usually same day.
-            </p>
-            <div className="line">
-              <span className="k">Call</span>
-              {/* TODO: replace with Dean's real number */}
-              <a href="tel:+10000000000">Tap to call Dean</a>
-            </div>
-            <div className="line">
-              <span className="k">Instagram</span>
-              <a href="https://instagram.com/dean__on__deck" target="_blank" rel="noopener noreferrer">
-                @dean__on__deck
-              </a>
-            </div>
-            <div className="line">
-              <span className="k">Plan</span>
-              <a href="/plan">Ready to book? Send me your full trip details →</a>
-            </div>
-            <div className="line">
-              <span className="k">Manage</span>
-              <a href="/manage">Existing MNVV booking? I can take it over →</a>
-            </div>
+            <p style={{ marginTop: 0 }}>{c.asideIntro}</p>
+            {c.lines.map((line) => (
+              <div className="line" key={line.k}>
+                <span className="k">{line.k}</span>
+                <a
+                  href={line.href}
+                  {...(line.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {line.label}
+                </a>
+              </div>
+            ))}
           </aside>
         </div>
       </div>

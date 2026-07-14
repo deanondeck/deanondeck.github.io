@@ -1,30 +1,39 @@
-import { CRUISE_LINES } from "@/lib/content";
 import { img } from "@/lib/media";
+import { renderInline } from "@/lib/cms/markdown";
+import type { SectionProps } from "@/lib/cms/types";
 
-/* /cruises — the fleet, one line per band (modeled on the reference's
-   simple stacked cruises page). Virgin rides the navy flagship band;
-   the extended fleet alternates on paper. */
+/* /cruises — the fleet, one line per band (modeled on the reference's simple
+   stacked cruises page). Virgin rides the navy flagship band; the extended
+   fleet alternates on paper. The cruise-line list is global (edited in Site
+   Settings) so the header "Book a voyage" menu and this page stay in sync. */
 
-export default function Cruises() {
+type Action = {
+  label: string;
+  href: string;
+  variant: "scarlet" | "ghost" | "ink";
+  arrow?: boolean;
+};
+type CruisesContent = {
+  hero: { eyebrow: string; heading: string; lede: string };
+  cta: { eyebrow: string; heading: string; lede: string; actions: Action[] };
+};
+
+export default function Cruises({ content, site }: SectionProps) {
+  const c = content as CruisesContent;
+  const lines = site.cruiseLines;
+
   return (
     <>
       {/* ---- intro ---- */}
       <section className="band band--black cruises-hero" id="top-cruises">
         <div className="wrap">
           <div className="sec-head reveal">
-            <p className="log">The Fleet</p>
-            <h2 className="display h-xl">
-              One advisor. <em>Every ocean.</em>
-            </h2>
-            <p className="lede">
-              Virgin Voyages is my specialty — but it isn&apos;t the only ship
-              I sail. Family reunion, ultra-luxury escape, or a slow drift down
-              the Danube: request me as your travel advisor on any of these
-              lines and I handle every detail. No booking fees, ever.
-            </p>
+            <p className="log">{c.hero.eyebrow}</p>
+            <h2 className="display h-xl">{renderInline(c.hero.heading)}</h2>
+            <p className="lede">{c.hero.lede}</p>
           </div>
           <nav className="cruises-index reveal d1" aria-label="Cruise lines on this page">
-            {CRUISE_LINES.map((l) => (
+            {lines.map((l) => (
               <a key={l.id} href={`#${l.id}`}>
                 {l.name}
               </a>
@@ -34,7 +43,7 @@ export default function Cruises() {
       </section>
 
       {/* ---- one band per line ---- */}
-      {CRUISE_LINES.map((l, i) => {
+      {lines.map((l, i) => {
         const flagship = l.id === "virgin";
         const band = flagship ? "band--ink" : i % 2 ? "band--shell" : "band--shell2";
         return (
@@ -85,22 +94,21 @@ export default function Cruises() {
       <section className="band band--black cl-cta">
         <div className="wrap">
           <div className="sec-head center reveal">
-            <p className="log log--center">Anchors aweigh</p>
-            <h2 className="display h-lg">
-              Can&apos;t decide? <em>That&apos;s my job.</em>
-            </h2>
-            <p className="lede">
-              Tell me who&apos;s sailing and what a perfect day at sea looks
-              like — I&apos;ll come back with the right line, the right ship,
-              and every perk you&apos;re owed. Usually the same day.
-            </p>
+            <p className="log log--center">{c.cta.eyebrow}</p>
+            <h2 className="display h-lg">{renderInline(c.cta.heading)}</h2>
+            <p className="lede">{c.cta.lede}</p>
             <div className="cl-cta-actions">
-              <a className="btn btn-scarlet" href="tel:+16178999774">
-                Call (617) 899-9774
-              </a>
-              <a className="btn btn-ghost" href="/plan">
-                Start planning <span className="arrow">→</span>
-              </a>
+              {c.cta.actions.map((a) => (
+                <a className={`btn btn-${a.variant}`} href={a.href} key={a.label}>
+                  {a.label}
+                  {a.arrow && (
+                    <>
+                      {" "}
+                      <span className="arrow">→</span>
+                    </>
+                  )}
+                </a>
+              ))}
             </div>
           </div>
         </div>

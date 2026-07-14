@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Manage an Existing Booking · MNVV Transfer | Dean on Deck",
+    "description": "Already have a Virgin Voyages booking or a My Next Virgin Voyage (MNVV) voucher? Transfer it to Dean on Deck as your First Mate — no rebooking, no fees, same fare. Unlock Sailor Loot and RockStar perks.",
+    "ogTitle": "Make Dean your First Mate — transfer your Virgin Voyages booking",
+    "ogDescription": "Hand over an existing Virgin Voyages reservation or MNVV voucher. No rebooking, no fees, same fare — just perks and hands-on service.",
+    "ogType": "website",
+    "inNav": true,
+    "navLabel": "Manage Booking"
+  },
+  "sections": [
+    {
+      "id": "manageBooking",
+      "type": "manageBooking",
+      "content": {
+        "eyebrow": "Already booked?",
+        "heading": "Make me your *First Mate.*",
+        "lede": "Already holding a Virgin Voyages reservation or a My Next Virgin Voyage (MNVV) voucher? Hand it over — no rebooking, no fees, and your fare stays exactly the same. I'll take it from here and unlock the Sailor Loot and perks you should be getting.",
+        "image": "cta-sunset",
+        "checkboxLabel": "I request that **Dean Satterfield (On Deck)** be assigned as my First Mate / Travel Advisor for this booking.",
+        "steps": [
+          {
+            "n": "01",
+            "t": "Send the details",
+            "d": "Drop your booking or MNVV voucher number below — that's all I need to find it."
+          },
+          {
+            "n": "02",
+            "t": "I request the transfer",
+            "d": "Virgin moves your reservation under me as your First Mate. Your price and itinerary don't change."
+          },
+          {
+            "n": "03",
+            "t": "Perks switched on",
+            "d": "Sailor Loot, priority windows, and hands-on planning kick in for a trip you've already started."
+          }
+        ],
+        "aside": {
+          "log": "How it works",
+          "note": "Prefer to talk it through first? Reach me directly and I'll walk you through the transfer.",
+          "lines": [
+            {
+              "k": "Call",
+              "label": "Tap to call Dean",
+              "href": "tel:+10000000000"
+            },
+            {
+              "k": "Instagram",
+              "label": "@dean__on__deck",
+              "href": "https://instagram.com/dean__on__deck",
+              "external": true
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
