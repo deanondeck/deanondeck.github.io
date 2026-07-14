@@ -32,7 +32,7 @@
           "**Virgin Voyages** specialist"
         ]
       },
-      "hidden": true
+      "hidden": false
     },
     {
       "id": "ticker",
