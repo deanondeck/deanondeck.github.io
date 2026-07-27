@@ -72,40 +72,40 @@
         "lede": "No kids' menus. No water slides. Just Michelin-inspired dining, world-class wellness, and sea days made entirely for the grown-up escape.",
         "items": [
           {
-            "img": "ship-beach",
+            "img": "2580x1440-option-2-png-1400x781-9553b7.webp",
             "tag": "18+ only",
             "t": "Adults-Only Voyages",
             "d": "Every sailor is 18 or over. No exceptions — just pure grown-up freedom, bow to stern."
           },
           {
-            "img": "dining",
+            "img": "eat-landing-the-wake-810x810-4-e5a877.webp",
             "tag": "Included",
             "t": "Michelin-Inspired Dining",
             "d": "20+ included restaurants, zero buffets, and not a single tray in sight."
           },
           {
-            "img": "spa",
+            "img": "download-048011.webp",
             "tag": "The Spa",
             "t": "Wellness & Spa",
-            "d": "Thermal suites, fitness, and treatments tuned to long days at sea."
+            "d": "Thermal suites and treatments tuned to long days at sea."
           },
           {
-            "img": "suite",
+            "img": "download-1-7bc8aa.webp",
             "tag": "RockStar",
             "t": "Suites With a View",
-            "d": "VIP from the terminal on — private decks, a personal agent, the works."
+            "d": "VIP Mega Rockstars from the terminal on — private decks, a personal agent, the works."
           },
           {
-            "img": "balcony",
+            "img": "download-2-270d3f.webp",
             "tag": "Sea days",
             "t": "Sea Days, Your Way",
             "d": "A private balcony, a hammock, and a cold drink as the coast rolls by."
           },
           {
-            "img": "breakfast",
-            "tag": "Mornings",
+            "img": "images-f831b1.webp",
+            "tag": "Mornings - Brunch Bubbles",
             "t": "Wake Up at Sea",
-            "d": "Slow mornings, room service, and a horizon that changes every day."
+            "d": "Slow mornings and a horizon that changes every day."
           }
         ]
       }

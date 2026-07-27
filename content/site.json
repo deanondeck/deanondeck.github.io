@@ -8,7 +8,7 @@
   "seo": {
     "siteName": "Dean on Deck Cruise Travel",
     "title": "Dean on Deck — Virgin Voyages First Mate | Adults-Only Luxury Cruises",
-    "description": "I'm Dean, your Gold-Certified Virgin Voyages First Mate. Adults-only sailings, Michelin-inspired dining, RockStar perks, and zero booking fees. No kids. No stress. Just you.",
+    "description": "I'm Dean, your Gold-Certified Virgin Voyages First Mate Travel Advisor. Adults-only sailings, Michelin-inspired dining, RockStar perks, and zero booking fees. No kids. No stress. Just you.",
     "url": "https://deanondeck.github.io",
     "ogImage": "/img/hero-ship-night.jpg",
     "ogTitle": "Dean on Deck — Sail like a grown-up",
@@ -25,15 +25,28 @@
   },
   "social": {
     "instagram": "https://instagram.com/dean__on__deck",
-    "facebook": "#",
-    "tiktok": "#",
+    "facebook": "https://www.facebook.com/profile.php?id=61578955203882",
+    "tiktok": "https://www.tiktok.com/@deanondeck?lang=en",
     "googleReviews": "https://www.google.com/maps?cid=0x27bff539e2a886e5:0x6563ddb20bd8046f"
   },
   "nav": [
-    { "label": "About", "href": "/about", "drawerLabel": "About Dean" },
-    { "label": "Cruises", "href": "/cruises" },
-    { "label": "Plan a Voyage", "href": "/plan" },
-    { "label": "Manage Booking", "href": "/manage" }
+    {
+      "label": "About",
+      "href": "/about",
+      "drawerLabel": "About Dean"
+    },
+    {
+      "label": "Cruises",
+      "href": "/cruises"
+    },
+    {
+      "label": "Plan a Voyage",
+      "href": "/plan"
+    },
+    {
+      "label": "Manage Booking",
+      "href": "/manage"
+    }
   ],
   "virginBookingUrl": "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK",
   "cruiseLines": [
@@ -96,15 +109,43 @@
   ],
   "footer": {
     "exploreLinks": [
-      { "label": "The Difference", "href": "#difference" },
-      { "label": "Ports", "href": "#ports" },
-      { "label": "Reviews", "href": "#reviews" },
-      { "label": "FAQs", "href": "#faq" },
-      { "label": "About Dean", "href": "/about" },
-      { "label": "Cruises", "href": "/cruises" },
-      { "label": "Book a voyage", "href": "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK", "external": true },
-      { "label": "Plan a voyage", "href": "/plan" },
-      { "label": "Manage a booking", "href": "/manage" }
+      {
+        "label": "The Difference",
+        "href": "#difference"
+      },
+      {
+        "label": "Ports",
+        "href": "#ports"
+      },
+      {
+        "label": "Reviews",
+        "href": "#reviews"
+      },
+      {
+        "label": "FAQs",
+        "href": "#faq"
+      },
+      {
+        "label": "About Dean",
+        "href": "/about"
+      },
+      {
+        "label": "Cruises",
+        "href": "/cruises"
+      },
+      {
+        "label": "Book a voyage",
+        "href": "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=281761&agencyId=54480&bookingChannel=FMLINK",
+        "external": true
+      },
+      {
+        "label": "Plan a voyage",
+        "href": "/plan"
+      },
+      {
+        "label": "Manage a booking",
+        "href": "/manage"
+      }
     ],
     "boatList": [
       "Adults-only · 18+",
