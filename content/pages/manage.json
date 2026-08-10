@@ -15,7 +15,7 @@
       "content": {
         "eyebrow": "Already booked?",
         "heading": "Make me your *First Mate.*",
-        "lede": "Already holding a Virgin Voyages reservation or a My Next Virgin Voyage (MNVV) voucher? Hand it over — no rebooking, no fees, and your fare stays exactly the same. I'll take it from here and unlock the Sailor Loot and perks you should be getting.",
+        "lede": "Are you already holding a Virgin Voyages reservation or a My Next Virgin Voyage (MNVV) voucher? Within 30 days of the booking and not paid in full — no rebooking, no fees, and your fare stays exactly the same. I'll take it from here and unlock the Sailor Loot and perks you should be getting.",
         "image": "cta-sunset",
         "checkboxLabel": "I request that **Dean Satterfield (On Deck)** be assigned as my First Mate / Travel Advisor for this booking.",
         "steps": [
@@ -27,7 +27,7 @@
           {
             "n": "02",
             "t": "I request the transfer",
-            "d": "Virgin moves your reservation under me as your First Mate. Your price and itinerary don't change."
+            "d": "Virgin moves your reservation under me as your First Mate if you booked Premium or Rockstar. Your price and itinerary don't change."
           },
           {
             "n": "03",
@@ -42,7 +42,7 @@
             {
               "k": "Call",
               "label": "Tap to call Dean",
-              "href": "tel:+10000000000"
+              "href": "tel:+16178999774"
             },
             {
               "k": "Instagram",
