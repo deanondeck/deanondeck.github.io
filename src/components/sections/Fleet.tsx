@@ -1,3 +1,4 @@
+import { img } from "@/lib/media";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
@@ -23,15 +24,22 @@ export default function Fleet({ id, content, site }: SectionProps) {
           <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
           <p className="lede" data-cms-field="lede">{c.lede}</p>
         </div>
-        <div className="fleet" data-cms-field="items">
-          {c.items.map((l, i) => (
-            <article className={`line-card reveal d${(i % 4) + 1}`} key={l.t}>
-              <span className="k">{l.k}</span>
-              <h3><a href={`/cruises#${site.cruiseLines.find((line) => line.name === l.t)?.id ?? "top-cruises"}`}>{l.t} <span aria-hidden="true">↗</span></a></h3>
-              <p>{l.d}</p>
-            </article>
-          ))}
-        </div>
+        <nav className="cruise-strip" aria-label="Explore cruise lines" data-cms-field="items">
+          {c.items.map((item) => {
+            const line = site.cruiseLines.find((entry) => entry.name === item.t);
+            return (
+              <a className="cruise-panel" href={`/cruises/#${line?.id ?? "top-cruises"}`} key={item.t}>
+                {line && <img src={img(line.img)} alt="" loading="lazy" />}
+                <span className="cruise-panel-copy">
+                  <span className="cruise-panel-k">Explore · {item.k}</span>
+                  <span className="cruise-panel-title">{item.t}</span>
+                  <span className="cruise-panel-desc">{item.d}</span>
+                  <span className="cruise-panel-arrow" aria-hidden="true">Explore →</span>
+                </span>
+              </a>
+            );
+          })}
+        </nav>
         <p className="coming reveal" data-cms-field="coming">{renderInline(c.coming)}</p>
         <div className="fleet-cta reveal">
           <a className="btn btn-ink" href={c.ctaHref} data-cms-field="ctaLabel">
