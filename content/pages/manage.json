@@ -15,7 +15,7 @@
       "content": {
         "eyebrow": "Already booked?",
         "heading": "Already booked? *Let’s check your options.*",
-        "lede": "Have a Virgin Voyages reservation or MNVV voucher? Send me the details so I can check whether it can be connected to my agency. Transfer eligibility depends on the cruise line’s current rules, timing and payment status. A request does not confirm a transfer.",
+        "lede": "Already booked a Virgin Voyages cruise? You can request to add me as your First Mate within 30 days of the reservation’s creation, provided it hasn’t been paid in full. Contact me promptly so I can help arrange the transfer with Virgin Voyages. Have an MNVV voucher? I can help check your options for that, too.",
         "image": "cta-sunset",
         "checkboxLabel": "I request that **Dean Satterfield (On Deck)** be assigned as my First Mate / Travel Advisor for this booking.",
         "steps": [
@@ -27,7 +27,7 @@
           {
             "n": "02",
             "t": "I check eligibility",
-            "d": "I’ll check the applicable transfer rules and explain your options."
+            "d": "For a Virgin Voyages reservation, I’ll check that it was created within the past 30 days and hasn’t been paid in full, then help arrange your transfer."
           },
           {
             "n": "03",

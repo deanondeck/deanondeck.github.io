@@ -1261,6 +1261,11 @@
     "note": "The form fields themselves are fixed; edit the surrounding copy and contact details here.",
     "fields": [
       {
+        "key": "compact",
+        "kind": "boolean",
+        "label": "Show compact contact buttons instead of the full form"
+      },
+      {
         "key": "eyebrow",
         "kind": "text",
         "label": "Eyebrow"

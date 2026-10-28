@@ -14,10 +14,10 @@
       "type": "hero",
       "content": {
         "eyebrow": "Dean On Deck · Cruise Travel",
-        "heading": "Your next adventure. A helping hand all the way.",
-        "script": "Your vacation, your way.",
-        "sub": "Hi, I’m Dean. From adults-only escapes to family adventures and luxury voyages, I’ll help you find your cruise and handle the details. My support comes at no extra service fee.",
-        "posterImg": "virgin-scarlet-ship",
+        "heading": "Your vacation, your way.",
+        "script": "Your First Mate, all the way.",
+        "sub": "Hi, I’m Dean. Let’s find your next cruise—from adults-only escapes to family adventures and luxury voyages. Plan it yourself or let me help, at no extra service fee.",
+        "posterImg": "port-caribbean",
         "video": "",
         "primaryCta": {
           "label": "Explore cruise lines",
@@ -45,15 +45,16 @@
           "Independent booking, with a helping hand",
           "Virgin Voyages & beyond"
         ]
-      }
+      },
+      "hidden": true
     },
     {
       "id": "fleet",
       "type": "fleet",
       "content": {
         "eyebrow": "Find your kind of getaway",
-        "heading": "One ocean. *So many ways to sail.*",
-        "lede": "Start with the experience you want. I’ll help you choose the cruise line and the right way to book with my support.",
+        "heading": "Explore *your kind of cruise.*",
+        "lede": "Pick a cruise line to see your options. On your phone, swipe to explore.",
         "items": [
           {
             "k": "The specialty · adults only",
@@ -98,20 +99,7 @@
         "eyebrow": "Your First Mate, behind the scenes",
         "heading": "You make the memories. *I’ll help with the details.*",
         "lede": "Having me as your First Mate costs you nothing extra. Keep control of your plans, with a helping hand when you need one. Supplier charges and fare rules still apply.",
-        "stats": [
-          {
-            "num": "$0",
-            "lab": "Extra service fee for my help"
-          },
-          {
-            "num": "Your way",
-            "lab": "As much or as little help as you want"
-          },
-          {
-            "num": "One",
-            "lab": "Personal contact for your cruise plans"
-          }
-        ],
+        "stats": [],
         "pillars": [
           {
             "k": "Plan it yourself",
@@ -189,7 +177,8 @@
           "ctaLabel": "Start planning",
           "ctaHref": "/plan/"
         }
-      }
+      },
+      "hidden": true
     },
     {
       "id": "faq",
@@ -238,8 +227,12 @@
             "q": "I already booked. Can I add Dean?",
             "body": [
               {
-                "h": "Let’s check the cruise line’s rules",
-                "text": "Booking transfers depend on the supplier, booking date and payment status. Contact me before making changes; I’ll help you check eligibility."
+                "h": "Virgin Voyages: within 30 days, and not paid in full",
+                "text": "Already booked a Virgin Voyages cruise? If your reservation was created within the past 30 days and hasn’t been paid in full, you can request to add me as your First Mate. Contact me promptly so I can help arrange the transfer with Virgin Voyages."
+              },
+              {
+                "h": "Booked with another cruise line?",
+                "text": "Transfer rules vary by supplier, booking date and payment status. Contact me before making changes, and I’ll help you check eligibility."
               }
             ]
           }
@@ -276,7 +269,8 @@
             "label": "Already booked? Ask about adding Dean →",
             "href": "/manage/"
           }
-        ]
+        ],
+        "compact": true
       }
     },
     {

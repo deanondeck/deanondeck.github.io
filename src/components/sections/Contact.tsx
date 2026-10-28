@@ -10,6 +10,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 type ContactLine = { k: string; label: string; href: string; external?: boolean };
 type ContactContent = {
+  compact?: boolean;
   eyebrow: string;
   heading: string;
   image: string;
@@ -38,6 +39,23 @@ export default function Contact({ id, content }: SectionProps) {
       setError(result.error);
       setStatus("error");
     }
+  }
+
+  if (c.compact) {
+    return (
+      <section className="band contact contact--compact" id="contact" data-cms-id={id}>
+        <div className="wrap">
+          <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
+          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
+          <p className="lede" data-cms-field="asideIntro">{c.asideIntro}</p>
+          <div className="contact-actions">
+            <a className="btn btn-scarlet" href="/plan/">Let’s plan your cruise →</a>
+            <a className="cl-alt" href="tel:+16178999774">Call (617) 899-9774</a>
+            <a className="cl-alt" href="mailto:deanondeck1@gmail.com">Email Dean</a>
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (
