@@ -2,7 +2,7 @@ import { img } from "@/lib/media";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
-type FleetItem = { k: string; t: string; d: string };
+type FleetItem = { k: string; t: string; d: string; href?: string; img?: string };
 type FleetContent = {
   eyebrow: string;
   heading: string;
@@ -27,9 +27,10 @@ export default function Fleet({ id, content, site }: SectionProps) {
         <nav className="cruise-strip" aria-label="Explore cruise lines" data-cms-field="items">
           {c.items.map((item) => {
             const line = site.cruiseLines.find((entry) => entry.name === item.t);
+            const photo = item.img ?? line?.img;
             return (
-              <a className="cruise-panel" href={`/cruises/#${line?.id ?? "top-cruises"}`} key={item.t}>
-                {line && <img src={img(line.img)} alt="" loading="lazy" />}
+              <a className="cruise-panel" href={item.href ?? `/cruises/#${line?.id ?? "top-cruises"}`} key={item.t}>
+                {photo && <img src={img(photo)} alt="" loading="lazy" />}
                 <span className="cruise-panel-copy">
                   <span className="cruise-panel-k">Explore · {item.k}</span>
                   <span className="cruise-panel-title">{item.t}</span>

@@ -37,6 +37,14 @@
             "sea": "Sitka, AK ⚓"
           },
           {
+            "img": "voyages/culture-amsterdam",
+            "alt": "Dean on a canal boat in Amsterdam, with canal boats and waterfront houses behind him",
+            "k": "Along the canals",
+            "t": "Amsterdam by canal",
+            "d": "A moment from my travels in Amsterdam: seeing the city from the water, with canal boats and waterfront houses all around.",
+            "sea": "Amsterdam, Netherlands"
+          },
+          {
             "img": "deck/scarlet-night",
             "alt": "Dean in red light under the Scarlet Night neon sign on board",
             "k": "Signature night",
@@ -154,13 +162,6 @@
             "k": "On & off ship",
             "t": "Culinary Delights",
             "d": "Savor local flavors with gourmet dining experiences crafted by top chefs on and off the ship."
-          },
-          {
-            "img": "voyages/culture-amsterdam",
-            "alt": "Dean on a canal boat gliding past the gabled houses of Amsterdam",
-            "k": "Guided",
-            "t": "Cultural Immersion",
-            "d": "Engage with the rich history and vibrant culture of every region through guided tours and local interactions. Amsterdam awaits."
           },
           {
             "img": "voyages/wellness-iceland",

@@ -82,8 +82,9 @@ export default function Contact({ id, content }: SectionProps) {
             </div>
             <div className="row">
               <div className="field">
-                <label htmlFor="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" />
+                <label htmlFor="phone">Phone — WhatsApp preferred</label>
+                <input id="phone" name="phone" type="tel" autoComplete="tel" aria-describedby="phone-help" required />
+                <small id="phone-help">Please include your country code.</small>
               </div>
               <div className="field">
                 <label htmlFor="dest">Destination</label>

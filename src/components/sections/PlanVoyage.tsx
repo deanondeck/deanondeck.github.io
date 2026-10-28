@@ -20,11 +20,17 @@ type PlanContent = {
 export default function PlanVoyage({ id, content, site }: SectionProps) {
   const c = content as PlanContent;
   const [line, setLine] = useState("");
+  const [extras, setExtras] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const selected = new URLSearchParams(window.location.search).get("line");
+    const query = new URLSearchParams(window.location.search);
+    const selected = query.get("line");
+    if (query.get("interest") === "travel-with-dean") {
+      setExtras("I’m interested in joining Dean on a future voyage. Please share upcoming sailing options.");
+      setLine("Help me choose");
+    }
     if (selected && site.cruiseLines.some((item) => item.name === selected)) {
       setLine(selected);
     }
@@ -40,6 +46,7 @@ export default function PlanVoyage({ id, content, site }: SectionProps) {
       setStatus("success");
       form.reset();
       setLine("");
+      setExtras("");
     } else {
       setError(result.error);
       setStatus("error");
@@ -68,8 +75,9 @@ export default function PlanVoyage({ id, content, site }: SectionProps) {
             </div>
             <div className="row">
               <div className="field">
-                <label htmlFor="p-phone">Phone (optional)</label>
-                <input id="p-phone" name="phone" type="tel" autoComplete="tel" />
+                <label htmlFor="p-phone">Phone — WhatsApp preferred</label>
+                <input id="p-phone" name="phone" type="tel" autoComplete="tel" aria-describedby="p-phone-help" required />
+                <small id="p-phone-help">Please include your country code.</small>
               </div>
               <div className="field">
                 <label htmlFor="p-line">Cruise line</label>
@@ -98,7 +106,7 @@ export default function PlanVoyage({ id, content, site }: SectionProps) {
             </div>
             <div className="field">
               <label htmlFor="p-extras">What would you like help with? (optional)</label>
-              <textarea id="p-extras" name="extras" placeholder="Cabin preferences, group size, a special occasion, or an existing booking question" />
+              <textarea id="p-extras" name="extras" value={extras} onChange={(e) => setExtras(e.target.value)} placeholder="Cabin preferences, group size, a special occasion, or an existing booking question" />
             </div>
             <button type="submit" className="btn btn-scarlet" disabled={status === "submitting"}>
               {status === "submitting" ? "Sending…" : "Send Dean my cruise ideas"} <span className="arrow">→</span>
