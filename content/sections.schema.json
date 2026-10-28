@@ -1204,6 +1204,16 @@
             "kind": "text",
             "label": "Description",
             "multiline": true
+          },
+          {
+            "key": "href",
+            "kind": "link",
+            "label": "Optional destination URL"
+          },
+          {
+            "key": "img",
+            "kind": "image",
+            "label": "Optional photo override"
           }
         ]
       },
@@ -1902,5 +1912,77 @@
         ]
       }
     ]
+  },
+  "travelWithDean": {
+    "label": "Come Travel With Me",
+    "group": "pages",
+    "fields": [
+      {
+        "key": "eyebrow",
+        "kind": "text",
+        "label": "Eyebrow"
+      },
+      {
+        "key": "heading",
+        "kind": "richtext",
+        "label": "Heading"
+      },
+      {
+        "key": "lede",
+        "kind": "text",
+        "label": "Introduction"
+      },
+      {
+        "key": "emptyMessage",
+        "kind": "text",
+        "label": "Message when no sailings are listed"
+      },
+      {
+        "key": "ctaLabel",
+        "kind": "text",
+        "label": "Inquiry button label"
+      },
+      {
+        "key": "ctaHref",
+        "kind": "link",
+        "label": "Inquiry button URL"
+      },
+      {
+        "key": "voyages",
+        "kind": "list",
+        "label": "Confirmed sailings with Dean",
+        "itemFields": [
+          {
+            "key": "name",
+            "kind": "text",
+            "label": "Sailing or ship name"
+          },
+          {
+            "key": "dates",
+            "kind": "text",
+            "label": "Sailing dates"
+          },
+          {
+            "key": "route",
+            "kind": "text",
+            "label": "Destination / route"
+          },
+          {
+            "key": "href",
+            "kind": "link",
+            "label": "Inquiry URL"
+          }
+        ]
+      }
+    ],
+    "defaults": {
+      "eyebrow": "Make memories together",
+      "heading": "Come Travel *With Me.*",
+      "lede": "Some voyages are even better together. If you’d like to join me on a future sailing, I’d love to hear from you.",
+      "emptyMessage": "My upcoming sailings will be shared here as plans are confirmed. In the meantime, let me know you’re interested and ask about future options.",
+      "ctaLabel": "Ask about sailing with Dean",
+      "ctaHref": "/plan/?interest=travel-with-dean",
+      "voyages": []
+    }
   }
 }

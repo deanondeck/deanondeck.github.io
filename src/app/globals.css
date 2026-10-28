@@ -2132,3 +2132,11 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 }
 @media (max-width: 760px) { .cruise-panel { flex-basis: 235px; } }
 @media (prefers-reduced-motion: reduce) { .cruise-panel, .cruise-panel > img { transition: none; } }
+.travel-together { padding-top: 9rem; min-height: 65svh; }
+.travel-together .sec-head { margin-inline: auto; }
+.travel-together .lede { margin-inline: auto; }
+.travel-note { max-width: 57ch; margin: 2rem auto; padding: 1.5rem; border: 1px solid #d9ccb6; background: white; text-align: center; color: #575e65; }
+.travel-cta { text-align: center; margin-top: 2rem; }
+.travel-voyages { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1.2rem; margin-top: 2rem; }
+@media (min-width: 1100px) { .nav-links { gap: 1.05rem; } .nav-links a { font-size: .65rem; letter-spacing: .12em; } }
+.foot .brand-name { color: #fff; }

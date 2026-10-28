@@ -43,6 +43,10 @@
       "href": "/from-the-deck/"
     },
     {
+      "label": "Travel With Me",
+      "href": "/travel-with-dean/"
+    },
+    {
       "label": "Contact",
       "href": "/#contact"
     }
@@ -111,16 +115,6 @@
       ],
       "book": null,
       "bookLabel": "Ask Dean about Atlantis"
-    },
-    {
-      "id": "river",
-      "name": "River Boat Cruises",
-      "k": "Europe's rivers & beyond",
-      "img": "voyages/culture-amsterdam",
-      "alt": "Dean on a canal boat gliding past the gabled houses of Amsterdam",
-      "d": "Small vessels that dock in the heart of town — the Danube, the Rhine, the Douro, the Mekong. I work across the leading river lines (AmaWaterways, Avalon, Uniworld, and more) to match the boat to the journey. Tell me the river; I'll handle the rest.",
-      "book": null,
-      "bookLabel": "Plan with Dean"
     }
   ],
   "footer": {
@@ -144,6 +138,10 @@
       {
         "label": "From the Deck",
         "href": "/from-the-deck/"
+      },
+      {
+        "label": "Come Travel With Me",
+        "href": "/travel-with-dean/"
       },
       {
         "label": "Plan a Cruise",

@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Come Travel With Me | Dean On Deck",
+    "description": "Interested in joining Dean on a future voyage? Explore his upcoming sailing plans as they are confirmed and ask about traveling together."
+  },
+  "sections": [
+    {
+      "id": "travelWithDean",
+      "type": "travelWithDean",
+      "content": {
+        "eyebrow": "Make memories together",
+        "heading": "Come Travel *With Me.*",
+        "lede": "Some voyages are even better together. If you’d like to join me on a future sailing, I’d love to hear from you.",
+        "emptyMessage": "My upcoming sailings will be shared here as plans are confirmed. In the meantime, let me know you’re interested and ask about future options.",
+        "ctaLabel": "Ask about sailing with Dean",
+        "ctaHref": "/plan/?interest=travel-with-dean",
+        "voyages": []
+      }
+    }
+  ]
+}

@@ -82,9 +82,11 @@
             "d": "LGBTQ+ charters, celebration and community."
           },
           {
-            "k": "Europe's rivers & beyond",
-            "t": "River Boat Cruises",
-            "d": "A closer look at riverside towns and local culture."
+            "k": "Sail with Dean",
+            "t": "Come Travel With Me",
+            "d": "Ask where I’m heading next and explore the chance to join me.",
+            "href": "/travel-with-dean/",
+            "img": "voyages/culture-amsterdam"
           }
         ],
         "coming": "**Prefer to book yourself?** Use my Virgin Voyages link. For other lines, contact me first so your booking can be connected to my agency.",
@@ -125,7 +127,7 @@
       "content": {
         "eyebrow": "Your First Mate",
         "heading": "Ahoy — I'm Dean.",
-        "body": "I’m Dean Satterfield, your cruise advisor and Virgin Voyages First Mate. I love the places a cruise can take you—and helping you feel ready to enjoy every moment.\n\nWhether you want help from the first idea or prefer to do your own planning, I’m here when you need me. You bring the excitement. I’ll bring a helping hand.",
+        "body": "I’m Dean Satterfield, your cruise advisor and Virgin Voyages First Mate. I love the places a cruise can take you—and helping you feel ready to enjoy every moment.\n\nWhether you want help from the first idea or prefer to do your own planning, I’m here when you need me. You bring the excitement. I’ll bring a helping hand.\n\nWant to join me on a future sailing? [Come travel with me →](/travel-with-dean/).",
         "signature": "— Dean",
         "ctaLabel": "Get to know Dean →",
         "ctaHref": "/about/",

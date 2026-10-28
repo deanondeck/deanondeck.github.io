@@ -10,6 +10,7 @@
 import type { ComponentType } from "react";
 import type { SectionProps } from "@/lib/cms/types";
 
+import TravelWithDean from "@/components/sections/TravelWithDean";
 import Hero from "@/components/sections/Hero";
 import Ticker from "@/components/sections/Ticker";
 import About from "@/components/sections/About";
@@ -35,6 +36,7 @@ export const SECTION_REGISTRY: Record<
   string,
   ComponentType<SectionProps>
 > = {
+  travelWithDean: TravelWithDean,
   hero: Hero,
   ticker: Ticker,
   about: About,
