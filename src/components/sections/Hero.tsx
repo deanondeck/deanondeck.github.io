@@ -33,8 +33,8 @@ export default function Hero({ id, content, site }: SectionProps) {
   // sailor has asked for reduced motion — the poster photo carries the hero.
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduce) setPlayVideo(true);
-  }, []);
+    if (!reduce && c.video.trim()) setPlayVideo(true);
+  }, [c.video]);
 
   return (
     <section className="hero" data-cms-id={id}>
@@ -61,7 +61,7 @@ export default function Hero({ id, content, site }: SectionProps) {
         <p className="hero-script" data-cms-field="script">{c.script}</p>
         <p className="hero-sub" data-cms-field="sub">{c.sub}</p>
         <div className="hero-actions">
-          <a href={c.primaryCta.href} target="_blank" rel="noopener noreferrer" className="btn btn-light" data-cms-field="primaryCta">
+          <a href={c.primaryCta.href} {...(c.primaryCta.href.startsWith("https://") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="btn btn-light" data-cms-field="primaryCta">
             {c.primaryCta.label} <span className="arrow">→</span>
           </a>
           <a href={c.secondaryCta.href} className="btn btn-ghost" data-cms-field="secondaryCta">

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Plan a Voyage · Trip Details | Dean on Deck",
-    "description": "Ready to sail? Share your sailing, cabin, and fare preferences and Dean on Deck will come back with a plan, pricing, and every Virgin Voyages perk you're owed — no booking fees, usually same-day.",
+    "title": "Plan Your Cruise | Dean On Deck",
+    "description": "Tell Dean where you want to sail. Personal cruise planning and support at no extra service fee.",
     "ogTitle": "Chart your course — plan a Virgin Voyages trip with Dean on Deck",
     "ogDescription": "Tell Dean who's sailing, where, and how you like to travel. Get back a plan, pricing, and perks — no booking fees.",
     "ogType": "website",
@@ -13,9 +13,9 @@
       "id": "planVoyage",
       "type": "planVoyage",
       "content": {
-        "eyebrow": "Ahoy, Sailor",
-        "heading": "Chart *your course.*",
-        "lede": "Tell me who's sailing, where you're dreaming of, and how you like to travel. I'll come back with a plan, pricing, and every perk you're owed — usually the same day.",
+        "eyebrow": "A little inspiration. A personal plan.",
+        "heading": "Let’s find *your next cruise.*",
+        "lede": "A destination, a date, or just a daydream—tell me what you have in mind. There’s no extra service fee for my help.",
         "image": "port-sail",
         "cabins": [
           {
@@ -77,19 +77,19 @@
           "log": "Good to know",
           "notes": [
             {
-              "strong": "Adults only. Absolutely.",
-              "text": "No kids, no chaos — just poolside cocktails, late-night shows, and lie-ins that last as long as you like."
+              "strong": "Your vacation, your way.",
+              "text": "Choose how much help you want. I can plan with you or support you behind the scenes."
             },
             {
-              "strong": "Travel insurance is smart.",
-              "text": "I recommend it in case the unforeseeable happens — ask me when we speak."
+              "strong": "No extra service fee.",
+              "text": "Cruise fares and supplier fees still apply. I’ll explain the options before you book."
             },
             {
-              "strong": "No booking fees, ever.",
-              "text": "Same fare as booking direct, plus Sailor Loot and perks you'd otherwise miss."
+              "strong": "Already booked?",
+              "text": "Ask me to check whether your cruise line allows a transfer to my agency."
             }
           ],
-          "note": "Prefer to talk it through first? Text or call and we'll chart it live.",
+          "note": "Prefer a conversation? Call, text or email me.",
           "lines": [
             {
               "k": "Call / Text",
@@ -98,8 +98,8 @@
             },
             {
               "k": "Email",
-              "label": "dean@deanondeck.com",
-              "href": "mailto:dean@deanondeck.com"
+              "label": "deanondeck1@gmail.com",
+              "href": "mailto:deanondeck1@gmail.com"
             },
             {
               "k": "Instagram",

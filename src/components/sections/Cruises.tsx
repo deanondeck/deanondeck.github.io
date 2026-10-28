@@ -29,7 +29,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
         <div className="wrap">
           <div className="sec-head reveal">
             <p className="log">{c.hero.eyebrow}</p>
-            <h2 className="display h-xl">{renderInline(c.hero.heading)}</h2>
+            <h1 className="display h-xl">{renderInline(c.hero.heading)}</h1>
             <p className="lede">{c.hero.lede}</p>
           </div>
           <nav className="cruises-index reveal d1" aria-label="Cruise lines on this page">
@@ -79,11 +79,13 @@ export default function Cruises({ id, content, site }: SectionProps) {
                       </a>
                     </>
                   ) : (
-                    <a className="btn btn-ink" href="/plan">
+                    <a className="btn btn-ink" href={`/plan/?line=${encodeURIComponent(l.name)}`}>
                       {l.bookLabel} <span className="arrow">→</span>
                     </a>
                   )}
                 </div>
+                {l.browse && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
+                {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
               </div>
             </div>
           </section>

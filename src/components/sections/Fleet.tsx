@@ -13,7 +13,7 @@ type FleetContent = {
 };
 
 /* "Discover Unique Voyages" — the old site's beyond-Virgin portfolio. */
-export default function Fleet({ id, content }: SectionProps) {
+export default function Fleet({ id, content, site }: SectionProps) {
   const c = content as FleetContent;
   return (
     <section className="band band--shell2" id="fleet" data-cms-id={id}>
@@ -27,7 +27,7 @@ export default function Fleet({ id, content }: SectionProps) {
           {c.items.map((l, i) => (
             <article className={`line-card reveal d${(i % 4) + 1}`} key={l.t}>
               <span className="k">{l.k}</span>
-              <h3>{l.t}</h3>
+              <h3><a href={`/cruises#${site.cruiseLines.find((line) => line.name === l.t)?.id ?? "top-cruises"}`}>{l.t} <span aria-hidden="true">↗</span></a></h3>
               <p>{l.d}</p>
             </article>
           ))}

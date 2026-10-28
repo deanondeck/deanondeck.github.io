@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "title": "From the Deck | Dean On Deck",
+    "description": "Places, moments and cruise inspiration from Dean’s travels."
+  },
+  "sections": [
+    {
+      "id": "journal",
+      "type": "journal",
+      "content": {
+        "eyebrow": "From the Deck",
+        "heading": "Notes from the *latest sailings.*",
+        "lede": "Ports I've walked, tours I've tested, nights worth staying up for — straight from Dean's deck log, camera roll included.",
+        "items": [
+          {
+            "img": "deck/seattle-falls",
+            "alt": "A waterfall thundering into a green gorge outside Seattle",
+            "k": "Pacific Northwest",
+            "t": "Waterfalls & Pike Place",
+            "d": "Seattle is incredible — Pike Place Market and the Space Needle define the skyline, and beyond the city you'll find breathtaking waterfalls and a world-class culinary scene.",
+            "sea": "Seattle, WA"
+          },
+          {
+            "img": "deck/whale-watching",
+            "alt": "Dean dockside in front of the Swiftsure catamaran in Port Townsend",
+            "k": "Shore things",
+            "t": "Whale Watching on the Swiftsure",
+            "d": "Out of Port Townsend, the Swiftsure is a high-speed, wave-piercing catamaran with a wrap-around viewing deck — prime territory for getting up close with the whales.",
+            "sea": "Port Townsend, WA"
+          },
+          {
+            "img": "deck/sitka",
+            "alt": "Dean beside the carved eagle at the Sitka, Alaska welcome sign",
+            "k": "Latest experience",
+            "t": "Sitka, Alaska",
+            "d": "Wildlife cruises past sea otters, whales, and bears; an Alaskan seafood feast at Fin Island Lodge; kayaking glacier-carved fjords. A bucket-list stop — book Shore Things early.",
+            "sea": "Sitka, AK ⚓"
+          },
+          {
+            "img": "deck/scarlet-night",
+            "alt": "Dean in red light under the Scarlet Night neon sign on board",
+            "k": "Signature night",
+            "t": "Scarlet Night",
+            "d": "Virgin's ship-wide immersive party replaces stuffy formal nights — pop-up performances, flash mobs, and acrobatics, ending in a late-night pool party. Express yourself.",
+            "sea": "Every voyage"
+          },
+          {
+            "img": "deck/space-needle",
+            "alt": "Dean's selfie beneath the Space Needle against a clear blue sky",
+            "k": "The view",
+            "t": "The Space Needle",
+            "d": "A must-see that truly stands out. From the scenery to the atmosphere, it's the kind of place that stays with you long after you leave.",
+            "sea": "Seattle, WA ⚓🔱"
+          },
+          {
+            "img": "deck/life-is-great",
+            "alt": "Dean waving from the pier with a Virgin Voyages ship towering behind him",
+            "k": "Why I sail",
+            "t": "Life Is Great",
+            "d": "Nothing beats touching down somewhere new. Meeting people and diving into vibrant cultures enriches life in ways words can't capture. Now it's your turn to chase the horizon.",
+            "sea": "— Dean"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ports",
+      "type": "ports",
+      "content": {
+        "eyebrow": "Ports of Call",
+        "heading": "Where shall we point *the bow?*",
+        "lede": "A few of the routes sailors love. Dreaming of Iceland, Alaska, or somewhere off the map? Just ask — I'll chart it.",
+        "board": [
+          "Bahamas",
+          "San Juan",
+          "Bimini",
+          "Dubrovnik",
+          "Santorini",
+          "Mykonos",
+          "Barcelona",
+          "Mallorca",
+          "Cannes",
+          "Key West",
+          "Costa Maya",
+          "Roatán"
+        ],
+        "items": [
+          {
+            "img": "port-caribbean",
+            "c": "Caribbean",
+            "t": "Sun & White Sand",
+            "q": "selectedRegions=CARIBBEAN"
+          },
+          {
+            "img": "port-greece",
+            "c": "Greece & Croatia",
+            "t": "The Adriatic",
+            "q": "selectedPorts=DBV,SPU,KTR,JTR,JMK,ATH,CFU"
+          },
+          {
+            "img": "port-italy",
+            "c": "Italy & the Med",
+            "t": "Old-World Coast",
+            "q": "selectedPorts=CIV,NAP,FLR,SAL,CTA,PMO,MLA"
+          },
+          {
+            "img": "port-spain",
+            "c": "Spain",
+            "t": "Iberian Nights",
+            "q": "selectedPorts=BCN,PMI,IBZ,AGP,VLC,ALC,CAD"
+          },
+          {
+            "img": "port-tropical",
+            "c": "Tropical Escapes",
+            "t": "Endless Summer",
+            "q": "selectedPorts=CMA,RTB,CTG,AUA,WIL,KRA,CZM,POP"
+          },
+          {
+            "img": "port-halong",
+            "c": "Far Horizons",
+            "t": "On Request",
+            "q": "selectedRegions=TRANSATLANTIC"
+          }
+        ]
+      }
+    },
+    {
+      "id": "experiences",
+      "type": "experiences",
+      "content": {
+        "eyebrow": "Voyage Distinction",
+        "script": "beyond the waves",
+        "heading": "Unforgettable Virgin Voyages.",
+        "lede": "Discover captivating adventures beyond the waves — every photo below is from Dean's own sailings.",
+        "items": [
+          {
+            "img": "voyages/excursion-dr",
+            "alt": "Dean in a helmet and harness on a zipline platform above the Dominican Republic coast",
+            "pos": "50% 30%",
+            "k": "Hidden gems",
+            "t": "Excursion Tours",
+            "d": "Itineraries that showcase hidden gems and must-see spots — think the Dominican Republic, done right."
+          },
+          {
+            "img": "voyages/sailing-greece",
+            "alt": "Dean on a Santorini terrace with the caldera and a Virgin ship anchored below",
+            "k": "Premium at sea",
+            "t": "Luxury Sailing Adventures",
+            "d": "Exclusive sailing experiences aboard Virgin Voyages with premium amenities and stunning ocean views. Greece, anyone?"
+          },
+          {
+            "img": "voyages/culinary",
+            "alt": "A glass of champagne beside the printed tasting menu at Test Kitchen on board",
+            "k": "On & off ship",
+            "t": "Culinary Delights",
+            "d": "Savor local flavors with gourmet dining experiences crafted by top chefs on and off the ship."
+          },
+          {
+            "img": "voyages/culture-amsterdam",
+            "alt": "Dean on a canal boat gliding past the gabled houses of Amsterdam",
+            "k": "Guided",
+            "t": "Cultural Immersion",
+            "d": "Engage with the rich history and vibrant culture of every region through guided tours and local interactions. Amsterdam awaits."
+          },
+          {
+            "img": "voyages/wellness-iceland",
+            "alt": "Feet up on the warm deck at Sky Lagoon, looking out over the still Icelandic sea",
+            "k": "Recharge",
+            "t": "Wellness Retreats",
+            "d": "Relax and rejuvenate with yoga, spa treatments, and meditation. Sky Lagoon, Iceland is calling."
+          },
+          {
+            "img": "voyages/adventure-anguilla",
+            "alt": "Dean in a snorkel mask reaching toward the camera in the turquoise water off Anguilla",
+            "pos": "50% 25%",
+            "k": "Thrill-seekers",
+            "t": "Adventure Excursions",
+            "d": "Snorkeling, hiking, and more — tailored to your interests and skill level. Anguilla sets the bar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "instagramCta",
+      "type": "instagramCta",
+      "content": {
+        "image": "dean-hero",
+        "imageAlt": "Dean relaxing in the red rope hammock on his Virgin Voyages balcony",
+        "stamp": "The balcony hammock · at sea",
+        "script": "Follow the journey",
+        "heading": "Life at sea, on the feed.",
+        "body": "Cruise moments, the latest deals, and life at sea with Dean on Deck — new ports every week.",
+        "ctaLabel": "@dean__on__deck",
+        "ctaHref": "https://instagram.com/dean__on__deck"
+      }
+    }
+  ]
+}

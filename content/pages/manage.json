@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Manage an Existing Booking · MNVV Transfer | Dean on Deck",
-    "description": "Already have a Virgin Voyages booking or a My Next Virgin Voyage (MNVV) voucher? Transfer it to Dean on Deck as your First Mate — no rebooking, no fees, same fare. Unlock Sailor Loot and RockStar perks.",
-    "ogTitle": "Make Dean your First Mate — transfer your Virgin Voyages booking",
-    "ogDescription": "Hand over an existing Virgin Voyages reservation or MNVV voucher. No rebooking, no fees, same fare — just perks and hands-on service.",
+    "title": "Existing Booking Help | Dean On Deck",
+    "description": "Already booked a Virgin Voyages cruise? Ask Dean to check whether your reservation or MNVV voucher can be connected to his agency.",
+    "ogTitle": "A helping hand for an existing booking",
+    "ogDescription": "Check booking-transfer eligibility with Dean. Supplier rules apply.",
     "ogType": "website",
     "inNav": true,
     "navLabel": "Manage Booking"
@@ -14,25 +14,25 @@
       "type": "manageBooking",
       "content": {
         "eyebrow": "Already booked?",
-        "heading": "Make me your *First Mate.*",
-        "lede": "Are you already holding a Virgin Voyages reservation or a My Next Virgin Voyage (MNVV) voucher? Within 30 days of the booking and not paid in full — no rebooking, no fees, and your fare stays exactly the same. I'll take it from here and unlock the Sailor Loot and perks you should be getting.",
+        "heading": "Already booked? *Let’s check your options.*",
+        "lede": "Have a Virgin Voyages reservation or MNVV voucher? Send me the details so I can check whether it can be connected to my agency. Transfer eligibility depends on the cruise line’s current rules, timing and payment status. A request does not confirm a transfer.",
         "image": "cta-sunset",
         "checkboxLabel": "I request that **Dean Satterfield (On Deck)** be assigned as my First Mate / Travel Advisor for this booking.",
         "steps": [
           {
             "n": "01",
-            "t": "Send the details",
-            "d": "Drop your booking or MNVV voucher number below — that's all I need to find it."
+            "t": "Share your details",
+            "d": "Tell me about your Virgin Voyages booking or MNVV voucher."
           },
           {
             "n": "02",
-            "t": "I request the transfer",
-            "d": "Virgin moves your reservation under me as your First Mate if you booked Premium or Rockstar. Your price and itinerary don't change."
+            "t": "I check eligibility",
+            "d": "I’ll check the applicable transfer rules and explain your options."
           },
           {
             "n": "03",
-            "t": "Perks switched on",
-            "d": "Sailor Loot, priority windows, and hands-on planning kick in for a trip you've already started."
+            "t": "Support, when confirmed",
+            "d": "If the cruise line approves the transfer, I can help with your booking and requested changes. Supplier rules and fees still apply."
           }
         ],
         "aside": {
