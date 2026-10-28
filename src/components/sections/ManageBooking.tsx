@@ -51,7 +51,7 @@ export default function ManageBooking({ id, content }: SectionProps) {
       <div className="wrap">
         <div className="sec-head reveal">
           <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
-          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
+          <h1 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h1>
           <p className="lede" data-cms-field="lede">{c.lede}</p>
         </div>
 

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Cruises · Every Line I Book | Dean on Deck",
-    "description": "Virgin Voyages, Royal Caribbean, Celebrity Cruises, Silversea, and river boat cruises — one advisor, every ocean. Request Dean as your travel advisor and sail with zero booking fees.",
+    "description": "Compare Virgin Voyages, Royal Caribbean, Celebrity, Silversea, Atlantis and river cruising. Explore your options and plan with Dean On Deck.",
     "ogTitle": "One advisor. Every ocean. — Cruises with Dean on Deck",
     "ogDescription": "Virgin Voyages, Royal Caribbean, Celebrity Cruises, Silversea, and river cruising — compare the lines Dean books, fee-free.",
     "ogType": "website",
@@ -16,12 +16,12 @@
         "hero": {
           "eyebrow": "The Fleet",
           "heading": "One advisor. *Every ocean.*",
-          "lede": "Virgin Voyages is my specialty — but it isn't the only ship I sail. Family reunion, ultra-luxury escape, or a slow drift down the Danube: request me as your travel advisor on any of these lines and I handle every detail. No booking fees, ever."
+          "lede": "From adults-only escapes to family adventures, luxury voyages and LGBTQ+ charters, let’s find your fit. Use my Virgin Voyages link to book independently, or contact me first about booking with my support on another line."
         },
         "cta": {
           "eyebrow": "Anchors aweigh",
-          "heading": "Can't decide? *That's my job.*",
-          "lede": "Tell me who's sailing and what a perfect day at sea looks like — I'll come back with the right line, the right ship, and every perk you're owed. Usually the same day.",
+          "heading": "Not sure where to start? *Let’s talk.*",
+          "lede": "Tell me who’s sailing and what you’d love to experience. We’ll explore your options together, with no extra service fee for my help.",
           "actions": [
             {
               "label": "Call (617) 899-9774",
@@ -30,7 +30,7 @@
             },
             {
               "label": "Start planning",
-              "href": "/plan",
+              "href": "/plan/",
               "variant": "ghost",
               "arrow": true
             }

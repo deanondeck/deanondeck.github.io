@@ -132,7 +132,7 @@
       "body": "Better known as **Dean on Deck**. Whether you're sailing solo or rallying the whole crew for a celebration, I make booking your Virgin Voyages cruise effortless — start to gangway.\n\nAs a Gold-Certified Virgin Voyages First Mate, I'll handle the details, unlock the perks, and point you to the best spots onboard. You just show up and sail.\n\nReady to chase the horizon? Pure happiness, zero stress. Let's do this.",
       "signature": "— Dean",
       "ctaLabel": "Read my full story →",
-      "ctaHref": "/about",
+      "ctaHref": "/about/",
       "photo": "dean",
       "photoAlt": "Dean Satterfield with fellow sailors",
       "stamp": "Dean Satterfield · First Mate"
@@ -1252,7 +1252,7 @@
       ],
       "coming": "**Coming soon:** Disney Cruise Line, Norwegian Cruise Line, and Princess Cruises join the lineup — plus one special line. Stay tuned, or email me with questions and bookings in the meantime.",
       "ctaLabel": "Compare every line",
-      "ctaHref": "/cruises"
+      "ctaHref": "/cruises/"
     }
   },
   "contact": {

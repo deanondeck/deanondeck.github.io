@@ -1,71 +1,45 @@
 "use client";
 
-import { useState } from "react";
-import { img } from "@/lib/media";
+import { useEffect, useState } from "react";
 import { submitForm } from "@/lib/forms";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
-/* Trip-intake form — the on-site replacement for the old "2026 Dean on Deck
-   Travel Contact Information" Google Form. Same questions, same admin inbox as
-   every other form (`submitForm`), redesigned as a ship's manifest. The form
-   fields are fixed; marketing copy and the cabin/fare/gratuity choices are
-   CMS-editable. */
-
-type Choice = { value: string; tag: string; desc: string };
-type AsideNote = { strong: string; text: string };
-type AsideLine = { k: string; label: string; href: string; external?: boolean };
 type PlanContent = {
   eyebrow: string;
   heading: string;
   lede: string;
-  image: string;
-  cabins: Choice[];
-  fares: Choice[];
-  gratuities: Choice[];
   aside: {
     log: string;
-    notes: AsideNote[];
+    notes: { strong: string; text: string }[];
     note: string;
-    lines: AsideLine[];
+    lines: { k: string; label: string; href: string; external?: boolean }[];
   };
 };
 
-type Status = "idle" | "submitting" | "success" | "error";
-
-export default function PlanVoyage({ id, content }: SectionProps) {
+export default function PlanVoyage({ id, content, site }: SectionProps) {
   const c = content as PlanContent;
-  const [status, setStatus] = useState<Status>("idle");
+  const [line, setLine] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const selected = new URLSearchParams(window.location.search).get("line");
+    if (selected && site.cruiseLines.some((item) => item.name === selected)) {
+      setLine(selected);
+    }
+  }, [site.cruiseLines]);
 
   async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const fd = new FormData(form);
-
-    // At least one cabin — HTML `required` can't express this for a group.
-    if (fd.getAll("cabin").length === 0) {
-      setError("Pick at least one cabin style so I can price the right rooms.");
-      setStatus("error");
-      return;
-    }
-
     setStatus("submitting");
     setError("");
-
-    // Object.fromEntries would keep only the last checked cabin — collapse
-    // repeated keys (the cabin checkboxes) into one "; "-joined value instead.
-    const data: Record<string, FormDataEntryValue> = {};
-    for (const key of new Set(fd.keys())) {
-      const values = fd.getAll(key);
-      data[key] = values.length > 1 ? values.join("; ") : values[0];
-    }
-
-    const result = await submitForm("Plan a voyage", data);
-
+    const result = await submitForm("Plan a voyage", Object.fromEntries(new FormData(form)));
     if (result.ok) {
       setStatus("success");
       form.reset();
+      setLine("");
     } else {
       setError(result.error);
       setStatus("error");
@@ -74,199 +48,69 @@ export default function PlanVoyage({ id, content }: SectionProps) {
 
   return (
     <section className="band band--ink plan" id="plan" data-cms-id={id}>
-      <div className="plan-media">
-        <img src={img(c.image)} alt="" data-cms-field="image" />
-      </div>
       <div className="wrap">
         <div className="sec-head reveal">
           <p className="log" data-cms-field="eyebrow">{c.eyebrow}</p>
-          <h2 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h2>
+          <h1 className="display h-lg" data-cms-field="heading">{renderInline(c.heading)}</h1>
           <p className="lede" data-cms-field="lede">{c.lede}</p>
         </div>
-
         <div className="plan-grid">
           <form className="form reveal d1" onSubmit={handleSubmit}>
-            <fieldset className="leg">
-              <legend className="leg-title">
-                <span className="leg-n">01</span> The sailors
-              </legend>
+            <div className="row">
               <div className="field">
-                <label htmlFor="p-fullname">Full name(s), as on passport</label>
-                <input
-                  id="p-fullname"
-                  name="fullname"
-                  type="text"
-                  autoComplete="name"
-                  placeholder="Include your travel partner if known"
-                  required
-                />
+                <label htmlFor="p-name">Your name</label>
+                <input id="p-name" name="fullname" autoComplete="name" required />
               </div>
-              <div className="row">
+              <div className="field">
+                <label htmlFor="p-email">Email</label>
+                <input id="p-email" name="email" type="email" autoComplete="email" required />
+              </div>
+            </div>
+            <div className="row">
+              <div className="field">
+                <label htmlFor="p-phone">Phone (optional)</label>
+                <input id="p-phone" name="phone" type="tel" autoComplete="tel" />
+              </div>
+              <div className="field">
+                <label htmlFor="p-line">Cruise line</label>
+                <select id="p-line" name="cruiseLine" value={line} onChange={(e) => setLine(e.target.value)} required>
+                  <option value="">Choose a line</option>
+                  {site.cruiseLines.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}
+                  <option value="Help me choose">Help me choose</option>
+                </select>
+              </div>
+            </div>
+            {line === "Atlantis Events" && (
+              <div className="atlantis-note">
+                <strong>A quick note for Atlantis guests</strong>
+                <p>Atlantis advised Dean that guests who booked directly within the past four years generally must continue booking directly. We’ll confirm eligibility before you book. When calling, request Dean Satterfield at On Deck Agency.</p>
                 <div className="field">
-                  <label htmlFor="p-phone">Phone</label>
-                  <input id="p-phone" name="phone" type="tel" autoComplete="tel" required />
-                </div>
-                <div className="field">
-                  <label htmlFor="p-email">Email</label>
-                  <input id="p-email" name="email" type="email" autoComplete="email" required />
+                  <label htmlFor="p-atlantis">Have you booked directly with Atlantis within the last four years?</label>
+                  <select id="p-atlantis" name="atlantisBookingHistory" required>
+                    <option value="">Please choose</option><option>No</option><option>Yes</option><option>Not sure</option>
+                  </select>
                 </div>
               </div>
-            </fieldset>
-
-            <fieldset className="leg">
-              <legend className="leg-title">
-                <span className="leg-n">02</span> The sailing
-              </legend>
-              <div className="field">
-                <label htmlFor="p-sailing">
-                  Which itinerary caught your eye — and when?
-                </label>
-                <textarea
-                  id="p-sailing"
-                  name="sailing"
-                  placeholder="Name of the sailing, destination, and rough dates — e.g. Fire &amp; Sunset Soirées, Miami to Bimini, June 2026"
-                  required
-                />
-              </div>
-            </fieldset>
-
-            <fieldset className="leg">
-              <legend className="leg-title">
-                <span className="leg-n">03</span> The cabin
-              </legend>
-              <p className="leg-note">Pick every style you&apos;d consider.</p>
-              <div className="choices" data-cms-field="cabins">
-                {c.cabins.map((choice) => (
-                  <label className="choice" key={choice.value}>
-                    <input type="checkbox" name="cabin" value={choice.value} />
-                    <span className="choice-body">
-                      <span className="choice-head">
-                        <strong>{choice.value}</strong>
-                        <span className="choice-tag">{choice.tag}</span>
-                      </span>
-                      <span className="choice-desc">{choice.desc}</span>
-                    </span>
-                  </label>
-                ))}
-              </div>
-            </fieldset>
-
-            <fieldset className="leg">
-              <legend className="leg-title">
-                <span className="leg-n">04</span> The fare
-              </legend>
-              <p className="leg-note">
-                Virgin&apos;s VoyageFair Choices — three tiers for Sea Terrace
-                cabins and below. RockStar Quarters skip this entirely.
-              </p>
-              <div className="choices" data-cms-field="fares">
-                {c.fares.map((choice) => (
-                  <label className="choice" key={choice.value}>
-                    <input type="radio" name="fare" value={choice.value} required />
-                    <span className="choice-body">
-                      <span className="choice-head">
-                        <strong>{choice.value}</strong>
-                        <span className="choice-tag">{choice.tag}</span>
-                      </span>
-                      <span className="choice-desc">{choice.desc}</span>
-                    </span>
-                  </label>
-                ))}
-              </div>
-            </fieldset>
-
-            <fieldset className="leg">
-              <legend className="leg-title">
-                <span className="leg-n">05</span> Gratuities
-              </legend>
-              <p className="leg-note">
-                Since October 2025 gratuities are a separate, mandatory charge —
-                prepaying is cheaper and covers all service staff.
-              </p>
-              <div className="choices" data-cms-field="gratuities">
-                {c.gratuities.map((choice) => (
-                  <label className="choice" key={choice.value}>
-                    <input type="radio" name="gratuities" value={choice.value} required />
-                    <span className="choice-body">
-                      <span className="choice-head">
-                        <strong>{choice.value}</strong>
-                        <span className="choice-tag">{choice.tag}</span>
-                      </span>
-                      <span className="choice-desc">{choice.desc}</span>
-                    </span>
-                  </label>
-                ))}
-              </div>
-            </fieldset>
-
-            <fieldset className="leg">
-              <legend className="leg-title">
-                <span className="leg-n">06</span> The details
-              </legend>
-              <div className="field">
-                <label htmlFor="p-extras">
-                  Anything else to plan around? (optional)
-                </label>
-                <textarea
-                  id="p-extras"
-                  name="extras"
-                  placeholder="Celebrations, flights or hotels to line up, accessibility needs, travel insurance questions…"
-                />
-              </div>
-              <div className="field">
-                <label htmlFor="p-other">
-                  Interested in a cruise line other than Virgin? (optional)
-                </label>
-                <input
-                  id="p-other"
-                  name="other_cruise"
-                  type="text"
-                  placeholder="A trusted colleague of mine handles those — just say the word"
-                />
-              </div>
-            </fieldset>
-
+            )}
+            <div className="field">
+              <label htmlFor="p-sailing">Destination, dates or sailing you have in mind</label>
+              <textarea id="p-sailing" name="sailing" placeholder="A Caribbean getaway, Alaska, the Mediterranean—or help me choose…" required />
+            </div>
+            <div className="field">
+              <label htmlFor="p-extras">What would you like help with? (optional)</label>
+              <textarea id="p-extras" name="extras" placeholder="Cabin preferences, group size, a special occasion, or an existing booking question" />
+            </div>
             <button type="submit" className="btn btn-scarlet" disabled={status === "submitting"}>
-              {status === "submitting" ? "Sending…" : "Send my trip details"}{" "}
-              <span className="arrow">→</span>
+              {status === "submitting" ? "Sending…" : "Send Dean my cruise ideas"} <span className="arrow">→</span>
             </button>
-
-            {status === "success" && (
-              <p className="form-status is-success" role="status" aria-live="polite">
-                Anchors aweigh — your details are in. I&apos;ll be back with a
-                plan and pricing, usually the same day.
-              </p>
-            )}
-            {status === "error" && (
-              <p className="form-status is-error" role="alert" aria-live="assertive">
-                {error}
-              </p>
-            )}
+            {status === "success" && <p className="form-status is-success" role="status">Your details have been received. Dean will be in touch.</p>}
+            {status === "error" && <p className="form-status is-error" role="alert">{error} You can also call (617) 899-9774 or email deanondeck1@gmail.com.</p>}
           </form>
-
           <aside className="plan-aside reveal d2" data-cms-field="aside">
             <p className="log">{c.aside.log}</p>
-            <ul className="plan-notes">
-              {c.aside.notes.map((n) => (
-                <li key={n.strong}>
-                  <strong>{n.strong}</strong> {n.text}
-                </li>
-              ))}
-            </ul>
+            <ul className="plan-notes">{c.aside.notes.map((n) => <li key={n.strong}><strong>{n.strong}</strong> {n.text}</li>)}</ul>
             <p className="plan-note">{c.aside.note}</p>
-            {c.aside.lines.map((line) => (
-              <div className="line" key={line.k}>
-                <span className="k">{line.k}</span>
-                <a
-                  href={line.href}
-                  {...(line.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                >
-                  {line.label}
-                </a>
-              </div>
-            ))}
+            {c.aside.lines.map((item) => <div className="line" key={item.k}><span className="k">{item.k}</span><a href={item.href} {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{item.label}</a></div>)}
           </aside>
         </div>
       </div>

@@ -6,7 +6,7 @@ import type { SiteConfig } from "@/lib/cms/types";
 
 /* Dropdown items: each line books out like the Virgin link; river cruising
    has no single line, so it routes to the trip-intake form instead. */
-const bookHref = (book: string | null) => book ?? "/plan";
+const bookHref = (book: string | null, name: string) => book ?? `/plan/?line=${encodeURIComponent(name)}`;
 
 export default function SiteHeader({
   subpage = false,
@@ -95,7 +95,7 @@ export default function SiteHeader({
                 {cruiseLines.map((l) => (
                   <li key={l.id}>
                     <a
-                      href={bookHref(l.book)}
+                      href={bookHref(l.book, l.name)}
                       {...(l.book ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       onClick={() => setBook(false)}
                     >
@@ -132,7 +132,7 @@ export default function SiteHeader({
       </header>
 
       {/* mobile drawer */}
-      <div className={`drawer${menu ? " open" : ""}`} role="dialog" aria-modal="true">
+      <div className={`drawer${menu ? " open" : ""}`} role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden={!menu} inert={!menu}>
         {nav.map((n, i) => (
           <a key={n.href} href={n.href} onClick={() => setMenu(false)}>
             <span className="idx">{String(i + 1).padStart(2, "0")}</span>
@@ -144,7 +144,7 @@ export default function SiteHeader({
           {cruiseLines.map((l) => (
             <a
               key={l.id}
-              href={bookHref(l.book)}
+              href={bookHref(l.book, l.name)}
               {...(l.book ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               onClick={() => setMenu(false)}
             >

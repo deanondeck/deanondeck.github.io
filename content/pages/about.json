@@ -28,7 +28,7 @@
             "heading": "Did you book a voyage in the last 30 days?",
             "body": "If you haven't paid in full yet, I'd be happy to run the numbers to see if adding me as your First Mate offers you a better advantage.",
             "ctaLabel": "Run the numbers",
-            "ctaHref": "/manage",
+            "ctaHref": "/manage/",
             "fine": "You keep your cabin, rate, and confirmation number — only the agency of record changes."
           },
           "afterFlag": "Whether you are a seasoned sailor who prefers booking independently or a first-timer, I am here to help:",
@@ -89,7 +89,7 @@
             },
             {
               "label": "Start planning",
-              "href": "/plan",
+              "href": "/plan/",
               "variant": "ghost",
               "arrow": true
             }

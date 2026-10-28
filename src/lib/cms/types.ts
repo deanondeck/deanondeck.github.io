@@ -83,6 +83,8 @@ export type CruiseLine = {
   /** external booking URL, or null → route to /plan */
   book: string | null;
   bookLabel: string;
+  /** Research only; does not imply agency attribution. */
+  browse?: string;
 };
 
 export type SiteConfig = {
