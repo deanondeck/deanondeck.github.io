@@ -143,7 +143,7 @@
         "eyebrow": "Dean on Deck · Google Reviews",
         "heading": "A few words from *my sailors.*",
         "ratingNum": "5.0",
-        "linkLabel": "Read the reviews on Google",
+        "linkLabel": "Read all reviews on Google",
         "linkHref": "https://www.google.com/maps/search/?api=1&query=Dean+On+Deck&query_place_id=ChIJ5Yao4jn1vycRbwTYC7LdY2U",
         "items": [
           {
@@ -155,6 +155,11 @@
             "q": "Dean on Deck scored me the best deals on multiple Virgin voyages! Whenever he's on the ship, Dean makes time to ensure my experience is unforgettable and full of excitement.",
             "who": "Cathie Newell",
             "when": "Google Review"
+          },
+          {
+            "q": "Very good experience having Dean take care of my travel arrangements, would definitely use again and recommend.",
+            "who": "Andi Siegers",
+            "when": "Google Review · excerpt"
           }
         ]
       }
