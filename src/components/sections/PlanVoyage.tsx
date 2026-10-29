@@ -88,6 +88,19 @@ export default function PlanVoyage({ id, content, site }: SectionProps) {
                 </select>
               </div>
             </div>
+            {line === "Virgin Voyages" && (
+              <div className="field">
+                <label htmlFor="p-experience">How would you like to sail?</label>
+                <select id="p-experience" name="virginExperience" required defaultValue="">
+                  <option value="">Choose your Virgin experience</option>
+                  <option value="Mega RockStar">Mega RockStar</option>
+                  <option value="RockStar">RockStar</option>
+                  <option value="Non-RockStar">Non-RockStar</option>
+                  <option value="Help me choose">Help me choose</option>
+                </select>
+                <small>A preference, not a reservation. Dean will confirm suite availability and pricing.</small>
+              </div>
+            )}
             {line === "Atlantis Events" && (
               <div className="atlantis-note">
                 <strong>A quick note for Atlantis guests</strong>
