@@ -2233,3 +2233,8 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 @media (min-width: 901px) {
   .cl-grid--virgin .cl-media { align-self: stretch; aspect-ratio: auto; min-height: 380px; }
 }
+
+/* Header wordmark echoes the logo's tall, condensed lettering. */
+.nav .brand-name { font-family: var(--font-brand-condensed), "Arial Narrow", sans-serif; font-size: 1.55rem; font-weight: 500; line-height: 1.15; letter-spacing: .035em; text-transform: uppercase; }
+.nav .brand-sub { color: #9a7d3f; font-size: .52rem; letter-spacing: .27em; margin-top: .4rem; }
+@media (max-width: 480px) { .nav .brand-name { font-size: 1.4rem; } }
