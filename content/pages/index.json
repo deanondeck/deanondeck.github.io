@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Dean On Deck | Cruise Planning with a Personal Helping Hand",
-    "description": "Explore Virgin Voyages, Royal Caribbean, Celebrity, Silversea and Atlantis with Dean On Deck. Personal cruise planning and support at no extra service fee.",
+    "description": "Explore Virgin Voyages, Royal Caribbean, Celebrity, Silversea and Atlantis with Dean On Deck. Personal cruise planning and support at no cost to you.",
     "ogTitle": "Your vacation, your way. Dean On Deck.",
     "ogDescription": "Choose your cruise. Keep a helping hand behind the scenes. Explore voyages and plan with Dean.",
     "ogType": "website",
@@ -16,7 +16,7 @@
         "eyebrow": "Dean On Deck · Cruise Travel",
         "heading": "Your vacation, your way.",
         "script": "Your First Mate, all the way.",
-        "sub": "Hi, I’m Dean. Let’s find your next cruise—from adults-only escapes to family adventures and luxury voyages. Plan it yourself or let me help, at no extra service fee.",
+        "sub": "Hi, I’m Dean. Let’s find your next cruise—from adults-only escapes to family adventures and luxury voyages. Plan it yourself or let me help, at no cost to you.",
         "posterImg": "port-caribbean",
         "video": "",
         "primaryCta": {
@@ -28,7 +28,7 @@
           "href": "/plan/"
         },
         "metaItems": [
-          "**$0** extra service fee",
+          "**$0** planning fee",
           "**Your choice** of cruise line",
           "**Personal** support"
         ]
@@ -41,7 +41,7 @@
       "content": {
         "items": [
           "Your plans. Your choices. My support.",
-          "No extra service fee",
+          "Planning at no cost to you",
           "Independent booking, with a helping hand",
           "Virgin Voyages & beyond"
         ]
@@ -198,8 +198,8 @@
             "q": "Does it cost extra to have Dean help me?",
             "body": [
               {
-                "h": "No extra service fee",
-                "text": "There is no extra service fee for my cruise planning and support. Cruise fares, taxes, supplier charges and any change or cancellation fees still apply."
+                "h": "Planning at no cost to you",
+                "text": "My cruise planning and support come at no cost to you. Cruise fares, taxes, supplier charges and any change or cancellation fees still apply."
               }
             ]
           },

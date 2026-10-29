@@ -2159,3 +2159,21 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .cl-rockstar .booking-note { color: #535e6a; font-size: .8rem; margin: 1.4rem 0; }
 .cl-rockstar-source { font-size: .75rem; margin: 1rem 0 0; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 900px) { .cl-grid--virgin { grid-template-columns: 1fr; } }
+
+.cl-included { background: #fff; border-radius: 12px; padding: 1rem 1.1rem; margin-top: 1.1rem; border: 1px solid #e7ded7; }
+.cl-included h4 { font-weight: 700; margin: 0 0 .7rem; }
+.cl-rockstar ul.virgin-checks { list-style: none; padding: 0; margin: 0; }
+.virgin-checks li { display: grid; grid-template-columns: 1rem 1fr; gap: .55rem; line-height: 1.45; margin: .55rem 0; }
+.virgin-checks li > span { color: var(--scarlet); font-weight: 800; }
+.cl-rockstar-tier + .cl-rockstar-tier { border-top: 1px solid #ded7cf; margin-top: 1.2rem; }
+.cl-rockstar-tier p { margin-bottom: .65rem; }
+
+/* Unpublished Virgin section typography proposal. */
+#virgin h3, #virgin h4 { font-family: var(--font-virgin-preview), Arial, sans-serif; font-weight: 700; letter-spacing: -.035em; }
+#virgin .cl-body h3 { font-weight: 800; }
+#virgin .cl-rockstar h3 { font-size: clamp(1.8rem, 2.8vw, 2.65rem); line-height: 1.12; }
+#virgin .cl-rockstar { border-top-color: var(--scarlet); }
+
+#virgin .checklist li::before { color: var(--scarlet); }
+
+#virgin .cl-rockstar h3 { font-family: var(--font-display); font-style: italic; font-weight: 500; letter-spacing: -.04em; }

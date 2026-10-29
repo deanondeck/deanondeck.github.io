@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Plan Your Cruise | Dean On Deck",
-    "description": "Tell Dean where you want to sail. Personal cruise planning and support at no extra service fee.",
+    "description": "Tell Dean where you want to sail. Personal cruise planning and support at no cost to you.",
     "ogTitle": "Chart your course — plan a Virgin Voyages trip with Dean on Deck",
     "ogDescription": "Tell Dean who's sailing, where, and how you like to travel. Get back a plan, pricing, and perks — no booking fees.",
     "ogType": "website",
@@ -15,7 +15,7 @@
       "content": {
         "eyebrow": "A little inspiration. A personal plan.",
         "heading": "Let’s find *your next cruise.*",
-        "lede": "A destination, a date, or just a daydream—tell me what you have in mind. There’s no extra service fee for my help.",
+        "lede": "A destination, a date, or just a daydream—tell me what you have in mind. My planning help comes at no cost to you.",
         "image": "port-sail",
         "cabins": [
           {
@@ -81,7 +81,7 @@
               "text": "Choose how much help you want. I can plan with you or support you behind the scenes."
             },
             {
-              "strong": "No extra service fee.",
+              "strong": "Planning at no cost to you.",
               "text": "Cruise fares and supplier fees still apply. I’ll explain the options before you book."
             },
             {
