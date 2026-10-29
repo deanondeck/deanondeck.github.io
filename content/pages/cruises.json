@@ -68,6 +68,49 @@
             "Dining, essential beverages, entertainment and fitness included",
             "Wi-Fi included; level depends on your fare"
           ]
+        },
+        "royal": {
+          "heading": "Find your kind of Royal",
+          "intro": "From a private retreat to a Royal Genie experience, choose the space and service that suit your crew.",
+          "included": [
+            "Dining in complimentary restaurants and casual venues",
+            "Water, tea, classic coffee and select juices",
+            "Shows, pools, fitness facilities and many onboard activities"
+          ],
+          "tiers": [
+            {
+              "title": "Star Class",
+              "items": [
+                "Royal Genie service for a personalized voyage",
+                "Most specialty dining included; selected experiences carry a charge",
+                "Deluxe Beverage Package for eligible adults; refreshment package for younger guests",
+                "VOOM internet: one device per guest",
+                "Standard service gratuities included; Genie tips are separate"
+              ]
+            },
+            {
+              "title": "Sky Class",
+              "items": [
+                "Concierge service and priority dining reservations",
+                "Coastal Kitchen access; dinner reservations required",
+                "Suite Lounge and suite sun deck access",
+                "VOOM internet in eligible suites; category exceptions apply",
+                "Flexible arrival boarding and priority departure"
+              ]
+            },
+            {
+              "title": "Sea Class",
+              "items": [
+                "Suite comfort with upgraded bedding, bath amenities and espresso machine",
+                "Dedicated check-in line and priority boarding",
+                "Coastal Kitchen dinner, subject to availability and reservation",
+                "Internet, beverage packages and gratuities are additional"
+              ]
+            }
+          ],
+          "stateroomTitle": "Interior, Ocean View & Balcony",
+          "stateroomText": "Your own place to recharge, with all the shared cruise inclusions above. Choose an interior retreat, a window to the ocean or your own balcony. Internet and beverage packages can be added.",
+          "note": "Royal Suite Class is offered on participating Oasis, Quantum and Icon class ships; benefits and venues vary by ship and suite. Sky Junior Suites and Sunset Junior Suites exclude VOOM. Sky Balcony (BY) on Spectrum includes VOOM only for bookings made on or before April 27, 2026. Specialty dining, drinks outside included packages, excursions and some activities cost extra. Dean will confirm your exact inclusions before booking."
         }
       }
     }

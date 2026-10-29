@@ -2243,3 +2243,15 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .nav .brand > span { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 .nav .brand-name { display: block; }
 .nav .brand img { flex-shrink: 0; }
+
+/* Royal draft: shared layout, with ocean-blue accents and upright headings. */
+#royal-caribbean { --scarlet: #1456a0; }
+.cl-grid--royal { align-items: center; gap: 2.5rem 3.5rem; }
+.cl-grid--royal .cl-media { margin: 0; align-self: stretch; aspect-ratio: auto; min-height: 340px; }
+.cl-grid--royal .cl-body h3 { font-family: var(--font-virgin-preview), Arial, sans-serif; font-size: clamp(2.1rem,3.5vw,3rem); font-weight: 700; letter-spacing: -.035em; }
+.royal-comparison { grid-column: 1 / -1; padding: 0; border: 0; background: transparent; }
+.royal-comparison h3 { font-style: normal; }
+.royal-comparison h4 { font-family: var(--font-virgin-preview),Arial,sans-serif; font-weight: 700; }
+.royal-comparison .btn { background: #1456a0; border-color: #1456a0; }
+.royal-staterooms p { margin: 0; font-size: .95rem; }
+@media (max-width: 900px) { .cl-grid--royal { grid-template-columns: 1fr; gap: 1.8rem; } .cl-grid--royal .cl-media { min-height: 0; aspect-ratio: 16 / 9; } }

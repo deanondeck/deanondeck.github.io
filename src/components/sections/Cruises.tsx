@@ -14,6 +14,7 @@ type Action = {
   arrow?: boolean;
 };
 type CruisesContent = {
+  royal?: { heading: string; intro: string; included: string[]; tiers: { title: string; items: string[] }[]; stateroomTitle: string; stateroomText: string; note: string };
   rockstar?: { eyebrow: string; heading: string; intro: string; includedTitle: string; includedItems: string[]; regular: string; nonItems: string[]; coreTitle: string; coreItems: string[]; megaTitle: string; megaItems: string[]; note: string; cta: string };
   hero: { eyebrow: string; heading: string; lede: string };
   cta: { eyebrow: string; heading: string; lede: string; actions: Action[] };
@@ -49,7 +50,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
         const band = flagship ? "band--ink" : i % 2 ? "band--shell" : "band--shell2";
         return (
           <section key={l.id} id={l.id} className={`band ${band} cl`}>
-            <div className={`wrap cl-grid${flagship ? " cl-grid--virgin" : ""}${i % 2 ? " flip" : ""}`}>
+            <div className={`wrap cl-grid${flagship ? " cl-grid--virgin" : l.id === "royal-caribbean" ? " cl-grid--royal" : ""}${i % 2 && l.id !== "royal-caribbean" ? " flip" : ""}`}>
               <div className="cl-main">
               <figure className="cl-media reveal">
                 <img src={img(flagship ? "virgin-sunset-sailing.jpg" : l.img)} alt={flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt} loading={i === 0 ? "eager" : "lazy"} />
@@ -125,6 +126,31 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   <a className="btn btn-ink" href="/plan/?line=Virgin%20Voyages">{c.rockstar.cta} <span className="arrow">→</span></a>
                   <p className="cl-rockstar-source"><a href="https://www.virginvoyages.com/cabins/suites" target="_blank" rel="noopener noreferrer">View Virgin’s current suite benefits ↗</a></p>
                   <p className="cl-rockstar-source"><a href={site.virginBookingUrl} target="_blank" rel="noopener noreferrer">Let’s Go — Book with Dean ↗</a></p>
+                  </footer>
+                </aside>
+              )}
+              {l.id === "royal-caribbean" && c.royal && (
+                <aside className="cl-rockstar royal-comparison" aria-label="Compare Royal Caribbean staterooms and suite classes">
+                  <header className="virgin-comparison-heading">
+                    <p className="log log--center">Your voyage, elevated</p>
+                    <h3 className="display h-md">{c.royal.heading}</h3>
+                    <p>{c.royal.intro}</p>
+                    <div className="cl-included">
+                      <h4>Included with every stateroom</h4>
+                      <ul className="virgin-checks">{c.royal.included.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
+                    </div>
+                  </header>
+                  <div className="virgin-tier-grid">
+                    {c.royal.tiers.map(tier => <div className="cl-rockstar-tier" key={tier.title}>
+                      <h4>{tier.title}</h4>
+                      <ul className="virgin-checks">{tier.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
+                    </div>)}
+                  </div>
+                  <div className="cl-included royal-staterooms"><h4>{c.royal.stateroomTitle}</h4><p>{c.royal.stateroomText}</p></div>
+                  <footer className="virgin-comparison-footer">
+                    <p className="booking-note">{c.royal.note}</p>
+                    <a className="btn btn-ink" href="/plan/?line=Royal%20Caribbean">Find my Royal experience <span aria-hidden="true">→</span></a>
+                    <p className="cl-rockstar-source"><a href="https://www.royalcaribbean.com/faq/questions/what-are-the-benefits-of-royal-suite-class" target="_blank" rel="noopener noreferrer">View Royal’s current suite benefits ↗</a></p>
                   </footer>
                 </aside>
               )}
