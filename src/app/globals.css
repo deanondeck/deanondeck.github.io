@@ -2229,3 +2229,7 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .virgin-offers { display: block; margin-top: 0; color: var(--navy); text-decoration: none; transition: border-color .2s, box-shadow .2s; }
 #virgin .virgin-offers:hover, #virgin .virgin-offers:focus-visible { border-color: var(--scarlet); box-shadow: 0 4px 18px #0000000a; }
 #virgin .virgin-offers:focus-visible { outline: 2px solid var(--scarlet); outline-offset: 4px; }
+
+@media (min-width: 901px) {
+  .cl-grid--virgin .cl-media { align-self: stretch; aspect-ratio: auto; min-height: 380px; }
+}

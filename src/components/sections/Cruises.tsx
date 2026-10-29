@@ -52,7 +52,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
             <div className={`wrap cl-grid${flagship ? " cl-grid--virgin" : ""}${i % 2 ? " flip" : ""}`}>
               <div className="cl-main">
               <figure className="cl-media reveal">
-                <img src={img(l.img)} alt={l.alt} loading={i === 0 ? "eager" : "lazy"} />
+                <img src={img(flagship ? "virgin-sunset-sailing.jpg" : l.img)} alt={flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt} loading={i === 0 ? "eager" : "lazy"} />
               </figure>
               <div className="cl-body reveal d1">
                 <p className={flagship ? "log log--center" : "log"}>{l.k}</p>
