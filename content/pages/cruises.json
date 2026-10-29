@@ -68,6 +68,93 @@
             "Dining, essential beverages, entertainment and fitness included",
             "Wi-Fi included; level depends on your fare"
           ]
+        },
+        "royal": {
+          "heading": "Find your kind of Royal",
+          "intro": "From a private retreat to a Royal Genie experience, choose the space and service that suit your crew.",
+          "included": [
+            "Dining in complimentary restaurants and casual venues",
+            "Water, tea, classic coffee and select juices",
+            "Shows, pools, fitness facilities and many onboard activities"
+          ],
+          "tiers": [
+            {
+              "title": "Star Class",
+              "items": [
+                "Royal Genie service for a personalized voyage",
+                "Most specialty dining included; selected experiences carry a charge",
+                "Deluxe Beverage Package for eligible adults; refreshment package for younger guests",
+                "VOOM internet: one device per guest",
+                "Standard service gratuities included; Genie tips are separate"
+              ]
+            },
+            {
+              "title": "Sky Class",
+              "items": [
+                "Concierge service and priority dining reservations",
+                "Coastal Kitchen access; dinner reservations required",
+                "Suite Lounge and suite sun deck access",
+                "VOOM internet in eligible suites; category exceptions apply",
+                "Flexible arrival boarding and priority departure"
+              ]
+            },
+            {
+              "title": "Sea Class",
+              "items": [
+                "Suite comfort with upgraded bedding, bath amenities and espresso machine",
+                "Dedicated check-in line and priority boarding",
+                "Coastal Kitchen dinner, subject to availability and reservation",
+                "Internet, beverage packages and gratuities are additional"
+              ]
+            }
+          ],
+          "stateroomTitle": "Interior, Ocean View & Balcony",
+          "stateroomText": "Your own place to recharge, with all the shared cruise inclusions above. Choose an interior retreat, a window to the ocean or your own balcony. Internet and beverage packages can be added.",
+          "note": "Royal Suite Class is offered on participating Oasis, Quantum and Icon class ships; benefits and venues vary by ship and suite. Sky Junior Suites and Sunset Junior Suites exclude VOOM. Sky Balcony (BY) on Spectrum includes VOOM only for bookings made on or before April 27, 2026. Specialty dining, drinks outside included packages, excursions and some activities cost extra. Dean will confirm your exact inclusions before booking."
+        },
+        "silversea": {
+          "heading": "Your suite. Your sanctuary.",
+          "intro": "An all-suite voyage with personal butler service at every level. Choose the space, setting and attention that feel right for you.",
+          "included": [
+            "Butler service and 24-hour in-suite dining",
+            "Included dining, beverages and Wi-Fi",
+            "Onboard gratuities, port taxes and fees"
+          ],
+          "tiers": [
+            {
+              "title": "Villa",
+              "items": [
+                "The collection’s most expansive suites, with generous living spaces and terraces",
+                "Includes Otium, Master, Owner’s, Grand and Royal suites",
+                "From January 2027: enhanced arrival and personalized signature experiences"
+              ]
+            },
+            {
+              "title": "Residence",
+              "items": [
+                "Separate bedroom and living spaces for more room to settle in",
+                "Includes Junior Grand, Signature, Silver and Medallion suite types",
+                "From January 2027: earlier dining and spa reservations; priority embarkation on Classic voyages"
+              ]
+            },
+            {
+              "title": "Veranda",
+              "items": [
+                "Your own private balcony for open-air views",
+                "Classic, Superior, Deluxe and Premium Veranda options, depending on ship",
+                "All shared Silversea inclusions, with standard Wi-Fi"
+              ]
+            },
+            {
+              "title": "Oceanview",
+              "items": [
+                "Expansive sea views through a picture window",
+                "Vista and Panorama suites, depending on ship",
+                "All shared Silversea inclusions and personal butler service"
+              ]
+            }
+          ],
+          "note": "Suite types and benefits vary by ship and sailing. Enhanced Residence and Villa benefits apply to departures on or after January 1, 2027; some benefits differ between Classic and Expedition voyages. Air, transfers, shore experiences and premium extras depend on the fare and itinerary. Dean will confirm what is included before you book."
         }
       }
     }
