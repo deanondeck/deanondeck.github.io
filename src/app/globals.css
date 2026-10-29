@@ -2215,3 +2215,9 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 
 /* Virgin-specific red supplied by Dean. */
 #virgin { --scarlet: #E4181E; }
+
+.virgin-offers { margin-top: 1.4rem; padding: 1.2rem 1.35rem; background: #fff; border: 1px solid #e7ded7; border-left: 3px solid var(--scarlet); border-radius: 12px; }
+.virgin-offers h4 { font-size: 1rem; margin: 0 0 .55rem; }
+.virgin-offers p { font-size: .92rem; line-height: 1.5; margin: 0 0 .7rem; }
+.virgin-offers-link { display: inline-block; font-weight: 700; font-size: .9rem; text-decoration: underline; text-underline-offset: 3px; }
+.virgin-offers small { display: block; margin-top: .65rem; color: #535e6a; font-size: .75rem; line-height: 1.45; }

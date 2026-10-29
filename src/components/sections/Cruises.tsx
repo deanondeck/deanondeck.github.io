@@ -60,7 +60,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
                   <ul className="checklist">
-                    {l.points.map((p) => (
+                    {l.points.filter(p => !flagship || p !== "Ask Dean to check current offers and eligible extras").map((p) => (
                       <li key={p}>{p}</li>
                     ))}
                   </ul>
@@ -84,6 +84,14 @@ export default function Cruises({ id, content, site }: SectionProps) {
                     </a>
                   )}
                 </div>
+                {flagship && (
+                  <aside className="virgin-offers" aria-label="Current Virgin Voyages offers">
+                    <h4>Current Virgin Voyages Offers</h4>
+                    <p>Explore the latest offers for your next voyage.</p>
+                    <a className="virgin-offers-link" href={site.virginBookingUrl} target="_blank" rel="noopener noreferrer">View Offers with Dean <span aria-hidden="true">→</span></a>
+                    <small>Offers and eligibility vary by sailing. Check current terms before booking.</small>
+                  </aside>
+                )}
                 {l.browse && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
               </div>
