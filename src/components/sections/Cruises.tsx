@@ -111,6 +111,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   <p className="booking-note">{c.rockstar.note}</p>
                   <a className="btn btn-ink" href="/plan/?line=Virgin%20Voyages">{c.rockstar.cta} <span className="arrow">→</span></a>
                   <p className="cl-rockstar-source"><a href="https://www.virginvoyages.com/cabins/suites" target="_blank" rel="noopener noreferrer">View Virgin’s current suite benefits ↗</a></p>
+                  <p className="cl-rockstar-source"><a href={site.virginBookingUrl} target="_blank" rel="noopener noreferrer">Let’s Go — Book with Dean ↗</a></p>
                 </aside>
               )}
             </div>
