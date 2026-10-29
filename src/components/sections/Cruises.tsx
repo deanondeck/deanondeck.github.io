@@ -89,17 +89,17 @@ export default function Cruises({ id, content, site }: SectionProps) {
               </div>
               </div>
               {flagship && c.rockstar && (
-                <aside className="cl-rockstar reveal d1" aria-label="Compare Non-RockStar, RockStar and Mega RockStar">
+                <aside className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
                   <p className="log">{c.rockstar.eyebrow}</p>
                   <h3 className="display h-md">{c.rockstar.heading}</h3>
                   <p>{c.rockstar.intro}</p>
-                  <p className="cl-rockstar-regular"><strong>Non-RockStar</strong><br />{c.rockstar.regular}</p>
-                  {[{title: c.rockstar.coreTitle, items: c.rockstar.coreItems}, {title: c.rockstar.megaTitle, items: c.rockstar.megaItems}].map(tier => (
+                  {[{title: c.rockstar.megaTitle, items: c.rockstar.megaItems}, {title: c.rockstar.coreTitle, items: c.rockstar.coreItems}].map(tier => (
                     <div className="cl-rockstar-tier" key={tier.title}>
                       <h4>{tier.title}</h4>
                       <ul>{tier.items.map(item => <li key={item}>{item}</li>)}</ul>
                     </div>
                   ))}
+                  <p className="cl-rockstar-regular"><strong>Non-RockStar</strong><br />{c.rockstar.regular}</p>
                   <p className="booking-note">{c.rockstar.note}</p>
                   <a className="btn btn-ink" href="/plan/?line=Virgin%20Voyages">{c.rockstar.cta} <span className="arrow">→</span></a>
                   <p className="cl-rockstar-source"><a href="https://www.virginvoyages.com/cabins/suites" target="_blank" rel="noopener noreferrer">View Virgin’s current suite benefits ↗</a></p>
