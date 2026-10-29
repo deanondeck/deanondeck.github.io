@@ -2180,3 +2180,35 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 
 .cl-rockstar-intro { margin-top: 2rem; }
 .cl-rockstar > .cl-rockstar-tier:first-child h4 { margin-top: 0; }
+
+/* Virgin: introduction, shared inclusions, then three equal tier cards. */
+.cl-grid--virgin { align-items: center; gap: 2.5rem 3.5rem; }
+.cl-grid--virgin .cl-main { display: contents; }
+.cl-grid--virgin .cl-media { margin: 0; aspect-ratio: 4 / 3; }
+#virgin .cl-body h3 { font-size: clamp(2.1rem, 3.6vw, 3.2rem); }
+#virgin .cl-copy { margin-bottom: 1.3rem; }
+#virgin .checklist li { margin-bottom: .65rem; }
+.cl-grid--virgin > .cl-rockstar { grid-column: 1 / -1; padding: 0; background: transparent; border: 0; }
+.virgin-comparison-heading { text-align: center; margin: .5rem 0 1.5rem; }
+.virgin-comparison-heading > .log { justify-content: center; }
+.virgin-comparison-heading > p:not(.log) { max-width: 65ch; margin: 0 auto; }
+.virgin-comparison-heading .cl-included { padding: 1.2rem 1.5rem; margin-top: 1.5rem; text-align: left; }
+.virgin-comparison-heading .virgin-checks { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .7rem 1.5rem; }
+.virgin-comparison-heading .virgin-checks li { margin: 0; }
+.virgin-tier-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.2rem; align-items: stretch; }
+.virgin-tier-grid .cl-rockstar-tier { padding: 1.5rem; border: 1px solid #e7ded7; border-top: 3px solid var(--scarlet); border-radius: 16px; background: #fff; margin: 0; }
+.virgin-tier-grid .cl-rockstar-tier h4 { margin: 0 0 1rem; font-size: 1.12rem; }
+.virgin-tier-grid .cl-rockstar-tier p, .virgin-tier-grid .cl-rockstar-tier li { font-size: .9rem; }
+.virgin-tier-grid .virgin-checks li { margin: .7rem 0; }
+.virgin-comparison-footer { text-align: center; padding-top: .2rem; }
+.virgin-comparison-footer .booking-note { max-width: 95ch; margin: 1.1rem auto 1.4rem; }
+.virgin-comparison-footer .cl-rockstar-source { margin-top: .75rem; }
+@media (max-width: 900px) {
+  .cl-grid--virgin { gap: 1.8rem; }
+  .cl-grid--virgin .cl-media { aspect-ratio: 16 / 9; }
+  .virgin-comparison-heading .virgin-checks { grid-template-columns: 1fr; gap: .6rem; }
+}
+@media (max-width: 700px) {
+  .virgin-tier-grid { grid-template-columns: 1fr; }
+  .virgin-tier-grid .cl-rockstar-tier { padding: 1.3rem; }
+}
