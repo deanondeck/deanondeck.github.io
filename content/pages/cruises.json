@@ -40,24 +40,34 @@
           "eyebrow": "Adventure awaits",
           "heading": "Cruise like a RockStar",
           "intro": "Three ways to sail: Mega RockStar, RockStar and Non-RockStar. Find the experience that fits your voyage.",
-          "regular": "Choose an Inside, Sea View or Sea Terrace cabin for the Virgin experience. RockStar suite privileges are not included.",
+          "regular": "Inside, Sea View or Sea Terrace — with all the voyage inclusions above.",
           "coreTitle": "RockStar",
           "coreItems": [
-            "Richard’s Rooftop private sundeck access",
-            "RockStar Agent team for reservations and requests",
-            "Early boarding and priority booking access",
+            "All shared voyage inclusions, plus suite accommodation",
+            "Richard’s Rooftop, RockStar Agent team and priority access",
             "Curated in-suite bar — first round included",
-            "Shipwide alcoholic drinks are extra — no unlimited drinks package"
+            "Classic Wi-Fi — one device per sailor"
           ],
           "megaTitle": "Mega RockStar",
           "megaItems": [
-            "Personally dedicated Mega RockStar Agent",
-            "Bottomless in-suite bar plus a daily shipwide Bar Tab (Virgin’s drink and bottle limits apply)",
-            "Complimentary daily Thermal Suite access",
-            "Private transfers or parking where available; Work from Sea Wi-Fi"
+            "All shared inclusions and RockStar privileges",
+            "Dedicated Mega RockStar Agent and replenished in-suite bar",
+            "Daily shipwide Bar Tab, with drink and bottle limits",
+            "Daily Thermal Suite access; transfers or parking where available",
+            "Work from Sea Wi-Fi — two devices per sailor"
           ],
-          "note": "Benefits vary by suite and availability. Dean can confirm the details for your sailing.",
-          "cta": "Ask Dean about suites"
+          "note": "RockStar shipwide alcoholic drinks are extra. Premium drinks, dining extras and some ticketed experiences cost extra. Benefits and connectivity depend on your fare, sailing and availability.",
+          "cta": "Ask Dean about suites",
+          "includedTitle": "Included in every voyage",
+          "includedItems": [
+            "Dining at 20+ eateries",
+            "Soft drinks, still & sparkling water, tea and drip coffee",
+            "Wi-Fi, entertainment and group fitness classes"
+          ],
+          "nonItems": [
+            "Dining, essential beverages, entertainment and fitness included",
+            "Wi-Fi included; level depends on your fare"
+          ]
         }
       }
     }

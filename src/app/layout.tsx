@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Corinthia } from "next/font/google";
+import { Noto_Serif, Corinthia, Montserrat } from "next/font/google";
 import StructuredData from "@/components/StructuredData";
 import { loadSite } from "@/lib/cms/loader";
 import "./globals.css";
@@ -13,6 +13,8 @@ const notoSerif = Noto_Serif({
   style: ["normal", "italic"],
   display: "swap",
 });
+
+const virginType = Montserrat({ variable: "--font-virgin-preview", subsets: ["latin"], weight: ["600", "700", "800"], display: "swap" });
 
 const corinthia = Corinthia({
   variable: "--font-corinthia",
@@ -65,7 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${notoSerif.variable} ${corinthia.variable} antialiased`}
+      className={`${notoSerif.variable} ${corinthia.variable} ${virginType.variable} antialiased`}
     >
       <body>
         <StructuredData />

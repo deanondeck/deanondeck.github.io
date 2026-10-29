@@ -14,7 +14,7 @@ type Action = {
   arrow?: boolean;
 };
 type CruisesContent = {
-  rockstar?: { eyebrow: string; heading: string; intro: string; regular: string; coreTitle: string; coreItems: string[]; megaTitle: string; megaItems: string[]; note: string; cta: string };
+  rockstar?: { eyebrow: string; heading: string; intro: string; includedTitle: string; includedItems: string[]; regular: string; nonItems: string[]; coreTitle: string; coreItems: string[]; megaTitle: string; megaItems: string[]; note: string; cta: string };
   hero: { eyebrow: string; heading: string; lede: string };
   cta: { eyebrow: string; heading: string; lede: string; actions: Action[] };
 };
@@ -93,13 +93,21 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   <p className="log">{c.rockstar.eyebrow}</p>
                   <h3 className="display h-md">{c.rockstar.heading}</h3>
                   <p>{c.rockstar.intro}</p>
+                  <div className="cl-included">
+                    <h4>{c.rockstar.includedTitle}</h4>
+                    <ul className="virgin-checks">{c.rockstar.includedItems.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
+                  </div>
                   {[{title: c.rockstar.megaTitle, items: c.rockstar.megaItems}, {title: c.rockstar.coreTitle, items: c.rockstar.coreItems}].map(tier => (
                     <div className="cl-rockstar-tier" key={tier.title}>
                       <h4>{tier.title}</h4>
-                      <ul>{tier.items.map(item => <li key={item}>{item}</li>)}</ul>
+                      <ul className="virgin-checks">{tier.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
                     </div>
                   ))}
-                  <p className="cl-rockstar-regular"><strong>Non-RockStar</strong><br />{c.rockstar.regular}</p>
+                  <div className="cl-rockstar-tier">
+                    <h4>Non-RockStar</h4>
+                    <p>{c.rockstar.regular}</p>
+                    <ul className="virgin-checks">{c.rockstar.nonItems.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
+                  </div>
                   <p className="booking-note">{c.rockstar.note}</p>
                   <a className="btn btn-ink" href="/plan/?line=Virgin%20Voyages">{c.rockstar.cta} <span className="arrow">→</span></a>
                   <p className="cl-rockstar-source"><a href="https://www.virginvoyages.com/cabins/suites" target="_blank" rel="noopener noreferrer">View Virgin’s current suite benefits ↗</a></p>
