@@ -2257,9 +2257,11 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 @media (max-width: 900px) { .cl-grid--royal { grid-template-columns: 1fr; gap: 1.8rem; } .cl-grid--royal .cl-media { min-height: 0; aspect-ratio: 16 / 9; } }
 
 /* Silversea draft: restrained mineral accents and a spacious suite collection. */
-#silversea { --scarlet: #6f7773; }
-#silversea .cl-body h3 { font-family: var(--font-display); font-weight: 500; letter-spacing: .015em; }
-.silversea-comparison .cl-rockstar-tier h4 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; }
+#silversea { --scarlet: #775732; }
+#silversea .cl-body h3 { font-family: var(--font-silversea), Georgia, serif; font-weight: 500; letter-spacing: .015em; color: #252525; }
+.silversea-comparison .cl-rockstar-tier h4 { font-family: var(--font-silversea), Georgia, serif; font-size: 1.65rem; font-weight: 600; color: #252525; }
 .silversea-tier-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-.silversea-comparison .btn { background: #384940; border-color: #384940; }
+.silversea-comparison .btn { background: #35302b; border-color: #35302b; }
 @media (max-width: 700px) { .silversea-tier-grid { grid-template-columns: 1fr; } }
+
+#silversea .silversea-comparison h3 { font-family: var(--font-silversea), Georgia, serif; font-weight: 500; font-size: clamp(2rem,3.4vw,2.8rem); color: #252525; }

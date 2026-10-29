@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Corinthia, Montserrat, Oswald } from "next/font/google";
+import { Noto_Serif, Corinthia, Montserrat, Oswald, Cormorant_Garamond } from "next/font/google";
 import StructuredData from "@/components/StructuredData";
 import { loadSite } from "@/lib/cms/loader";
 import "./globals.css";
@@ -13,6 +13,8 @@ const notoSerif = Noto_Serif({
   style: ["normal", "italic"],
   display: "swap",
 });
+
+const silverseaType = Cormorant_Garamond({ variable: "--font-silversea", subsets: ["latin"], weight: ["500", "600"], display: "swap" });
 
 const brandType = Oswald({ variable: "--font-brand-condensed", subsets: ["latin"], weight: ["500"], display: "swap" });
 
@@ -69,7 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${notoSerif.variable} ${corinthia.variable} ${virginType.variable} ${brandType.variable} antialiased`}
+      className={`${notoSerif.variable} ${corinthia.variable} ${virginType.variable} ${brandType.variable} ${silverseaType.variable} antialiased`}
     >
       <body>
         <StructuredData />
