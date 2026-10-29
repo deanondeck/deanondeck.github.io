@@ -2212,3 +2212,6 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   .virgin-tier-grid { grid-template-columns: 1fr; }
   .virgin-tier-grid .cl-rockstar-tier { padding: 1.3rem; }
 }
+
+/* Virgin-specific red supplied by Dean. */
+#virgin { --scarlet: #E4181E; }
