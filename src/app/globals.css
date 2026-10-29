@@ -2235,6 +2235,11 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 }
 
 /* Header wordmark echoes the logo's tall, condensed lettering. */
-.nav .brand-name { font-family: var(--font-brand-condensed), "Arial Narrow", sans-serif; font-size: 1.55rem; font-weight: 500; line-height: 1.15; letter-spacing: .035em; text-transform: uppercase; }
-.nav .brand-sub { color: #9a7d3f; font-size: .52rem; letter-spacing: .27em; margin-top: .4rem; }
-@media (max-width: 480px) { .nav .brand-name { font-size: 1.4rem; } }
+.nav .brand-name { font-family: var(--font-brand-condensed), "Arial Narrow", sans-serif; font-size: 1.2rem; font-weight: 500; line-height: 1.15; letter-spacing: .025em; text-transform: uppercase; }
+.nav .brand-sub { color: #9a7d3f; font-size: .52rem; letter-spacing: .2em; margin-top: .3rem; }
+@media (max-width: 480px) { .nav .brand-name { font-size: 1.12rem; } }
+
+.nav .brand { flex-shrink: 0; gap: .65rem; }
+.nav .brand > span { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.nav .brand-name { display: block; }
+.nav .brand img { flex-shrink: 0; }
