@@ -2168,7 +2168,7 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .cl-rockstar-tier + .cl-rockstar-tier { border-top: 1px solid #ded7cf; margin-top: 1.2rem; }
 .cl-rockstar-tier p { margin-bottom: .65rem; }
 
-/* Unpublished Virgin section typography proposal. */
+/* Virgin section typography. */
 #virgin h3, #virgin h4 { font-family: var(--font-virgin-preview), Arial, sans-serif; font-weight: 700; letter-spacing: -.035em; }
 #virgin .cl-body h3 { font-weight: 800; }
 #virgin .cl-rockstar h3 { font-size: clamp(1.8rem, 2.8vw, 2.65rem); line-height: 1.12; }
@@ -2177,3 +2177,6 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .checklist li::before { color: var(--scarlet); }
 
 #virgin .cl-rockstar h3 { font-family: var(--font-display); font-style: italic; font-weight: 500; letter-spacing: -.04em; }
+
+.cl-rockstar-intro { margin-top: 2rem; }
+.cl-rockstar > .cl-rockstar-tier:first-child h4 { margin-top: 0; }

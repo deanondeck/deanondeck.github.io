@@ -87,9 +87,8 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 {l.browse && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
               </div>
-              </div>
               {flagship && c.rockstar && (
-                <aside className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
+                <div className="cl-rockstar cl-rockstar-intro reveal d1">
                   <p className="log">{c.rockstar.eyebrow}</p>
                   <h3 className="display h-md">{c.rockstar.heading}</h3>
                   <p>{c.rockstar.intro}</p>
@@ -97,6 +96,11 @@ export default function Cruises({ id, content, site }: SectionProps) {
                     <h4>{c.rockstar.includedTitle}</h4>
                     <ul className="virgin-checks">{c.rockstar.includedItems.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
                   </div>
+                </div>
+              )}
+              </div>
+              {flagship && c.rockstar && (
+                <aside className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
                   {[{title: c.rockstar.megaTitle, items: c.rockstar.megaItems}, {title: c.rockstar.coreTitle, items: c.rockstar.coreItems}].map(tier => (
                     <div className="cl-rockstar-tier" key={tier.title}>
                       <h4>{tier.title}</h4>
