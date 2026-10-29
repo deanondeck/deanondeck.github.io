@@ -2175,3 +2175,5 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .cl-rockstar { border-top-color: var(--scarlet); }
 
 #virgin .checklist li::before { color: var(--scarlet); }
+
+#virgin .cl-rockstar h3 { font-family: var(--font-display); font-style: italic; font-weight: 500; letter-spacing: -.04em; }
