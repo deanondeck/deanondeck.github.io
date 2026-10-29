@@ -55,7 +55,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 <img src={img(l.img)} alt={l.alt} loading={i === 0 ? "eager" : "lazy"} />
               </figure>
               <div className="cl-body reveal d1">
-                <p className="log">{l.k}</p>
+                <p className={flagship ? "log log--center" : "log"}>{l.k}</p>
                 <h3 className="display h-lg">{l.name}</h3>
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
@@ -65,7 +65,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                     ))}
                   </ul>
                 )}
-                <div className="cl-actions">
+                {!flagship && <div className="cl-actions">
                   {l.book ? (
                     <>
                       <a
@@ -83,14 +83,14 @@ export default function Cruises({ id, content, site }: SectionProps) {
                       {l.bookLabel} <span className="arrow">→</span>
                     </a>
                   )}
-                </div>
+                </div>}
                 {flagship && (
-                  <aside className="virgin-offers" aria-label="Current Virgin Voyages offers">
-                    <h4>Current Virgin Voyages Offers</h4>
-                    <p>Explore the latest offers for your next voyage.</p>
-                    <a className="virgin-offers-link" href={site.virginBookingUrl} target="_blank" rel="noopener noreferrer">View Offers with Dean <span aria-hidden="true">→</span></a>
+                  <a className="virgin-offers" href="https://www.virginvoyages.com/?agentId=281761&agencyId=54480" target="_blank" rel="noopener noreferrer" aria-label="Explore Virgin’s latest offers">
+                    <h4>Explore Virgin’s Latest Offers</h4>
+                    <p>View current promotions and sailings.</p>
+                    <span className="virgin-offers-link">Explore Offers <span aria-hidden="true">→</span></span>
                     <small>Offers and eligibility vary by sailing. Check current terms before booking.</small>
-                  </aside>
+                  </a>
                 )}
                 {l.browse && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}

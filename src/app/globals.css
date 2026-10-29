@@ -2221,3 +2221,11 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .virgin-offers p { font-size: .92rem; line-height: 1.5; margin: 0 0 .7rem; }
 .virgin-offers-link { display: inline-block; font-weight: 700; font-size: .9rem; text-decoration: underline; text-underline-offset: 3px; }
 .virgin-offers small { display: block; margin-top: .65rem; color: #535e6a; font-size: .75rem; line-height: 1.45; }
+
+/* Keep the Virgin introduction compact, with one clear booking action. */
+#virgin .cl-copy { margin-bottom: .9rem; }
+#virgin .cl-body .checklist { margin: 0 0 1rem; }
+#virgin .cl-body .checklist li { padding: .3rem 0; margin: 0; }
+#virgin .virgin-offers { display: block; margin-top: 0; color: var(--navy); text-decoration: none; transition: border-color .2s, box-shadow .2s; }
+#virgin .virgin-offers:hover, #virgin .virgin-offers:focus-visible { border-color: var(--scarlet); box-shadow: 0 4px 18px #0000000a; }
+#virgin .virgin-offers:focus-visible { outline: 2px solid var(--scarlet); outline-offset: 4px; }
