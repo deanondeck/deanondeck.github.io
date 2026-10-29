@@ -91,7 +91,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
               {flagship && c.rockstar && (
                 <aside className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
                   <header className="virgin-comparison-heading">
-                  <p className="log">{c.rockstar.eyebrow}</p>
+                  <p className="log log--center">{c.rockstar.eyebrow}</p>
                   <h3 className="display h-md">{c.rockstar.heading}</h3>
                   <p>{c.rockstar.intro}</p>
                   <div className="cl-included">
