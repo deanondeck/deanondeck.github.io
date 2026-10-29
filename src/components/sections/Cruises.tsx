@@ -14,6 +14,7 @@ type Action = {
   arrow?: boolean;
 };
 type CruisesContent = {
+  rockstar?: { eyebrow: string; heading: string; intro: string; regular: string; coreTitle: string; coreItems: string[]; megaTitle: string; megaItems: string[]; note: string; cta: string };
   hero: { eyebrow: string; heading: string; lede: string };
   cta: { eyebrow: string; heading: string; lede: string; actions: Action[] };
 };
@@ -48,7 +49,8 @@ export default function Cruises({ id, content, site }: SectionProps) {
         const band = flagship ? "band--ink" : i % 2 ? "band--shell" : "band--shell2";
         return (
           <section key={l.id} id={l.id} className={`band ${band} cl`}>
-            <div className={`wrap cl-grid${i % 2 ? " flip" : ""}`}>
+            <div className={`wrap cl-grid${flagship ? " cl-grid--virgin" : ""}${i % 2 ? " flip" : ""}`}>
+              <div className="cl-main">
               <figure className="cl-media reveal">
                 <img src={img(l.img)} alt={l.alt} loading={i === 0 ? "eager" : "lazy"} />
               </figure>
@@ -74,9 +76,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                       >
                         {l.bookLabel} <span className="arrow">→</span>
                       </a>
-                      <a className="cl-alt" href="/plan">
-                        or plan it with Dean
-                      </a>
+
                     </>
                   ) : (
                     <a className="btn btn-ink" href={`/plan/?line=${encodeURIComponent(l.name)}`}>
@@ -87,6 +87,24 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 {l.browse && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
               </div>
+              </div>
+              {flagship && c.rockstar && (
+                <aside className="cl-rockstar reveal d1" aria-label="Compare Non-RockStar, RockStar and Mega RockStar">
+                  <p className="log">{c.rockstar.eyebrow}</p>
+                  <h3 className="display h-md">{c.rockstar.heading}</h3>
+                  <p>{c.rockstar.intro}</p>
+                  <p className="cl-rockstar-regular"><strong>Non-RockStar</strong><br />{c.rockstar.regular}</p>
+                  {[{title: c.rockstar.coreTitle, items: c.rockstar.coreItems}, {title: c.rockstar.megaTitle, items: c.rockstar.megaItems}].map(tier => (
+                    <div className="cl-rockstar-tier" key={tier.title}>
+                      <h4>{tier.title}</h4>
+                      <ul>{tier.items.map(item => <li key={item}>{item}</li>)}</ul>
+                    </div>
+                  ))}
+                  <p className="booking-note">{c.rockstar.note}</p>
+                  <a className="btn btn-ink" href="/plan/?line=Virgin%20Voyages">{c.rockstar.cta} <span className="arrow">→</span></a>
+                  <p className="cl-rockstar-source"><a href="https://www.virginvoyages.com/cabins/suites" target="_blank" rel="noopener noreferrer">View Virgin’s current suite benefits ↗</a></p>
+                </aside>
+              )}
             </div>
           </section>
         );
