@@ -2255,3 +2255,11 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .royal-comparison .btn { background: #1456a0; border-color: #1456a0; }
 .royal-staterooms p { margin: 0; font-size: .95rem; }
 @media (max-width: 900px) { .cl-grid--royal { grid-template-columns: 1fr; gap: 1.8rem; } .cl-grid--royal .cl-media { min-height: 0; aspect-ratio: 16 / 9; } }
+
+/* Silversea draft: restrained mineral accents and a spacious suite collection. */
+#silversea { --scarlet: #6f7773; }
+#silversea .cl-body h3 { font-family: var(--font-display); font-weight: 500; letter-spacing: .015em; }
+.silversea-comparison .cl-rockstar-tier h4 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; }
+.silversea-tier-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.silversea-comparison .btn { background: #384940; border-color: #384940; }
+@media (max-width: 700px) { .silversea-tier-grid { grid-template-columns: 1fr; } }
