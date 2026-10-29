@@ -52,20 +52,20 @@ export default function Cruises({ id, content, site }: SectionProps) {
             <div className={`wrap cl-grid${flagship ? " cl-grid--virgin" : ""}${i % 2 ? " flip" : ""}`}>
               <div className="cl-main">
               <figure className="cl-media reveal">
-                <img src={img(l.img)} alt={l.alt} loading={i === 0 ? "eager" : "lazy"} />
+                <img src={img(flagship ? "virgin-sunset-sailing.jpg" : l.img)} alt={flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt} loading={i === 0 ? "eager" : "lazy"} />
               </figure>
               <div className="cl-body reveal d1">
-                <p className="log">{l.k}</p>
+                <p className={flagship ? "log log--center" : "log"}>{l.k}</p>
                 <h3 className="display h-lg">{l.name}</h3>
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
                   <ul className="checklist">
-                    {l.points.map((p) => (
+                    {l.points.filter(p => !flagship || p !== "Ask Dean to check current offers and eligible extras").map((p) => (
                       <li key={p}>{p}</li>
                     ))}
                   </ul>
                 )}
-                <div className="cl-actions">
+                {!flagship && <div className="cl-actions">
                   {l.book ? (
                     <>
                       <a
@@ -83,24 +83,31 @@ export default function Cruises({ id, content, site }: SectionProps) {
                       {l.bookLabel} <span className="arrow">→</span>
                     </a>
                   )}
-                </div>
+                </div>}
+                {flagship && (
+                  <a className="virgin-offers" href="https://www.virginvoyages.com/?agentId=281761&agencyId=54480" target="_blank" rel="noopener noreferrer" aria-label="Explore Virgin’s latest offers">
+                    <h4>Explore Virgin’s Latest Offers</h4>
+                    <p>View current promotions and sailings.</p>
+                    <span className="virgin-offers-link">Explore Offers <span aria-hidden="true">→</span></span>
+                    <small>Offers and eligibility vary by sailing. Check current terms before booking.</small>
+                  </a>
+                )}
                 {l.browse && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
               </div>
+              </div>
               {flagship && c.rockstar && (
-                <div className="cl-rockstar cl-rockstar-intro reveal d1">
-                  <p className="log">{c.rockstar.eyebrow}</p>
+                <aside className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
+                  <header className="virgin-comparison-heading">
+                  <p className="log log--center">{c.rockstar.eyebrow}</p>
                   <h3 className="display h-md">{c.rockstar.heading}</h3>
                   <p>{c.rockstar.intro}</p>
                   <div className="cl-included">
                     <h4>{c.rockstar.includedTitle}</h4>
                     <ul className="virgin-checks">{c.rockstar.includedItems.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
                   </div>
-                </div>
-              )}
-              </div>
-              {flagship && c.rockstar && (
-                <aside className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
+                  </header>
+                  <div className="virgin-tier-grid">
                   {[{title: c.rockstar.megaTitle, items: c.rockstar.megaItems}, {title: c.rockstar.coreTitle, items: c.rockstar.coreItems}].map(tier => (
                     <div className="cl-rockstar-tier" key={tier.title}>
                       <h4>{tier.title}</h4>
@@ -112,10 +119,13 @@ export default function Cruises({ id, content, site }: SectionProps) {
                     <p>{c.rockstar.regular}</p>
                     <ul className="virgin-checks">{c.rockstar.nonItems.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
                   </div>
+                  </div>
+                  <footer className="virgin-comparison-footer">
                   <p className="booking-note">{c.rockstar.note}</p>
                   <a className="btn btn-ink" href="/plan/?line=Virgin%20Voyages">{c.rockstar.cta} <span className="arrow">→</span></a>
                   <p className="cl-rockstar-source"><a href="https://www.virginvoyages.com/cabins/suites" target="_blank" rel="noopener noreferrer">View Virgin’s current suite benefits ↗</a></p>
                   <p className="cl-rockstar-source"><a href={site.virginBookingUrl} target="_blank" rel="noopener noreferrer">Let’s Go — Book with Dean ↗</a></p>
+                  </footer>
                 </aside>
               )}
             </div>
