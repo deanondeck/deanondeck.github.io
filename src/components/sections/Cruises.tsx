@@ -95,6 +95,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   </a>
                 )}
                 {l.browse && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
+                {l.id === "silversea" && <p className="booking-note">Explore voyages with Dean’s contact details at hand. Use Contact on the Silversea site to email Dean and arrange your booking.</p>}
                 {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
               </div>
               </div>
@@ -174,7 +175,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   <footer className="virgin-comparison-footer">
                     <p className="booking-note">{c.silversea.note}</p>
                     <a className="btn btn-ink" href="/plan/?line=Silversea">Find my Silversea suite <span aria-hidden="true">→</span></a>
-                    <p className="cl-rockstar-source"><a href="https://www.silversea.com/life-onboard/luxury-suites.html" target="_blank" rel="noopener noreferrer">View Silversea’s suite collection ↗</a></p>
+                    <p className="cl-rockstar-source"><a href="https://www.silversea.com/life-onboard/luxury-suites.html?insider=7owgg-dean-satterfield" target="_blank" rel="noopener noreferrer">View Silversea’s suite collection ↗</a></p>
                   </footer>
                 </aside>
               )}
