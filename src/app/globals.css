@@ -2297,3 +2297,9 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 @media (max-width: 600px) {
   #philosophy .sec-head .h-lg { font-size: clamp(1.8rem, 7vw, 2.3rem); }
 }
+
+/* Homepage Dean introduction balance */
+@media (min-width: 901px) {
+  #difference .about-photo { max-height: none; }
+  #difference .about-body .h-lg { font-size: clamp(2.2rem, 3.7vw, 3.05rem); }
+}
