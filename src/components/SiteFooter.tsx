@@ -22,6 +22,7 @@ export default function SiteFooter({
               <img src={img(brand.logo)} alt="" />
               <span className="brand-name">{brand.name}</span>
             </div>
+            <p className="foot-role">Independent Travel Advisor</p>
             <p className="foot-tag">{brand.tagline}</p>
             <div className="foot-socials">
               <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -61,7 +62,7 @@ export default function SiteFooter({
             </ul>
           </div>
           <div>
-            <h4>The Boat</h4>
+            <h4>The Fleet</h4>
             <ul>
               {footer.boatList.map((item) => (
                 <li key={item}>{item}</li>
