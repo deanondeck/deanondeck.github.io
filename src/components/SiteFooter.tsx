@@ -32,12 +32,12 @@ export default function SiteFooter({
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a href={social.facebook} aria-label="Facebook">
+              <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-1c0-.6.4-1 1-1z" />
                 </svg>
               </a>
-              <a href={social.tiktok} aria-label="TikTok">
+              <a href={social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M16 4c.3 2 1.6 3.4 3.5 3.6V10c-1.3 0-2.5-.4-3.5-1.1V15a5 5 0 11-5-5v2.6a2.4 2.4 0 102.4 2.4V4H16z" />
                 </svg>
