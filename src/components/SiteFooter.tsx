@@ -7,7 +7,7 @@ export default function SiteFooter({
   subpage?: boolean;
   site: SiteConfig;
 }) {
-  const { brand, social, footer, seo } = site;
+  const { social, footer, seo } = site;
   // On sub-pages, in-page anchors need to point back to the home route.
   const to = (href: string) =>
     subpage && href.startsWith("#") ? `/${href}` : href;
@@ -24,7 +24,7 @@ export default function SiteFooter({
               </svg>
               <div className="footer-wordmark"><span>DEAN ON DECK</span><small>CRUISE TRAVEL</small></div>
             </div>
-            <p className="foot-tag">Your vacation, your way.<br/>Your First Mate, All The Way.</p>
+            <p className="foot-tag">Your vacation, your way.<br/>Your First Mate, all the way.</p>
             <div className="foot-socials">
               <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -46,7 +46,7 @@ export default function SiteFooter({
             </div>
           </div>
           <div>
-            <h4>Explore</h4>
+            <h4><span>Explore</span></h4>
             <ul>
               {footer.exploreLinks.map((link) => (
                 <li key={link.label}>
@@ -56,14 +56,14 @@ export default function SiteFooter({
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
                   >
-                    {link.label}
+                    {link.label === "FAQs" ? "Know Before You Sail" : link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h4>The Fleet</h4>
+            <h4><span>The Fleet</span></h4>
             <ul>
               {footer.boatList.map((item) => (
                 <li key={item}>{item}</li>
@@ -71,10 +71,10 @@ export default function SiteFooter({
             </ul>
           </div>
         </div>
-        <div className="footer-wave" aria-hidden="true">〰</div>
+        <div className="footer-wave" aria-hidden="true"><svg viewBox="0 0 170 34" role="presentation"><path d="M2 25C34 1 58 6 83 15s51 18 85-7C139 24 114 23 87 14S39 5 2 25Z" fill="currentColor"/><path d="M14 30C43 15 63 17 85 24s46 9 70-3C127 34 105 32 83 26S41 19 14 30Z" fill="currentColor"/></svg></div>
         <div className="foot-bottom">
-          <span>© {new Date().getFullYear()} {seo.siteName}</span>
-          <span className="disc">{footer.disclaimer}</span>
+          <span>© {new Date().getFullYear()} {seo.siteName}. All rights reserved.</span>
+          <span className="disc">Dean On Deck Cruise Travel is an independently operated travel advisory business offering personalized cruise planning and booking assistance with multiple travel suppliers. Supplier names and trademarks are property of their respective owners.</span>
         </div>
       </div>
     </footer>
