@@ -2315,3 +2315,31 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   height: 1px;
   background: #c8a45c;
 }
+
+
+/* Approved Dean On Deck footer — archived variation 1 (no credentials) */
+.foot { background:#07152b; color:#f7f4ed; padding-block:3.3rem 1.7rem; }
+.foot .foot-top { grid-template-columns:1.4fr 1fr 1fr; gap:2.8rem; border-bottom:0; padding-bottom:1.4rem; }
+.foot .foot-top > div + div { border-left:1px solid rgba(202,160,83,.6); padding-left:2.5rem; }
+.footer-identity { display:flex; align-items:center; justify-content:center; gap:1.1rem; color:#d4a850; }
+.footer-anchor { width:66px; height:86px; flex:none; }
+.footer-wordmark { border-left:1px solid #cba45c; padding-left:.9rem; display:flex; flex-direction:column; text-align:center; }
+.footer-wordmark > span { font-family:Georgia,serif; font-size:clamp(1.45rem,2.3vw,2.25rem); color:#fff; line-height:1.2; white-space:nowrap; }
+.footer-wordmark small { font-family:Georgia,serif; font-size:.85rem; color:#d9af5c; letter-spacing:.3em; margin-top:.3rem; }
+.foot .foot-tag { font-family:Georgia,serif; font-size:1.18rem; line-height:1.5; text-align:center; margin:1rem 0 1.2rem; }
+.foot .foot-socials { justify-content:center; gap:1.4rem; }
+.foot .foot-socials a { color:#fff; border:1px solid #d9af5c; width:44px; height:44px; }
+.foot h4 { color:#e2b766; font-family:Georgia,serif; font-size:1.32rem; font-weight:600; letter-spacing:.17em; text-transform:uppercase; margin-bottom:1.1rem; }
+.foot h4::before,.foot h4::after { content:"—"; padding:0 .4em; }
+.foot ul { font-family:Georgia,serif; font-size:1.05rem; gap:.4rem; }
+.foot .foot-bottom { border-top:1px solid #cba45c; padding-top:1.5rem; align-items:center; }
+.foot .foot-bottom .disc { max-width:60%; opacity:.9; }
+.footer-wave { display:flex; align-items:center; gap:1rem; color:#d5a44e; font-size:2.1rem; line-height:1; justify-content:center; margin:1rem 0 -.25rem; }
+.footer-wave::before,.footer-wave::after { content:""; flex:1; height:1px; background:#cba45c; }
+@media(max-width:760px) {
+ .foot .foot-top { grid-template-columns:1fr; gap:1.8rem; }
+ .foot .foot-top > div + div { border-left:0; border-top:1px solid rgba(202,160,83,.5); padding:1.5rem 0 0; }
+ .footer-identity { justify-content:center; }
+ .foot .foot-bottom .disc { max-width:100%; }
+ .foot h4::before { padding-left:0; }
+}
