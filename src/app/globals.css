@@ -2303,3 +2303,21 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   #difference .about-photo { max-height: none; }
   #difference .about-body .h-lg { font-size: clamp(2.2rem, 3.7vw, 3.05rem); }
 }
+
+/* Homepage eyebrow only: long, fine gold rules instead of short dashes. */
+.hero .log::before,
+.hero .log::after {
+  content: "";
+  display: inline-block;
+  flex: 0 0 clamp(2.5rem, 6vw, 5.5rem);
+  width: clamp(2.5rem, 6vw, 5.5rem);
+  height: 1px;
+  background: #c8a45c;
+}
+@media (max-width: 440px) {
+  .hero .log::before,
+  .hero .log::after {
+    flex-basis: 1.5rem;
+    width: 1.5rem;
+  }
+}
