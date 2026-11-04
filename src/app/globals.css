@@ -2372,3 +2372,27 @@ body { background: var(--paper); color: var(--ink-on-paper); }
  .foot .foot-bottom>span:first-child {white-space:normal;}
  .foot .foot-bottom .disc {border-left:0;border-top:1px solid #c99f4d;padding:14px 0 0;font-size:12px;}
 }
+
+/* Footer V1 visual alignment against the original approved 1536px artwork */
+@media(min-width:1101px){
+.foot {background:radial-gradient(ellipse at 45% 44%,#0b1c38 0%,#08152c 64%,#071226 100%);padding-top:24px;padding-bottom:42px;}
+.foot .wrap {max-width:1320px;width:calc(100% - 180px);}
+.foot .foot-top {grid-template-columns:1.46fr 1fr 1fr;padding-bottom:37px;}
+.foot .foot-top>div:first-child {padding-right:34px;}
+.foot .foot-top>div:nth-child(2) {padding-left:58px;padding-right:24px;}
+.foot .foot-top>div:nth-child(3) {padding-left:68px;}
+.foot .footer-identity {gap:12px;}
+.foot .footer-anchor {width:80px;height:90px;}
+.foot .footer-wordmark>span {font-size:clamp(30px,2.7vw,41px);font-weight:400;letter-spacing:-.045em;}
+.foot .footer-wordmark small {font-size:16px;letter-spacing:.28em;}
+.foot .foot-tag {font-size:clamp(22px,1.85vw,27px);margin-top:24px;margin-bottom:25px;}
+.foot .foot-socials {gap:37px;}
+.foot .foot-socials a {width:47px;height:47px;}
+.foot .foot-socials svg {width:23px;height:23px;}
+.foot h4 {font-size:clamp(21px,1.62vw,25px);letter-spacing:.23em;font-weight:400;margin-bottom:17px;gap:20px;}
+.foot h4::before,.foot h4::after {width:32px;flex-basis:32px;height:2px;}
+.foot ul {font-size:clamp(19px,1.45vw,22px);font-weight:400;gap:6px;line-height:1.3;}
+.foot .footer-wave {margin-bottom:24px;}
+.foot .foot-bottom {grid-template-columns: .9fr 1.1fr;gap:42px;font-size:17px;}
+.foot .foot-bottom .disc {font-size:14px;line-height:1.65;}
+}
