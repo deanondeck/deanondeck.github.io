@@ -2304,19 +2304,23 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   #difference .about-body .h-lg { font-size: clamp(2.2rem, 3.7vw, 3.05rem); }
 }
 
-/* Homepage eyebrow only: long, fine gold rules instead of short dashes. */
+/* Matching fine gold hairlines for the first two homepage headings only. */
 .hero .log::before,
-.hero .log::after {
+.hero .log::after,
+#fleet .log::before,
+#fleet .log::after {
   content: "";
   display: inline-block;
-  flex: 0 0 clamp(2.5rem, 6vw, 5.5rem);
-  width: clamp(2.5rem, 6vw, 5.5rem);
+  flex: 0 0 3rem;
+  width: 3rem;
   height: 1px;
   background: #c8a45c;
 }
 @media (max-width: 440px) {
   .hero .log::before,
-  .hero .log::after {
+  .hero .log::after,
+  #fleet .log::before,
+  #fleet .log::after {
     flex-basis: 1.5rem;
     width: 1.5rem;
   }
