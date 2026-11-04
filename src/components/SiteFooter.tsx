@@ -19,12 +19,13 @@ export default function SiteFooter({
           <div>
             <div className="footer-identity">
               <svg className="footer-anchor" viewBox="0 0 90 104" fill="none" aria-hidden="true">
-                <defs><linearGradient id="footerGold" x1="0" x2="1" y1="0" y2="1"><stop stopColor="#f5d78c"/><stop offset=".52" stopColor="#d4a148"/><stop offset="1" stopColor="#f2cb74"/></linearGradient></defs>
+                <defs><linearGradient id="footerGold" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#f7d991"/><stop offset=".48" stopColor="#d9a64d"/><stop offset="1" stopColor="#edc46e"/></linearGradient></defs>
                 <g stroke="url(#footerGold)" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="45" cy="12" r="6" strokeWidth="4"/>
-                  <path d="M45 18v55M30 33h30M45 72C27 72 16 60 16 49M45 72c18 0 29-12 29-23" strokeWidth="4"/>
-                  <path d="M16 49l-7 4 8 6M74 49l7 4-8 6M45 73l-7-7m7 7 7-7" strokeWidth="3"/>
-                  <path d="M7 86c12-6 22-7 37-1 16 6 27 5 39-1M8 96c15-7 25-7 37-2 12 5 25 5 37-2" strokeWidth="3"/>
+                  <circle cx="45" cy="11" r="5.4" strokeWidth="2.7"/>
+                  <path d="M45 17v56M32 31h26" strokeWidth="2.7"/>
+                  <path d="M45 73C29 73 17 63 14 49M45 73c16 0 28-10 31-24" strokeWidth="2.8"/>
+                  <path d="M14 49l-6 6 9 4M76 49l6 6-9 4M45 73l-7-7m7 7 7-7" strokeWidth="2.5"/>
+                  <path d="M8 87c12-6 24-7 37-2 13 5 25 4 37-2M9 96c13-6 25-7 37-2 13 5 24 4 35-2" strokeWidth="2.2"/>
                 </g>
               </svg>
               <div className="footer-wordmark"><span>DEAN ON DECK</span><small>CRUISE TRAVEL</small></div>
