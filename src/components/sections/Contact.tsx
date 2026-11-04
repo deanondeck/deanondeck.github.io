@@ -52,6 +52,7 @@ export default function Contact({ id, content }: SectionProps) {
             <a className="btn btn-scarlet" href="/plan/">Let’s plan your cruise →</a>
             <a className="cl-alt" href="tel:+16178999774">Call (617) 899-9774</a>
             <a className="cl-alt" href="mailto:deanondeck1@gmail.com">Email Dean</a>
+            <a className="cl-alt" href="https://dot.cards/deanondeck" target="_blank" rel="noopener noreferrer">Dot Digital Business Card</a>
           </div>
         </div>
       </section>
