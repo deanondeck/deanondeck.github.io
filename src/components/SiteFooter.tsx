@@ -1,4 +1,3 @@
-import { img } from "@/lib/media";
 import type { SiteConfig } from "@/lib/cms/types";
 
 export default function SiteFooter({
@@ -18,12 +17,14 @@ export default function SiteFooter({
       <div className="wrap">
         <div className="foot-top">
           <div>
-            <div className="brand">
-              <img src={img(brand.logo)} alt="" />
-              <span className="brand-name">{brand.name}</span>
+            <div className="footer-identity">
+              <svg className="footer-anchor" viewBox="0 0 80 100" fill="none" aria-hidden="true">
+                <circle cx="40" cy="12" r="7" stroke="currentColor" strokeWidth="4"/>
+                <path d="M40 19v60M27 35h26M40 80C20 80 11 65 11 53l-8 9M40 80c20 0 29-15 29-27l8 9M26 88q14-9 28 0M18 94q22-10 44 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <div className="footer-wordmark"><span>DEAN ON DECK</span><small>CRUISE TRAVEL</small></div>
             </div>
-            <p className="foot-role">Independent Travel Advisor</p>
-            <p className="foot-tag">{brand.tagline}</p>
+            <p className="foot-tag">Your vacation, your way.<br/>Your First Mate, All The Way.</p>
             <div className="foot-socials">
               <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -70,6 +71,7 @@ export default function SiteFooter({
             </ul>
           </div>
         </div>
+        <div className="footer-wave" aria-hidden="true">〰</div>
         <div className="foot-bottom">
           <span>© {new Date().getFullYear()} {seo.siteName}</span>
           <span className="disc">{footer.disclaimer}</span>
