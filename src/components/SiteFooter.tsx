@@ -70,9 +70,14 @@ export default function SiteFooter({
           <div>
             <h4><span>The Fleet</span></h4>
             <ul>
-              {footer.boatList.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              {footer.boatList.map((item) => {
+                const cruise = site.cruiseLines.find((line) => line.name === item || (item === "Atlantis Events" && line.id === "atlantis"));
+                return (
+                  <li key={item}>
+                    {cruise ? <a href={to(`/cruises/#${cruise.id}`)}>{item}</a> : item}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
