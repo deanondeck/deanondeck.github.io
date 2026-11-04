@@ -2449,3 +2449,30 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   .foot .foot-bottom { grid-template-columns:.8fr 1.2fr; gap:24px; font-size:14px; }
   .foot .foot-bottom .disc { padding-left:32px; font-size:12px; line-height:1.6; }
 }
+
+
+/* Approved cleaned footer: single authoritative desktop layout */
+@media (min-width:1101px) {
+  .foot { background:radial-gradient(ellipse at 48% 45%,#0b1b35 0%,#07152c 62%,#061126 100%);padding:31px 0 35px; }
+  .foot .wrap { width:calc(100% - 160px);max-width:1320px; }
+  .foot .foot-top {grid-template-columns: 44% 28.5% 27.5%;gap:0;padding-bottom:30px;}
+  .foot .foot-top>div:first-child {padding:0 38px 0 0;text-align:center;}
+  .foot .foot-top>div:nth-child(2) {border-left:1px solid #b9924d;padding:0 18px 0 43px;}
+  .foot .foot-top>div:nth-child(3) {border-left:1px solid #b9924d;padding:0 0 0 54px;}
+  .foot .footer-identity {gap:10px;justify-content:center;}
+  .foot .footer-anchor {width:76px;height:83px;}
+  .foot .footer-wordmark {padding-left:12px;}
+  .foot .footer-wordmark>span {font-family:Georgia,'Times New Roman',serif;font-size:clamp(31px,2.8vw,41px);font-weight:400;letter-spacing:-.025em;line-height:1.1;color:#fff;}
+  .foot .footer-wordmark small {font-family:Georgia,serif;font-size:16px;letter-spacing:.29em;margin-top:6px;color:#e9ba64;}
+  .foot .foot-tag {font-family:Georgia,serif;font-size:clamp(20px,1.7vw,25px);line-height:1.32;margin:52px 0 22px;font-style:italic;color:#fff;}
+  .foot .foot-socials {gap:36px;justify-content:center;}
+  .foot .foot-socials a {width:46px;height:46px;border:1.2px solid #e5b85e;}
+  .foot .foot-socials svg {width:21px;height:21px;}
+  .foot h4 {font-family:Georgia,serif;font-size:21px;font-weight:400;letter-spacing:.23em;gap:16px;margin:0 0 14px;line-height:1.2;color:#f0c572;}
+  .foot h4::before,.foot h4::after {width:32px;flex-basis:32px;height:1px;background:#dba950;}
+  .foot ul {font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:400;line-height:1.45;gap:0;}
+  .foot .footer-wave {margin:0 0 19px;color:#dca950;}
+  .foot .footer-wave svg {width:160px;height:29px;}
+  .foot .foot-bottom {grid-template-columns:38% 62%;gap:0;font-family:Arial,sans-serif;font-size:16px;line-height:1.6;}
+  .foot .foot-bottom .disc {border-left:1px solid #c89e53;padding-left:42px;font-size:13px;line-height:1.65;}
+}
