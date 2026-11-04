@@ -2317,29 +2317,58 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 }
 
 
-/* Approved Dean On Deck footer — archived variation 1 (no credentials) */
-.foot { background:#07152b; color:#f7f4ed; padding-block:3.3rem 1.7rem; }
-.foot .foot-top { grid-template-columns:1.4fr 1fr 1fr; gap:2.8rem; border-bottom:0; padding-bottom:1.4rem; }
-.foot .foot-top > div + div { border-left:1px solid rgba(202,160,83,.6); padding-left:2.5rem; }
-.footer-identity { display:flex; align-items:center; justify-content:center; gap:1.1rem; color:#d4a850; }
-.footer-anchor { width:66px; height:86px; flex:none; }
-.footer-wordmark { border-left:1px solid #cba45c; padding-left:.9rem; display:flex; flex-direction:column; text-align:center; }
-.footer-wordmark > span { font-family:Georgia,serif; font-size:clamp(1.45rem,2.3vw,2.25rem); color:#fff; line-height:1.2; white-space:nowrap; }
-.footer-wordmark small { font-family:Georgia,serif; font-size:.85rem; color:#d9af5c; letter-spacing:.3em; margin-top:.3rem; }
-.foot .foot-tag { font-family:Georgia,serif; font-size:1.18rem; line-height:1.5; text-align:center; margin:1rem 0 1.2rem; }
-.foot .foot-socials { justify-content:center; gap:1.4rem; }
-.foot .foot-socials a { color:#fff; border:1px solid #d9af5c; width:44px; height:44px; }
-.foot h4 { color:#e2b766; font-family:Georgia,serif; font-size:1.32rem; font-weight:600; letter-spacing:.17em; text-transform:uppercase; margin-bottom:1.1rem; }
-.foot h4::before,.foot h4::after { content:"—"; padding:0 .4em; }
-.foot ul { font-family:Georgia,serif; font-size:1.05rem; gap:.4rem; }
-.foot .foot-bottom { border-top:1px solid #cba45c; padding-top:1.5rem; align-items:center; }
-.foot .foot-bottom .disc { max-width:60%; opacity:.9; }
-.footer-wave { display:flex; align-items:center; gap:1rem; color:#d5a44e; font-size:2.1rem; line-height:1; justify-content:center; margin:1rem 0 -.25rem; }
-.footer-wave::before,.footer-wave::after { content:""; flex:1; height:1px; background:#cba45c; }
+
+/* Dean On Deck — approved footer Version 1; scoped overrides */
+.foot { background:radial-gradient(ellipse at 50% 20%,#0a1931 0%,#071329 72%,#061126 100%);color:#fff;padding:25px 0 31px; }
+.foot .wrap { max-width:1320px; width:calc(100% - 64px); }
+.foot .foot-top { display:grid;grid-template-columns:1.38fr 1fr .92fr;gap:0;padding:0 0 31px;border:0; }
+.foot .foot-top>div { min-width:0; }
+.foot .foot-top>div:first-child {padding:0 34px 0 0;text-align:center;}
+.foot .foot-top>div:nth-child(2) {border-left:1px solid #b8954c;padding:0 32px 0 43px;}
+.foot .foot-top>div:nth-child(3) {border-left:1px solid #b8954c;padding:0 0 0 49px;}
+.foot .footer-identity {display:flex;align-items:center;justify-content:center;gap:13px;color:#e5b653;white-space:nowrap;}
+.foot .footer-anchor {height:86px;width:74px;flex-shrink:0;}
+.foot .footer-wordmark {border-left:1px solid #cda657;padding:0 0 0 12px;text-align:center;display:flex;flex-direction:column;}
+.foot .footer-wordmark>span {font-family:Georgia,"Times New Roman",serif;font-size:clamp(26px,2.65vw,43px);line-height:1.12;color:#fff;letter-spacing:-.025em;white-space:nowrap;}
+.foot .footer-wordmark small {font-family:Georgia,serif;font-size:clamp(11px,1.25vw,18px);letter-spacing:.29em;color:#e5b653;margin-top:7px;}
+.foot .foot-tag {font-family:Georgia,serif;font-size:clamp(17px,1.7vw,25px);line-height:1.35;font-style:italic;color:#fff;margin:17px 0 20px;}
+.foot .foot-socials {display:flex;justify-content:center;gap:34px;margin:0;}
+.foot .foot-socials a {height:46px;width:46px;border:1.5px solid #e2b550;border-radius:50%;color:#fff;}
+.foot h4 {display:flex;align-items:center;gap:16px;white-space:nowrap;margin:0 0 12px;font-family:Georgia,serif;font-size:clamp(18px,1.7vw,25px);font-weight:600;letter-spacing:.2em;color:#e6ba63;text-transform:uppercase;line-height:1.2;}
+.foot h4::before,.foot h4::after {content:"";display:block;flex:0 0 32px;width:32px;height:2px;background:#e1b04c;padding:0;}
+.foot ul {display:grid;gap:3px;margin:0;padding:0;list-style:none;font-family:Georgia,serif;font-size:clamp(16px,1.43vw,22px);line-height:1.3;}
+.foot ul li {margin:0;}
+.foot .footer-wave {display:flex;align-items:center;gap:20px;color:#e2ad52;margin:0 0 20px;font-size:0;line-height:0;}
+.foot .footer-wave svg {width:170px;height:34px;flex:none;}
+.foot .footer-wave::before,.foot .footer-wave::after {content:"";height:1px;background:#d4a349;flex:1;}
+.foot .foot-bottom {display:grid;grid-template-columns: .85fr 1.15fr;align-items:center;gap:42px;padding:0;border:0;font-family:Arial,sans-serif;font-size:16px;line-height:1.55;}
+.foot .foot-bottom>span:first-child {white-space:nowrap;}
+.foot .foot-bottom .disc {max-width:none;border-left:1px solid #c99f4d;padding-left:42px;opacity:1;font-size:14px;line-height:1.6;}
+@media(max-width:1100px) {
+ .foot .wrap {width:calc(100% - 44px);}
+ .foot .foot-top {grid-template-columns:1.2fr 1fr .9fr;}
+ .foot .foot-top>div:first-child {padding-right:18px;}
+ .foot .foot-top>div:nth-child(2) {padding-left:22px;padding-right:15px;}
+ .foot .foot-top>div:nth-child(3) {padding-left:22px;}
+ .foot .footer-anchor {width:52px;height:70px;}
+ .foot .footer-wordmark>span {font-size:clamp(21px,2.5vw,30px);}
+ .foot h4 {gap:9px;letter-spacing:.1em;}
+ .foot h4::before,.foot h4::after {flex-basis:20px;width:20px;}
+ .foot ul {font-size:16px;}
+}
 @media(max-width:760px) {
- .foot .foot-top { grid-template-columns:1fr; gap:1.8rem; }
- .foot .foot-top > div + div { border-left:0; border-top:1px solid rgba(202,160,83,.5); padding:1.5rem 0 0; }
- .footer-identity { justify-content:center; }
- .foot .foot-bottom .disc { max-width:100%; }
- .foot h4::before { padding-left:0; }
+ .foot {padding:34px 0 24px;}
+ .foot .foot-top {grid-template-columns:1fr;gap:24px;padding-bottom:25px;}
+ .foot .foot-top>div:first-child {padding:0;}
+ .foot .foot-top>div:nth-child(2),.foot .foot-top>div:nth-child(3) {border-left:0;border-top:1px solid rgba(211,165,78,.55);padding:21px 0 0;}
+ .foot .footer-identity {justify-content:center;}
+ .foot .footer-wordmark>span {font-size:clamp(26px,6vw,38px);}
+ .foot .footer-wordmark small {font-size:12px;}
+ .foot .foot-tag {font-size:21px;}
+ .foot h4 {font-size:22px;}
+ .foot ul {font-size:18px;}
+ .foot .footer-wave svg {width:105px;height:25px;}
+ .foot .foot-bottom {grid-template-columns:1fr;gap:14px;font-size:13px;}
+ .foot .foot-bottom>span:first-child {white-space:normal;}
+ .foot .foot-bottom .disc {border-left:0;border-top:1px solid #c99f4d;padding:14px 0 0;font-size:12px;}
 }
