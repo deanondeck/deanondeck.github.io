@@ -62,6 +62,11 @@
             "d": "Adults-only escapes, vibrant dining and days your way."
           },
           {
+            "k": "Ultra-luxury",
+            "t": "Silversea",
+            "d": "Intimate luxury voyages and extraordinary destinations."
+          },
+          {
             "k": "For the whole crew",
             "t": "Royal Caribbean",
             "d": "Big adventures for families, friends and every generation."
@@ -70,11 +75,6 @@
             "k": "Modern luxury",
             "t": "Celebrity Cruises",
             "d": "Modern ships, relaxed luxury and time to reconnect."
-          },
-          {
-            "k": "Ultra-luxury",
-            "t": "Silversea",
-            "d": "Intimate luxury voyages and extraordinary destinations."
           },
           {
             "k": "Community & celebration",
