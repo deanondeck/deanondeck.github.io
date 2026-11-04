@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Dean On Deck Cruise Travel | Independent Travel Advisor",
+    "title": "Dean On Deck · Cruise Travel",
     "description": "Plan your next cruise with Dean On Deck Cruise Travel. Explore adults-only Virgin Voyages, Silversea luxury sailings, Celebrity, Royal Caribbean and Atlantis with personal guidance.",
     "ogTitle": "Your vacation, your way. Dean On Deck.",
     "ogDescription": "Choose your cruise. Keep a helping hand behind the scenes. Explore voyages and plan with Dean.",
@@ -13,10 +13,10 @@
       "id": "hero",
       "type": "hero",
       "content": {
-        "eyebrow": "Dean On Deck Cruise Travel · Independent Travel Advisor",
+        "eyebrow": "— DEAN ON DECK · CRUISE TRAVEL —",
         "heading": "Your vacation, your way.",
-        "script": "Your First Mate, all the way.",
-        "sub": "Hi, I’m Dean, your Independent Travel Advisor. From adults-only Virgin Voyages to luxury escapes and family adventures, I’ll help you find the right cruise and be with you throughout the journey—at no additional planning fee.",
+        "script": "YOUR FIRST MATE, ALL THE WAY.",
+        "sub": "Hi, I’m Dean. From adults-only Virgin Voyages to luxury escapes and family adventures, I’ll help you find the right cruise and be with you throughout the journey—at no additional planning fee.",
         "posterImg": "virgin-sunset-sailing",
         "video": "",
         "primaryCta": {
@@ -127,7 +127,7 @@
       "content": {
         "eyebrow": "Your First Mate",
         "heading": "Ahoy, I'm Dean.",
-        "body": "I’m Dean Satterfield, an Independent Travel Advisor with a passion for cruising and helping others discover the joy of being at sea.\n\nWhether you’re planning your first cruise or your next adventure, I’m here to help with the details so you can enjoy every moment.",
+        "body": "I’m Dean Satterfield, with a passion for cruising and helping others discover the joy of being at sea.\n\nWhether you’re planning your first cruise or your next adventure, I’m here to help with the details so you can enjoy every moment.",
         "signature": "— Dean",
         "ctaLabel": "Get to know Dean →",
         "ctaHref": "/about/",
