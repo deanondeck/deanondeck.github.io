@@ -204,6 +204,23 @@
             ]
           },
           {
+            "q": "Should I purchase voyage protection or travel insurance?",
+            "body": [
+              {
+                "h": "Protect your investment",
+                "text": "Cruise fares can be nonrefundable, and unexpected illness, travel delays or other disruptions may affect your plans. Consider travel insurance or a cruise line’s voyage protection option before final payment."
+              },
+              {
+                "h": "Compare the coverage",
+                "text": "Coverage varies. Review trip cancellation and interruption benefits, emergency medical care, medical evacuation, exclusions, pre-existing-condition provisions and purchase deadlines. Cruise line protection and independent travel insurance may offer different benefits."
+              },
+              {
+                "h": "Ask Dean before you decide",
+                "text": "I can help you understand the options available for your sailing. Always review the actual policy documents and coverage terms before purchasing."
+              }
+            ]
+          },
+          {
             "q": "Can I still book and plan on my own?",
             "body": [
               {
