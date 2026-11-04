@@ -18,9 +18,14 @@ export default function SiteFooter({
         <div className="foot-top">
           <div>
             <div className="footer-identity">
-              <svg className="footer-anchor" viewBox="0 0 80 100" fill="none" aria-hidden="true">
-                <circle cx="40" cy="12" r="7" stroke="currentColor" strokeWidth="4"/>
-                <path d="M40 19v60M27 35h26M40 80C20 80 11 65 11 53l-8 9M40 80c20 0 29-15 29-27l8 9M26 88q14-9 28 0M18 94q22-10 44 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg className="footer-anchor" viewBox="0 0 90 104" fill="none" aria-hidden="true">
+                <defs><linearGradient id="footerGold" x1="0" x2="1" y1="0" y2="1"><stop stopColor="#f5d78c"/><stop offset=".52" stopColor="#d4a148"/><stop offset="1" stopColor="#f2cb74"/></linearGradient></defs>
+                <g stroke="url(#footerGold)" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="45" cy="12" r="6" strokeWidth="4"/>
+                  <path d="M45 18v55M30 33h30M45 72C27 72 16 60 16 49M45 72c18 0 29-12 29-23" strokeWidth="4"/>
+                  <path d="M16 49l-7 4 8 6M74 49l7 4-8 6M45 73l-7-7m7 7 7-7" strokeWidth="3"/>
+                  <path d="M7 86c12-6 22-7 37-1 16 6 27 5 39-1M8 96c15-7 25-7 37-2 12 5 25 5 37-2" strokeWidth="3"/>
+                </g>
               </svg>
               <div className="footer-wordmark"><span>DEAN ON DECK</span><small>CRUISE TRAVEL</small></div>
             </div>
