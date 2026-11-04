@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Dean On Deck | Cruise Planning with a Personal Helping Hand",
-    "description": "Explore Virgin Voyages, Royal Caribbean, Celebrity, Silversea and Atlantis with Dean On Deck. Personal cruise planning and support at no cost to you.",
+    "title": "Dean On Deck Cruise Travel | Independent Travel Advisor",
+    "description": "Plan your next cruise with Dean On Deck Cruise Travel. Explore adults-only Virgin Voyages, Silversea luxury sailings, Celebrity, Royal Caribbean and Atlantis with personal guidance.",
     "ogTitle": "Your vacation, your way. Dean On Deck.",
     "ogDescription": "Choose your cruise. Keep a helping hand behind the scenes. Explore voyages and plan with Dean.",
     "ogType": "website",
@@ -13,10 +13,10 @@
       "id": "hero",
       "type": "hero",
       "content": {
-        "eyebrow": "Dean On Deck · Cruise Travel",
+        "eyebrow": "Dean On Deck Cruise Travel · Independent Travel Advisor",
         "heading": "Your vacation, your way.",
         "script": "Your First Mate, all the way.",
-        "sub": "Hi, I’m Dean. Let’s find your next cruise—from adults-only escapes to family adventures and luxury voyages. Plan it yourself or let me help, at no cost to you.",
+        "sub": "Hi, I’m Dean, your Independent Travel Advisor. From adults-only Virgin Voyages to luxury escapes and family adventures, I’ll help you find the right cruise and be with you throughout the journey—at no additional planning fee.",
         "posterImg": "port-caribbean",
         "video": "",
         "primaryCta": {
@@ -127,7 +127,7 @@
       "content": {
         "eyebrow": "Your First Mate",
         "heading": "Ahoy, I'm Dean.",
-        "body": "I’m Dean Satterfield, an independent travel advisor with a passion for cruising and helping others discover the joy of being at sea.\n\nWhether you’re planning your first cruise or your next adventure, I’m here to help with the details so you can enjoy every moment.",
+        "body": "I’m Dean Satterfield, an Independent Travel Advisor with a passion for cruising and helping others discover the joy of being at sea.\n\nWhether you’re planning your first cruise or your next adventure, I’m here to help with the details so you can enjoy every moment.",
         "signature": "— Dean",
         "ctaLabel": "Get to know Dean →",
         "ctaHref": "/about/",
