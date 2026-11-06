@@ -44,29 +44,7 @@ export default function SiteFooter({
         <div className="foot-top">
           <div className="footer-brand-col">
             <div className="footer-identity">
-              <svg className="footer-anchor" viewBox="0 0 110 118" fill="none" aria-hidden="true">
-                <defs>
-                  <linearGradient id="anchorMetalGold" x1="0" y1="0" x2="1" y2=".35">
-                    <stop offset="0" stopColor="#9c5d0b"/><stop offset=".18" stopColor="#f7c858"/><stop offset=".34" stopColor="#fff0ac"/><stop offset=".52" stopColor="#bc7a13"/><stop offset=".7" stopColor="#ffda6c"/><stop offset="1" stopColor="#8c5109"/>
-                  </linearGradient>
-                  <linearGradient id="anchorGoldRope" x1="0" y1="0" x2="1" y2="1">
-                    <stop stopColor="#fff1a6"/><stop offset=".5" stopColor="#bb7818"/><stop offset="1" stopColor="#f5c353"/>
-                  </linearGradient>
-                </defs>
-                <g strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="55" cy="13" r="9" stroke="url(#anchorMetalGold)" strokeWidth="5"/>
-                  <path d="M55 23V84" stroke="#8d520c" strokeWidth="13"/>
-                  <path d="M55 23V84" stroke="url(#anchorMetalGold)" strokeWidth="9"/>
-                  <path d="M38 35H72" stroke="#8d520c" strokeWidth="9"/>
-                  <path d="M38 34H72" stroke="url(#anchorMetalGold)" strokeWidth="6"/>
-                  <path d="M62 27C81 28 78 40 62 45C44 51 41 59 56 66C67 71 68 77 61 83" stroke="#70420f" strokeWidth="6"/>
-                  <path d="M62 27C81 28 78 40 62 45C44 51 41 59 56 66C67 71 68 77 61 83" stroke="url(#anchorGoldRope)" strokeWidth="4"/>
-                  <path d="M55 88C31 87 18 73 15 57L8 65L21 70L15 57M55 88C79 87 92 73 95 57L102 65L89 70L95 57" stroke="#92590c" strokeWidth="8"/>
-                  <path d="M55 88C31 87 18 73 15 57L8 65L21 70L15 57M55 88C79 87 92 73 95 57L102 65L89 70L95 57" stroke="url(#anchorMetalGold)" strokeWidth="5.5"/>
-                  <path d="M55 87L49 80M55 87L61 80" stroke="#ffe48c" strokeWidth="3"/>
-                  <path d="M6 101C22 93 37 93 54 100C71 107 88 103 104 95M8 110C24 102 38 102 55 108C73 114 87 109 102 103" stroke="url(#anchorMetalGold)" strokeWidth="4"/>
-                </g>
-              </svg>
+              <img className="footer-anchor" src="data:image/webp;base64,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" alt="" aria-hidden="true" />
               <div className="footer-wordmark"><span>DEAN ON DECK</span><small>CRUISE TRAVEL</small></div>
             </div>
             <p className="foot-tag">Your vacation, your way.<br/>Your First Mate, all the way.</p>
