@@ -19,7 +19,7 @@ export default function SiteFooter({
         .foot .foot-top { border-bottom:0; }
         .foot .footer-wordmark { border-left:2px solid #e2b24d; }
         .foot .footer-wordmark small { color:#f2c463; }
-        .foot .footer-anchor { object-fit:contain; width:112px; height:125px; flex-shrink:0; }
+        .foot .footer-anchor { object-fit:contain; width:112px; height:125px; flex-shrink:0; mix-blend-mode:lighten; }
         @media(max-width:1100px) and (min-width:701px) { .foot .footer-anchor { width:92px; height:103px; } }
         @media(max-width:700px) { .foot .footer-anchor { width:86px; height:96px; } }
         .foot .foot-socials a { border:2px solid #e8b64e;color:#fff; }
