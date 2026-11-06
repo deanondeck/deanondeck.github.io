@@ -16,7 +16,7 @@ export default function SiteFooter({
     <footer className="foot">
       <div className="wrap">
         <div className="foot-top">
-          <div>
+          <div className="footer-brand-col">
             <div className="footer-identity">
               <svg className="footer-anchor" viewBox="0 0 90 104" fill="none" aria-hidden="true">
                 <defs><linearGradient id="footerGold" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#f7d991"/><stop offset=".48" stopColor="#d9a64d"/><stop offset="1" stopColor="#edc46e"/></linearGradient></defs>
@@ -51,7 +51,7 @@ export default function SiteFooter({
               </a>
             </div>
           </div>
-          <div>
+          <div className="footer-links-col">
             <h4><span>Explore</span></h4>
             <ul>
               {footer.exploreLinks.map((link) => (
@@ -68,7 +68,7 @@ export default function SiteFooter({
               ))}
             </ul>
           </div>
-          <div>
+          <div className="footer-fleet-col">
             <h4><span>The Fleet</span></h4>
             <ul>
               {footer.boatList.map((item) => {
