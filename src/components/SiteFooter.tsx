@@ -14,6 +14,32 @@ export default function SiteFooter({
 
   return (
     <footer className="foot">
+      <style>{`
+        .foot { background:radial-gradient(ellipse at 50% 40%,#0a1a35 0%,#06142d 72%,#041027 100%);color:#fff; }
+        .foot .foot-top { border-bottom:0; }
+        .foot .footer-wordmark { border-left:2px solid #e2b24d; }
+        .foot .footer-wordmark small { color:#f2c463; }
+        .foot .foot-socials a { border:2px solid #e8b64e;color:#fff; }
+        .foot .footer-wave { display:flex;align-items:center;gap:20px;color:#f3b936; }
+        .foot .footer-wave::before,.foot .footer-wave::after {content:"";height:3px;background:#e8b341;flex:1;min-width:0;}
+        .foot .footer-wave svg { flex-shrink:0; }
+        .foot .foot-bottom,.foot .foot-bottom .disc { color:#fff; }
+        @media(min-width:1101px) {
+          .foot .foot-top {grid-template-columns:42% 29% 29%;}
+          .foot .footer-brand-col {padding-right:34px;}
+          .foot .footer-links-col {border-left:2px solid #d9a84e;padding-left:42px;}
+          .foot .footer-fleet-col {border-left:2px solid #d9a84e;padding-left:46px;}
+          .foot .foot-tag {margin-top:28px;}
+          .foot .foot-bottom .disc {border-left:2px solid #d9a84e;}
+        }
+        @media(max-width:1100px) {
+          .foot .footer-links-col,.foot .footer-fleet-col {border-left:1px solid #b9924d;padding-left:18px;}
+        }
+        @media(max-width:700px) {
+          .foot .footer-links-col,.foot .footer-fleet-col {border-left:0;padding-left:0;}
+          .foot .footer-wave svg {max-width:80px;}
+        }
+      `}</style>
       <div className="wrap">
         <div className="foot-top">
           <div className="footer-brand-col">
