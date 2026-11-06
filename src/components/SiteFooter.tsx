@@ -44,14 +44,27 @@ export default function SiteFooter({
         <div className="foot-top">
           <div className="footer-brand-col">
             <div className="footer-identity">
-              <svg className="footer-anchor" viewBox="0 0 90 104" fill="none" aria-hidden="true">
-                <defs><linearGradient id="footerGold" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#f7d991"/><stop offset=".48" stopColor="#d9a64d"/><stop offset="1" stopColor="#edc46e"/></linearGradient></defs>
-                <g stroke="url(#footerGold)" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="45" cy="11" r="5.4" strokeWidth="2.7"/>
-                  <path d="M45 17v56M32 31h26" strokeWidth="2.7"/>
-                  <path d="M45 73C29 73 17 63 14 49M45 73c16 0 28-10 31-24" strokeWidth="2.8"/>
-                  <path d="M14 49l-6 6 9 4M76 49l6 6-9 4M45 73l-7-7m7 7 7-7" strokeWidth="2.5"/>
-                  <path d="M8 87c12-6 24-7 37-2 13 5 25 4 37-2M9 96c13-6 25-7 37-2 13 5 24 4 35-2" strokeWidth="2.2"/>
+              <svg className="footer-anchor" viewBox="0 0 110 118" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="anchorMetalGold" x1="0" y1="0" x2="1" y2=".35">
+                    <stop offset="0" stopColor="#9c5d0b"/><stop offset=".18" stopColor="#f7c858"/><stop offset=".34" stopColor="#fff0ac"/><stop offset=".52" stopColor="#bc7a13"/><stop offset=".7" stopColor="#ffda6c"/><stop offset="1" stopColor="#8c5109"/>
+                  </linearGradient>
+                  <linearGradient id="anchorGoldRope" x1="0" y1="0" x2="1" y2="1">
+                    <stop stopColor="#fff1a6"/><stop offset=".5" stopColor="#bb7818"/><stop offset="1" stopColor="#f5c353"/>
+                  </linearGradient>
+                </defs>
+                <g strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="55" cy="13" r="9" stroke="url(#anchorMetalGold)" strokeWidth="5"/>
+                  <path d="M55 23V84" stroke="#8d520c" strokeWidth="13"/>
+                  <path d="M55 23V84" stroke="url(#anchorMetalGold)" strokeWidth="9"/>
+                  <path d="M38 35H72" stroke="#8d520c" strokeWidth="9"/>
+                  <path d="M38 34H72" stroke="url(#anchorMetalGold)" strokeWidth="6"/>
+                  <path d="M62 27C81 28 78 40 62 45C44 51 41 59 56 66C67 71 68 77 61 83" stroke="#70420f" strokeWidth="6"/>
+                  <path d="M62 27C81 28 78 40 62 45C44 51 41 59 56 66C67 71 68 77 61 83" stroke="url(#anchorGoldRope)" strokeWidth="4"/>
+                  <path d="M55 88C31 87 18 73 15 57L8 65L21 70L15 57M55 88C79 87 92 73 95 57L102 65L89 70L95 57" stroke="#92590c" strokeWidth="8"/>
+                  <path d="M55 88C31 87 18 73 15 57L8 65L21 70L15 57M55 88C79 87 92 73 95 57L102 65L89 70L95 57" stroke="url(#anchorMetalGold)" strokeWidth="5.5"/>
+                  <path d="M55 87L49 80M55 87L61 80" stroke="#ffe48c" strokeWidth="3"/>
+                  <path d="M6 101C22 93 37 93 54 100C71 107 88 103 104 95M8 110C24 102 38 102 55 108C73 114 87 109 102 103" stroke="url(#anchorMetalGold)" strokeWidth="4"/>
                 </g>
               </svg>
               <div className="footer-wordmark"><span>DEAN ON DECK</span><small>CRUISE TRAVEL</small></div>
