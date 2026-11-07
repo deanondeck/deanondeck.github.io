@@ -2636,3 +2636,15 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 
 /* First Mate review: compact section spacing, with existing typography/cards. */
 #philosophy { padding-block: clamp(2rem,3vw,2.75rem); scroll-margin-top: 85px; }
+
+/* Equal breathing room into and out of the homepage reviews. */
+#difference { padding-bottom: 24px; }
+#reviews .sec-head > .log { display: flex; }
+#difference .about-body > .log::after {
+  content: "";
+  display: inline-block;
+  flex: 0 0 1.8rem;
+  width: 1.8rem;
+  height: 1px;
+  background: #c8a45c;
+}
