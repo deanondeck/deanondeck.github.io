@@ -130,7 +130,7 @@ export default function Faq({ id, content }: SectionProps) {
   return <section className="band band--shell" id="faq" data-cms-id={id}>
     <div className="wrap">
       <div className="sec-head center">
-        <h2 className="display h-lg" data-cms-field="heading">{c.heading}</h2>
+        <h2 className="log log--center" data-cms-field="heading">{c.heading}</h2>
         <p className="sail-intro">Helpful answers, travel tips, and essential information to make your cruise smooth and stress-free.</p>
       </div>
       <div className="sail-columns">
