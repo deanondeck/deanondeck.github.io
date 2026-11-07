@@ -2307,7 +2307,8 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 /* Match the original site's short, delicate gold dashes. */
 .hero .log::before,
 .hero .log::after,
-#fleet .log::after {
+#fleet .log::after,
+#contact .log::before {
   content: "";
   display: inline-block;
   flex: 0 0 1.8rem;
