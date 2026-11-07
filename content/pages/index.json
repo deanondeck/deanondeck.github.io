@@ -192,7 +192,7 @@
       "type": "faq",
       "content": {
         "eyebrow": "Essential FAQs",
-        "heading": "Know before you sail.",
+        "heading": "Know Before You Sail",
         "items": [
           {
             "q": "Does it cost extra to have Dean help me?",
@@ -239,8 +239,12 @@
             ]
           },
           {
-            "q": "What should Atlantis guests know?",
+            "q": "Booking Royal Caribbean, Celebrity or Atlantis? Here’s what to know.",
             "body": [
+              {
+                "h": "Royal Caribbean and Celebrity",
+                "text": "Contact me before booking so I can help you use the right booking route and keep your reservation connected to my agency. If you already booked, transfer eligibility depends on the supplier’s rules, booking date and payment status."
+              },
               {
                 "h": "Check with Dean before booking",
                 "text": "Atlantis advised me that travelers who booked directly within the past four years generally must keep booking directly. Contact me so we can confirm your eligibility. When calling Atlantis, request Dean Satterfield at On Deck Agency."
