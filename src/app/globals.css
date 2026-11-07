@@ -2625,3 +2625,11 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   #faq .sail-protection:not(:has(.sail-form-view)) li { padding-block: 2px; }
   #faq .sail-difference { margin-top: 12px; }
 }
+/* Keep the portrait and both lettering lines on one true center axis. */
+#faq .sail-brand-name { max-width: none; text-align: center; }
+@media (min-width: 801px) {
+  #faq .sail-difference { grid-template-columns: minmax(170px, max-content) minmax(0, 1fr); }
+}
+@media (min-width: 481px) and (max-width: 800px) {
+  #faq .sail-difference { grid-template-columns: minmax(115px, max-content) minmax(0, 1fr); }
+}
