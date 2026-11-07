@@ -2633,3 +2633,6 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 @media (min-width: 481px) and (max-width: 800px) {
   #faq .sail-difference { grid-template-columns: minmax(115px, max-content) minmax(0, 1fr); }
 }
+
+/* First Mate review: compact section spacing, with existing typography/cards. */
+#philosophy { padding-block: clamp(2rem,3vw,2.75rem); scroll-margin-top: 85px; }
