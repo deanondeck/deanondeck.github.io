@@ -2309,6 +2309,7 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .hero .log::after,
 #fleet .log::after,
 #contact .log::before,
+#contact .log::after,
 #plan .sec-head .log::before,
 #plan .plan-aside > .log::before {
   content: "";
