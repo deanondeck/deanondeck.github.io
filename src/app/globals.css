@@ -2693,3 +2693,23 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 /* Preserve the supplied horizontal Virgin logo artwork without cropping. */
 #virgin .virgin-editorial-wordmark { width:100%; max-width:440px; min-height:155px; justify-content:center; }
 #virgin .virgin-editorial-wordmark img { display:block; width:100%; height:auto; max-height:220px; object-fit:contain; }
+
+
+/* 2026-11-08: bring Virgin editorial sizing back to the approved compact mockup. */
+#virgin > .wrap.cl-grid--virgin { max-width:1160px; }
+#virgin .virgin-editorial { padding:12px 0 32px; }
+#virgin .virgin-editorial-eyebrow { font-size:clamp(26px,2.8vw,40px); margin-bottom:26px; }
+#virgin .virgin-editorial-grid { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,4.8vw,64px); }
+#virgin .virgin-editorial-photo { height:clamp(390px,39vw,540px); }
+#virgin .virgin-editorial-wordmark { width:100%; max-width:340px; min-height:0; height:112px; margin:0 auto 12px; overflow:hidden; }
+#virgin .virgin-editorial-wordmark img { width:100%; height:100%; max-height:none; object-fit:contain; mix-blend-mode:multiply; }
+#virgin .virgin-editorial-content h3 { font-size:clamp(24px,2.4vw,34px); margin-bottom:9px; }
+#virgin .virgin-editorial-intro { font-size:clamp(15px,1.35vw,18px); line-height:1.4; margin-bottom:18px; }
+#virgin .virgin-editorial-tier { min-height:78px; padding:8px 4px; }
+#virgin .virgin-editorial-tier-copy strong { font-size:19px; }
+#virgin .virgin-editorial-tier-copy em { font-size:15px; }
+#virgin .virgin-editorial-cta { margin-top:17px; padding:13px 18px; font-size:19px; }
+@media(max-width:800px){
+ #virgin .virgin-editorial-photo { height:auto; aspect-ratio:3/2; }
+ #virgin .virgin-editorial-wordmark { height:105px; }
+}
