@@ -62,9 +62,9 @@ export default function Cruises({ id, content, site }: SectionProps) {
                       <h3>Bold Cruises for Grown-Up Travelers</h3>
                       <p className="virgin-editorial-intro">Award-winning ships, elevated dining, and unforgettable destinations — all kid-free.</p>
                       <div className="virgin-editorial-tiers">
-                        <a href="#virgin-accommodations" className="virgin-editorial-tier"><span className="virgin-editorial-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M9 46 5 17l15 13L32 8l12 22 15-13-4 29H9Zm1 5h44v7H10z"/></svg></span><span className="virgin-editorial-tier-copy"><strong>Mega RockStar®</strong><em>Our most exclusive suites with VIP perks and personal service.</em></span><span className="virgin-editorial-arrow">›</span></a>
-                        <a href="#virgin-accommodations" className="virgin-editorial-tier"><span className="virgin-editorial-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="m32 5 8.6 17.6L60 25.4 46 39l3.3 19.2L32 49.1 14.7 58.2 18 39 4 25.4l19.4-2.8z"/></svg></span><span className="virgin-editorial-tier-copy"><strong>RockStar®</strong><em>Stylish suites with elevated perks and priority access.</em></span><span className="virgin-editorial-arrow">›</span></a>
-                        <a href="#virgin-accommodations" className="virgin-editorial-tier"><span className="virgin-editorial-symbol virgin-editorial-symbol--red" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="m32 5 8.6 17.6L60 25.4 46 39l3.3 19.2L32 49.1 14.7 58.2 18 39 4 25.4l19.4-2.8z"/></svg></span><span className="virgin-editorial-tier-copy"><strong>Non-RockStar®</strong><em>Comfortable, modern cabins with all the signature Virgin inclusions.</em></span><span className="virgin-editorial-arrow">›</span></a>
+                        <a href="#virgin-mega-rockstar" className="virgin-editorial-tier"><span className="virgin-editorial-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M9 46 5 17l15 13L32 8l12 22 15-13-4 29H9Zm1 5h44v7H10z"/></svg></span><span className="virgin-editorial-tier-copy"><strong>Mega RockStar®</strong><em>Our most exclusive suites with VIP perks and personal service.</em></span><span className="virgin-editorial-arrow">›</span></a>
+                        <a href="#virgin-rockstar" className="virgin-editorial-tier"><span className="virgin-editorial-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="m32 5 8.6 17.6L60 25.4 46 39l3.3 19.2L32 49.1 14.7 58.2 18 39 4 25.4l19.4-2.8z"/></svg></span><span className="virgin-editorial-tier-copy"><strong>RockStar®</strong><em>Stylish suites with elevated perks and priority access.</em></span><span className="virgin-editorial-arrow">›</span></a>
+                        <a href="#virgin-non-rockstar" className="virgin-editorial-tier"><span className="virgin-editorial-symbol virgin-editorial-symbol--red" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="m32 5 8.6 17.6L60 25.4 46 39l3.3 19.2L32 49.1 14.7 58.2 18 39 4 25.4l19.4-2.8z"/></svg></span><span className="virgin-editorial-tier-copy"><strong>Non-RockStar®</strong><em>Comfortable, modern cabins with all the signature Virgin inclusions.</em></span><span className="virgin-editorial-arrow">›</span></a>
                       </div>
                       <a className="virgin-editorial-cta" href="/plan/?line=Virgin%20Voyages">Explore Virgin Voyages with Dean <span aria-hidden="true">›</span></a>
                     </div>
@@ -132,12 +132,12 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   </header>
                   <div className="virgin-tier-grid">
                   {[{title: c.rockstar.megaTitle, items: c.rockstar.megaItems}, {title: c.rockstar.coreTitle, items: c.rockstar.coreItems}].map(tier => (
-                    <div className="cl-rockstar-tier" key={tier.title}>
+                    <div className="cl-rockstar-tier" id={tier.title === c.rockstar.megaTitle ? "virgin-mega-rockstar" : "virgin-rockstar"} key={tier.title}>
                       <h4>{tier.title}</h4>
                       <ul className="virgin-checks">{tier.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
                     </div>
                   ))}
-                  <div className="cl-rockstar-tier">
+                  <div className="cl-rockstar-tier" id="virgin-non-rockstar">
                     <h4>Non-RockStar</h4>
                     <p>{c.rockstar.regular}</p>
                     <ul className="virgin-checks">{c.rockstar.nonItems.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
