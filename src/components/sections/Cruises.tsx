@@ -31,14 +31,14 @@ export default function Cruises({ id, content, site }: SectionProps) {
       <section className="band band--black cruises-hero" id="top-cruises" data-cms-id={id} data-cms-field="hero">
         <div className="wrap">
           <div className="sec-head reveal">
-            <p className="log">{c.hero.eyebrow}</p>
+            <p className="log log--center">{c.hero.eyebrow}</p>
             <h1 className="display h-xl">{renderInline(c.hero.heading)}</h1>
             <p className="lede">{c.hero.lede}</p>
           </div>
           <nav className="cruises-index reveal d1" aria-label="Cruise lines on this page">
             {lines.map((l) => (
               <a key={l.id} href={`#${l.id}`}>
-                {l.name}
+                <span>{l.name}</span><span className="fleet-link-arrow" aria-hidden="true">→</span>
               </a>
             ))}
           </nav>

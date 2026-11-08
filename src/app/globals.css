@@ -2643,3 +2643,22 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   height: 1px;
   background: #c8a45c;
 }
+
+/* Fleet overview review: calm editorial type with simple in-page links. */
+#top-cruises { padding-top: calc(85px + clamp(2.5rem, 5vw, 4.5rem)); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+#top-cruises > .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 7vw, 6rem); align-items: center; }
+#top-cruises .sec-head { max-width: none; }
+#top-cruises .log { justify-content: flex-start; color: #9a7d3f; }
+#top-cruises .log::before, #top-cruises .log::after { background: #c8a45c; flex-shrink: 0; }
+#top-cruises h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.15; max-width: 16ch; margin: 0 0 1.25rem; }
+#top-cruises h1 em { display: block; }
+#top-cruises .lede { font-size: 1.125rem; line-height: 1.7; margin: 0; max-width: 49ch; }
+#top-cruises .cruises-index { display: flex; flex-direction: column; flex-wrap: nowrap; gap: 0; margin: 0; }
+#top-cruises .cruises-index a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem .25rem; border: 0; border-bottom: 1px solid #d9c5a3; border-radius: 0; font-family: var(--font-display); font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 400; line-height: 1.4; letter-spacing: 0; text-transform: none; color: var(--navy); background: transparent; }
+#top-cruises .cruises-index a:hover { color: var(--burgundy); border-color: var(--gold); }
+#top-cruises .fleet-link-arrow { color: #9a7d3f; font-family: var(--font-body); font-size: 1.3rem; }
+@media (max-width: 700px) {
+  #top-cruises > .wrap { grid-template-columns: 1fr; gap: 1.75rem; }
+  #top-cruises h1 { max-width: 17ch; }
+  #top-cruises .cruises-index a { padding-block: .8rem; }
+}
