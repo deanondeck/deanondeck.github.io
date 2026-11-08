@@ -2755,3 +2755,13 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .virgin-editorial-tier:hover .virgin-editorial-arrow,#virgin .virgin-editorial-tier:focus-visible .virgin-editorial-arrow { background:#871126; transform:translateX(3px); }
 #virgin .virgin-editorial-arrow { transition:background-color .2s ease,transform .2s ease; }
 #virgin .virgin-editorial-cta:hover,#virgin .virgin-editorial-cta:focus-visible { background:linear-gradient(180deg,#ed1434,#ad001e 55%,#780017); color:#fff; box-shadow:0 5px 12px #0003; }
+
+/* Final editorial refinements against approved Virgin mockup. */
+#virgin .virgin-editorial-wordmark { max-width:460px; width:100%; height:130px; margin:0 auto 0; }
+#virgin .virgin-editorial-wordmark img { width:100%; height:100%; object-fit:contain; }
+#virgin .virgin-editorial-content h3 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(29px,2.65vw,39px); font-style:italic; font-weight:700; letter-spacing:-.045em; }
+#virgin .virgin-editorial-cta { display:flex; align-items:center; justify-content:center; gap:16px; width:100%; max-width:none; min-height:0; padding:10px 22px; line-height:1.1; white-space:nowrap; font-size:clamp(17px,1.85vw,25px); font-weight:500; }
+#virgin .virgin-editorial-cta span { display:inline-block; flex:0 0 auto; line-height:1; }
+#virgin .cl-rockstar-tier[id] { scroll-margin-top:100px; }
+#virgin .cl-rockstar-tier[id]:target { outline:2px solid #d4a64e; outline-offset:8px; background:#fff7e9; transition:background-color .25s; }
+@media(max-width:600px){#virgin .virgin-editorial-wordmark{height:110px;max-width:340px}#virgin .virgin-editorial-cta{font-size:clamp(14px,3.7vw,20px);gap:8px;padding:12px 10px;white-space:normal}}
