@@ -2713,3 +2713,10 @@ body { background: var(--paper); color: var(--ink-on-paper); }
  #virgin .virgin-editorial-photo { height:auto; aspect-ratio:3/2; }
  #virgin .virgin-editorial-wordmark { height:105px; }
 }
+
+/* Approved Virgin header: fine gold rules flanking the italic title; no bottom diamond. */
+#virgin .virgin-editorial-eyebrow { display:flex; width:100%; align-items:center; justify-content:center; gap:clamp(12px,2vw,28px); margin:0 0 28px; font-family:var(--font-display),Georgia,serif; font-style:italic; font-weight:400; color:#091d42; white-space:nowrap; }
+#virgin .virgin-editorial-eyebrow::before,
+#virgin .virgin-editorial-eyebrow::after { content:""; flex:1 1 0; width:auto; max-width:none; height:1px; background:linear-gradient(90deg,#b78a32,#d7aa53); }
+#virgin .virgin-editorial-eyebrow span { flex:0 0 auto; }
+@media(max-width:600px){#virgin .virgin-editorial-eyebrow{font-size:clamp(20px,5vw,29px);gap:10px;white-space:normal;text-align:center}}
