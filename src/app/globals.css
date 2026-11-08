@@ -2720,3 +2720,29 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .virgin-editorial-eyebrow::after { content:""; flex:1 1 0; width:auto; max-width:none; height:1px; background:linear-gradient(90deg,#b78a32,#d7aa53); }
 #virgin .virgin-editorial-eyebrow span { flex:0 0 auto; }
 @media(max-width:600px){#virgin .virgin-editorial-eyebrow{font-size:clamp(20px,5vw,29px);gap:10px;white-space:normal;text-align:center}}
+
+/* Fidelity pass: approved Virgin editorial reference, scoped to first section only. */
+#virgin .virgin-editorial { max-width:1160px; margin:auto; padding:4px 0 24px; }
+#virgin .virgin-editorial-eyebrow { font-family:Georgia,"Times New Roman",serif; font-size:clamp(30px,3.8vw,54px); font-weight:700; font-style:italic; letter-spacing:-.045em; line-height:1.1; margin-bottom:28px; }
+#virgin .virgin-editorial-grid { grid-template-columns:minmax(0,0.93fr) minmax(0,1.07fr); gap:clamp(30px,4.2vw,58px); align-items:start; }
+#virgin .virgin-editorial-photo { height:clamp(450px,47vw,610px); border-radius:28px; }
+#virgin .virgin-editorial-wordmark { max-width:340px; height:106px; margin:0 auto 3px; }
+#virgin .virgin-editorial-wordmark img { mix-blend-mode:multiply; }
+#virgin .virgin-editorial-content h3 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(27px,2.9vw,41px); font-weight:700; font-style:italic; line-height:1.08; letter-spacing:-.035em; margin:0 0 12px; }
+#virgin .virgin-editorial-intro { font-family:Georgia,"Times New Roman",serif; font-size:clamp(17px,1.65vw,22px); font-weight:600; line-height:1.22; margin:0 auto 17px; max-width:38rem; }
+#virgin .virgin-editorial-tiers { border-top:0; }
+#virgin .virgin-editorial-tier { grid-template-columns:clamp(64px,6vw,88px) minmax(0,1fr) 44px; gap:13px; min-height:105px; padding:8px 5px; border-bottom:1px solid #d3a047; }
+#virgin .virgin-editorial-symbol { font-family:Georgia,serif; font-size:clamp(44px,4.8vw,65px); font-weight:900; line-height:1; border-right:0; padding-right:0; position:relative; }
+#virgin .virgin-editorial-symbol::after { content:""; position:absolute; right:-8px; top:15%; bottom:15%; width:4px; border-radius:3px; background:linear-gradient(#e6ad27,#b17b13); }
+#virgin .virgin-editorial-tier-copy { font-family:Georgia,"Times New Roman",serif; gap:2px; }
+#virgin .virgin-editorial-tier-copy strong { font-size:clamp(22px,2.1vw,28px); font-weight:700; line-height:1.05; }
+#virgin .virgin-editorial-tier-copy em { font-size:clamp(16px,1.55vw,20px); font-weight:600; line-height:1.17; }
+#virgin .virgin-editorial-arrow { width:42px; height:42px; font-family:Arial,sans-serif; font-size:36px; background:#d40012; }
+#virgin .virgin-editorial-cta { margin-top:20px; padding:13px 12px; border:2px solid #d7a521; border-radius:100px; background:linear-gradient(180deg,#d00023 0%,#a9001c 55%,#690010 100%); box-shadow:0 3px 5px #0002; font-family:Georgia,"Times New Roman",serif; font-size:clamp(19px,2vw,27px); font-weight:700; }
+@media(max-width:800px){
+ #virgin .virgin-editorial-grid { grid-template-columns:1fr; }
+ #virgin .virgin-editorial-photo { height:auto; aspect-ratio:1.12; }
+ #virgin .virgin-editorial-tier { min-height:90px; grid-template-columns:65px minmax(0,1fr) 36px; }
+ #virgin .virgin-editorial-symbol { font-size:43px; }
+ #virgin .virgin-editorial-arrow { width:34px; height:34px; font-size:29px; }
+}
