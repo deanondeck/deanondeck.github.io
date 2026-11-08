@@ -2689,3 +2689,7 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .virgin-editorial-arrow { display:grid; place-items:center; width:30px; height:30px; background:#b91c35; border-radius:50%; color:white; font-size:28px; line-height:1; }
 #virgin .virgin-editorial-cta { display:block; margin-top:25px; padding:17px 20px; border:1px solid #bd985a; border-radius:40px; background:#9f1733; color:#fff; text-align:center; font:22px var(--font-display),Georgia,serif; text-decoration:none; }
 @media(max-width:800px){#virgin .virgin-editorial-grid{grid-template-columns:1fr}#virgin .virgin-editorial-photo{height:auto;aspect-ratio:3/2}#virgin .virgin-editorial-tier{min-height:85px}#virgin .virgin-editorial-eyebrow{margin-bottom:25px}}
+
+/* Preserve the supplied horizontal Virgin logo artwork without cropping. */
+#virgin .virgin-editorial-wordmark { width:100%; max-width:440px; min-height:155px; justify-content:center; }
+#virgin .virgin-editorial-wordmark img { display:block; width:100%; height:auto; max-height:220px; object-fit:contain; }
