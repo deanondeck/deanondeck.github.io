@@ -52,6 +52,25 @@ export default function Cruises({ id, content, site }: SectionProps) {
         return (
           <section key={l.id} id={l.id} className={`band ${band} cl`}>
             <div className={`wrap cl-grid${flagship ? " cl-grid--virgin" : (l.id === "royal-caribbean" || l.id === "silversea") ? " cl-grid--royal" : ""}${i % 2 && l.id !== "royal-caribbean" && l.id !== "silversea" ? " flip" : ""}`}>
+              {flagship ? (
+                <div className="virgin-editorial">
+                  <h2 className="virgin-editorial-eyebrow"><span>Specialty · Adults Only</span></h2>
+                  <div className="virgin-editorial-grid">
+                    <figure className="virgin-editorial-photo"><img src={img("virgin-sunset-sailing.jpg")} alt="Virgin Voyages ship sailing at sunset" loading="eager" /></figure>
+                    <div className="virgin-editorial-content">
+                      <div className="virgin-editorial-wordmark"><img src={img("virgin-voyages-horizontal.svg")} alt="Virgin Voyages" loading="eager" width={500} height={250} /></div>
+                      <h3>Bold Cruises for Grown-Up Travelers</h3>
+                      <p className="virgin-editorial-intro">Award-winning ships, elevated dining, and unforgettable destinations — all kid-free.</p>
+                      <div className="virgin-editorial-tiers">
+                        <a href="#virgin-accommodations" className="virgin-editorial-tier"><span className="virgin-editorial-symbol">♛</span><span className="virgin-editorial-tier-copy"><strong>Mega RockStar®</strong><em>Our most exclusive suites with VIP perks and personal service.</em></span><span className="virgin-editorial-arrow">›</span></a>
+                        <a href="#virgin-accommodations" className="virgin-editorial-tier"><span className="virgin-editorial-symbol">★</span><span className="virgin-editorial-tier-copy"><strong>RockStar®</strong><em>Stylish suites with elevated perks and priority access.</em></span><span className="virgin-editorial-arrow">›</span></a>
+                        <a href="#virgin-accommodations" className="virgin-editorial-tier"><span className="virgin-editorial-symbol virgin-editorial-symbol--red">★</span><span className="virgin-editorial-tier-copy"><strong>Non-RockStar®</strong><em>Comfortable, modern cabins with all the signature Virgin inclusions.</em></span><span className="virgin-editorial-arrow">›</span></a>
+                      </div>
+                      <a className="virgin-editorial-cta" href="/plan/?line=Virgin%20Voyages">Explore Virgin Voyages with Dean <span aria-hidden="true">›</span></a>
+                    </div>
+                  </div>
+                </div>
+              ) : (
               <div className="cl-main">
               <figure className="cl-media reveal">
                 <img src={img(flagship ? "virgin-sunset-sailing.jpg" : l.img)} alt={flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt} loading={i === 0 ? "eager" : "lazy"} />
@@ -99,8 +118,9 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
               </div>
               </div>
+              )}
               {flagship && c.rockstar && (
-                <aside className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
+                <aside id="virgin-accommodations" className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
                   <header className="virgin-comparison-heading">
                   <p className="log log--center">{c.rockstar.eyebrow}</p>
                   <h3 className="display h-md">{c.rockstar.heading}</h3>
