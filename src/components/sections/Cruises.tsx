@@ -58,7 +58,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   <div className="virgin-editorial-grid">
                     <figure className="virgin-editorial-photo"><img src={img("virgin-sunset-sailing.jpg")} alt="Virgin Voyages ship sailing at sunset" loading="eager" /></figure>
                     <div className="virgin-editorial-content">
-                      <div className="virgin-editorial-wordmark" aria-label="Virgin Voyages"><span className="virgin-editorial-script">Virgin</span><span className="virgin-editorial-voyages">VOYAGES</span></div>
+                      <div className="virgin-editorial-wordmark"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Virgin_Voyages_logo.svg" alt="Virgin Voyages" loading="eager" style={{ width: "min(100%, 190px)", height: "auto", objectFit: "contain" }} /></div>
                       <h3>Bold Cruises for Grown-Up Travelers</h3>
                       <p className="virgin-editorial-intro">Award-winning ships, elevated dining, and unforgettable destinations — all kid-free.</p>
                       <div className="virgin-editorial-tiers">
