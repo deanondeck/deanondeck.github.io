@@ -2765,3 +2765,6 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .cl-rockstar-tier[id] { scroll-margin-top:100px; }
 #virgin .cl-rockstar-tier[id]:target { outline:2px solid #d4a64e; outline-offset:8px; background:#fff7e9; transition:background-color .25s; }
 @media(max-width:600px){#virgin .virgin-editorial-wordmark{height:110px;max-width:340px}#virgin .virgin-editorial-cta{font-size:clamp(14px,3.7vw,20px);gap:8px;padding:12px 10px;white-space:normal}}
+
+/* Small, correctly raised registered marks on Virgin cabin names. */
+#virgin .virgin-editorial-tier-copy strong .virgin-registered { font-size:.42em; line-height:0; vertical-align:super; margin-left:1px; font-weight:400; }
