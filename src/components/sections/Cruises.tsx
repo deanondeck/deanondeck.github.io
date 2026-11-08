@@ -47,63 +47,6 @@ export default function Cruises({ id, content, site }: SectionProps) {
 
       {/* ---- one band per line ---- */}
       {lines.map((l, i) => {
-        if (l.id === "virgin") {
-          return (
-            <section key={l.id} id="virgin" className="band cl virgin-editorial">
-              <div className="wrap">
-                <header className="virgin-editorial-section-title">
-                  <span>Specialty · Adults Only</span>
-                </header>
-                <div className="virgin-editorial-layout">
-                  <figure className="cl-media virgin-editorial-photo">
-                    <img src={img("virgin-sunset-sailing.jpg")} alt="Virgin Voyages ship sailing into a sunset" loading={i === 0 ? "eager" : "lazy"} />
-                  </figure>
-                  <div className="virgin-editorial-content">
-                    <p className="virgin-editorial-wordmark">VIRGIN <span>VOYAGES</span></p>
-                    <h2>Bold Cruises for Grown-Up Travelers</h2>
-                    <p className="virgin-editorial-intro">Award-winning ships, elevated dining, and unforgettable destinations — all kid-free.</p>
-                    <nav className="virgin-editorial-tiers" aria-label="Explore Virgin Voyages accommodation types">
-                      <a href="#virgin-mega-rockstar" className="virgin-editorial-tier">
-                        <span className="virgin-tier-icon virgin-tier-crown" aria-hidden="true">♛</span>
-                        <span className="virgin-tier-text"><strong>Mega RockStar®</strong><em>Our most exclusive suites with VIP perks and personal service.</em></span>
-                        <span className="virgin-tier-arrow" aria-hidden="true">›</span>
-                      </a>
-                      <a href="#virgin-rockstar" className="virgin-editorial-tier">
-                        <span className="virgin-tier-icon virgin-tier-star" aria-hidden="true">★</span>
-                        <span className="virgin-tier-text"><strong>RockStar®</strong><em>Stylish suites with elevated perks and priority access.</em></span>
-                        <span className="virgin-tier-arrow" aria-hidden="true">›</span>
-                      </a>
-                      <a href="#virgin-non-rockstar" className="virgin-editorial-tier">
-                        <span className="virgin-tier-icon virgin-tier-star virgin-tier-red" aria-hidden="true">★</span>
-                        <span className="virgin-tier-text"><strong>Non-RockStar®</strong><em>Comfortable, modern cabins with all the signature Virgin inclusions.</em></span>
-                        <span className="virgin-tier-arrow" aria-hidden="true">›</span>
-                      </a>
-                    </nav>
-                    <a className="virgin-editorial-cta" href="https://www.virginvoyages.com/?agentId=281761&agencyId=54480" target="_blank" rel="noopener noreferrer">Explore Virgin Voyages with Dean <span aria-hidden="true">›</span></a>
-                  </div>
-                </div>
-                <div className="virgin-editorial-divider" aria-hidden="true"><span /></div>
-                {c.rockstar && (
-                  <div className="virgin-editorial-details" aria-label="Virgin Voyages accommodation details">
-                    <h2>{c.rockstar.heading}</h2>
-                    <p>{c.rockstar.intro}</p>
-                    <div className="virgin-editorial-inclusions">
-                      <h3>{c.rockstar.includedTitle}</h3>
-                      <ul>{c.rockstar.includedItems.map(item => <li key={item}>{item}</li>)}</ul>
-                    </div>
-                    <div className="virgin-editorial-detail-grid">
-                      <article id="virgin-mega-rockstar"><h3>{c.rockstar.megaTitle}</h3><ul>{c.rockstar.megaItems.map(item => <li key={item}>{item}</li>)}</ul></article>
-                      <article id="virgin-rockstar"><h3>{c.rockstar.coreTitle}</h3><ul>{c.rockstar.coreItems.map(item => <li key={item}>{item}</li>)}</ul></article>
-                      <article id="virgin-non-rockstar"><h3>Non-RockStar</h3><p>{c.rockstar.regular}</p><ul>{c.rockstar.nonItems.map(item => <li key={item}>{item}</li>)}</ul></article>
-                    </div>
-                    <p className="virgin-editorial-note">{c.rockstar.note}</p>
-                    <p className="virgin-editorial-detail-links"><a href="/plan/?line=Virgin%20Voyages">{c.rockstar.cta} →</a> <a href="https://www.virginvoyages.com/cabins/suites" target="_blank" rel="noopener noreferrer">View current suite benefits ↗</a> <a href={site.virginBookingUrl} target="_blank" rel="noopener noreferrer">Book with Dean ↗</a></p>
-                  </div>
-                )}
-              </div>
-            </section>
-          );
-        }
         const flagship = l.id === "virgin";
         const band = flagship ? "band--ink" : i % 2 ? "band--shell" : "band--shell2";
         return (
