@@ -2795,3 +2795,27 @@ body { background: var(--paper); color: var(--ink-on-paper); }
  #virgin .virgin-editorial-tier-copy strong { font-size:1.1rem; }
  #virgin .virgin-tier-grid .cl-rockstar-tier { padding:1.2rem; }
 }
+
+
+/* Virgin accommodation guide: Fleet page only, no homepage changes. */
+#virgin .virgin-accommodation-launch { grid-column:1/-1; width:100%; margin:2rem auto; padding:2rem; background:#f7f3eb; border:1px solid #dfd2ba; border-radius:16px; text-align:center; color:#102447; }
+#virgin .virgin-accommodation-kicker { font-family:var(--font-display),Georgia,serif; font-style:italic; color:#947342; font-size:.95rem; letter-spacing:.03em; }
+#virgin .virgin-accommodation-launch h3 { font-family:var(--font-display),Georgia,serif; font-size:clamp(1.5rem,2.7vw,2.2rem); margin:.5rem 0; }
+#virgin .virgin-accommodation-launch-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; margin-top:1.4rem; }
+#virgin .virgin-accommodation-launch-grid button { border:1px solid #c3a46c; background:#fff; color:#102447; border-radius:8px; padding:1rem; font:600 1rem var(--font-display),Georgia,serif; cursor:pointer; }
+#virgin .virgin-accommodation-launch-grid button:hover,#virgin .virgin-accommodation-launch-grid button:focus-visible { background:#ede2cf; outline:2px solid #a57c37; outline-offset:2px; }
+#virgin .virgin-accommodation-backdrop { position:fixed; inset:0; z-index:10000; display:grid; place-items:center; padding:1rem; background:rgba(9,21,39,.75); }
+#virgin .virgin-accommodation-dialog { position:relative; width:min(720px,100%); max-height:min(88vh,850px); overflow-y:auto; padding:clamp(1.2rem,3vw,2.2rem); background:#fbf8f2; color:#102447; border:1px solid #b9985e; border-radius:15px; box-shadow:0 20px 70px #0005; }
+#virgin .virgin-accommodation-close { position:absolute; top:.7rem; right:.9rem; border:0; background:transparent; color:#102447; font-size:2rem; line-height:1; cursor:pointer; }
+#virgin .virgin-accommodation-tabs { display:flex; flex-wrap:wrap; gap:.45rem; margin:1rem 0 1.5rem; }
+#virgin .virgin-accommodation-tabs button { border:1px solid #c8b38f; border-radius:25px; background:#fff; color:#102447; padding:.55rem .8rem; cursor:pointer; font-size:.85rem; }
+#virgin .virgin-accommodation-tabs button[aria-selected="true"] { background:#102447; color:white; }
+#virgin .virgin-accommodation-content h3 { font-family:var(--font-display),Georgia,serif; font-size:clamp(1.6rem,3vw,2.2rem); margin:.3rem 0 .8rem; }
+#virgin .virgin-accommodation-subtitle { color:#98723b; font-style:italic; }
+#virgin .virgin-accommodation-content ul { columns:2; margin:1rem 0; padding-left:1.3rem; }
+#virgin .virgin-accommodation-content li { padding:.3rem 0; break-inside:avoid; }
+#virgin .virgin-accommodation-note { font-size:.85rem; color:#596271; }
+#virgin .virgin-accommodation-controls { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-top:1rem; border-top:1px solid #dac8aa; }
+#virgin .virgin-accommodation-controls button { border:0; background:transparent; color:#9c1830; font-weight:700; cursor:pointer; padding:.5rem; }
+#virgin .virgin-accommodation-dialog button:focus-visible { outline:2px solid #b58b45; outline-offset:3px; }
+@media(max-width:600px){#virgin .virgin-accommodation-launch{padding:1.25rem}#virgin .virgin-accommodation-launch-grid{grid-template-columns:1fr}#virgin .virgin-accommodation-content ul{columns:1}#virgin .virgin-accommodation-dialog{max-height:92vh} }
