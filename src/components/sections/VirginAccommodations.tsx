@@ -62,10 +62,10 @@ export default function VirginAccommodations() {
           <p className="virgin-accommodation-kicker">{tabs[active].title}</p>
           <h3>{room}</h3>
           <div className="virgin-room-photo-grid">
-            <div className="virgin-room-photo-placeholder"><strong>Interior</strong><span>Verified room photograph pending</span></div>
+            {room === "Massive Suite" ? <figure className="virgin-room-photo-placeholder" style={{overflow:"hidden",margin:0}}><img src="/img/virgin-accommodations/massive-interior-transfer-test.jpg" alt="Virgin Voyages Massive Suite living room interior" loading="lazy" style={{display:"block",width:"100%",height:"100%",minHeight:210,objectFit:"cover"}} /></figure> : <div className="virgin-room-photo-placeholder"><strong>Interior</strong><span>Verified room photograph pending</span></div>}
             <div className="virgin-room-photo-placeholder"><strong>{room === "Insider" || room === "Sea View" ? "Second room view" : "Private outdoor space"}</strong><span>Verified photograph pending</span></div>
           </div>
-          <p className="virgin-accommodation-note">Photographs will be added when verified for this specific accommodation. Insider and Sea View cabins do not have private terraces.</p>
+          <p className="virgin-accommodation-note">{room === "Massive Suite" ? "Massive Suite interior photo is a low-resolution transfer proof for design review; the final high-resolution asset is still required." : "Photographs will be added when verified for this specific accommodation. Insider and Sea View cabins do not have private terraces."}</p>
           <div className="virgin-accommodation-controls">
             <button type="button" onClick={()=>setRoom(tabs[active].rooms[(tabs[active].rooms.indexOf(room)+tabs[active].rooms.length-1)%tabs[active].rooms.length])}>← Previous</button>
             <span>{tabs[active].rooms.indexOf(room)+1} of {tabs[active].rooms.length}</span>
