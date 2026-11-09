@@ -1,4 +1,5 @@
 import { img } from "@/lib/media";
+import VirginAccommodations from "./VirginAccommodations";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
@@ -119,6 +120,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
               </div>
               </div>
               )}
+              {flagship && <VirginAccommodations />}
               {flagship && c.rockstar && (
                 <aside id="virgin-accommodations" className="cl-rockstar reveal d1" aria-label="Compare Mega RockStar, RockStar and Non-RockStar">
                   <header className="virgin-comparison-heading">
