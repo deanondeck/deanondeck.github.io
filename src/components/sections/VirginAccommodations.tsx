@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 const tabs = [
   { title: "Cabins & Sea Terraces", subtitle: "Beautifully uncomplicated", text: "Explore thoughtfully designed cabins and Sea Terrace rooms with private outdoor space on select accommodations.", rooms: ["Insider", "Sea View", "Sea Terrace", "XL Sea Terrace"] },
-  { title: "RockStar Quarters", subtitle: "Suite life, elevated", text: "A collection of distinctive suites with elevated service and RockStar privileges. Specific benefits vary by sailing and suite.", rooms: ["Seriously Suite", "Brilliant Suite", "Cheeky Corner Suite", "Sweet Aft Suite"] },
-  { title: "Mega RockStar Quarters", subtitle: "The ultimate indulgence", text: "Virgin's most exclusive suite collection, designed around generous spaces and a higher-touch onboard experience.", rooms: ["Massive Suite", "Fab Suite", "Posh Suite", "Gorgeous Suite"] },
+  { title: "RockStar Suites", subtitle: "Suite life, elevated", text: "A collection of distinctive suites with elevated service and RockStar privileges. Specific benefits vary by sailing and suite.", rooms: ["Seriously Suite", "Brilliant Suite", "Cheeky Corner Suite", "Sweet Aft Suite"] },
+  { title: "Mega RockStar Suites", subtitle: "The ultimate indulgence", text: "Virgin's most exclusive suite collection, designed around generous spaces and a higher-touch onboard experience.", rooms: ["Massive Suite", "Fab Suite", "Posh Suite", "Gorgeous Suite"] },
   { title: "Accessible Accommodations", subtitle: "Comfort for every sailor", text: "Accessible accommodation options are available in select categories. Ask Dean to confirm the precise features and availability for your sailing.", rooms: ["Accessible cabins", "Accessible Sea Terrace options", "Accessible suite options — verify availability"] }
 ];
 export default function VirginAccommodations() {
