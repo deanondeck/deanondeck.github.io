@@ -148,7 +148,6 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   <footer className="virgin-comparison-footer">
                   <p className="booking-note">{c.rockstar.note}</p>
                   <a className="btn btn-ink" href="/plan/?line=Virgin%20Voyages">{c.rockstar.cta} <span className="arrow">→</span></a>
-                  <p className="cl-rockstar-source"><a href="https://www.virginvoyages.com/cabins/suites" target="_blank" rel="noopener noreferrer">View Virgin’s current suite benefits ↗</a></p>
                   </footer>
                 </aside>
               )}
