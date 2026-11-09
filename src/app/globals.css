@@ -2768,3 +2768,54 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 
 /* Small, correctly raised registered marks on Virgin cabin names. */
 #virgin .virgin-editorial-tier-copy strong .virgin-registered { font-size:.42em; line-height:0; vertical-align:super; margin-left:1px; font-weight:400; }
+
+
+/* Dean On Deck editorial refinement: Virgin comparison and Specialty section.
+   Scoped to Virgin; preserves the site's existing typography, icons and gold rules. */
+#virgin .virgin-editorial-tier { min-height:86px; gap:12px; }
+#virgin .virgin-editorial-tier-copy strong { font-family:var(--font-display); font-weight:600; letter-spacing:-.025em; }
+#virgin .virgin-editorial-tier-copy em { font-family:var(--font-display); font-size:clamp(.88rem,1.3vw,1rem); font-weight:400; color:#866c40; }
+#virgin .virgin-editorial-arrow { width:27px; height:27px; background:#b71c32; font-size:24px; }
+#virgin .virgin-editorial-tier:hover .virgin-editorial-arrow { background:#8e1529; }
+#virgin .cl-rockstar { background:#f7f3eb; color:#102447; }
+#virgin .virgin-comparison-heading .display { font-family:var(--font-display); color:#102447; }
+#virgin .virgin-comparison-heading > p:not(.log) { color:#4b5565; }
+#virgin .virgin-comparison-heading .cl-included { border:1px solid #e6dccd; border-radius:12px; background:#fff; }
+#virgin .virgin-tier-grid .cl-rockstar-tier { border:1px solid #e6dccd; border-top:2px solid #b5965a; border-radius:13px; padding:1.5rem; box-shadow:none; }
+#virgin .virgin-tier-grid .cl-rockstar-tier h4 { color:#102447; font-family:var(--font-display); font-size:clamp(1.2rem,2vw,1.45rem); letter-spacing:-.025em; }
+#virgin .virgin-tier-grid .cl-rockstar-tier::before { display:block; font-family:var(--font-display); font-style:italic; font-size:.92rem; color:#947342; margin-bottom:.6rem; }
+#virgin #virgin-mega-rockstar::before { content:"The ultimate indulgence"; }
+#virgin #virgin-rockstar::before { content:"Suite life, elevated"; }
+#virgin #virgin-non-rockstar::before { content:"Beautifully uncomplicated"; }
+#virgin .virgin-checks li { line-height:1.55; }
+#virgin .virgin-tier-grid .virgin-checks li { margin:.5rem 0; }
+#virgin .virgin-tier-grid .virgin-checks li span { color:#b71c32; }
+@media(max-width:700px) {
+ #virgin .virgin-editorial-tier { grid-template-columns:44px minmax(0,1fr) 28px; }
+ #virgin .virgin-editorial-tier-copy strong { font-size:1.1rem; }
+ #virgin .virgin-tier-grid .cl-rockstar-tier { padding:1.2rem; }
+}
+
+
+/* Virgin accommodation guide: Fleet page only, no homepage changes. */
+#virgin .virgin-accommodation-launch { grid-column:1/-1; width:100%; margin:2rem auto; padding:2rem; background:#f7f3eb; border:1px solid #dfd2ba; border-radius:16px; text-align:center; color:#102447; }
+#virgin .virgin-accommodation-kicker { font-family:var(--font-display),Georgia,serif; font-style:italic; color:#947342; font-size:.95rem; letter-spacing:.03em; }
+#virgin .virgin-accommodation-launch h3 { font-family:var(--font-display),Georgia,serif; font-size:clamp(1.5rem,2.7vw,2.2rem); margin:.5rem 0; }
+#virgin .virgin-accommodation-launch-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; margin-top:1.4rem; }
+#virgin .virgin-accommodation-launch-grid button { border:1px solid #c3a46c; background:#fff; color:#102447; border-radius:8px; padding:1rem; font:600 1rem var(--font-display),Georgia,serif; cursor:pointer; }
+#virgin .virgin-accommodation-launch-grid button:hover,#virgin .virgin-accommodation-launch-grid button:focus-visible { background:#ede2cf; outline:2px solid #a57c37; outline-offset:2px; }
+#virgin .virgin-accommodation-backdrop { position:fixed; inset:0; z-index:10000; display:grid; place-items:center; padding:1rem; background:rgba(9,21,39,.75); }
+#virgin .virgin-accommodation-dialog { position:relative; width:min(720px,100%); max-height:min(88vh,850px); overflow-y:auto; padding:clamp(1.2rem,3vw,2.2rem); background:#fbf8f2; color:#102447; border:1px solid #b9985e; border-radius:15px; box-shadow:0 20px 70px #0005; }
+#virgin .virgin-accommodation-close { position:absolute; top:.7rem; right:.9rem; border:0; background:transparent; color:#102447; font-size:2rem; line-height:1; cursor:pointer; }
+#virgin .virgin-accommodation-tabs { display:flex; flex-wrap:wrap; gap:.45rem; margin:1rem 0 1.5rem; }
+#virgin .virgin-accommodation-tabs button { border:1px solid #c8b38f; border-radius:25px; background:#fff; color:#102447; padding:.55rem .8rem; cursor:pointer; font-size:.85rem; }
+#virgin .virgin-accommodation-tabs button[aria-selected="true"] { background:#102447; color:white; }
+#virgin .virgin-accommodation-content h3 { font-family:var(--font-display),Georgia,serif; font-size:clamp(1.6rem,3vw,2.2rem); margin:.3rem 0 .8rem; }
+#virgin .virgin-accommodation-subtitle { color:#98723b; font-style:italic; }
+#virgin .virgin-accommodation-content ul { columns:2; margin:1rem 0; padding-left:1.3rem; }
+#virgin .virgin-accommodation-content li { padding:.3rem 0; break-inside:avoid; }
+#virgin .virgin-accommodation-note { font-size:.85rem; color:#596271; }
+#virgin .virgin-accommodation-controls { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-top:1rem; border-top:1px solid #dac8aa; }
+#virgin .virgin-accommodation-controls button { border:0; background:transparent; color:#9c1830; font-weight:700; cursor:pointer; padding:.5rem; }
+#virgin .virgin-accommodation-dialog button:focus-visible { outline:2px solid #b58b45; outline-offset:3px; }
+@media(max-width:600px){#virgin .virgin-accommodation-launch{padding:1.25rem}#virgin .virgin-accommodation-launch-grid{grid-template-columns:1fr}#virgin .virgin-accommodation-content ul{columns:1}#virgin .virgin-accommodation-dialog{max-height:92vh} }
