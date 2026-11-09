@@ -2730,6 +2730,19 @@ body { background: var(--paper); color: var(--ink-on-paper); }
  #virgin .virgin-editorial-cta { font-size:clamp(14px,3.7vw,20px); gap:8px; padding:12px 10px; white-space:normal; }
 }
 
+/* Consistent RockStar comparison presentation on narrow screens. */
+@media (max-width:700px) {
+ #virgin .virgin-comparison-heading { text-align:center; margin:1.25rem 0 1.5rem; }
+ #virgin .virgin-comparison-heading .display { font-family:var(--font-display),Georgia,serif; font-style:italic; font-weight:600; line-height:1.12; font-size:clamp(2rem,7.5vw,3rem); color:#102447; }
+ #virgin .virgin-comparison-heading > .log { justify-content:center; color:#947342; }
+ #virgin .virgin-comparison-heading > p:not(.log) { max-width:34ch; margin-inline:auto; line-height:1.6; }
+ #virgin .virgin-comparison-heading .cl-included { padding:1.1rem; margin-top:1.4rem; border:1px solid #e6dccd; border-radius:12px; background:#fff; }
+ #virgin .virgin-comparison-heading .virgin-checks { display:grid; grid-template-columns:1fr; gap:.65rem; }
+ #virgin .virgin-tier-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:1rem; }
+ #virgin .virgin-tier-grid .cl-rockstar-tier { margin:0; padding:1.2rem; border:1px solid #e6dccd; border-top:2px solid #b5965a; border-radius:13px; background:#fff; }
+ #virgin .virgin-tier-grid .cl-rockstar-tier h4 { font-family:var(--font-display),Georgia,serif; color:#102447; }
+}
+
 /* Virgin accommodation guide: Fleet page only, no homepage changes. */
 #virgin .virgin-accommodation-launch { grid-column:1/-1; width:100%; margin:2rem auto; padding:2rem; background:#f7f3eb; border:1px solid #dfd2ba; border-radius:16px; text-align:center; color:#102447; }
 #virgin .virgin-accommodation-kicker { font-family:var(--font-display),Georgia,serif; font-style:italic; color:#947342; font-size:.95rem; letter-spacing:.03em; }
