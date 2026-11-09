@@ -135,12 +135,12 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   <div className="virgin-tier-grid">
                   {[{title: c.rockstar.megaTitle, items: c.rockstar.megaItems}, {title: c.rockstar.coreTitle, items: c.rockstar.coreItems}].map(tier => (
                     <div className="cl-rockstar-tier" id={tier.title === c.rockstar?.megaTitle ? "virgin-mega-rockstar" : "virgin-rockstar"} key={tier.title}>
-                      <h4><span className="virgin-comparison-icon" aria-hidden="true">{tier.title === c.rockstar?.megaTitle ? "♛" : "★"}</span>{tier.title === c.rockstar?.megaTitle ? "Mega RockStar Suites" : "RockStar Suites"}</h4>
+                      <h4><span className="virgin-comparison-icon" aria-hidden="true">{tier.title === c.rockstar?.megaTitle ? <svg viewBox="0 0 64 64" fill="currentColor"><path d="M9 46 5 17l15 13L32 8l12 22 15-13-4 29H9Zm1 5h44v7H10z"/></svg> : <svg viewBox="0 0 64 64" fill="currentColor"><path d="m32 5 8.6 17.6L60 25.4 46 39l3.3 19.2L32 49.1 14.7 58.2 18 39 4 25.4l19.4-2.8z"/></svg>}</span>{tier.title === c.rockstar?.megaTitle ? "Mega RockStar Suites" : "RockStar Suites"}</h4>
                       <ul className="virgin-checks">{tier.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
                     </div>
                   ))}
                   <div className="cl-rockstar-tier" id="virgin-non-rockstar">
-                    <h4><span className="virgin-comparison-icon virgin-comparison-icon--red" aria-hidden="true">★</span>Cabins &amp; Sea Terraces</h4>
+                    <h4><span className="virgin-comparison-icon virgin-comparison-icon--red" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="m32 5 8.6 17.6L60 25.4 46 39l3.3 19.2L32 49.1 14.7 58.2 18 39 4 25.4l19.4-2.8z"/></svg></span>Cabins &amp; Sea Terraces</h4>
                     <p>{c.rockstar.regular}</p>
                     <ul className="virgin-checks">{c.rockstar.nonItems.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
                   </div>
