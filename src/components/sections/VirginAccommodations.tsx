@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import type { MouseEvent } from "react";
 
 const suiteFacts: Record<string, { detail: string; link: string }> = {
   "Brilliant Suite": { detail: "Interior 396 sq ft · terrace approximately 86 sq ft.", link: "https://www.virginvoyages.com/cabins/rockstar-quarters" },
@@ -32,8 +33,8 @@ export default function VirginAccommodations() {
     const old = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = old; opener.current?.focus(); };
-  }, [active === null, room]);
-  const open = (i: number, e: React.MouseEvent<HTMLButtonElement>) => { opener.current = e.currentTarget; setActive(i); };
+  }, [active, room]);
+  const open = (i: number, e: MouseEvent<HTMLButtonElement>) => { opener.current = e.currentTarget; setActive(i); };
   return <>
     <div className="virgin-accommodation-launch">
       <p className="virgin-accommodation-kicker">Explore your space at sea</p>
@@ -58,9 +59,9 @@ export default function VirginAccommodations() {
           <p className="virgin-accommodation-note">Room configurations and inclusions may change. Confirm details for your specific ship and sailing.</p>
         </div>
         <div className="virgin-accommodation-controls">
-          <button type="button" onClick={()=>setActive((active+tabs.length-1)%tabs.length)} aria-label="Previous accommodation category">← Previous</button>
+          <button type="button" onClick={()=>{setRoom(null);setActive((active+tabs.length-1)%tabs.length)}} aria-label="Previous accommodation category">← Previous</button>
           <span>{active+1} of {tabs.length}</span>
-          <button type="button" onClick={()=>setActive((active+1)%tabs.length)} aria-label="Next accommodation category">Next →</button>
+          <button type="button" onClick={()=>{setRoom(null);setActive((active+1)%tabs.length)}} aria-label="Next accommodation category">Next →</button>
         </div>
       </section>
       {room && <div className="virgin-room-backdrop" onMouseDown={e=>{if(e.target===e.currentTarget)setRoom(null)}}>
