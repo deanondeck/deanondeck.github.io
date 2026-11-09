@@ -2768,6 +2768,17 @@ body { background: var(--paper); color: var(--ink-on-paper); }
  #virgin .virgin-comparison-icon svg { width:2rem; height:2rem; }
 }
 
+/* Quiet editorial typography for the Virgin ship-side content. */
+@media (min-width:901px) {
+ #virgin .virgin-editorial-wordmark { height:90px; max-width:335px; margin-bottom:5px; }
+ #virgin .virgin-editorial-content h3 { font-family:var(--font-display),Georgia,serif; font-size:clamp(25px,2.15vw,31px); font-weight:500; line-height:1.17; letter-spacing:-.025em; margin-bottom:11px; }
+ #virgin .virgin-editorial-intro { font-family:var(--font-body),Arial,sans-serif; font-size:clamp(14px,1.15vw,16px); font-weight:400; line-height:1.55; max-width:32rem; margin-bottom:18px; color:#34435b; }
+ #virgin .virgin-editorial-tier { min-height:76px; padding:10px 4px; }
+ #virgin .virgin-editorial-tier-copy strong { font-size:clamp(18px,1.65vw,22px); font-weight:600; line-height:1.15; }
+ #virgin .virgin-editorial-tier-copy em { font-family:var(--font-body),Arial,sans-serif; font-size:clamp(13px,1.05vw,14px); font-weight:400; font-style:normal; line-height:1.45; color:#6b6257; }
+ #virgin .virgin-editorial-cta { margin-top:22px; padding:12px 18px; font-size:clamp(16px,1.5vw,19px); }
+}
+
 /* Virgin accommodation guide: Fleet page only, no homepage changes. */
 #virgin .virgin-accommodation-launch { grid-column:1/-1; width:100%; margin:2rem auto; padding:2rem; background:#f7f3eb; border:1px solid #dfd2ba; border-radius:16px; text-align:center; color:#102447; }
 #virgin .virgin-accommodation-kicker { font-family:var(--font-display),Georgia,serif; font-style:italic; color:#947342; font-size:.95rem; letter-spacing:.03em; }
