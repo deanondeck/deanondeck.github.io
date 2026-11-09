@@ -10,20 +10,22 @@ const tabs = [
 export default function VirginAccommodations() {
   const [active, setActive] = useState<number | null>(null);
   const close = useRef<HTMLButtonElement>(null);
+  const [room, setRoom] = useState<string | null>(null);
+  const roomClose = useRef<HTMLButtonElement>(null);
   const opener = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
     if (active === null) return;
-    close.current?.focus();
+    if (room) roomClose.current?.focus(); else close.current?.focus();
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActive(null);
-      if (e.key === "ArrowRight") setActive(v => v === null ? null : (v + 1) % tabs.length);
-      if (e.key === "ArrowLeft") setActive(v => v === null ? null : (v + tabs.length - 1) % tabs.length);
+      if (e.key === "Escape") { if (room) setRoom(null); else setActive(null); }
+      if (!room && e.key === "ArrowRight") setActive(v => v === null ? null : (v + 1) % tabs.length);
+      if (!room && e.key === "ArrowLeft") setActive(v => v === null ? null : (v + tabs.length - 1) % tabs.length);
     };
     document.addEventListener("keydown", onKey);
     const old = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = old; opener.current?.focus(); };
-  }, [active === null]);
+  }, [active === null, room]);
   const open = (i: number, e: React.MouseEvent<HTMLButtonElement>) => { opener.current = e.currentTarget; setActive(i); };
   return <>
     <div className="virgin-accommodation-launch">
@@ -39,13 +41,13 @@ export default function VirginAccommodations() {
         <button className="virgin-accommodation-close" type="button" ref={close} aria-label="Close accommodation guide" onClick={()=>setActive(null)}>×</button>
         <p className="virgin-accommodation-kicker">Virgin Voyages · Accommodations</p>
         <div className="virgin-accommodation-tabs" role="tablist" aria-label="Accommodation categories">
-          {tabs.map((t,i)=><button key={t.title} type="button" role="tab" aria-selected={active===i} onClick={()=>setActive(i)}>{t.title}</button>)}
+          {tabs.map((t,i)=><button key={t.title} type="button" role="tab" aria-selected={active===i} onClick={()=>(setRoom(null),setActive(i))}>{t.title}</button>)}
         </div>
         <div className="virgin-accommodation-content">
           <p className="virgin-accommodation-subtitle">{tabs[active].subtitle}</p>
           <h3 id="virgin-accommodation-title">{tabs[active].title}</h3>
           <p>{tabs[active].text}</p>
-          <ul>{tabs[active].rooms.map(room=><li key={room}>{room}</li>)}</ul>
+          <ul className="virgin-accommodation-room-list">{tabs[active].rooms.map(name=><li key={name}><button type="button" onClick={()=>setRoom(name)}>{name} <span aria-hidden="true">↗</span></button></li>)}</ul>
           <p className="virgin-accommodation-note">Room configurations and inclusions may change. Confirm details for your specific ship and sailing.</p>
         </div>
         <div className="virgin-accommodation-controls">
@@ -54,6 +56,23 @@ export default function VirginAccommodations() {
           <button type="button" onClick={()=>setActive((active+1)%tabs.length)} aria-label="Next accommodation category">Next →</button>
         </div>
       </section>
+      {room && <div className="virgin-room-backdrop" onMouseDown={e=>{if(e.target===e.currentTarget)setRoom(null)}}>
+        <section className="virgin-room-dialog" role="dialog" aria-modal="true" aria-label={room + " accommodation viewer"}>
+          <button type="button" ref={roomClose} className="virgin-accommodation-close" aria-label="Close room viewer" onClick={()=>setRoom(null)}>×</button>
+          <p className="virgin-accommodation-kicker">{tabs[active].title}</p>
+          <h3>{room}</h3>
+          <div className="virgin-room-photo-grid">
+            <div className="virgin-room-photo-placeholder"><strong>Interior</strong><span>Verified room photograph pending</span></div>
+            <div className="virgin-room-photo-placeholder"><strong>{room === "Insider" || room === "Sea View" ? "Second room view" : "Private outdoor space"}</strong><span>Verified photograph pending</span></div>
+          </div>
+          <p className="virgin-accommodation-note">Photographs will be added when verified for this specific accommodation. Insider and Sea View cabins do not have private terraces.</p>
+          <div className="virgin-accommodation-controls">
+            <button type="button" onClick={()=>setRoom(tabs[active].rooms[(tabs[active].rooms.indexOf(room)+tabs[active].rooms.length-1)%tabs[active].rooms.length])}>← Previous</button>
+            <span>{tabs[active].rooms.indexOf(room)+1} of {tabs[active].rooms.length}</span>
+            <button type="button" onClick={()=>setRoom(tabs[active].rooms[(tabs[active].rooms.indexOf(room)+1)%tabs[active].rooms.length])}>Next →</button>
+          </div>
+        </section>
+      </div>}
     </div>}
   </>;
 }
