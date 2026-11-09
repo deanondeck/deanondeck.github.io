@@ -134,7 +134,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   </header>
                   <div className="virgin-tier-grid">
                   {[{title: c.rockstar.megaTitle, items: c.rockstar.megaItems}, {title: c.rockstar.coreTitle, items: c.rockstar.coreItems}].map(tier => (
-                    <div className="cl-rockstar-tier" id={tier.title === c.rockstar.megaTitle ? "virgin-mega-rockstar" : "virgin-rockstar"} key={tier.title}>
+                    <div className="cl-rockstar-tier" id={tier.title === c.rockstar?.megaTitle ? "virgin-mega-rockstar" : "virgin-rockstar"} key={tier.title}>
                       <h4>{tier.title}</h4>
                       <ul className="virgin-checks">{tier.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
                     </div>
