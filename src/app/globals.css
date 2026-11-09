@@ -2743,6 +2743,10 @@ body { background: var(--paper); color: var(--ink-on-paper); }
  #virgin .virgin-tier-grid .cl-rockstar-tier h4 { font-family:var(--font-display),Georgia,serif; color:#102447; }
 }
 
+/* Consistent iconography in the three Virgin comparison cards. */
+#virgin .virgin-tier-grid .cl-rockstar-tier h4 { display:flex; align-items:center; gap:.65rem; }
+#virgin .virgin-comparison-icon { display:inline-flex; align-items:center; justify-content:center; flex:0 0 2rem; color:#151515; font-family:Georgia,serif; font-size:1.8rem; line-height:1; }
+#virgin .virgin-comparison-icon--red { color:#cb2235; }
 /* Virgin accommodation guide: Fleet page only, no homepage changes. */
 #virgin .virgin-accommodation-launch { grid-column:1/-1; width:100%; margin:2rem auto; padding:2rem; background:#f7f3eb; border:1px solid #dfd2ba; border-radius:16px; text-align:center; color:#102447; }
 #virgin .virgin-accommodation-kicker { font-family:var(--font-display),Georgia,serif; font-style:italic; color:#947342; font-size:.95rem; letter-spacing:.03em; }
