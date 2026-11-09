@@ -2813,3 +2813,10 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .virgin-room-photo-placeholder strong { font-family:var(--font-display),Georgia,serif; font-size:1.3rem; }
 #virgin .virgin-room-photo-placeholder span { font-size:.85rem; color:#646c79; }
 @media(max-width:600px){#virgin .virgin-room-photo-grid{grid-template-columns:1fr}#virgin .virgin-room-photo-placeholder{min-height:140px;aspect-ratio:2/1}}
+
+/* RockStar suite photo tiles: responsive, clickable, and readable. */
+#virgin .virgin-room-photo-tile { display:block; padding:0; border:1px solid #d7c8ae; background:#fff; color:#102447; text-align:left; cursor:zoom-in; overflow:hidden; border-radius:6px; }
+#virgin .virgin-room-photo-tile img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; }
+#virgin .virgin-room-photo-tile span { display:block; padding:.55rem .75rem; font-size:.83rem; }
+#virgin .virgin-room-photo-tile:focus-visible { outline:3px solid #a57c37; outline-offset:3px; }
+@media(max-width:600px){#virgin .virgin-room-photo-tile img{aspect-ratio:3/2}}
