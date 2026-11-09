@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 
 type TerraceOption = { id: string; name: string; size: string };
 type Suite = {
@@ -144,7 +144,7 @@ export default function VirginAccommodations() {
     if (active === null && !lightbox) openerRef.current?.focus();
   }, [active, lightbox]);
 
-  const open = (index: number, event: React.MouseEvent<HTMLButtonElement>) => {
+  const open = (index: number, event: MouseEvent<HTMLButtonElement>) => {
     openerRef.current = event.currentTarget;
     setSelectedTerrace(suites[index].terraces[0].id);
     setActive(index);
