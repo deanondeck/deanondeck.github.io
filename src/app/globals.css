@@ -2768,3 +2768,30 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 
 /* Small, correctly raised registered marks on Virgin cabin names. */
 #virgin .virgin-editorial-tier-copy strong .virgin-registered { font-size:.42em; line-height:0; vertical-align:super; margin-left:1px; font-weight:400; }
+
+
+/* Dean On Deck editorial refinement: Virgin comparison and Specialty section.
+   Scoped to Virgin; preserves the site's existing typography, icons and gold rules. */
+#virgin .virgin-editorial-tier { min-height:86px; gap:12px; }
+#virgin .virgin-editorial-tier-copy strong { font-family:var(--font-display); font-weight:600; letter-spacing:-.025em; }
+#virgin .virgin-editorial-tier-copy em { font-family:var(--font-display); font-size:clamp(.88rem,1.3vw,1rem); font-weight:400; color:#866c40; }
+#virgin .virgin-editorial-arrow { width:27px; height:27px; background:#b71c32; font-size:24px; }
+#virgin .virgin-editorial-tier:hover .virgin-editorial-arrow { background:#8e1529; }
+#virgin .cl-rockstar { background:#f7f3eb; color:#102447; }
+#virgin .virgin-comparison-heading .display { font-family:var(--font-display); color:#102447; }
+#virgin .virgin-comparison-heading > p:not(.log) { color:#4b5565; }
+#virgin .virgin-comparison-heading .cl-included { border:1px solid #e6dccd; border-radius:12px; background:#fff; }
+#virgin .virgin-tier-grid .cl-rockstar-tier { border:1px solid #e6dccd; border-top:2px solid #b5965a; border-radius:13px; padding:1.5rem; box-shadow:none; }
+#virgin .virgin-tier-grid .cl-rockstar-tier h4 { color:#102447; font-family:var(--font-display); font-size:clamp(1.2rem,2vw,1.45rem); letter-spacing:-.025em; }
+#virgin .virgin-tier-grid .cl-rockstar-tier::before { display:block; font-family:var(--font-display); font-style:italic; font-size:.92rem; color:#947342; margin-bottom:.6rem; }
+#virgin #virgin-mega-rockstar::before { content:"The ultimate indulgence"; }
+#virgin #virgin-rockstar::before { content:"Suite life, elevated"; }
+#virgin #virgin-non-rockstar::before { content:"Beautifully uncomplicated"; }
+#virgin .virgin-checks li { line-height:1.55; }
+#virgin .virgin-tier-grid .virgin-checks li { margin:.5rem 0; }
+#virgin .virgin-tier-grid .virgin-checks li span { color:#b71c32; }
+@media(max-width:700px) {
+ #virgin .virgin-editorial-tier { grid-template-columns:44px minmax(0,1fr) 28px; }
+ #virgin .virgin-editorial-tier-copy strong { font-size:1.1rem; }
+ #virgin .virgin-tier-grid .cl-rockstar-tier { padding:1.2rem; }
+}
