@@ -2801,3 +2801,15 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .virgin-accommodation-controls button { border:0; background:transparent; color:#9c1830; font-weight:700; cursor:pointer; padding:.5rem; }
 #virgin .virgin-accommodation-dialog button:focus-visible { outline:2px solid #b58b45; outline-offset:3px; }
 @media(max-width:600px){#virgin .virgin-accommodation-launch{padding:1.25rem}#virgin .virgin-accommodation-launch-grid{grid-template-columns:1fr}#virgin .virgin-accommodation-content ul{columns:1}#virgin .virgin-accommodation-dialog{max-height:92vh} }
+
+/* Two-view Virgin room viewer, nested above the accommodation guide. */
+#virgin .virgin-accommodation-room-list button { width:100%; padding:.45rem .35rem; border:0; border-bottom:1px solid #dfd2ba; background:transparent; text-align:left; font:inherit; color:#102447; cursor:pointer; }
+#virgin .virgin-accommodation-room-list button:hover,#virgin .virgin-accommodation-room-list button:focus-visible { color:#a01c32; background:#f1e9db; }
+#virgin .virgin-room-backdrop { position:fixed; inset:0; z-index:10001; display:grid; place-items:center; padding:1rem; background:rgba(8,19,35,.8); }
+#virgin .virgin-room-dialog { position:relative; width:min(880px,100%); max-height:90vh; overflow-y:auto; padding:clamp(1.25rem,3vw,2.2rem); border:1px solid #b9985e; border-radius:15px; background:#fbf8f2; color:#102447; box-shadow:0 24px 80px #0007; }
+#virgin .virgin-room-dialog h3 { font-family:var(--font-display),Georgia,serif; font-size:clamp(1.65rem,3vw,2.3rem); margin:.25rem 0 1.4rem; }
+#virgin .virgin-room-photo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-bottom:1.2rem; }
+#virgin .virgin-room-photo-placeholder { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:.65rem; min-height:225px; aspect-ratio:4/3; padding:1.2rem; border:1px solid #dfd2ba; background:#eee8de; text-align:center; }
+#virgin .virgin-room-photo-placeholder strong { font-family:var(--font-display),Georgia,serif; font-size:1.3rem; }
+#virgin .virgin-room-photo-placeholder span { font-size:.85rem; color:#646c79; }
+@media(max-width:600px){#virgin .virgin-room-photo-grid{grid-template-columns:1fr}#virgin .virgin-room-photo-placeholder{min-height:140px;aspect-ratio:2/1}}
