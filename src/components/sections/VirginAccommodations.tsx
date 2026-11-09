@@ -1,6 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
+const suiteFacts: Record<string, { detail: string; link: string }> = {
+  "Brilliant Suite": { detail: "Interior 396 sq ft · terrace approximately 86 sq ft.", link: "https://www.virginvoyages.com/cabins/rockstar-quarters" },
+  "Seriously Suite": { detail: "Interior 284 sq ft · terrace 68 sq ft.", link: "https://www.virginvoyages.com/cabins/rockstar-quarters" },
+  "Cheeky Corner Suite": { detail: "Interior 311 sq ft. Terrace varies: Pretty Big 304–306.5 sq ft; Even Bigger 349–397 sq ft; Biggest 442.42–536.8 sq ft. Photos must match the selected configuration.", link: "https://www.virginvoyages.com/cabins/rockstar-quarters" },
+  "Sweet Aft Suite": { detail: "Interior 236 sq ft. Terrace varies: Pretty Big 180–182 sq ft; Even Bigger 223.6–268 sq ft; Biggest 321.8–425 sq ft.", link: "https://www.virginvoyages.com/cabins/rockstar-quarters" }
+};
+
 const tabs = [
   { title: "Cabins & Sea Terraces", subtitle: "Beautifully uncomplicated", text: "Explore thoughtfully designed cabins and Sea Terrace rooms with private outdoor space on select accommodations.", rooms: ["Insider", "Sea View", "Sea Terrace", "XL Sea Terrace"] },
   { title: "RockStar Suites", subtitle: "Suite life, elevated", text: "A collection of distinctive suites with elevated service and RockStar privileges. Specific benefits vary by sailing and suite.", rooms: ["Seriously Suite", "Brilliant Suite", "Cheeky Corner Suite", "Sweet Aft Suite"] },
@@ -61,11 +68,13 @@ export default function VirginAccommodations() {
           <button type="button" ref={roomClose} className="virgin-accommodation-close" aria-label="Close room viewer" onClick={()=>setRoom(null)}>×</button>
           <p className="virgin-accommodation-kicker">{tabs[active].title}</p>
           <h3>{room}</h3>
+          {suiteFacts[room] && <p className="virgin-accommodation-note">{suiteFacts[room].detail}</p>}
           <div className="virgin-room-photo-grid">
             <div className="virgin-room-photo-placeholder"><strong>Interior</strong><span>Verified room photograph pending</span></div>
             <div className="virgin-room-photo-placeholder"><strong>{room === "Insider" || room === "Sea View" ? "Second room view" : "Private outdoor space"}</strong><span>Verified photograph pending</span></div>
           </div>
-          <p className="virgin-accommodation-note">Photographs will be added when verified for this specific accommodation. Insider and Sea View cabins do not have private terraces.</p>
+          <p className="virgin-accommodation-note">Photographs must be verified for this exact accommodation and terrace configuration. Insider and Sea View cabins do not have private terraces.</p>
+          {suiteFacts[room] && <p><a href={suiteFacts[room].link} target="_blank" rel="noopener noreferrer">Explore More — Virgin Voyages ↗</a></p>}
           <div className="virgin-accommodation-controls">
             <button type="button" onClick={()=>setRoom(tabs[active].rooms[(tabs[active].rooms.indexOf(room)+tabs[active].rooms.length-1)%tabs[active].rooms.length])}>← Previous</button>
             <span>{tabs[active].rooms.indexOf(room)+1} of {tabs[active].rooms.length}</span>
