@@ -36,6 +36,9 @@ export default function VirginAccommodations() {
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = old; opener.current?.focus(); };
   }, [active, room, enlarged]);
   const photos: Record<string, { interior: string; terrace?: string; note?: string }> = {
+    "Insider": { interior: "/img/cabins/insider-entertainment-mode.jpg", note: "Interior with Entertainment Mode Lighting." },
+    "Sea Terrace": { interior: "/img/cabins/sea-terrace-interior.jpg", terrace: "/img/cabins/sea-terrace-balcony.jpg" },
+    "XL Sea Terrace": { interior: "/img/cabins/xl-sea-terrace.jpg", note: "A little more room, with an enhanced bathroom layout." },
     "Brilliant Suite": { interior: "/img/rockstar/brilliant-suite-01.jpeg", terrace: "/img/rockstar/brilliant-suite-02.jpeg" },
     "Seriously Suite": { interior: "/img/rockstar/seriously-suite-01.jpeg", terrace: "/img/rockstar/seriously-suite-02.jpeg" },
     "Cheeky Corner Suite": { interior: "/img/rockstar/cheeky-corner-suite-01.jpeg", terrace: "/img/rockstar/cheeky-corner-suite-02.jpeg", note: "Terrace photograph: Dean’s Cheeky Corner Biggest Terrace. Pretty Big and Even Bigger are different configurations and are not pictured here." },
@@ -79,8 +82,8 @@ export default function VirginAccommodations() {
           {suiteFacts[room] && <p className="virgin-accommodation-note">{suiteFacts[room].detail}</p>}
           <div className="virgin-room-photo-grid">
             {photos[room] ? <>
-              <button type="button" className="virgin-room-photo-tile" onClick={()=>setEnlarged(photos[room].interior)} aria-label={"Enlarge " + room + " interior photograph"}><img src={photos[room].interior} alt={room + " interior photograph"} loading="lazy" /><span>Suite interior · enlarge ↗</span></button>
-              {photos[room].terrace ? <button type="button" className="virgin-room-photo-tile" onClick={()=>setEnlarged(photos[room].terrace!)} aria-label={"Enlarge " + room + " second photograph"}><img src={photos[room].terrace} alt={room === "Cheeky Corner Suite" ? "Cheeky Corner Biggest Terrace — Dean’s photograph" : room + " terrace photograph"} loading="lazy" /><span>{room === "Cheeky Corner Suite" ? "Biggest Terrace · enlarge ↗" : "Private terrace · enlarge ↗"}</span></button> : <div className="virgin-room-photo-placeholder"><strong>Terrace photograph</strong><span>Exact suite terrace photograph not yet verified</span></div>}
+              <button type="button" className="virgin-room-photo-tile" onClick={()=>setEnlarged(photos[room].interior)} aria-label={"Enlarge " + room + " interior photograph"}><img src={photos[room].interior} alt={room + " interior photograph"} loading="lazy" /><span>Interior · enlarge ↗</span></button>
+              {photos[room].terrace ? <button type="button" className="virgin-room-photo-tile" onClick={()=>setEnlarged(photos[room].terrace!)} aria-label={"Enlarge " + room + " second photograph"}><img src={photos[room].terrace} alt={room === "Cheeky Corner Suite" ? "Cheeky Corner Biggest Terrace — Dean’s photograph" : room + " terrace photograph"} loading="lazy" /><span>{room === "Cheeky Corner Suite" ? "Biggest Terrace · enlarge ↗" : "Private terrace · enlarge ↗"}</span></button> : null}
             </> : <div className="virgin-room-photo-placeholder"><strong>Accommodation photograph</strong><span>Verified photograph pending</span></div>}
           </div>
           {photos[room]?.note && <p className="virgin-accommodation-note">{photos[room].note}</p>}
