@@ -19,13 +19,14 @@ export default function VirginAccommodations() {
   const [active, setActive] = useState<number | null>(null);
   const close = useRef<HTMLButtonElement>(null);
   const [room, setRoom] = useState<string | null>(null);
+  const [enlarged, setEnlarged] = useState<string | null>(null);
   const roomClose = useRef<HTMLButtonElement>(null);
   const opener = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
     if (active === null) return;
     if (room) roomClose.current?.focus(); else close.current?.focus();
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") { if (room) setRoom(null); else setActive(null); }
+      if (e.key === "Escape") { if (enlarged) setEnlarged(null); else if (room) setRoom(null); else setActive(null); }
       if (!room && e.key === "ArrowRight") setActive(v => v === null ? null : (v + 1) % tabs.length);
       if (!room && e.key === "ArrowLeft") setActive(v => v === null ? null : (v + tabs.length - 1) % tabs.length);
     };
@@ -33,7 +34,13 @@ export default function VirginAccommodations() {
     const old = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = old; opener.current?.focus(); };
-  }, [active, room]);
+  }, [active, room, enlarged]);
+  const photos: Record<string, { interior: string; terrace?: string; note?: string }> = {
+    "Brilliant Suite": { interior: "/img/rockstar/brilliant-suite-01.jpeg", terrace: "/img/rockstar/brilliant-suite-02.jpeg" },
+    "Seriously Suite": { interior: "/img/rockstar/seriously-suite-01.jpeg", terrace: "/img/rockstar/seriously-suite-02.jpeg" },
+    "Cheeky Corner Suite": { interior: "/img/rockstar/cheeky-corner-suite-01.jpeg", terrace: "/img/rockstar/cheeky-corner-suite-02.jpeg", note: "Terrace photograph: Dean’s Cheeky Corner Biggest Terrace. Pretty Big and Even Bigger are different configurations and are not pictured here." },
+    "Sweet Aft Suite": { interior: "/img/rockstar/sweet-aft-suite-01.jpeg", terrace: "/img/rockstar/sweet-aft-suite-02.jpeg", note: "Sweet Aft terrace photograph. Pretty Big, Even Bigger and Biggest terrace layouts vary; confirm the exact configuration for your sailing." }
+  };
   const open = (i: number, e: MouseEvent<HTMLButtonElement>) => { opener.current = e.currentTarget; setActive(i); };
   return <>
     <div className="virgin-accommodation-launch">
@@ -71,10 +78,12 @@ export default function VirginAccommodations() {
           <h3>{room}</h3>
           {suiteFacts[room] && <p className="virgin-accommodation-note">{suiteFacts[room].detail}</p>}
           <div className="virgin-room-photo-grid">
-            <div className="virgin-room-photo-placeholder"><strong>Interior</strong><span>Verified room photograph pending</span></div>
-            <div className="virgin-room-photo-placeholder"><strong>{room === "Insider" || room === "Sea View" ? "Second room view" : "Private outdoor space"}</strong><span>Verified photograph pending</span></div>
+            {photos[room] ? <>
+              <button type="button" className="virgin-room-photo-tile" onClick={()=>setEnlarged(photos[room].interior)} aria-label={"Enlarge " + room + " interior photograph"}><img src={photos[room].interior} alt={room + " interior photograph"} loading="lazy" /><span>Suite interior · enlarge ↗</span></button>
+              {photos[room].terrace ? <button type="button" className="virgin-room-photo-tile" onClick={()=>setEnlarged(photos[room].terrace!)} aria-label={"Enlarge " + room + " second photograph"}><img src={photos[room].terrace} alt={room === "Cheeky Corner Suite" ? "Cheeky Corner Biggest Terrace — Dean’s photograph" : room + " terrace photograph"} loading="lazy" /><span>{room === "Cheeky Corner Suite" ? "Biggest Terrace · enlarge ↗" : "Private terrace · enlarge ↗"}</span></button> : <div className="virgin-room-photo-placeholder"><strong>Terrace photograph</strong><span>Exact suite terrace photograph not yet verified</span></div>}
+            </> : <div className="virgin-room-photo-placeholder"><strong>Accommodation photograph</strong><span>Verified photograph pending</span></div>}
           </div>
-          <p className="virgin-accommodation-note">Photographs must be verified for this exact accommodation and terrace configuration. Insider and Sea View cabins do not have private terraces.</p>
+          {photos[room]?.note && <p className="virgin-accommodation-note">{photos[room].note}</p>}
           {suiteFacts[room] && <p><a href={suiteFacts[room].link} target="_blank" rel="noopener noreferrer">Explore More — Virgin Voyages ↗</a></p>}
           <div className="virgin-accommodation-controls">
             <button type="button" onClick={()=>setRoom(tabs[active].rooms[(tabs[active].rooms.indexOf(room)+tabs[active].rooms.length-1)%tabs[active].rooms.length])}>← Previous</button>
@@ -83,6 +92,7 @@ export default function VirginAccommodations() {
           </div>
         </section>
       </div>}
+      {enlarged && <div className="virgin-room-backdrop" onClick={()=>setEnlarged(null)} role="presentation"><div role="dialog" aria-modal="true" aria-label="Enlarged suite photograph" style={{position:"relative",maxWidth:"min(94vw,1100px)",margin:"auto"}}><button type="button" className="virgin-accommodation-close" onClick={()=>setEnlarged(null)} aria-label="Close enlarged photograph">×</button><img src={enlarged} alt="Enlarged suite photograph" style={{display:"block",maxWidth:"100%",maxHeight:"85vh",objectFit:"contain"}} /></div></div>}
     </div>}
   </>;
 }
