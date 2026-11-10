@@ -204,19 +204,23 @@
             ]
           },
           {
-            "q": "Should I purchase voyage protection or travel insurance?",
+            "q": "Do I Really Need Voyage Protection?",
             "body": [
               {
-                "h": "Protect your investment",
-                "text": "Cruise fares can be nonrefundable, and unexpected illness, travel delays or other disruptions may affect your plans. Consider travel insurance or a cruise line’s voyage protection option before final payment."
+                "h": "Not necessarily. But what if the unexpected happens?",
+                "text": "A little protection can make a big difference."
               },
               {
-                "h": "Compare the coverage",
-                "text": "Coverage varies. Review trip cancellation and interruption benefits, emergency medical care, medical evacuation, exclusions, pre-existing-condition provisions and purchase deadlines. Cruise line protection and independent travel insurance may offer different benefits."
+                "h": "Your vacation is an investment worth protecting",
+                "text": "Unexpected illness, travel delays, missed connections, lost luggage, or a medical emergency at sea can quickly turn an unforgettable journey into an expensive one."
               },
               {
-                "h": "Ask Dean before you decide",
-                "text": "I can help you understand the options available for your sailing. Always review the actual policy documents and coverage terms before purchasing."
+                "h": "Have a pre-existing medical condition?",
+                "text": "Some travel insurance plans offer a waiver of pre-existing condition exclusions when eligibility requirements are met. Purchase deadlines matter, so it's worth exploring your options early."
+              },
+              {
+                "h": "Protect your journey. Travel with greater peace of mind.",
+                "text": "Travel protection may help safeguard your investment and provide assistance when covered circumstances interrupt your plans. Coverage varies by plan. Terms, conditions, limitations, and exclusions apply."
               }
             ]
           },
