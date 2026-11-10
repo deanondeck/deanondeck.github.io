@@ -36,8 +36,8 @@ export default function VirginAccommodations() {
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = old; opener.current?.focus(); };
   }, [active, room, enlarged]);
   const photos: Record<string, { interior: string; terrace?: string; note?: string }> = {
-    "Brilliant Suite": { interior: "/img/rockstar/brilliant-suite-01.jpeg" },
-    "Seriously Suite": { interior: "/img/rockstar/seriously-suite-01.jpeg" },
+    "Brilliant Suite": { interior: "/img/rockstar/brilliant-suite-01.jpeg", terrace: "/img/rockstar/brilliant-suite-02.jpeg" },
+    "Seriously Suite": { interior: "/img/rockstar/seriously-suite-01.jpeg", terrace: "/img/rockstar/seriously-suite-02.jpeg" },
     "Cheeky Corner Suite": { interior: "/img/rockstar/cheeky-corner-suite-01.jpeg", terrace: "/img/rockstar/cheeky-corner-suite-02.jpeg", note: "Terrace photograph: Dean’s Cheeky Corner Biggest Terrace. Pretty Big and Even Bigger are different configurations and are not pictured here." },
     "Sweet Aft Suite": { interior: "/img/rockstar/sweet-aft-suite-01.jpeg", terrace: "/img/rockstar/sweet-aft-suite-02.jpeg", note: "Sweet Aft terrace photograph. Pretty Big, Even Bigger and Biggest terrace layouts vary; confirm the exact configuration for your sailing." }
   };
