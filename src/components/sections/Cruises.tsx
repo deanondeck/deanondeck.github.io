@@ -77,7 +77,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 <img src={img(flagship ? "virgin-sunset-sailing.jpg" : l.img)} alt={flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt} loading={i === 0 ? "eager" : "lazy"} />
               </figure>
               <div className="cl-body reveal d1">
-                <p className={flagship ? "log log--center" : "log"}>{l.k}</p>
+                <p className={flagship ? "log log--center" : l.id === "silversea" ? "log log--silversea" : "log"}>{l.k}</p>
                 <h3 className="display h-lg">{l.name}</h3>
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
