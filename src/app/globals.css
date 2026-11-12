@@ -122,6 +122,13 @@ section[id] { scroll-margin-top: 96px; }
 }
 .band--shell .log--center::after,
 .band--shell2 .log--center::after { background: #c8a45c; }
+.log--silversea::after {
+  content: "";
+  width: 1.8rem;
+  height: 1px;
+  background: #c8a45c;
+  display: inline-block;
+}
 
 /* Display headings — Noto Serif, calm and roomy like the reference */
 .display {
