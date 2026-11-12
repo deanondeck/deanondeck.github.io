@@ -37,7 +37,7 @@ export default function VirginAccommodations() {
   }, [active, room, enlarged]);
   const photos: Record<string, { interior: string; terrace?: string; note?: string; interiorLabel?: string; terraceLabel?: string; second?: string; secondLabel?: string; third?: string; thirdLabel?: string }> = {
     "Insider": { interior: "/img/cabins/insider-entertainment-mode.jpg", interiorLabel: "Insider cabin · Entertainment Mode lighting" },
-    "Sea View": { interior: "/img/cabins/sea-view-interior.jpg", second: "/img/cabins/sea-view-interior-detail.jpg", interiorLabel: "Sea View cabin bedroom", secondLabel: "Sea View cabin lounge and window" },
+    "Sea View": { interior: "/img/cabins/sea-view-interior.jpg", second: "/img/cabins/sea-view-interior-detail.jpg", interiorLabel: "Sea View cabin bedroom", secondLabel: "Sea View window seat and porthole view" },
     "Sea Terrace": { interior: "/img/cabins/sea-terrace-interior.jpg", terrace: "/img/cabins/sea-terrace-balcony.jpg", interiorLabel: "Sea Terrace bedroom", terraceLabel: "Private balcony with hammock" },
     "XL Sea Terrace": { interior: "/img/cabins/xl-sea-terrace.jpg", second: "/img/cabins/xl-sea-terrace-detail.jpg", third: "/img/cabins/xl-sea-terrace-terrace.jpg", interiorLabel: "XL Sea Terrace cabin", secondLabel: "XL Sea Terrace interior detail", thirdLabel: "XL Sea Terrace private terrace" },
     "Massive Suite": { interior: "/img/mega-rockstar/massive-interior.jpg", terrace: "/img/mega-rockstar/massive-terrace.jpg", interiorLabel: "Massive Suite music room and lounge", terraceLabel: "Massive Suite private terrace with hot tub" },
