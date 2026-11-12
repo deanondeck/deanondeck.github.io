@@ -13,7 +13,7 @@ const tabs = [
   { title: "Cabins & Sea Terraces", subtitle: "Beautifully uncomplicated", text: "Explore thoughtfully designed cabins and Sea Terrace rooms with private outdoor space on select accommodations.", rooms: ["Insider", "Sea View", "Sea Terrace", "XL Sea Terrace"] },
   { title: "RockStar Suites", subtitle: "Suite life, elevated", text: "A collection of distinctive suites with elevated service and RockStar privileges. Specific benefits vary by sailing and suite.", rooms: ["Seriously Suite", "Brilliant Suite", "Cheeky Corner Suite", "Sweet Aft Suite"] },
   { title: "Mega RockStar Suites", subtitle: "The ultimate indulgence", text: "Virgin's most exclusive suite collection, designed around generous spaces and a higher-touch onboard experience.", rooms: ["Massive Suite", "Fab Suite", "Posh Suite", "Gorgeous Suite"] },
-  { title: "Accessible Accommodations", subtitle: "Comfort for every sailor", text: "Accessible accommodation options are available in select categories. Ask Dean to confirm the precise features and availability for your sailing.", rooms: ["Accessible cabins", "Accessible Sea Terrace options", "Accessible suite options — verify availability"] }
+  { title: "Accessible Accommodations", subtitle: "Comfort for every sailor", text: "Accessible accommodation options are available in select categories. Ask Dean to confirm the precise features and availability for your sailing.", rooms: ["Accessible cabins", "ADA RockStar Suite"] }
 ];
 export default function VirginAccommodations() {
   const [active, setActive] = useState<number | null>(null);
@@ -45,6 +45,7 @@ export default function VirginAccommodations() {
     "Posh Suite": { interior: "/img/mega-rockstar/posh-interior.jpg", terrace: "/img/mega-rockstar/posh-terrace.jpg", interiorLabel: "Posh Suite lounge", terraceLabel: "Posh Suite private terrace" },
     "Gorgeous Suite": { interior: "/img/mega-rockstar/gorgeous-interior.jpg", terrace: "/img/mega-rockstar/gorgeous-terrace.jpg", interiorLabel: "Gorgeous Suite bedroom", terraceLabel: "Gorgeous Suite private terrace with hammock" },
     "Accessible cabins": { interior: "/img/accessible/accessible-cabin-interior.jpg", second: "/img/accessible/accessible-cabin-bathroom.jpg", interiorLabel: "Accessible cabin bedroom", secondLabel: "Accessible cabin bathroom" },
+    "ADA RockStar Suite": { interior: "/img/accessible/ada-rockstar-bedroom.jpg", second: "/img/accessible/ada-rockstar-bathroom.jpg", third: "/img/accessible/ada-rockstar-terrace.jpg", interiorLabel: "ADA RockStar suite bedroom", secondLabel: "ADA RockStar suite accessible bathroom", thirdLabel: "ADA RockStar suite terrace" },
     "Brilliant Suite": { interior: "/img/rockstar/brilliant-suite-01.jpeg", terrace: "/img/rockstar/brilliant-suite-02.jpeg" },
     "Seriously Suite": { interior: "/img/rockstar/seriously-suite-01.jpeg", terrace: "/img/rockstar/seriously-suite-02.jpeg" },
     "Cheeky Corner Suite": { interior: "/img/rockstar/cheeky-corner-suite-01.jpeg", terrace: "/img/rockstar/cheeky-corner-suite-02.jpeg", note: "Terrace photograph: Dean’s Cheeky Corner Biggest Terrace. Pretty Big and Even Bigger are different configurations and are not pictured here." },
