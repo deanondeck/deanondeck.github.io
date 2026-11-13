@@ -2,6 +2,21 @@
 
 import { useEffect, useState } from "react";
 
+const shipDetails: Record<string, { slug: string; guests: number }> = {
+  "Silver Dawn": { slug: "silver-dawn", guests: 596 },
+  "Silver Moon": { slug: "silver-moon", guests: 596 },
+  "Silver Muse": { slug: "silver-muse", guests: 632 },
+  "Silver Nova": { slug: "silver-nova", guests: 728 },
+  "Silver Ray": { slug: "silver-ray", guests: 728 },
+  "Silver Shadow": { slug: "silver-shadow", guests: 392 },
+  "Silver Spirit": { slug: "silver-spirit", guests: 636 },
+  "Silver Whisper": { slug: "silver-whisper", guests: 392 },
+  "Silver Cloud": { slug: "silver-cloud", guests: 254 },
+  "Silver Endeavour": { slug: "silver-endeavour", guests: 220 },
+  "Silver Origin": { slug: "silver-origin", guests: 100 },
+  "Silver Wind": { slug: "silver-wind", guests: 274 },
+};
+
 const officialShipImages: Record<string, string> = {
   "Silver Dawn": "https://cdn.sanity.io/images/rd0y3pad/production/f52c84c593994d05d38e1813082392f86434f67a-2500x1875.jpg",
   "Silver Ray": "https://cdn.sanity.io/images/rd0y3pad/production/3429871fc3f45cc59f40be12faebf62ca56db6b4-4939x3550.jpg",
@@ -57,12 +72,12 @@ export default function SilverseaFleetPreview() {
             <p>{fleets[active].description}</p>
             <div className="ss-fleet-ship-list">
               {fleets[active].ships.map(ship => (
-                <a key={ship} href="https://www.silversea.com/ships.html" target="_blank" rel="noopener noreferrer" aria-label={`Find official information about ${ship} on Silversea's fleet website`}>
-                  <span className="ss-fleet-ship-name">{officialShipImages[ship] && <img src={officialShipImages[ship]} alt={`${ship} — official Silversea fleet photograph`} loading="lazy" />}<span>{ship}</span></span><span aria-hidden="true">↗</span>
+                <a key={ship} href={`https://www.silversea.com/ships/${shipDetails[ship].slug}.html`} target="_blank" rel="noopener noreferrer" aria-label={`Find official information about ${ship} on Silversea's fleet website`}>
+                  <span className="ss-fleet-ship-name">{officialShipImages[ship] && <img src={officialShipImages[ship]} alt={`${ship} — official Silversea fleet photograph`} loading="lazy" />}<span>{ship}<small className="ss-fleet-capacity">{shipDetails[ship].guests} guests · Ship details & deck plan</small></span></span><span aria-hidden="true">↗</span>
                 </a>
               ))}
             </div>
-            <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Browse the official Silversea fleet for verified ship photography and specifications.</p>
+            <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Each ship opens its official Silversea page, with photographs, suites, specifications and deck-plan access.</p>
           </div>
         </div>
       )}
