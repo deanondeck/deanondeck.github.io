@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react";
 
+const officialShipImages: Record<string, string> = {
+  "Silver Dawn": "https://cdn.sanity.io/images/rd0y3pad/production/f52c84c593994d05d38e1813082392f86434f67a-2500x1875.jpg",
+  "Silver Ray": "https://cdn.sanity.io/images/rd0y3pad/production/3429871fc3f45cc59f40be12faebf62ca56db6b4-4939x3550.jpg",
+};
+
 const fleets = {
   classic: {
     title: "Classic Luxury Voyages",
@@ -52,8 +57,8 @@ export default function SilverseaFleetPreview() {
             <p>{fleets[active].description}</p>
             <div className="ss-fleet-ship-list">
               {fleets[active].ships.map(ship => (
-                <a key={ship} href={`https://www.silversea.com/ships.html`} target="_blank" rel="noopener noreferrer" aria-label={`Find official information about ${ship} on Silversea's fleet website`}>
-                  <span>{ship}</span><span aria-hidden="true">↗</span>
+                <a key={ship} href="https://www.silversea.com/ships.html" target="_blank" rel="noopener noreferrer" aria-label={`Find official information about ${ship} on Silversea's fleet website`}>
+                  <span className="ss-fleet-ship-name">{officialShipImages[ship] && <img src={officialShipImages[ship]} alt={`${ship} — official Silversea fleet photograph`} loading="lazy" />}<span>{ship}</span></span><span aria-hidden="true">↗</span>
                 </a>
               ))}
             </div>
