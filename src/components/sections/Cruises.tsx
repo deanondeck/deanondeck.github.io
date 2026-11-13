@@ -78,7 +78,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 <img src={img(flagship ? "virgin-sunset-sailing.jpg" : l.img)} alt={flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt} loading={i === 0 ? "eager" : "lazy"} />
               </figure>
               <div className="cl-body reveal d1">
-                <p className={flagship ? "log log--center" : "log"}>{l.k}</p>
+                <p className={flagship ? "log log--center" : l.id === "silversea" ? "log silversea-eyebrow" : "log"}>{l.k}</p>
                 <h3 className="display h-lg">{l.name}</h3>
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
@@ -115,8 +115,8 @@ export default function Cruises({ id, content, site }: SectionProps) {
                     <small>Offers and eligibility vary by sailing. Check current terms before booking.</small>
                   </a>
                 )}
-                {l.browse && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
-                {l.id === "silversea" && <p className="booking-note">Explore voyages with Dean’s contact details at hand. Use Contact on the Silversea site to email Dean and arrange your booking.</p>}
+                {l.browse && l.id !== "silversea" && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
+                
                 {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
               </div>
               </div>
