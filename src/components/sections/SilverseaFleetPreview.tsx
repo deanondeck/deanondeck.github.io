@@ -102,11 +102,9 @@ export default function SilverseaFleetPreview() {
         <div>
           <p className="ss-fleet-brand">THOUGHTFUL TRAVEL</p>
           <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
-          <p><strong>Luxury designed with comfort and accessibility in mind.</strong></p>
-          <p>Silversea offers thoughtfully designed wheelchair-accessible suites aboard selected ships, allowing guests to enjoy an exceptional voyage with greater comfort and independence.</p>
-          <p>Accessible accommodations may include wider doorways, spacious layouts for wheelchair maneuverability, roll-in showers with seating and grab bars, adapted bathroom fixtures, and accessible storage. Selected suites also feature wheelchair-friendly access to private verandas.</p>
-          <p><strong>Every ship is unique.</strong> Accessible suite categories, layouts, dimensions, and amenities vary by vessel. Guests are encouraged to explore the accommodations available on their preferred ship and confirm their individual accessibility requirements before booking.</p>
-          <p className="ss-accessible-caution">Some ports require tenders or Zodiacs, which can restrict wheelchair access. Expedition accessibility requires special consideration.</p>
+          <p><strong>Thoughtful luxury, designed for you.</strong></p>
+          <p>Selected ships offer wheelchair-accessible suites with wider doorways, generous maneuvering space, roll-in showers, grab bars and adapted storage. Some also offer accessible veranda access.</p>
+          <p className="ss-accessible-caution">Features vary by ship and suite. Confirm your needs before booking; tenders and expedition landings may limit access.</p>
         </div>
         <a href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer">Explore Cruises with Dean <span aria-hidden="true">↗</span></a>
       </aside>
@@ -128,7 +126,7 @@ export default function SilverseaFleetPreview() {
             </div>}
             {selectedShip && <div className="ss-fleet-booking"><p>Ready to explore a Silversea voyage? Book through Dean’s personalized Silversea page.</p><a href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer">Explore cruises with Dean ↗</a></div>}
             {selectedShip && failedImages[selectedShip] && <p role="status" className="ss-fleet-note">This photograph is temporarily unavailable. Use the official ship gallery link above to view verified images.</p>}
-            <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Select a ship to view its official guide. For sailings and booking, use the personalized Explore cruises with Dean link. Ship-guide links are informational and are not confirmed to preserve advisor attribution.</p>
+            <p className="ss-fleet-note">Ship features vary. Official ship guides are for information; use Explore cruises with Dean for personalized booking.</p>
           </div>
         </div>
       )}
