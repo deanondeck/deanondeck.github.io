@@ -2861,3 +2861,7 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 @media(max-width:420px){.ss-fleet-dialog{padding:1.25rem}.ss-fleet-ship-name img{width:70px;height:54px}}
 
 .ss-fleet-booking{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.3rem 0;padding:1rem 1.2rem;border:1px solid #d6bb84;border-radius:8px;background:#faf7f0}.ss-fleet-booking p{margin:0;font-size:.9rem}.ss-fleet-booking a{display:inline-block;flex-shrink:0;padding:.75rem 1rem;border-radius:6px;background:#152e45;color:white;font-weight:600;text-decoration:none}.ss-fleet-booking a:focus-visible{outline:3px solid #ae8c4e;outline-offset:3px}@media(max-width:600px){.ss-fleet-booking{display:block}.ss-fleet-booking a{margin-top:.75rem}}
+
+/* Authentic Silversea fleet photography inside the approved two-card layout. */
+.ss-fleet-choice-photo{display:block;width:100%;height:clamp(170px,19vw,235px);object-fit:cover;object-position:center;border-radius:9px;margin-bottom:1.25rem;background:#e9e6e0}
+@media(max-width:650px){.ss-fleet-choice-photo{height:auto;aspect-ratio:16/10}}
