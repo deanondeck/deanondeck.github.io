@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const booking = "https://go.deanondeck.com/Silversea";
+// Veranda photo: © Silversea Cruises Ltd; image served by Widgety cruise-media asset CDN. Confirm supplier reuse permission before publishing.\nconst booking = "https://go.deanondeck.com/Silversea";
 const categories = [
   { name: "Villa", heading: "The best address on board", description: "Silversea’s most expansive suites, with separate bedrooms, generous living space and private outdoor areas.", examples: "Otium, Master, Owner’s, Grand and Royal suites", official: "https://www.silversea.com/life-onboard/luxury-suites.html" },
   { name: "Residence", heading: "Room to live. Space to unwind.", description: "Residential-style suites with separate bedroom and living areas, a private balcony and additional comforts.", examples: "Junior Grand, Signature, Silver, Premium Medallion and Medallion suites", official: "https://www.silversea.com/life-onboard/luxury-suites.html" },
@@ -36,7 +36,7 @@ export default function SilverseaSuites({ included, note }: { included: string[]
       <div className="ss-suite-gallery">
         {categories.map((suite, index) => (
           <button className="ss-suite-tile" key={suite.name} type="button" onClick={() => setSelected(index)} aria-label={`View ${suite.name} suite details`}>
-            <span className="ss-suite-photo-pending" aria-hidden="true"><span>{suite.name}</span></span>
+            {suite.name === "Veranda" ? <img className="ss-suite-photo" src="https://assets.widgety.co.uk/2025/04/28/13/03/45/48bb19ca-bbc0-4ce9-a185-a426f6c991ad/Silversea%2C%20Silver%20Ray%2C%20Premium%20Veranda%20Suite%20Balcony%20%C2%A9Silversea%20Cruises%20Ltd.jpg" alt="Silver Ray Premium Veranda Suite: private furnished balcony with two chairs and ocean view, official Silversea photograph" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} /> : <span className="ss-suite-photo-pending" aria-hidden="true"><span>{suite.name}</span></span>}
             <span className="ss-suite-tile-caption"><strong>{suite.name}</strong><small>View details ↗</small></span>
           </button>
         ))}
