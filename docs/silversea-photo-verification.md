@@ -32,3 +32,9 @@ Do not use AI images or assign a ship based on appearance alone. Source priority
 
 ## Official gallery source
 Each ship image above was matched to its labeled image in https://www.silversea.com/ships.html on 2026-11-12. Source serves images from Silversea's Sanity CDN. This establishes official site provenance, **not** a separate Marketing Central licensing determination. The browser/CDN image response and appearance must still be checked in staging before final approval.
+
+## Independent official-site cross-check — 2026-11-12
+- Official https://www.silversea.com/ships.html lists all eight Classic and four Expedition ships, with guest capacities matching the component.
+- Direct gallery asset references for **Silver Dawn**, **Silver Nova**, and **Silver Cloud** match the CDN asset identifiers recorded above (the browser search tool cannot render the CDN image response, so actual image loading remains untested).
+- Image matching is based on the official gallery's ship labels, not visual appearance alone.
+- **Remaining QA:** independently compare all other asset identifiers; load images in a browser; inspect ship identity visually; verify individual ship-page destinations and deck plan access; test modal interaction on mobile and desktop.
