@@ -13,7 +13,7 @@ function ShipGroup({ title, description, ships }: {title:string; description:str
       {ships.map(([name, guests]) => <article className="silversea-fleet-card" key={name}>
         <span className="silversea-fleet-label">{title === "Classic Voyages" ? "Classic" : "Expedition"}</span>
         <h5>{name}</h5><p>Up to {guests} guests</p>
-        <a href="https://www.silversea.com/ships.html" target="_blank" rel="noopener noreferrer" aria-label={`Explore ${name} on Silversea's official fleet page`}>Explore ship <span aria-hidden="true">↗</span></a>
+        <a href={`/plan/?line=Silversea&ship=${encodeURIComponent(name)}`} aria-label={`Ask Dean about ${name}`}>Ask Dean <span aria-hidden="true">→</span></a>
       </article>)}
     </div>
   </section>;
@@ -28,6 +28,7 @@ export default function SilverseaFleet() {
     </header>
     <ShipGroup title="Classic Voyages" description="Refined ocean journeys, with time to savor every destination." ships={classic}/>
     <ShipGroup title="Expedition Voyages" description="Venture farther, without leaving thoughtful luxury behind." ships={expedition}/>
+    <section className="silversea-suite-intro" aria-label="Silversea suite preview"><p className="log log--center">A glimpse inside</p><h4>Room to unwind, wherever you roam.</h4><p>From inviting veranda suites to spacious signature accommodations, the right suite depends on the ship and the journey. Dean can help you explore the options without overwhelming you with a catalog.</p><a href="/plan/?line=Silversea">Find your suite with Dean <span aria-hidden="true">→</span></a></section>
     <footer className="silversea-fleet-footer">
       <p>Every ship has its own character. Ask Dean which one suits your journey.</p>
       <a className="btn btn-ink" href="/plan/?line=Silversea">Explore Silversea with Dean <span aria-hidden="true">→</span></a>
