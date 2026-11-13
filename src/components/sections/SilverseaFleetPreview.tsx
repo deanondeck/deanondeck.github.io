@@ -102,10 +102,13 @@ export default function SilverseaFleetPreview() {
         <div>
           <p className="ss-fleet-brand">THOUGHTFUL TRAVEL</p>
           <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
-          <p>Adapted suites are offered on selected ships, including Silver Nova and Silver Ray. Layouts and accessible features vary by vessel. We'll help confirm the right suite and sailing with Silversea before booking.</p>
+          <p><strong>Luxury designed with comfort and accessibility in mind.</strong></p>
+          <p>Silversea offers thoughtfully designed wheelchair-accessible suites aboard selected ships, allowing guests to enjoy an exceptional voyage with greater comfort and independence.</p>
+          <p>Accessible accommodations may include wider doorways, spacious layouts for wheelchair maneuverability, roll-in showers with seating and grab bars, adapted bathroom fixtures, and accessible storage. Selected suites also feature wheelchair-friendly access to private verandas.</p>
+          <p><strong>Every ship is unique.</strong> Accessible suite categories, layouts, dimensions, and amenities vary by vessel. Guests are encouraged to explore the accommodations available on their preferred ship and confirm their individual accessibility requirements before booking.</p>
           <p className="ss-accessible-caution">Some ports require tenders or Zodiacs, which can restrict wheelchair access. Expedition accessibility requires special consideration.</p>
         </div>
-        <a href="https://www.silversea.com/life-onboard/luxury-ocean-view-suites/premium-veranda-suite.html" target="_blank" rel="noopener noreferrer">Explore adapted suites <span aria-hidden="true">↗</span></a>
+        <a href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer">Explore Cruises with Dean <span aria-hidden="true">↗</span></a>
       </aside>
       {active && (
         <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) closeFleet(); }}>
