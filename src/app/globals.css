@@ -2915,3 +2915,40 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 
 #silversea .ss-suite-photo{display:block;width:100%;height:clamp(115px,13vw,180px);object-fit:cover;object-position:center}
 @media(max-width:520px){#silversea .ss-suite-photo{height:120px}}
+
+/* Silversea reference layout — scoped; preserve all other cruise lines. */
+@media(min-width:901px){
+ #silversea .cl-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+ #silversea .cl-main{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+ #silversea .ss-fleet,#silversea .ss-suite-collection{grid-column:1/-1;width:100%;max-width:none}
+}
+#silversea .ss-suite-collection{background:linear-gradient(180deg,#fffdfa,#f8f4ed);border:0;border-radius:0;padding:clamp(1.5rem,4vw,4rem) clamp(1rem,3vw,3rem);box-shadow:none}
+#silversea .ss-suite-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.5rem,1vw,1rem)}
+#silversea .ss-suite-card{overflow:hidden;border:2px solid #c79635;border-radius:16px;background:#0e2b49}
+#silversea .ss-suite-photo,#silversea .ss-suite-photo-pending{height:clamp(170px,18vw,280px);width:100%;object-fit:cover}
+#silversea .ss-fleet{background:#102b47;border-radius:20px}
+#silversea .ss-fleet-choices{gap:clamp(.75rem,2vw,1.5rem)}
+#silversea .ss-fleet-choice{position:relative;overflow:hidden;min-height:280px;border:2px solid #e4c78c;background:#102b47;color:#fff;text-align:center;padding:0 0 1.2rem}
+#silversea .ss-fleet-choice-photo{display:block;width:100%;height:240px;object-fit:cover}
+#silversea .ss-fleet-choice h4{color:white;margin:1rem .5rem .35rem;font-style:italic}
+#silversea .ss-fleet-choice p{min-height:0;padding:0 1rem}
+#silversea .ss-fleet-choice button{background:transparent;border:1px solid #e4c78c;border-radius:100px}
+@media(max-width:700px){
+ #silversea .ss-suite-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #silversea .ss-suite-photo,#silversea .ss-suite-photo-pending{height:150px}
+ #silversea .ss-fleet-choices{grid-template-columns:1fr}
+}
+
+/* Approved Silversea composition: real photos, compact editorial styling. */
+#silversea .ss-suite-tile{position:relative;border:2px solid #c99740;border-radius:14px;min-width:0}
+#silversea .ss-suite-gallery{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.55rem,1.2vw,1rem)}
+#silversea .ss-suite-tile .ss-suite-photo{display:block;height:clamp(150px,17vw,260px);width:100%;object-fit:cover}
+#silversea .ss-suite-tile-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(10,35,61,.96) 25%);padding:2rem .3rem .6rem}
+#silversea .ss-suite-tile-caption strong{font-size:clamp(1.1rem,2vw,1.8rem)}
+#silversea .ss-suite-included>strong{background:linear-gradient(110deg,#d8a64c,#f7d995);color:#102943;padding:1.15rem 1.4rem;text-align:center;max-width:185px;text-transform:uppercase;letter-spacing:.08em;font:700 .9rem/1.3 Arial,sans-serif}
+#silversea .ss-suite-included{padding:0;overflow:hidden;gap:1.5rem}
+#silversea .ss-suite-intro{max-width:950px}
+#silversea .ss-suite-intro h3{font-size:clamp(2.5rem,5vw,4.5rem)}
+#silversea .ss-suite-dialog-photo{width:100%;max-height:270px;object-fit:cover;border-radius:10px;margin:.7rem 0}
+#silversea .ss-fleet-ribbon{display:block;max-width:460px;margin:1rem auto .5rem}
+@media(max-width:700px){#silversea .ss-suite-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}#silversea .ss-suite-tile .ss-suite-photo{height:170px}#silversea .ss-suite-included>strong{max-width:none}}
