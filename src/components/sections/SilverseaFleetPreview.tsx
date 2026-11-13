@@ -53,26 +53,58 @@ export default function SilverseaFleetPreview() {
   const [active, setActive] = useState<Fleet | null>(null);
   const [selectedShip, setSelectedShip] = useState<string | null>(null);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
-  const [failedFleetImages, setFailedFleetImages] = useState<Record<Fleet, boolean>>({});
+  const [failedFleetImages, setFailedFleetImages] = useState<Partial<Record<Fleet, boolean>>>({});
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRefs = useRef<Record<Fleet, HTMLButtonElement | null>>({ classic: null, expedition: null });
   const activeTriggerRef = useRef<Fleet | null>(null);
-  const closeFleet = () => { setSelectedShip(null); setActive(null); window.requestAnimationFrame(() => { if (activeTriggerRef.current) triggerRefs.current[activeTriggerRef.current]?.focus(); }); };
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const shipHeadingRef = useRef<HTMLHeadingElement>(null);
+  const shipTriggerRef = useRef<HTMLButtonElement>(null);
+  const previousShip = useRef<string | null>(null);
+
+  const closeFleet = () => {
+    setSelectedShip(null);
+    setActive(null);
+    previousShip.current = null;
+    const fleet = activeTriggerRef.current;
+    window.requestAnimationFrame(() => {
+      if (fleet) triggerRefs.current[fleet]?.focus();
+    });
+  };
+
+  const backToFleet = () => setSelectedShip(null);
+
   useEffect(() => {
     if (!active) return;
-    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") { if (selectedShip) setSelectedShip(null); else closeFleet(); } };
-    const onTab = (event: KeyboardEvent) => {
-      if (event.key !== "Tab" || selectedShip === undefined) return;
-      const dialog = document.querySelector<HTMLElement>(".ss-fleet-dialog");
-      const focusable = Array.from(dialog?.querySelectorAll<HTMLElement>('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])') ?? []);
-      if (!focusable.length) return;
-      const first = focusable[0], last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    const dialog = dialogRef.current;
+    if (selectedShip && dialog) {
+      dialog.scrollTop = 0;
+      shipHeadingRef.current?.focus({ preventScroll: true });
+    } else {
+      shipTriggerRef.current?.focus();
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        if (selectedShip) backToFleet();
+        else closeFleet();
+        return;
+      }
+      if (event.key !== "Tab" || !dialog) return;
+      const focusable = Array.from(dialog.querySelectorAll<HTMLElement>('button:not([disabled]), a[href]'));
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const focused = document.activeElement as HTMLElement;
+      if (event.shiftKey && (focused === first || !focusable.includes(focused))) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && focused === last) {
+        event.preventDefault();
+        first?.focus();
+      }
     };
     document.addEventListener("keydown", onKeyDown);
-    document.addEventListener("keydown", onTab);
-    return () => { document.removeEventListener("keydown", onKeyDown); document.removeEventListener("keydown", onTab); };
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [active, selectedShip]);
   useEffect(() => {
     if (!active) return;
@@ -112,16 +144,16 @@ export default function SilverseaFleetPreview() {
       </aside>
       {active && (
         <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) closeFleet(); }}>
-          <div className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
+          <div ref={dialogRef} className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
             <button ref={closeButtonRef} className="ss-fleet-close" type="button" onClick={closeFleet} aria-label="Close ship selection">×</button>
-            {selectedShip && <button type="button" className="ss-fleet-back" onClick={() => { setSelectedShip(null); closeButtonRef.current?.focus(); }}>← Back to fleet</button>}
+            {selectedShip && <button type="button" className="ss-fleet-back" onClick={backToFleet}>← Back to fleet</button>}
             <p className="ss-fleet-brand">DEAN ON DECK CRUISE TRAVEL · DISCOVER THE FLEET</p>
-            <h3 id="ss-fleet-dialog-title">{selectedShip || fleets[active].title}</h3>
+            <h3 ref={shipHeadingRef} tabIndex={-1} id="ss-fleet-dialog-title">{selectedShip || fleets[active].title}</h3>
             <p>{selectedShip ? `${selectedShip} welcomes up to ${shipDetails[selectedShip].guests} guests. Explore its distinctive suites, deck plans and onboard spaces in Silversea’s official ship guide.` : fleets[active].description}</p>
             {selectedShip && <div className="ss-fleet-detail">{officialShipImages[selectedShip] && !failedImages[selectedShip] && <img onError={() => setFailedImages(prev => ({ ...prev, [selectedShip]: true }))} src={officialShipImages[selectedShip]} alt={`${selectedShip} — Silversea official fleet photograph`} loading="eager" />}<a href={`https://www.silversea.com/ships/${shipDetails[selectedShip].slug}.html`} target="_blank" rel="noopener noreferrer">View official ship details & deck plans ↗</a></div>}
             {!selectedShip && <div className="ss-fleet-ship-list">
               {fleets[active].ships.map(ship => (
-                <button type="button" key={ship} onClick={() => setSelectedShip(ship)} aria-label={`View ${ship} details`}>
+                <button type="button" key={ship} ref={node => { if (ship === previousShip.current) shipTriggerRef.current = node; }} onClick={() => { previousShip.current = ship; setSelectedShip(ship); }} aria-label={`View ${ship} details`}>
                   <span className="ss-fleet-ship-name">{officialShipImages[ship] && !failedImages[ship] && <img onError={() => setFailedImages(prev => ({ ...prev, [ship]: true }))} src={officialShipImages[ship]} alt={`${ship} — official Silversea fleet photograph`} loading="lazy" />}<span>{ship}<small className="ss-fleet-capacity">{shipDetails[ship].guests} guests · Ship details & deck plan</small></span></span><span aria-hidden="true">›</span>
                 </button>
               ))}
