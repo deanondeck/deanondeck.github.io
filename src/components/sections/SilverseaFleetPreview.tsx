@@ -132,16 +132,7 @@ export default function SilverseaFleetPreview() {
           </article>
         ))}
       </div>
-      <aside className="ss-accessible" aria-labelledby="ss-accessible-heading">
-        <div>
-          <p className="ss-fleet-brand">THOUGHTFUL TRAVEL</p>
-          <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
-          <p><strong>Thoughtful luxury, designed for you.</strong></p>
-          <p>Selected ships offer wheelchair-accessible suites with wider doorways, generous maneuvering space, roll-in showers, grab bars and adapted storage. Some also offer accessible veranda access.</p>
-          <p className="ss-accessible-caution">Features vary by ship and suite. Confirm your needs before booking; tenders and expedition landings may limit access.</p>
-        </div>
-        <a href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer">Explore Cruises with Dean <span aria-hidden="true">↗</span></a>
-      </aside>
+
       {active && (
         <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) closeFleet(); }}>
           <div ref={dialogRef} className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
@@ -166,4 +157,19 @@ export default function SilverseaFleetPreview() {
       )}
     </section>
   );
+}
+
+export function SilverseaAccessibility() {
+ return (
+      <aside className="ss-accessible" aria-labelledby="ss-accessible-heading">
+        <div>
+          <p className="ss-fleet-brand">THOUGHTFUL TRAVEL</p>
+          <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
+          <p><strong>Thoughtful luxury, designed for you.</strong></p>
+          <p>Selected ships offer wheelchair-accessible suites with wider doorways, generous maneuvering space, roll-in showers, grab bars and adapted storage. Some also offer accessible veranda access.</p>
+          <p className="ss-accessible-caution">Features vary by ship and suite. Confirm your needs before booking; tenders and expedition landings may limit access.</p>
+        </div>
+        <a href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer">Explore Cruises with Dean <span aria-hidden="true">↗</span></a>
+      </aside>
+ );
 }
