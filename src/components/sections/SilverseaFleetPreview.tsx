@@ -49,12 +49,13 @@ type Fleet = keyof typeof fleets;
 
 export default function SilverseaFleetPreview() {
   const [active, setActive] = useState<Fleet | null>(null);
+  const [selectedShip, setSelectedShip] = useState<string | null>(null);
   useEffect(() => {
     if (!active) return;
-    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setActive(null); };
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") { if (selectedShip) setSelectedShip(null); else setActive(null); } };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [active]);
+  }, [active, selectedShip]);
 
   return (
     <section className="ss-fleet" aria-labelledby="ss-fleet-heading">
@@ -85,17 +86,19 @@ export default function SilverseaFleetPreview() {
       {active && (
         <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) setActive(null); }}>
           <div className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
-            <button className="ss-fleet-close" type="button" onClick={() => setActive(null)} aria-label="Close ship selection">×</button>
+            <button className="ss-fleet-close" type="button" onClick={() => { setActive(null); setSelectedShip(null); }} aria-label="Close ship selection">×</button>
+            {selectedShip && <button type="button" className="ss-fleet-back" onClick={() => setSelectedShip(null)}>← Back to fleet</button>}
             <p className="ss-fleet-brand">DISCOVER THE FLEET</p>
-            <h3 id="ss-fleet-dialog-title">{fleets[active].title}</h3>
-            <p>{fleets[active].description}</p>
-            <div className="ss-fleet-ship-list">
+            <h3 id="ss-fleet-dialog-title">{selectedShip || fleets[active].title}</h3>
+            <p>{selectedShip ? `${selectedShip} welcomes up to ${shipDetails[selectedShip].guests} guests. Explore its distinctive suites, deck plans and onboard spaces in Silversea’s official ship guide.` : fleets[active].description}</p>
+            {selectedShip && <div className="ss-fleet-detail">{officialShipImages[selectedShip] && <img src={officialShipImages[selectedShip]} alt={`${selectedShip} — Silversea official fleet photograph`} loading="eager" />}<a href={`https://www.silversea.com/ships/${shipDetails[selectedShip].slug}.html`} target="_blank" rel="noopener noreferrer">Official ship gallery, suites & deck plans ↗</a></div>}
+            {!selectedShip && <div className="ss-fleet-ship-list">
               {fleets[active].ships.map(ship => (
-                <a key={ship} href={`https://www.silversea.com/ships/${shipDetails[ship].slug}.html`} target="_blank" rel="noopener noreferrer" aria-label={`Find official information about ${ship} on Silversea's fleet website`}>
-                  <span className="ss-fleet-ship-name">{officialShipImages[ship] && <img src={officialShipImages[ship]} alt={`${ship} — official Silversea fleet photograph`} loading="lazy" />}<span>{ship}<small className="ss-fleet-capacity">{shipDetails[ship].guests} guests · Ship details & deck plan</small></span></span><span aria-hidden="true">↗</span>
-                </a>
+                <button type="button" key={ship} onClick={() => setSelectedShip(ship)} aria-label={`View ${ship} details`}>
+                  <span className="ss-fleet-ship-name">{officialShipImages[ship] && <img src={officialShipImages[ship]} alt={`${ship} — official Silversea fleet photograph`} loading="lazy" />}<span>{ship}<small className="ss-fleet-capacity">{shipDetails[ship].guests} guests · Ship details & deck plan</small></span></span><span aria-hidden="true">›</span>
+                </button>
               ))}
-            </div>
+            </div>}
             <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Each ship opens its official Silversea page, with photographs, suites, specifications and deck-plan access.</p>
           </div>
         </div>
