@@ -2865,3 +2865,18 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 /* Authentic Silversea fleet photography inside the approved two-card layout. */
 .ss-fleet-choice-photo{display:block;width:100%;height:clamp(170px,19vw,235px);object-fit:cover;object-position:center;border-radius:9px;margin-bottom:1.25rem;background:#e9e6e0}
 @media(max-width:650px){.ss-fleet-choice-photo{height:auto;aspect-ratio:16/10}}
+
+/* Silversea editorial refinement — draft, scoped to Silversea only. */
+#silversea .silversea-eyebrow { text-transform: none; letter-spacing: .22em; margin-bottom: .8rem; }
+#silversea .silversea-eyebrow::after { content: ""; display: inline-block; width: 1.8rem; height: 1px; background: #c8a45c; }
+#silversea .cl-body h3 { color: var(--ink, #142642); font-size: clamp(2rem, 3.1vw, 2.75rem); }
+#silversea .cl-copy { max-width: 54ch; }
+#silversea .cl-actions { margin-top: 1.1rem; }
+#silversea .cl-grid--royal { gap: 1.6rem 2.5rem; }
+#silversea .cl-media { min-height: 290px; }
+#silversea .ss-fleet-heading { padding-top: 1.3rem; padding-bottom: 1rem; }
+#silversea .ss-fleet-heading h3 { font-size: clamp(2.2rem, 4vw, 3.45rem); margin: .35rem 0; }
+#silversea .ss-fleet-brand { color: #e6c079; letter-spacing: .2em; }
+#silversea .ss-fleet-heading .ss-fleet-brand::before,
+#silversea .ss-fleet-heading .ss-fleet-brand::after { content: ""; display: inline-block; vertical-align: middle; width: 1.6rem; height: 1px; background: #e6c079; margin: 0 1rem; }
+@media (max-width: 700px) { #silversea .cl-media { min-height: 0; } #silversea .ss-fleet-heading .ss-fleet-brand::before, #silversea .ss-fleet-heading .ss-fleet-brand::after { width: .8rem; margin: 0 .45rem; } }
