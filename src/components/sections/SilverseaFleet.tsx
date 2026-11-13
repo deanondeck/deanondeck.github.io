@@ -22,9 +22,10 @@ function ShipGroup({ title, description, ships }: {title:string; description:str
 export default function SilverseaFleet() {
   return <aside className="silversea-fleet" aria-label="Explore Silversea ships">
     <header className="silversea-fleet-header">
-      <p className="log log--center">Twelve ships · Two ways to explore</p>
-      <h3 className="display h-md">Discover the Silversea Fleet</h3>
-      <p>Intimate ships, extraordinary destinations. Find the voyage that feels like yours.</p>
+      <p className="log log--center">The art of extraordinary travel</p>
+      <h3 className="display h-md">For the Finer Things in Life</h3>
+      <p className="silversea-fleet-tagline">Luxury Has No Bounds.</p>
+      <p>Intimate ships, extraordinary destinations. Discover the voyage that feels like yours.</p>
     </header>
     <ShipGroup title="Classic Voyages" description="Refined ocean journeys, with time to savor every destination." ships={classic}/>
     <ShipGroup title="Expedition Voyages" description="Venture farther, without leaving thoughtful luxury behind." ships={expedition}/>
