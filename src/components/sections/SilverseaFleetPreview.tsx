@@ -53,6 +53,7 @@ export default function SilverseaFleetPreview() {
   const [active, setActive] = useState<Fleet | null>(null);
   const [selectedShip, setSelectedShip] = useState<string | null>(null);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const [failedFleetImages, setFailedFleetImages] = useState<Record<Fleet, boolean>>({});
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRefs = useRef<Record<Fleet, HTMLButtonElement | null>>({ classic: null, expedition: null });
   const activeTriggerRef = useRef<Fleet | null>(null);
@@ -61,7 +62,7 @@ export default function SilverseaFleetPreview() {
     if (!active) return;
     const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") { if (selectedShip) setSelectedShip(null); else closeFleet(); } };
     const onTab = (event: KeyboardEvent) => {
-      if (event.key !== "Tab") return;
+      if (event.key !== "Tab" || selectedShip === undefined) return;
       const dialog = document.querySelector<HTMLElement>(".ss-fleet-dialog");
       const focusable = Array.from(dialog?.querySelectorAll<HTMLElement>('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])') ?? []);
       if (!focusable.length) return;
@@ -92,7 +93,7 @@ export default function SilverseaFleetPreview() {
       <div className="ss-fleet-choices">
         {(["classic", "expedition"] as const).map((key) => (
           <article className="ss-fleet-choice" key={key}>
-            <img className="ss-fleet-choice-photo" src={officialShipImages[key === "classic" ? "Silver Nova" : "Silver Endeavour"]} alt={key === "classic" ? "Silver Nova — official Silversea photograph" : "Silver Endeavour — official Silversea photograph"} loading="lazy" />
+            {!failedFleetImages[key] && <img className="ss-fleet-choice-photo" src={officialShipImages[key === "classic" ? "Silver Nova" : "Silver Endeavour"]} alt={key === "classic" ? "Silver Nova — official Silversea photograph" : "Silver Endeavour — official Silversea photograph"} loading="lazy" onError={() => setFailedFleetImages(prev => ({ ...prev, [key]: true }))} />}
             <h4>{fleets[key].title}</h4>
             <p>{key === "classic" ? "Elegant ships to the world's most iconic destinations." : "Purpose-built ships for extraordinary, remote regions."}</p>
             <button type="button" ref={node => { triggerRefs.current[key] = node; }} onClick={() => { activeTriggerRef.current = key; setSelectedShip(null); setActive(key); }}>Explore the Fleet <span aria-hidden="true">›</span></button>
@@ -113,7 +114,7 @@ export default function SilverseaFleetPreview() {
         <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) closeFleet(); }}>
           <div className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
             <button ref={closeButtonRef} className="ss-fleet-close" type="button" onClick={closeFleet} aria-label="Close ship selection">×</button>
-            {selectedShip && <button type="button" className="ss-fleet-back" onClick={() => setSelectedShip(null)}>← Back to fleet</button>}
+            {selectedShip && <button type="button" className="ss-fleet-back" onClick={() => { setSelectedShip(null); closeButtonRef.current?.focus(); }}>← Back to fleet</button>}
             <p className="ss-fleet-brand">DEAN ON DECK CRUISE TRAVEL · DISCOVER THE FLEET</p>
             <h3 id="ss-fleet-dialog-title">{selectedShip || fleets[active].title}</h3>
             <p>{selectedShip ? `${selectedShip} welcomes up to ${shipDetails[selectedShip].guests} guests. Explore its distinctive suites, deck plans and onboard spaces in Silversea’s official ship guide.` : fleets[active].description}</p>
@@ -127,7 +128,7 @@ export default function SilverseaFleetPreview() {
             </div>}
             {selectedShip && <div className="ss-fleet-booking"><p>Ready to explore a Silversea voyage? Book through Dean’s personalized Silversea page.</p><a href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer">Explore cruises with Dean ↗</a></div>}
             {selectedShip && failedImages[selectedShip] && <p role="status" className="ss-fleet-note">This photograph is temporarily unavailable. Use the official ship gallery link above to view verified images.</p>}
-            <p className="ss-fleet-note">Ship features vary. Official ship guides are for information; use Explore cruises with Dean for personalized booking.</p>
+            <p className="ss-fleet-note">Ship features vary. For personalized booking, use Explore cruises with Dean.</p>
           </div>
         </div>
       )}
