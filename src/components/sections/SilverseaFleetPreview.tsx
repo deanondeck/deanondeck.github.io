@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const shipDetails: Record<string, { slug: string; guests: number }> = {
   "Silver Dawn": { slug: "silver-dawn", guests: 596 },
@@ -51,7 +51,10 @@ export default function SilverseaFleetPreview() {
   const [active, setActive] = useState<Fleet | null>(null);
   const [selectedShip, setSelectedShip] = useState<string | null>(null);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
-  const closeFleet = () => { setSelectedShip(null); setActive(null); };
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRefs = useRef<Record<Fleet, HTMLButtonElement | null>>({ classic: null, expedition: null });
+  const activeTriggerRef = useRef<Fleet | null>(null);
+  const closeFleet = () => { setSelectedShip(null); setActive(null); window.requestAnimationFrame(() => { if (activeTriggerRef.current) triggerRefs.current[activeTriggerRef.current]?.focus(); }); };
   useEffect(() => {
     if (!active) return;
     const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") { if (selectedShip) setSelectedShip(null); else closeFleet(); } };
@@ -60,6 +63,7 @@ export default function SilverseaFleetPreview() {
   }, [active, selectedShip]);
   useEffect(() => {
     if (!active) return;
+    closeButtonRef.current?.focus();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = previousOverflow; };
@@ -78,7 +82,7 @@ export default function SilverseaFleetPreview() {
           <article className="ss-fleet-choice" key={key}>
             <h4>{fleets[key].title}</h4>
             <p>{key === "classic" ? "Elegant ships to the world's most iconic destinations." : "Purpose-built ships for extraordinary, remote regions."}</p>
-            <button type="button" onClick={() => { setSelectedShip(null); setActive(key); }}>Explore the Fleet <span aria-hidden="true">›</span></button>
+            <button type="button" ref={node => { triggerRefs.current[key] = node; }} onClick={() => { activeTriggerRef.current = key; setSelectedShip(null); setActive(key); }}>Explore the Fleet <span aria-hidden="true">›</span></button>
           </article>
         ))}
       </div>
@@ -94,7 +98,7 @@ export default function SilverseaFleetPreview() {
       {active && (
         <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) closeFleet(); }}>
           <div className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
-            <button className="ss-fleet-close" type="button" onClick={closeFleet} aria-label="Close ship selection">×</button>
+            <button ref={closeButtonRef} className="ss-fleet-close" type="button" onClick={closeFleet} aria-label="Close ship selection">×</button>
             {selectedShip && <button type="button" className="ss-fleet-back" onClick={() => setSelectedShip(null)}>← Back to fleet</button>}
             <p className="ss-fleet-brand">DISCOVER THE FLEET</p>
             <h3 id="ss-fleet-dialog-title">{selectedShip || fleets[active].title}</h3>
