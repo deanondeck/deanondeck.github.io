@@ -2912,3 +2912,6 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-suite-close{position:absolute;top:.5rem;right:.7rem;background:transparent;border:0;font-size:2rem;color:#142642;cursor:pointer}
 @media(max-width:800px){#silversea .ss-suite-included{display:block}#silversea .ss-suite-included ul{margin-top:.8rem}#silversea .ss-suite-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#silversea .ss-suite-included ul{grid-template-columns:1fr}#silversea .ss-suite-gallery{gap:.6rem}#silversea .ss-suite-photo-pending{height:120px}}
+
+#silversea .ss-suite-photo{display:block;width:100%;height:clamp(115px,13vw,180px);object-fit:cover;object-position:center}
+@media(max-width:520px){#silversea .ss-suite-photo{height:120px}}
