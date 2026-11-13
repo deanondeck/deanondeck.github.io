@@ -3,7 +3,7 @@ const classic = [
   ["Silver Muse",632],["Silver Spirit",636],["Silver Shadow",392],["Silver Whisper",392],
 ] as const;
 const expedition = [
-  ["Silver Endeavour",220],["Silver Origin",100],["Silver Cloud",254],["Silver Wind",274],
+  ["Silver Endeavour",220],["Silver Origin",100],["Silver Wind",274],["Silver Cloud",254],
 ] as const;
 
 function ShipGroup({ title, description, ships }: {title:string; description:string; ships:readonly (readonly [string,number])[]}) {
