@@ -63,6 +63,15 @@ export default function SilverseaFleetPreview() {
           </article>
         ))}
       </div>
+      <aside className="ss-accessible" aria-labelledby="ss-accessible-heading">
+        <div>
+          <p className="ss-fleet-brand">THOUGHTFUL TRAVEL</p>
+          <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
+          <p>Adapted suites are offered on selected ships, including Silver Nova and Silver Ray. Layouts and accessible features vary by vessel. We'll help confirm the right suite and sailing with Silversea before booking.</p>
+          <p className="ss-accessible-caution">Some ports require tenders or Zodiacs, which can restrict wheelchair access. Expedition accessibility requires special consideration.</p>
+        </div>
+        <a href="https://www.silversea.com/life-onboard/luxury-ocean-view-suites/premium-veranda-suite.html" target="_blank" rel="noopener noreferrer">Explore adapted suites <span aria-hidden="true">↗</span></a>
+      </aside>
       {active && (
         <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) setActive(null); }}>
           <div className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
