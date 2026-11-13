@@ -2880,3 +2880,35 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-fleet-heading .ss-fleet-brand::before,
 #silversea .ss-fleet-heading .ss-fleet-brand::after { content: ""; display: inline-block; vertical-align: middle; width: 1.6rem; height: 1px; background: #e6c079; margin: 0 1rem; }
 @media (max-width: 700px) { #silversea .cl-media { min-height: 0; } #silversea .ss-fleet-heading .ss-fleet-brand::before, #silversea .ss-fleet-heading .ss-fleet-brand::after { width: .8rem; margin: 0 .45rem; } }
+
+/* Silversea suite collection: compact editorial gallery; photography awaiting verified supplier files. */
+#silversea .ss-suite-collection{margin:1.5rem 0 0;padding:clamp(1rem,2.5vw,2rem);background:#faf8f3;border:1px solid #e4d9c4;border-radius:16px;text-align:center}
+#silversea .ss-suite-intro{max-width:740px;margin:0 auto 1.25rem}
+#silversea .ss-suite-kicker{display:flex;align-items:center;justify-content:center;gap:1rem;color:#a47c37;font-size:.75rem;letter-spacing:.19em;margin:0 0 .6rem}
+#silversea .ss-suite-kicker::before,#silversea .ss-suite-kicker::after{content:"";width:1.7rem;height:1px;background:#b18a49}
+#silversea .ss-suite-intro h3{font-family:var(--font-silversea),Georgia,serif;color:#142642;font-weight:400;font-size:clamp(2rem,3.6vw,3rem);margin:.25rem 0 .55rem}
+#silversea .ss-suite-intro>p:last-child{color:#536170;line-height:1.55;max-width:65ch;margin:auto}
+#silversea .ss-suite-included{display:flex;align-items:center;text-align:left;gap:1.25rem;background:white;border:1px solid #ded4c1;border-radius:12px;padding:1rem;margin:1rem 0 1.25rem}
+#silversea .ss-suite-included>strong{color:#142642;min-width:135px;font-family:Georgia,serif}
+#silversea .ss-suite-included ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;list-style:none;margin:0;padding:0;flex:1}
+#silversea .ss-suite-included li{display:flex;gap:.5rem;font-size:.84rem;color:#334155;line-height:1.4}
+#silversea .ss-suite-included li span{color:#b18a49;font-weight:700}
+#silversea .ss-suite-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+#silversea .ss-suite-tile{display:block;border:1px solid #d8c9ab;border-radius:11px;padding:0;background:#fff;overflow:hidden;text-align:center;cursor:pointer;font:inherit}
+#silversea .ss-suite-tile:focus-visible{outline:3px solid #b18a49;outline-offset:3px}
+#silversea .ss-suite-photo-pending{height:clamp(115px,13vw,180px);display:flex;align-items:center;justify-content:center;background:#e8e5de;color:#6e706d;font-family:Georgia,serif;font-size:1.15rem}
+#silversea .ss-suite-tile-caption{display:flex;flex-direction:column;gap:.25rem;background:#142642;color:#fff;padding:.7rem .35rem}
+#silversea .ss-suite-tile-caption strong{font-family:var(--font-silversea),Georgia,serif;font-weight:400;font-size:1.2rem}
+#silversea .ss-suite-tile-caption small{color:#e6c079;letter-spacing:.04em}
+#silversea .ss-suite-note{font-size:.78rem;line-height:1.5;color:#586574;max-width:82ch;margin:1.15rem auto}
+#silversea .ss-suite-book{display:inline-block;background:#80233e;color:#fff;border-radius:50px;padding:.8rem 1.35rem;text-decoration:none;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+#silversea .ss-suite-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;background:rgba(8,20,36,.74);padding:1rem}
+#silversea .ss-suite-dialog{position:relative;background:#fffdf9;border-radius:14px;padding:clamp(1.25rem,3vw,2.5rem);max-width:600px;width:100%;max-height:90vh;overflow:auto;text-align:left;color:#142642}
+#silversea .ss-suite-dialog h3{font-family:var(--font-silversea),Georgia,serif;font-size:2.4rem;font-weight:400;margin:.4rem 0}
+#silversea .ss-suite-dialog h4{font-family:Georgia,serif;font-weight:400;color:#a47c37;font-style:italic;margin:.5rem 0}
+#silversea .ss-suite-dialog p{line-height:1.55}
+#silversea .ss-suite-dialog .ss-suite-kicker{justify-content:flex-start}
+#silversea .ss-suite-dialog .ss-suite-official{display:block;margin:1rem 0;color:#142642;text-underline-offset:3px}
+#silversea .ss-suite-close{position:absolute;top:.5rem;right:.7rem;background:transparent;border:0;font-size:2rem;color:#142642;cursor:pointer}
+@media(max-width:800px){#silversea .ss-suite-included{display:block}#silversea .ss-suite-included ul{margin-top:.8rem}#silversea .ss-suite-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){#silversea .ss-suite-included ul{grid-template-columns:1fr}#silversea .ss-suite-gallery{gap:.6rem}#silversea .ss-suite-photo-pending{height:120px}}
