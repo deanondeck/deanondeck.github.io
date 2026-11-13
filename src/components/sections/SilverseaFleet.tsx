@@ -1,18 +1,18 @@
 const classic = [
-  ["Silver Dawn",596],["Silver Moon",596],["Silver Muse",632],["Silver Nova",728],
-  ["Silver Ray",728],["Silver Shadow",392],["Silver Spirit",636],["Silver Whisper",392],
+  ["Silver Ray",728],["Silver Nova",728],["Silver Dawn",596],["Silver Moon",596],
+  ["Silver Muse",632],["Silver Spirit",636],["Silver Shadow",392],["Silver Whisper",392],
 ] as const;
 const expedition = [
-  ["Silver Cloud",254],["Silver Endeavour",220],["Silver Origin",100],["Silver Wind",274],
+  ["Silver Endeavour",220],["Silver Origin",100],["Silver Cloud",254],["Silver Wind",274],
 ] as const;
 
 function ShipGroup({ title, description, ships }: {title:string; description:string; ships:readonly (readonly [string,number])[]}) {
   return <section className="silversea-fleet-group" aria-label={title}>
     <div className="silversea-fleet-group-heading"><h4>{title}</h4><p>{description}</p></div>
     <div className="silversea-fleet-cards">
-      {ships.map(([name, guests]) => <article className="silversea-fleet-card" key={name}>
+      {ships.map(([name]) => <article className="silversea-fleet-card" key={name}>
         <span className="silversea-fleet-label">{title === "Classic Voyages" ? "Classic" : "Expedition"}</span>
-        <h5>{name}</h5><p>Up to {guests} guests</p>
+        <h5>{name}</h5><p>{title === "Classic Voyages" ? "An intimate ocean escape" : "Discover beyond the ordinary"}</p>
         <a href={`/plan/?line=Silversea&ship=${encodeURIComponent(name)}`} aria-label={`Ask Dean about ${name}`}>Ask Dean <span aria-hidden="true">→</span></a>
       </article>)}
     </div>
