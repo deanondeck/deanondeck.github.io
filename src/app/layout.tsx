@@ -4,7 +4,7 @@ import StructuredData from "@/components/StructuredData";
 import { loadSite } from "@/lib/cms/loader";
 import "./globals.css";
 
-/* Reference pairing (happyjetsetter.com): Noto Serif carries every heading,
+/* Deployment retry after transient Google font fetch error.\n   Reference pairing (happyjetsetter.com): Noto Serif carries every heading,
    Corinthia supplies the handwritten flourishes; body copy rides the system
    sans stack (set in globals.css — no webfont needed). */
 const notoSerif = Noto_Serif({
