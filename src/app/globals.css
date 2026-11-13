@@ -2845,3 +2845,5 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 @media(max-width:650px){.ss-fleet-choices,.ss-fleet-ship-list{grid-template-columns:1fr}.ss-fleet-choice p{min-height:0}}
 
 .ss-fleet-ship-name{display:flex;align-items:center;gap:.7rem;min-width:0}.ss-fleet-ship-name img{width:86px;height:66px;object-fit:cover;border-radius:5px;flex-shrink:0}
+
+.ss-fleet-capacity{display:block;font-size:.74rem;color:#617087;margin-top:.3rem}
