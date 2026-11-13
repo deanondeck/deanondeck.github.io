@@ -1,5 +1,6 @@
 import { img } from "@/lib/media";
 import VirginAccommodations from "./VirginAccommodations";
+import SilverseaFleet from "./SilverseaFleet";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
@@ -176,6 +177,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   </footer>
                 </aside>
               )}
+              {l.id === "silversea" && <SilverseaFleet />}
               {l.id === "silversea" && c.silversea && (
                 <aside className="cl-rockstar royal-comparison silversea-comparison" aria-label="Compare Silversea suite categories">
                   <header className="virgin-comparison-heading">
