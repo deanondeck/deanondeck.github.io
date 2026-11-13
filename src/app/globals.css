@@ -2827,3 +2827,24 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .virgin-room-photo-tile span { display:block; padding:.55rem .75rem; font-size:.83rem; }
 #virgin .virgin-room-photo-tile:focus-visible { outline:3px solid #a57c37; outline-offset:3px; }
 @media(max-width:600px){#virgin .virgin-room-photo-tile img{aspect-ratio:3/2}}
+
+
+/* Silversea fleet — restrained editorial overview */
+.silversea-fleet { margin-top: clamp(2.5rem,6vw,5rem); padding: clamp(1.4rem,4vw,3.5rem); background: #f8f7f4; color: #23252b; border-top: 1px solid #d4c4a8; }
+.silversea-fleet-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+.silversea-fleet-header .log { color: #94753e; }
+.silversea-fleet-header > p:last-child { color: #65676c; }
+.silversea-fleet-group { margin-top: 2.5rem; }
+.silversea-fleet-group-heading { border-bottom: 1px solid #d8d2c8; margin-bottom: 1.25rem; padding-bottom: .9rem; }
+.silversea-fleet-group-heading h4 { font: 500 clamp(1.35rem,2.6vw,1.9rem)/1.3 var(--font-display); margin: 0; }
+.silversea-fleet-group-heading p { color: #62656b; margin: .35rem 0 0; }
+.silversea-fleet-cards { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .8rem; }
+.silversea-fleet-card { background: white; border: 1px solid #e5e0d8; padding: 1.25rem; min-width: 0; }
+.silversea-fleet-label { font-size: .64rem; letter-spacing: .16em; text-transform: uppercase; color: #97763c; }
+.silversea-fleet-card h5 { font: 500 1.18rem/1.3 var(--font-display); margin: .6rem 0 .3rem; }
+.silversea-fleet-card p { color: #6a6c70; font-size: .85rem; margin: 0 0 1.2rem; }
+.silversea-fleet-card a { font-size: .78rem; font-weight: 600; border-bottom: 1px solid #b59b6d; padding-bottom: .2rem; }
+.silversea-fleet-footer { text-align: center; padding-top: 2.8rem; }
+.silversea-fleet-footer p { color: #62656b; }
+@media(max-width:900px) { .silversea-fleet-cards { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:520px) { .silversea-fleet-cards { grid-template-columns: 1fr; } .silversea-fleet { padding: 1.25rem; } }
