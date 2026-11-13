@@ -110,10 +110,10 @@ export default function SilverseaFleetPreview() {
           <div className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
             <button ref={closeButtonRef} className="ss-fleet-close" type="button" onClick={closeFleet} aria-label="Close ship selection">×</button>
             {selectedShip && <button type="button" className="ss-fleet-back" onClick={() => setSelectedShip(null)}>← Back to fleet</button>}
-            <p className="ss-fleet-brand">DISCOVER THE FLEET</p>
+            <p className="ss-fleet-brand">DEAN ON DECK CRUISE TRAVEL · DISCOVER THE FLEET</p>
             <h3 id="ss-fleet-dialog-title">{selectedShip || fleets[active].title}</h3>
             <p>{selectedShip ? `${selectedShip} welcomes up to ${shipDetails[selectedShip].guests} guests. Explore its distinctive suites, deck plans and onboard spaces in Silversea’s official ship guide.` : fleets[active].description}</p>
-            {selectedShip && <div className="ss-fleet-detail">{officialShipImages[selectedShip] && !failedImages[selectedShip] && <img onError={() => setFailedImages(prev => ({ ...prev, [selectedShip]: true }))} src={officialShipImages[selectedShip]} alt={`${selectedShip} — Silversea official fleet photograph`} loading="eager" />}<a href={`https://www.silversea.com/ships/${shipDetails[selectedShip].slug}.html`} target="_blank" rel="noopener noreferrer">Official ship gallery, suites & deck plans ↗</a></div>}
+            {selectedShip && <div className="ss-fleet-detail">{officialShipImages[selectedShip] && !failedImages[selectedShip] && <img onError={() => setFailedImages(prev => ({ ...prev, [selectedShip]: true }))} src={officialShipImages[selectedShip]} alt={`${selectedShip} — Silversea official fleet photograph`} loading="eager" />}<a href={`https://www.silversea.com/ships/${shipDetails[selectedShip].slug}.html`} target="_blank" rel="noopener noreferrer">View official ship details & deck plans ↗</a></div>}
             {!selectedShip && <div className="ss-fleet-ship-list">
               {fleets[active].ships.map(ship => (
                 <button type="button" key={ship} onClick={() => setSelectedShip(ship)} aria-label={`View ${ship} details`}>
@@ -121,6 +121,7 @@ export default function SilverseaFleetPreview() {
                 </button>
               ))}
             </div>}
+            {selectedShip && <div className="ss-fleet-booking"><p>Ready to explore a Silversea voyage? I’ll help you find the right ship and suite.</p><a href="https://go.deanondeck.com/Book-with-Dean" target="_blank" rel="noopener noreferrer">Book with Dean ↗</a></div>}
             {selectedShip && failedImages[selectedShip] && <p role="status" className="ss-fleet-note">This photograph is temporarily unavailable. Use the official ship gallery link above to view verified images.</p>}
             <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Select a ship to explore its photograph and follow the link to Silversea’s official ship guide.</p>
           </div>
