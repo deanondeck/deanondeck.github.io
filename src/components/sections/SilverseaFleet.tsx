@@ -47,10 +47,10 @@ export default function SilverseaFleet() {
         <div className="silversea-fleet-cards" style={{marginTop:24}}>
           {groups[open].ships.map(ship => <article key={ship} className="silversea-fleet-card">
             <h4>{ship}</h4><p>A closer look at the journey and accommodations.</p>
-            <a href={`/plan/?line=Silversea&ship=${encodeURIComponent(ship)}`} aria-label={`Explore ${ship} with Dean`}>Explore this ship with Dean →</a>
+            <a href="https://go.deanondeck.com/Silversea" aria-label={`Book a Silversea voyage aboard ${ship}`}>Let’s Go Book →</a>
           </article>)}
         </div>
-        <p style={{fontSize:13,marginTop:24}}>Ship-specific booking links will be added once the advisor booking destination is verified.</p>
+        <p style={{fontSize:13,marginTop:24}}>Booking currently uses Dean’s existing Silversea advisor link. Ship-specific Shlink destinations will replace it after verification.</p>
       </section>
     </div>}
   </aside>;
