@@ -81,7 +81,6 @@ export default function Cruises({ id, content, site }: SectionProps) {
               <div className="cl-body reveal d1">
                 <p className={flagship ? "log log--center" : l.id === "silversea" ? "log silversea-eyebrow" : "log"}>{l.k}</p>
                 <h3 className="display h-lg">{l.name}</h3>
-                {l.id === "silversea" && <p className="ss-opening-tagline">Exquisite Horizons</p>}
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
                   <ul className="checklist">
