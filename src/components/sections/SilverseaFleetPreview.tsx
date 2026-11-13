@@ -50,12 +50,20 @@ type Fleet = keyof typeof fleets;
 export default function SilverseaFleetPreview() {
   const [active, setActive] = useState<Fleet | null>(null);
   const [selectedShip, setSelectedShip] = useState<string | null>(null);
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const closeFleet = () => { setSelectedShip(null); setActive(null); };
   useEffect(() => {
     if (!active) return;
-    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") { if (selectedShip) setSelectedShip(null); else setActive(null); } };
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") { if (selectedShip) setSelectedShip(null); else closeFleet(); } };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [active, selectedShip]);
+  useEffect(() => {
+    if (!active) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [active]);
 
   return (
     <section className="ss-fleet" aria-labelledby="ss-fleet-heading">
@@ -70,7 +78,7 @@ export default function SilverseaFleetPreview() {
           <article className="ss-fleet-choice" key={key}>
             <h4>{fleets[key].title}</h4>
             <p>{key === "classic" ? "Elegant ships to the world's most iconic destinations." : "Purpose-built ships for extraordinary, remote regions."}</p>
-            <button type="button" onClick={() => setActive(key)}>Explore the Fleet <span aria-hidden="true">›</span></button>
+            <button type="button" onClick={() => { setSelectedShip(null); setActive(key); }}>Explore the Fleet <span aria-hidden="true">›</span></button>
           </article>
         ))}
       </div>
@@ -84,21 +92,22 @@ export default function SilverseaFleetPreview() {
         <a href="https://www.silversea.com/life-onboard/luxury-ocean-view-suites/premium-veranda-suite.html" target="_blank" rel="noopener noreferrer">Explore adapted suites <span aria-hidden="true">↗</span></a>
       </aside>
       {active && (
-        <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) setActive(null); }}>
+        <div className="ss-fleet-overlay" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) closeFleet(); }}>
           <div className="ss-fleet-dialog" role="dialog" aria-modal="true" aria-labelledby="ss-fleet-dialog-title">
-            <button className="ss-fleet-close" type="button" onClick={() => { setActive(null); setSelectedShip(null); }} aria-label="Close ship selection">×</button>
+            <button className="ss-fleet-close" type="button" onClick={closeFleet} aria-label="Close ship selection">×</button>
             {selectedShip && <button type="button" className="ss-fleet-back" onClick={() => setSelectedShip(null)}>← Back to fleet</button>}
             <p className="ss-fleet-brand">DISCOVER THE FLEET</p>
             <h3 id="ss-fleet-dialog-title">{selectedShip || fleets[active].title}</h3>
             <p>{selectedShip ? `${selectedShip} welcomes up to ${shipDetails[selectedShip].guests} guests. Explore its distinctive suites, deck plans and onboard spaces in Silversea’s official ship guide.` : fleets[active].description}</p>
-            {selectedShip && <div className="ss-fleet-detail">{officialShipImages[selectedShip] && <img src={officialShipImages[selectedShip]} alt={`${selectedShip} — Silversea official fleet photograph`} loading="eager" />}<a href={`https://www.silversea.com/ships/${shipDetails[selectedShip].slug}.html`} target="_blank" rel="noopener noreferrer">Official ship gallery, suites & deck plans ↗</a></div>}
+            {selectedShip && <div className="ss-fleet-detail">{officialShipImages[selectedShip] && !failedImages[selectedShip] && <img onError={() => setFailedImages(prev => ({ ...prev, [selectedShip]: true }))} src={officialShipImages[selectedShip]} alt={`${selectedShip} — Silversea official fleet photograph`} loading="eager" />}<a href={`https://www.silversea.com/ships/${shipDetails[selectedShip].slug}.html`} target="_blank" rel="noopener noreferrer">Official ship gallery, suites & deck plans ↗</a></div>}
             {!selectedShip && <div className="ss-fleet-ship-list">
               {fleets[active].ships.map(ship => (
                 <button type="button" key={ship} onClick={() => setSelectedShip(ship)} aria-label={`View ${ship} details`}>
-                  <span className="ss-fleet-ship-name">{officialShipImages[ship] && <img src={officialShipImages[ship]} alt={`${ship} — official Silversea fleet photograph`} loading="lazy" />}<span>{ship}<small className="ss-fleet-capacity">{shipDetails[ship].guests} guests · Ship details & deck plan</small></span></span><span aria-hidden="true">›</span>
+                  <span className="ss-fleet-ship-name">{officialShipImages[ship] && !failedImages[ship] && <img onError={() => setFailedImages(prev => ({ ...prev, [ship]: true }))} src={officialShipImages[ship]} alt={`${ship} — official Silversea fleet photograph`} loading="lazy" />}<span>{ship}<small className="ss-fleet-capacity">{shipDetails[ship].guests} guests · Ship details & deck plan</small></span></span><span aria-hidden="true">›</span>
                 </button>
               ))}
             </div>}
+            {selectedShip && failedImages[selectedShip] && <p role="status" className="ss-fleet-note">This photograph is temporarily unavailable. Use the official ship gallery link above to view verified images.</p>}
             <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Each ship opens its official Silversea page, with photographs, suites, specifications and deck-plan access.</p>
           </div>
         </div>
