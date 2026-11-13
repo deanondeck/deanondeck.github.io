@@ -58,8 +58,18 @@ export default function SilverseaFleetPreview() {
   useEffect(() => {
     if (!active) return;
     const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") { if (selectedShip) setSelectedShip(null); else closeFleet(); } };
+    const onTab = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const dialog = document.querySelector<HTMLElement>(".ss-fleet-dialog");
+      const focusable = Array.from(dialog?.querySelectorAll<HTMLElement>('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])') ?? []);
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    document.addEventListener("keydown", onTab);
+    return () => { document.removeEventListener("keydown", onKeyDown); document.removeEventListener("keydown", onTab); };
   }, [active, selectedShip]);
   useEffect(() => {
     if (!active) return;
@@ -112,7 +122,7 @@ export default function SilverseaFleetPreview() {
               ))}
             </div>}
             {selectedShip && failedImages[selectedShip] && <p role="status" className="ss-fleet-note">This photograph is temporarily unavailable. Use the official ship gallery link above to view verified images.</p>}
-            <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Each ship opens its official Silversea page, with photographs, suites, specifications and deck-plan access.</p>
+            <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Select a ship to explore its photograph and follow the link to Silversea’s official ship guide.</p>
           </div>
         </div>
       )}
