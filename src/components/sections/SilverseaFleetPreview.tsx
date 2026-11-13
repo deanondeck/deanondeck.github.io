@@ -92,6 +92,7 @@ export default function SilverseaFleetPreview() {
       <div className="ss-fleet-choices">
         {(["classic", "expedition"] as const).map((key) => (
           <article className="ss-fleet-choice" key={key}>
+            <img className="ss-fleet-choice-photo" src={officialShipImages[key === "classic" ? "Silver Nova" : "Silver Endeavour"]} alt={key === "classic" ? "Silver Nova — official Silversea photograph" : "Silver Endeavour — official Silversea photograph"} loading="lazy" />
             <h4>{fleets[key].title}</h4>
             <p>{key === "classic" ? "Elegant ships to the world's most iconic destinations." : "Purpose-built ships for extraordinary, remote regions."}</p>
             <button type="button" ref={node => { triggerRefs.current[key] = node; }} onClick={() => { activeTriggerRef.current = key; setSelectedShip(null); setActive(key); }}>Explore the Fleet <span aria-hidden="true">›</span></button>
