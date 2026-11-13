@@ -2859,3 +2859,5 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .ss-fleet-ship-list button:focus-visible,.ss-fleet-back:focus-visible,.ss-fleet-detail a:focus-visible{outline:3px solid #a47a36;outline-offset:3px}
 .ss-fleet-detail img{aspect-ratio:16/9;object-fit:contain;background:#f5f4f0}
 @media(max-width:420px){.ss-fleet-dialog{padding:1.25rem}.ss-fleet-ship-name img{width:70px;height:54px}}
+
+.ss-fleet-booking{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.3rem 0;padding:1rem 1.2rem;border:1px solid #d6bb84;border-radius:8px;background:#faf7f0}.ss-fleet-booking p{margin:0;font-size:.9rem}.ss-fleet-booking a{display:inline-block;flex-shrink:0;padding:.75rem 1rem;border-radius:6px;background:#152e45;color:white;font-weight:600;text-decoration:none}.ss-fleet-booking a:focus-visible{outline:3px solid #ae8c4e;outline-offset:3px}@media(max-width:600px){.ss-fleet-booking{display:block}.ss-fleet-booking a{margin-top:.75rem}}
