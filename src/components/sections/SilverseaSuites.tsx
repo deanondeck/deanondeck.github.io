@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Veranda photo: © Silversea Cruises Ltd; image served by Widgety cruise-media asset CDN. Confirm supplier reuse permission before publishing.\nconst booking = "https://go.deanondeck.com/Silversea";
+// Veranda photo: © Silversea Cruises Ltd; image served by Widgety cruise-media asset CDN. Confirm supplier reuse permission before publishing.
+const booking = "https://go.deanondeck.com/Silversea";
 const categories = [
   { name: "Villa", heading: "The best address on board", description: "Silversea’s most expansive suites, with separate bedrooms, generous living space and private outdoor areas.", examples: "Otium, Master, Owner’s, Grand and Royal suites", official: "https://www.silversea.com/life-onboard/luxury-suites.html" },
   { name: "Residence", heading: "Room to live. Space to unwind.", description: "Residential-style suites with separate bedroom and living areas, a private balcony and additional comforts.", examples: "Junior Grand, Signature, Silver, Premium Medallion and Medallion suites", official: "https://www.silversea.com/life-onboard/luxury-suites.html" },
