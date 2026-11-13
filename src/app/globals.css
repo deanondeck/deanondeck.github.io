@@ -2820,3 +2820,26 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #virgin .virgin-room-photo-tile span { display:block; padding:.55rem .75rem; font-size:.83rem; }
 #virgin .virgin-room-photo-tile:focus-visible { outline:3px solid #a57c37; outline-offset:3px; }
 @media(max-width:600px){#virgin .virgin-room-photo-tile img{aspect-ratio:3/2}}
+
+
+/* Silversea fleet chooser — scoped, responsive, and isolated from other lines */
+.ss-fleet{grid-column:1/-1;margin:2rem auto;width:min(100%,1120px);padding:clamp(1.2rem,3vw,2.8rem);background:linear-gradient(145deg,#102641,#071426);color:#fff;border-radius:22px;text-align:center}
+.ss-fleet-heading h3{font-family:var(--font-silversea),Georgia,serif;font-style:italic;font-size:clamp(2.5rem,5vw,4.5rem);color:#e6c079;margin:.5rem 0}
+.ss-fleet-brand{letter-spacing:.18em;font-size:.72rem;text-transform:uppercase;color:#e9d2a1}
+.ss-fleet-ribbon{display:inline-block;margin:1.25rem auto;padding:.7rem 2rem;background:linear-gradient(90deg,#c79237,#ffebb1,#c79237);color:#14213a;clip-path:polygon(0 50%,8% 0,92% 0,100% 50%,92% 100%,8% 100%);font-family:Georgia,serif;font-style:italic}
+.ss-fleet-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
+.ss-fleet-choice{background:#fff;color:#10203a;border-radius:16px;padding:clamp(1rem,3vw,2rem);text-align:left}
+.ss-fleet-choice h4{font-family:var(--font-silversea),Georgia,serif;font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.05;margin:0 0 .8rem}
+.ss-fleet-choice p{min-height:3em}
+.ss-fleet-choice button{border:0;border-radius:8px;background:linear-gradient(#e9b34b,#976010);color:#fff;padding:.8rem 1.25rem;cursor:pointer;font:inherit}
+.ss-fleet-choice button:focus-visible,.ss-fleet-close:focus-visible,.ss-fleet-ship-list a:focus-visible{outline:3px solid #e6c079;outline-offset:3px}
+.ss-fleet-overlay{position:fixed;inset:0;z-index:1000;background:#000b;display:grid;place-items:center;padding:1rem;text-align:left}
+.ss-fleet-dialog{position:relative;width:min(100%,740px);max-height:90vh;overflow:auto;background:#fff;color:#13233c;border-radius:18px;padding:clamp(1.3rem,4vw,2.5rem);box-shadow:0 24px 70px #0006}
+.ss-fleet-dialog h3{font-family:var(--font-silversea),Georgia,serif;font-size:clamp(2rem,4vw,3rem);margin:.4rem 0}
+.ss-fleet-dialog .ss-fleet-brand{color:#86601f}
+.ss-fleet-close{position:absolute;right:1rem;top:.6rem;background:transparent;border:0;font-size:2rem;cursor:pointer;color:#13233c}
+.ss-fleet-ship-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:1.5rem 0}
+.ss-fleet-ship-list a{display:flex;justify-content:space-between;gap:.5rem;padding:.9rem 1rem;border:1px solid #d9d4ca;border-radius:8px;color:#14213a;text-decoration:none}
+.ss-fleet-ship-list a:hover{background:#f6f0e5}
+.ss-fleet-note{font-size:.85rem;color:#526078}
+@media(max-width:650px){.ss-fleet-choices,.ss-fleet-ship-list{grid-template-columns:1fr}.ss-fleet-choice p{min-height:0}}
