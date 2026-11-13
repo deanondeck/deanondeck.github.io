@@ -121,7 +121,7 @@ export default function SilverseaFleetPreview() {
                 </button>
               ))}
             </div>}
-            {selectedShip && <div className="ss-fleet-booking"><p>Ready to explore a Silversea voyage? I’ll help you find the right ship and suite.</p><a href="https://go.deanondeck.com/Silversea" target="_blank" rel="noopener noreferrer">Explore Silversea with Dean ↗</a></div>}
+            {selectedShip && <div className="ss-fleet-booking"><p>Ready to explore a Silversea voyage? I’ll help you find the right ship and suite.</p><a href="/#contact" target="_blank" rel="noopener noreferrer">Ask Dean about Silversea ↗</a></div>}
             {selectedShip && failedImages[selectedShip] && <p role="status" className="ss-fleet-note">This photograph is temporarily unavailable. Use the official ship gallery link above to view verified images.</p>}
             <p className="ss-fleet-note">Ships differ in design, suites and onboard experiences. Select a ship to explore its photograph and follow the link to Silversea’s official ship guide.</p>
           </div>
