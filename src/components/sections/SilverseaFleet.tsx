@@ -12,6 +12,8 @@ const groups = {
 
 export default function SilverseaFleet() {
   const [open, setOpen] = useState<Group | null>(null);
+  const [page, setPage] = useState(0);
+  const openGroup = (group: Group) => { setPage(0); setOpen(group); };
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(null); };
@@ -26,7 +28,7 @@ export default function SilverseaFleet() {
       <p>Intimate ships, extraordinary destinations. Discover the voyage that feels like yours.</p>
     </header>
     <div className="silversea-fleet-cards">
-      {(["classic","expedition"] as const).map(group => <button type="button" key={group} className="silversea-fleet-card" onClick={() => setOpen(group)} aria-haspopup="dialog" style={{textAlign:"left",cursor:"pointer",font:"inherit",color:"inherit"}}>
+      {(["classic","expedition"] as const).map(group => <button type="button" key={group} className="silversea-fleet-card" onClick={() => openGroup(group)} aria-haspopup="dialog" style={{textAlign:"left",cursor:"pointer",font:"inherit",color:"inherit"}}>
         <span className="silversea-fleet-label">{group === "classic" ? "Ocean journeys" : "Explore farther"}</span>
         <h4>{groups[group].title}</h4>
         <p>{groups[group].description}</p>
@@ -45,11 +47,16 @@ export default function SilverseaFleet() {
         <p className="log">Silversea · Explore with Dean</p><h3 id="silversea-dialog-title" className="display h-md">{groups[open].title}</h3>
         <p>{groups[open].description}</p>
         <div className="silversea-fleet-cards" style={{marginTop:24}}>
-          {groups[open].ships.map(ship => <article key={ship} className="silversea-fleet-card">
+          {(open === "classic" ? groups.classic.ships.slice(page * 4, page * 4 + 4) : groups.expedition.ships).map(ship => <article key={ship} className="silversea-fleet-card">
             <h4>{ship}</h4><p>A closer look at the journey and accommodations.</p>
             <a href="https://go.deanondeck.com/Silversea" aria-label={`Book a Silversea voyage aboard ${ship}`}>Let’s Go Book →</a>
           </article>)}
         </div>
+        {open === "classic" && <nav aria-label="Classic ship pages" style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:16,marginTop:24}}>
+          <button type="button" disabled={page === 0} onClick={() => setPage(0)} style={{padding:"10px 18px",cursor:page === 0 ? "default":"pointer"}}>← Previous four</button>
+          <span aria-live="polite">View {page + 1} of 2</span>
+          <button type="button" disabled={page === 1} onClick={() => setPage(1)} style={{padding:"10px 18px",cursor:page === 1 ? "default":"pointer"}}>Next four →</button>
+        </nav>}
         <p style={{fontSize:13,marginTop:24}}>Booking currently uses Dean’s existing Silversea advisor link. Ship-specific Shlink destinations will replace it after verification.</p>
       </section>
     </div>}
