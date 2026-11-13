@@ -2847,3 +2847,5 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .ss-fleet-ship-name{display:flex;align-items:center;gap:.7rem;min-width:0}.ss-fleet-ship-name img{width:86px;height:66px;object-fit:cover;border-radius:5px;flex-shrink:0}
 
 .ss-fleet-capacity{display:block;font-size:.74rem;color:#617087;margin-top:.3rem}
+
+.ss-accessible{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin:1.5rem 0 0;padding:1.5rem;border:1px solid rgba(163,131,70,.3);background:#fbfaf7;border-radius:8px}.ss-accessible h4{font-family:Georgia,serif;color:#172d40;font-size:1.35rem;margin:.35rem 0}.ss-accessible p{max-width:65ch;line-height:1.55;margin:.4rem 0}.ss-accessible .ss-accessible-caution{font-size:.85rem;color:#536170}.ss-accessible>a{flex-shrink:0;color:#17354a;text-decoration:underline;text-underline-offset:4px;font-weight:600}@media(max-width:700px){.ss-accessible{display:block}.ss-accessible>a{display:inline-block;margin-top:.8rem}}
