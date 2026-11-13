@@ -1,6 +1,7 @@
 import { img } from "@/lib/media";
 import VirginAccommodations from "./VirginAccommodations";
 import SilverseaFleetPreview from "./SilverseaFleetPreview";
+import SilverseaSuites from "./SilverseaSuites";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
@@ -178,29 +179,8 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 </aside>
               )}
               {l.id === "silversea" && <SilverseaFleetPreview />}
-              {l.id === "silversea" && c.silversea && (
-                <aside className="cl-rockstar royal-comparison silversea-comparison" aria-label="Compare Silversea suite categories">
-                  <header className="virgin-comparison-heading">
-                    <p className="log log--center">A more personal kind of luxury</p>
-                    <h3 className="display h-md">{c.silversea.heading}</h3>
-                    <p>{c.silversea.intro}</p>
-                    <div className="cl-included"><h4>Included with every suite</h4>
-                      <ul className="virgin-checks">{c.silversea.included.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
-                    </div>
-                  </header>
-                  <div className="virgin-tier-grid silversea-tier-grid">
-                    {c.silversea.tiers.map(tier => <div className="cl-rockstar-tier" key={tier.title}>
-                      <h4>{tier.title}</h4>
-                      <ul className="virgin-checks">{tier.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
-                    </div>)}
-                  </div>
-                  <footer className="virgin-comparison-footer">
-                    <p className="booking-note">{c.silversea.note}</p>
-                    <a className="btn btn-ink" href="/plan/?line=Silversea">Find my Silversea suite <span aria-hidden="true">→</span></a>
-                    <p className="cl-rockstar-source"><a href="https://www.silversea.com/life-onboard/luxury-suites.html?insider=7owgg-dean-satterfield" target="_blank" rel="noopener noreferrer">View Silversea’s suite collection ↗</a></p>
-                  </footer>
-                </aside>
-              )}
+              {l.id === "silversea" && c.silversea && <SilverseaSuites included={c.silversea.included} note={c.silversea.note} />}
+
             </div>
           </section>
         );
