@@ -1,6 +1,6 @@
 import { img } from "@/lib/media";
 import VirginAccommodations from "./VirginAccommodations";
-import SilverseaFleetPreview from "./SilverseaFleetPreview";
+import SilverseaFleetPreview, { SilverseaAccessibility } from "./SilverseaFleetPreview";
 import SilverseaSuites from "./SilverseaSuites";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
@@ -81,6 +81,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
               <div className="cl-body reveal d1">
                 <p className={flagship ? "log log--center" : l.id === "silversea" ? "log silversea-eyebrow" : "log"}>{l.k}</p>
                 <h3 className="display h-lg">{l.name}</h3>
+                {l.id === "silversea" && <p className="ss-opening-tagline">Exquisite Horizons</p>}
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
                   <ul className="checklist">
@@ -180,6 +181,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
               )}
               {l.id === "silversea" && <SilverseaFleetPreview />}
               {l.id === "silversea" && c.silversea && <SilverseaSuites included={c.silversea.included} note={c.silversea.note} />}
+              {l.id === "silversea" && <SilverseaAccessibility />}
 
             </div>
           </section>
