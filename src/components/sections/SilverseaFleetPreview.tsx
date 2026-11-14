@@ -117,8 +117,8 @@ export default function SilverseaFleetPreview() {
   return (
     <section className="ss-fleet" aria-labelledby="ss-fleet-heading">
       <div className="ss-fleet-heading">
-        <p className="ss-fleet-brand">SILVERSEA · ULTRA-LUXURY VOYAGES</p>
-        <h3 id="ss-fleet-heading">Exquisite Horizons.</h3>
+        <p className="ss-fleet-brand">ULTRA-LUXURY VOYAGES</p>
+        <h3 id="ss-fleet-heading">Explore Silversea’s Fleet</h3>
         <p>Personalized Service. Timeless Luxury.</p>
         <strong className="ss-fleet-ribbon">Every suite. Your own butler.</strong>
       </div>
@@ -126,7 +126,7 @@ export default function SilverseaFleetPreview() {
         {(["classic", "expedition"] as const).map((key) => (
           <article className="ss-fleet-choice" key={key}>
             {!failedFleetImages[key] && <img className="ss-fleet-choice-photo" src={officialShipImages[key === "classic" ? "Silver Nova" : "Silver Endeavour"]} alt={key === "classic" ? "Silver Nova — official Silversea photograph" : "Silver Endeavour — official Silversea photograph"} loading="lazy" onError={() => setFailedFleetImages(prev => ({ ...prev, [key]: true }))} />}
-            <h4>{fleets[key].title}</h4>
+            <h4>{key === "classic" ? "Classic Voyages" : "Expedition Voyages"}</h4>
             <p>{key === "classic" ? "Elegant ships to the world's most iconic destinations." : "Purpose-built ships for extraordinary, remote regions."}</p>
             <button type="button" ref={node => { triggerRefs.current[key] = node; }} onClick={() => { activeTriggerRef.current = key; setSelectedShip(null); setActive(key); }}>Explore the Fleet <span aria-hidden="true">›</span></button>
           </article>
@@ -161,7 +161,7 @@ export default function SilverseaFleetPreview() {
 
 export function SilverseaAccessibility() {
  return (
-      <aside className="ss-accessible" aria-labelledby="ss-accessible-heading">
+      <aside className="ss-accessible ss-accessible-editorial" aria-labelledby="ss-accessible-heading">
         <div>
           <p className="ss-fleet-brand">THOUGHTFUL TRAVEL</p>
           <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
