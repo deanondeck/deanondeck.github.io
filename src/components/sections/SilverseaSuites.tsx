@@ -30,7 +30,8 @@ export default function SilverseaSuites({ included, note }: { included: string[]
     return () => { document.body.style.overflow = overflow; document.removeEventListener("keydown", keydown); };
   }, [selected]);
   return (
-    <aside className="ss-suite-collection" aria-label="Explore Silversea suite categories">\n      <style>{`@import url(\'https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&display=swap\');`}</style>
+    <aside className="ss-suite-collection" aria-label="Explore Silversea suite categories">
+      <style>{`@import url(\'https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&display=swap\');`}</style>
       <header className="ss-suite-intro">
         <p className="ss-suite-kicker">The Suite Collection</p>
         <h3 style={{ textAlign: "center", margin: "10px 0 16px", lineHeight: 1 }}><span style={{ display: "block", color: "#15243a", fontFamily: "\'Cormorant Garamond\', Georgia, serif", fontSize: "clamp(38px, 6vw, 64px)", fontWeight: 500 }}>Your Suite,</span><span style={{ display: "block", color: "#ae864a", fontFamily: "\'Corinthia\', cursive", fontSize: "clamp(56px, 9vw, 95px)", fontWeight: 700, lineHeight: .9 }}>Your Sanctuary</span></h3>
