@@ -3049,3 +3049,7 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-accessible-copy p{font:clamp(17px,2.1vw,27px)/1.25 Georgia,serif;color:#122b47;margin:0}
 #silversea .ss-accessible-copy a{font:700 clamp(12px,1.4vw,17px)/1.4 Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#785019;text-decoration:none;display:block}
 @media(max-width:680px){#silversea .ss-accessible-restored{grid-template-columns:46% 54%;border-radius:10px}#silversea .ss-accessible-photo{min-height:165px}#silversea .ss-accessible-photo:after{right:-18px;width:34px}#silversea .ss-accessible-symbol{top:8px;left:8px;font-size:19px;padding:5px}#silversea .ss-accessible-copy{padding:12px 12px 12px 4px;gap:7px}#silversea .ss-accessible-copy h4{font-size:clamp(15px,3.9vw,25px);line-height:1.1;overflow-wrap:break-word}#silversea .ss-accessible-copy p{font-size:clamp(12px,3vw,17px);line-height:1.25}#silversea .ss-accessible-copy a{font-size:clamp(9px,2.1vw,12px);letter-spacing:0}}
+
+/* Exact approved Silversea accessibility artwork: full-width, uncropped at every viewport. */
+#silversea .ss-accessible-original{display:block;width:100%;max-width:100%;margin:clamp(12px,2vw,24px) 0 0;padding:0;line-height:0;text-decoration:none;overflow:visible}
+#silversea .ss-accessible-original img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;border:0;border-radius:0}
