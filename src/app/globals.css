@@ -2985,3 +2985,21 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-accessible .ss-accessible-caution{font-size:.75rem}
 #silversea .ss-accessible>a{font-size:.8rem;white-space:nowrap}
 @media(max-width:700px){#silversea .ss-fleet{padding:.85rem}#silversea .ss-fleet-choice-photo{height:auto;aspect-ratio:16/10}#silversea .ss-accessible>a{white-space:normal}}
+
+
+/* Silversea suite-photo correction (review branch): show the genuine
+   category-matched photographs with a minimal label overlay.
+   No changes to modal behavior, links, or fleet cards. */
+#silversea .ss-suite-tile .ss-suite-photo {
+  height: clamp(205px, 22vw, 310px);
+  object-fit: cover;
+  object-position: center;
+}
+#silversea .ss-suite-tile-caption {
+  background: linear-gradient(to top, rgba(10, 35, 61, .82), rgba(10, 35, 61, 0));
+  padding: 1.15rem .35rem .55rem;
+}
+@media (max-width: 700px) {
+  #silversea .ss-suite-tile .ss-suite-photo { height: 205px; }
+  #silversea .ss-suite-tile-caption { padding: 1rem .25rem .45rem; }
+}
