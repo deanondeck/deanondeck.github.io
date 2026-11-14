@@ -3037,3 +3037,15 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-fleet-dialog{max-height:min(88dvh,760px);overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
 #silversea .ss-fleet-close{position:sticky;top:0;float:right;z-index:5;background:#fff;border-radius:50%;width:42px;height:42px;display:grid;place-items:center;box-shadow:0 1px 8px #0002}
 @media(max-width:680px){#silversea .ss-fleet-overlay{padding:10px}#silversea .ss-fleet-dialog{width:100%;max-height:84dvh;padding:14px 16px 18px}#silversea .ss-fleet-ship-list{grid-template-columns:1fr;gap:6px;margin:12px 0}#silversea .ss-fleet-dialog h3{font-size:clamp(22px,6vw,30px)}}
+
+/* Restored Silversea accessible feature: editorial horizontal desktop, compact readable mobile. */
+#silversea .ss-accessible-restored{display:grid;grid-template-columns:51% 49%;width:100%;margin:clamp(12px,2vw,24px) 0 0;overflow:hidden;border:2px solid #c59b48;border-radius:18px;background:#fbf7f1;min-width:0;align-items:stretch}
+#silversea .ss-accessible-photo{position:relative;min-width:0;min-height:220px;overflow:hidden}
+#silversea .ss-accessible-photo img{width:100%;height:100%;object-fit:cover;display:block}
+#silversea .ss-accessible-photo:after{content:"";position:absolute;right:-38px;top:-8%;height:116%;width:66px;border-left:3px solid #b78325;border-radius:55% 0 0 55%;background:#fbf7f1;transform:rotate(7deg)}
+#silversea .ss-accessible-symbol{position:absolute;top:16px;left:18px;font-size:32px;line-height:1;background:#17334d;color:#fff;padding:8px;border:2px solid white;border-radius:9px;z-index:1}
+#silversea .ss-accessible-copy{min-width:0;padding:clamp(18px,3vw,38px) clamp(18px,3vw,38px) clamp(18px,3vw,38px) clamp(5px,2vw,26px);display:flex;flex-direction:column;justify-content:center;text-align:center;gap:clamp(9px,1.6vw,18px)}
+#silversea .ss-accessible-copy h4{font:italic 600 clamp(24px,3vw,42px)/1.05 Georgia,serif;color:#122b47;margin:0;overflow-wrap:normal}
+#silversea .ss-accessible-copy p{font:clamp(17px,2.1vw,27px)/1.25 Georgia,serif;color:#122b47;margin:0}
+#silversea .ss-accessible-copy a{font:700 clamp(12px,1.4vw,17px)/1.4 Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#785019;text-decoration:none;display:block}
+@media(max-width:680px){#silversea .ss-accessible-restored{grid-template-columns:46% 54%;border-radius:10px}#silversea .ss-accessible-photo{min-height:165px}#silversea .ss-accessible-photo:after{right:-18px;width:34px}#silversea .ss-accessible-symbol{top:8px;left:8px;font-size:19px;padding:5px}#silversea .ss-accessible-copy{padding:12px 12px 12px 4px;gap:7px}#silversea .ss-accessible-copy h4{font-size:clamp(15px,3.9vw,25px);line-height:1.1;overflow-wrap:break-word}#silversea .ss-accessible-copy p{font-size:clamp(12px,3vw,17px);line-height:1.25}#silversea .ss-accessible-copy a{font-size:clamp(9px,2.1vw,12px);letter-spacing:0}}
