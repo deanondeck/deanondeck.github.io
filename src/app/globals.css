@@ -2985,3 +2985,16 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-accessible .ss-accessible-caution{font-size:.75rem}
 #silversea .ss-accessible>a{font-size:.8rem;white-space:nowrap}
 @media(max-width:700px){#silversea .ss-fleet{padding:.85rem}#silversea .ss-fleet-choice-photo{height:auto;aspect-ratio:16/10}#silversea .ss-accessible>a{white-space:normal}}
+
+
+/* Silversea editorial suite gallery — approved Nov 13 mobile review */
+#silversea .ss-suite-collection{background:#f6f3ef;border:0;border-radius:0;padding:clamp(24px,4vw,54px) clamp(14px,3vw,36px)}
+#silversea .ss-suite-gallery{gap:clamp(10px,1.5vw,18px)}
+#silversea .ss-suite-tile{position:relative;min-height:clamp(260px,28vw,370px);border:0;border-radius:0;background:#15243a;text-align:left}
+#silversea .ss-suite-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%}
+#silversea .ss-suite-tile::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(7,18,35,.88));pointer-events:none}
+#silversea .ss-suite-tile-caption{position:absolute;z-index:1;left:16px;right:12px;bottom:17px;background:transparent;padding:0;text-align:left;gap:8px}
+#silversea .ss-suite-tile-caption strong{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(25px,2.6vw,34px);line-height:1.05}
+#silversea .ss-suite-tile-caption small{font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+#silversea .ss-suite-book{background:#17253c;border-radius:0}
+@media(max-width:720px){#silversea .ss-suite-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}#silversea .ss-suite-tile{min-height:260px}}
