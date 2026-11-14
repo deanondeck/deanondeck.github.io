@@ -180,8 +180,8 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 </aside>
               )}
               {l.id === "silversea" && <SilverseaFleetPreview />}
-              {l.id === "silversea" && c.silversea && <SilverseaSuites included={c.silversea.included} note={c.silversea.note} />}
               {l.id === "silversea" && <SilverseaAccessibility />}
+              {l.id === "silversea" && c.silversea && <SilverseaSuites included={c.silversea.included} note={c.silversea.note} />}
 
             </div>
           </section>
