@@ -29,7 +29,7 @@ const officialShipImages: Record<string, string> = {
   "Silver Cloud": "https://cdn.sanity.io/images/rd0y3pad/production/b587766190d5df7c8acdb45f0efb134b09b8db7e-5464x3640.jpg?auto=format&fit=max&w=900&q=85",
   "Silver Endeavour": "https://cdn.sanity.io/images/rd0y3pad/production/0e8d0ab4130e59213745b82d840fa8892dd54c6f-3500x2475.jpg?auto=format&fit=max&w=900&q=85",
   "Silver Origin": "https://cdn.sanity.io/images/rd0y3pad/production/23100646256d6f1a72f6cef15b0de95d76ba9a6f-6647x4433.jpg?auto=format&fit=max&w=900&q=85",
-  "Silver Wind": "https://cdn.sanity.io/images/rd0y3pad/production/46a858fc104bf38ac03e9b5936bab87c09430a1c-4524x2735.jpg?auto=format&fit=max&w=900&q=85",
+  "Silver Wind": "https://cdn.sanity.io/images/rd0y3pad/blog-production/c3632676e7ae65e074fd9a5dcf9443f27b1e08ff-2844x2133.jpg?auto=format&fit=max&w=1600&q=90",
 };
 
 const deanSilverseaBookingUrl = "https://go.deanondeck.com/Silversea";
@@ -125,10 +125,10 @@ export default function SilverseaFleetPreview() {
       <div className="ss-fleet-choices">
         {(["classic", "expedition"] as const).map((key) => (
           <article className="ss-fleet-choice" key={key}>
-            {!failedFleetImages[key] && <img className="ss-fleet-choice-photo" src={officialShipImages[key === "classic" ? "Silver Nova" : "Silver Endeavour"]} alt={key === "classic" ? "Silver Nova — official Silversea photograph" : "Silver Endeavour — official Silversea photograph"} loading="lazy" onError={() => setFailedFleetImages(prev => ({ ...prev, [key]: true }))} />}
+            {!failedFleetImages[key] && <img className="ss-fleet-choice-photo" src={officialShipImages[key === "classic" ? "Silver Nova" : "Silver Wind"]} alt={key === "classic" ? "Silver Nova — official Silversea photograph" : "Silver Wind — official Silversea photograph"} loading="lazy" onError={() => setFailedFleetImages(prev => ({ ...prev, [key]: true }))} />}
             <h4>{key === "classic" ? "Classic Voyages" : "Expedition Voyages"}</h4>
             <p>{key === "classic" ? "Elegant ships to the world's most iconic destinations." : "Purpose-built ships for extraordinary, remote regions."}</p>
-            <button type="button" ref={node => { triggerRefs.current[key] = node; }} onClick={() => { activeTriggerRef.current = key; setSelectedShip(null); setActive(key); }}>Explore the Fleet <span aria-hidden="true">›</span></button>
+            <button type="button" ref={node => { triggerRefs.current[key] = node; }} onClick={() => { activeTriggerRef.current = key; setSelectedShip(null); setActive(key); }}>Explore Suites <span aria-hidden="true">→</span></button>
           </article>
         ))}
       </div>
