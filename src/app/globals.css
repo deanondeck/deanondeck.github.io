@@ -3016,3 +3016,18 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-accessible-editorial{display:flex;width:100%;margin:0;padding:clamp(22px,4vw,44px);background:#f7f4ee;border:1px solid #d7c29d;border-radius:0;color:#17263d;box-sizing:border-box}
 #silversea .ss-accessible-editorial h4{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(29px,4vw,44px);font-weight:500}
 @media(max-width:680px){#silversea .ss-fleet-choices{grid-template-columns:1fr}#silversea .ss-accessible-editorial{display:block}#silversea .ss-accessible-editorial>a{display:inline-block;margin-top:16px}}
+
+
+/* Recovered Nov 13 approved Silversea mobile preview: ivory, paired ship photos, gold outlines */
+#silversea .ss-fleet{background:#f9f5ef;border:0;padding:0;margin:0}
+#silversea .ss-fleet-heading{display:none}
+#silversea .ss-fleet-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4%;align-items:stretch}
+#silversea .ss-fleet-choice{position:relative;aspect-ratio:1.42;border:2px solid #c59b48;border-radius:15px;overflow:hidden;padding:0;background:#102b49;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;isolation:isolate}
+#silversea .ss-fleet-choice-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+#silversea .ss-fleet-choice:nth-child(2) .ss-fleet-choice-photo{object-position:50% 53%;transform:scale(1.85);transform-origin:50% 52%}
+#silversea .ss-fleet-choice:after{content:"";position:absolute;z-index:-1;inset:68% 0 0;background:linear-gradient(0deg,rgba(6,29,53,.83),rgba(6,29,53,.49) 38%,transparent)}
+#silversea .ss-fleet-choice h4{color:#fff;font:italic clamp(18px,3.7vw,38px) Georgia,serif;margin:0 0 6px;white-space:nowrap}
+#silversea .ss-fleet-choice p{display:none}
+#silversea .ss-fleet-choice button{position:relative;color:#e5bd6b;background:transparent;border:0;font:600 clamp(9px,1.4vw,16px) Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 7%;padding:5px;cursor:pointer}
+#silversea .ss-accessible-editorial{margin-top:2%;border:1px solid #c59b48;border-radius:15px;background:#f9f5ef;padding:clamp(18px,3vw,36px)}
+@media(max-width:680px){#silversea .ss-fleet-choices{grid-template-columns:repeat(2,minmax(0,1fr))}#silversea .ss-fleet-choice{border-radius:9px}#silversea .ss-fleet-choice h4{font-size:clamp(14px,3.7vw,19px)}#silversea .ss-fleet-choice button{font-size:9px;letter-spacing:.04em}#silversea .ss-accessible-editorial{border-radius:9px}}
