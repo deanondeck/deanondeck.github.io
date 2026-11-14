@@ -3031,3 +3031,9 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-fleet-choice button{position:relative;color:#e5bd6b;background:transparent;border:0;font:600 clamp(9px,1.4vw,16px) Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 7%;padding:5px;cursor:pointer}
 #silversea .ss-accessible-editorial{margin-top:2%;border:1px solid #c59b48;border-radius:15px;background:#f9f5ef;padding:clamp(18px,3vw,36px)}
 @media(max-width:680px){#silversea .ss-fleet-choices{grid-template-columns:repeat(2,minmax(0,1fr))}#silversea .ss-fleet-choice{border-radius:9px}#silversea .ss-fleet-choice h4{font-size:clamp(14px,3.7vw,19px)}#silversea .ss-fleet-choice button{font-size:9px;letter-spacing:.04em}#silversea .ss-accessible-editorial{border-radius:9px}}
+
+/* Silversea fleet corrections: preserve complete expedition vessel and keep close control visible. */
+#silversea .ss-fleet-choice:nth-child(2) .ss-fleet-choice-photo{transform:none;object-fit:cover;object-position:center 50%}
+#silversea .ss-fleet-dialog{max-height:min(88dvh,760px);overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+#silversea .ss-fleet-close{position:sticky;top:0;float:right;z-index:5;background:#fff;border-radius:50%;width:42px;height:42px;display:grid;place-items:center;box-shadow:0 1px 8px #0002}
+@media(max-width:680px){#silversea .ss-fleet-overlay{padding:10px}#silversea .ss-fleet-dialog{width:100%;max-height:84dvh;padding:14px 16px 18px}#silversea .ss-fleet-ship-list{grid-template-columns:1fr;gap:6px;margin:12px 0}#silversea .ss-fleet-dialog h3{font-size:clamp(22px,6vw,30px)}}
