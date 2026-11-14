@@ -160,16 +160,17 @@ export default function SilverseaFleetPreview() {
 }
 
 export function SilverseaAccessibility() {
- return (
-      <aside className="ss-accessible ss-accessible-editorial" aria-labelledby="ss-accessible-heading">
-        <div>
-          <p className="ss-fleet-brand">THOUGHTFUL TRAVEL</p>
-          <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
-          <p><strong>Thoughtful luxury, designed for you.</strong></p>
-          <p>Selected ships offer wheelchair-accessible suites with wider doorways, generous maneuvering space, roll-in showers, grab bars and adapted storage. Some also offer accessible veranda access.</p>
-          <p className="ss-accessible-caution">Features vary by ship and suite. Confirm your needs before booking; tenders and expedition landings may limit access.</p>
-        </div>
-        <a href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer">Explore Cruises with Dean <span aria-hidden="true">↗</span></a>
-      </aside>
- );
+  return (
+    <aside className="ss-accessible-restored" aria-labelledby="ss-accessible-heading">
+      <div className="ss-accessible-photo">
+        <img src="https://assets.widgety.co.uk/2025/04/28/12/16/47/bf5105c3-3504-4484-9d89-85c2bf6801a8/Silversea,%20Silver%20Ray,%20Silver%20Suite%20Living%20Room%20%C2%A9Silversea%20Cruises%20Ltd.jpg" alt="Silversea Silver Suite interior" loading="lazy" />
+        <span className="ss-accessible-symbol" aria-label="Accessibility">♿</span>
+      </div>
+      <div className="ss-accessible-copy">
+        <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
+        <p>Thoughtfully designed suites with comfort, access and peace of mind.</p>
+        <a href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer">Explore Accessible Suites <span aria-hidden="true">→</span></a>
+      </div>
+    </aside>
+  );
 }
