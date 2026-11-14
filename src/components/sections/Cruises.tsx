@@ -80,6 +80,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
               </figure>
               <div className="cl-body reveal d1">
                 <p className={flagship ? "log log--center" : l.id === "silversea" ? "log silversea-eyebrow" : "log"}>{l.k}</p>
+                {l.id === "silversea" && <a className="silversea-official-logo" href="https://www.silversea.com/" target="_blank" rel="noopener noreferrer" aria-label="Silversea official website"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Silversea.png" alt="Silversea official wordmark" loading="lazy" /></a>}
                 <h3 className="display h-lg">{l.name}</h3>
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
