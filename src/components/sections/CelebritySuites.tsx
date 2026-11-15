@@ -30,7 +30,7 @@ export default function CelebritySuites() {
             <span className="celebrity-suite-copy">
               <span className="celebrity-suite-family">{suite.family}</span>
               <span className="celebrity-suite-name">{suite.name}</span>
-              <span className="celebrity-suite-action">Ask Dean about this suite <span aria-hidden="true">↗</span></span>
+              <span className="celebrity-suite-action">Ask Dean about this suite <span aria-hidden="true">→</span></span>
             </span>
           </a>
         ))}
@@ -43,7 +43,7 @@ export default function CelebritySuites() {
 
       <div className="celebrity-editorial-actions">
         <a className="btn btn-ink" href="/plan/?line=Celebrity%20Cruises">Explore Celebrity with Dean <span className="arrow">→</span></a>
-        <a className="cl-alt" href="https://www.celebritycruises.com/cruises" target="_blank" rel="noopener noreferrer">Browse Celebrity Cruises itineraries ↗</a>
+        <a className="cl-alt" href="https://www.celebritycruises.com/cruises" target="_blank" rel="noopener noreferrer">Browse Celebrity Cruises itineraries →</a>
       </div>
     </section>
   );
