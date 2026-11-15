@@ -11,10 +11,18 @@ const suites: Suite[] = [
   { name: "Aqua Sky Suite", image: "https://www.celebritycruises.com/content/dam/celebrity/new-images/beyond-new-images/aqua-sky-suite-BY-2560x1440.jpg", alt: "Aqua Sky Suite aboard Celebrity Beyond", highlight: "Spa-inspired · private veranda", description: "Spa-inspired details bring AquaClass wellness together with The Retreat’s service and a private veranda." },
 ];
 
+const accessibleSuiteImage = "https://www.celebritycruises.com/content/dam/celebrity/rooms-suites/1851-accessible-sky-suite-rooms-suites-80-opacity.jpg";
+const accessibleBathroomImage = "https://www.celebritycruises.com/blog/content/uploads/2019/03/cruises-for-seniors-with-disabilities-accessible-bath-1024x683.jpg";
+const accessibleSuitePage = "https://www.celebritycruises.com/things-to-do-onboard/staterooms/suite-class/accessible-sky-suite";
+
 export default function CelebritySuites() {
   const [active, setActive] = useState<Suite | null>(null);
+  const [accessibleOpen, setAccessibleOpen] = useState(false);
+  const [bathroomOpen, setBathroomOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const modalRef = useRef<HTMLDivElement | null>(null);
+  const accessibleTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const accessibleModalRef = useRef<HTMLDivElement | null>(null);
   const closeModal = () => {
     setActive(null);
     window.requestAnimationFrame(() => triggerRef.current?.focus());
@@ -32,6 +40,28 @@ export default function CelebritySuites() {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [active]);
+  const openAccessible = (trigger: HTMLButtonElement) => {
+    accessibleTriggerRef.current = trigger;
+    setBathroomOpen(false);
+    setAccessibleOpen(true);
+  };
+  const closeAccessible = () => {
+    setAccessibleOpen(false);
+    setBathroomOpen(false);
+    window.requestAnimationFrame(() => accessibleTriggerRef.current?.focus());
+  };
+  useEffect(() => {
+    if (!accessibleOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    accessibleModalRef.current?.focus();
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") closeAccessible(); };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [accessibleOpen]);
 
   return (
     <section className="celebrity-editorial" aria-labelledby="celebrity-suites-heading">
@@ -55,11 +85,14 @@ export default function CelebritySuites() {
         ))}
       </div>
       <aside className="celebrity-accessible-card" aria-labelledby="celebrity-accessible-heading">
-        <img src="https://www.celebritycruises.com/blog/content/uploads/2019/03/cruises-for-seniors-with-disabilities-accessible-bath-1024x683.jpg" alt="Celebrity accessible stateroom bathroom with a roll-in shower" loading="lazy" />
+        <button className="celebrity-accessible-image-trigger" type="button" aria-haspopup="dialog" onClick={(event) => openAccessible(event.currentTarget)} aria-label="View the Accessible Sky Suite">
+          <img src={accessibleSuiteImage} alt="Official Celebrity Accessible Sky Suite rendering showing its bedroom, sitting area, and veranda access" loading="lazy" />
+        </button>
         <div className="celebrity-accessible-copy">
           <p className="log">Accessible Accommodations</p>
-          <h4 id="celebrity-accessible-heading">Designed for easier movement.</h4>
-          <p>Features can include wider doors, roll-in showers, and grab bars. Layouts vary by ship and room.</p>
+          <h4 id="celebrity-accessible-heading">Accessible Sky Suite</h4>
+          <p>More room to move, with wider doorways and veranda access. Features and availability vary by ship.</p>
+          <button className="celebrity-accessible-details-btn" type="button" aria-haspopup="dialog" onClick={(event) => openAccessible(event.currentTarget)}>View suite details →</button>
           <a href="https://www.celebritycruises.com/special-needs/accessible-staterooms" target="_blank" rel="noopener noreferrer">See Celebrity’s accessibility details ↗</a>
         </div>
       </aside>
@@ -78,6 +111,33 @@ export default function CelebritySuites() {
               <p>{active.description}</p>
               <p className="celebrity-modal-availability">Exact suite features and availability vary by ship and sailing.</p>
               <a className="btn btn-ink" href={`/plan/?line=Celebrity%20Cruises&suite=${encodeURIComponent(active.name)}`}>Plan this suite with Dean <span className="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+      )}
+      {accessibleOpen && (
+        <div className="celebrity-modal-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) closeAccessible(); }}>
+          <div className="celebrity-suite-modal celebrity-accessible-modal" role="dialog" aria-modal="true" aria-labelledby="celebrity-accessible-modal-title" tabIndex={-1} ref={accessibleModalRef}>
+            <button className="celebrity-modal-close" type="button" onClick={closeAccessible} aria-label="Close accessible suite details">×</button>
+            <div className="celebrity-accessible-modal-visual">
+              <img className="celebrity-modal-photo" src={accessibleSuiteImage} alt="Official Celebrity Accessible Sky Suite rendering showing the sleeping area, living area, and veranda doors" />
+              {bathroomOpen && (
+                <figure className="celebrity-bathroom-detail" id="celebrity-accessible-bathroom">
+                  <img src={accessibleBathroomImage} alt="Celebrity accessible stateroom bathroom with a roll-in shower and grab bars" />
+                  <figcaption>Accessible bathroom example · layout and features vary by ship.</figcaption>
+                </figure>
+              )}
+            </div>
+            <div className="celebrity-modal-copy">
+              <p className="log">Accessible Accommodations</p>
+              <h4 className="display h-md" id="celebrity-accessible-modal-title">Accessible Sky Suite</h4>
+              <p>Celebrity describes this suite with wider doorways, an accessible veranda, and a roll-in shower with a fold-down seat. Features vary by ship.</p>
+              <p className="celebrity-modal-availability">Ask Dean to compare the layout and confirm what is available for your sailing.</p>
+              <button className="celebrity-bathroom-toggle" type="button" aria-expanded={bathroomOpen} aria-controls="celebrity-accessible-bathroom" onClick={() => setBathroomOpen((shown) => !shown)}>
+                {bathroomOpen ? "Hide bathroom view ↑" : "View bathroom details ↓"}
+              </button>
+              <a className="btn btn-ink" href="/plan/?line=Celebrity%20Cruises&suite=Accessible%20Sky%20Suite">Plan this suite with Dean <span className="arrow">→</span></a>
+              <a className="celebrity-accessible-official-link" href={accessibleSuitePage} target="_blank" rel="noopener noreferrer">Celebrity’s Accessible Sky Suite details ↗</a>
             </div>
           </div>
         </div>
