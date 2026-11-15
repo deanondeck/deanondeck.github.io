@@ -100,7 +100,6 @@ export default function Cruises({ id, content, site }: SectionProps) {
                           loading="eager"
                         />
                       </h3>
-                      <h4 className="celebrity-intro-title">Modern design.<br />Room to unwind.</h4>
                     </div>
                     <div className="celebrity-intro-copy">
                       <p className="cl-copy">{l.d}</p>
@@ -117,7 +116,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                         </p>
                       )}
                       <p className="booking-note celebrity-transfer-note">
-                        Already booked directly? Ask Dean about transfer eligibility. Celebrity’s guest request form and deadlines apply.
+                        Tell Dean what you’re looking for; he’ll handle the planning and send your official booking link. Already booked? Ask if your reservation can transfer so he can keep supporting you. You enter payment and personal booking details directly with Celebrity Cruises.
                       </p>
                     </div>
                   </div>
@@ -168,7 +167,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 )}
                 {l.browse && l.id !== "silversea" && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 
-                {!l.book && !royal && <p className="booking-note">{l.id === "royal-caribbean" || l.id === "celebrity" ? "For a new booking, start with Dean so I can help plan your cruise. Already booked directly? Ask Dean whether your reservation qualifies to transfer to Dean On Deck. If eligible, the cruise line requires its own guest-submitted request form; deadlines and rules apply." : "Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation."}</p>}
+                {royal && <p className="booking-note royal-booking-note">Tell Dean what you’re looking for; he’ll handle the planning and send your official booking link. Already booked? Ask if your reservation can transfer so he can keep supporting you. You enter payment and personal booking details directly with Royal Caribbean.</p>}
                   </>
                 )}
               </div>

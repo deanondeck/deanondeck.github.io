@@ -85,9 +85,10 @@
       "k": "For the whole crew",
       "img": "royal-caribbean/icon-at-cococay.jpg",
       "alt": "Icon of the Seas docked at Perfect Day at CocoCay, with the beach and overwater cabanas in the foreground",
-      "d": "From surf simulators and Broadway-style shows to a beach day at Perfect Day at CocoCay, Royal Caribbean gives the whole crew something to look forward to. Explore Icon of the Seas or find a sailing that fits everyone.",
+      "d": "From Icon Class ships to Perfect Day at CocoCay, Royal Caribbean pairs big onboard experiences with sailings for families, couples, and groups.",
       "book": null,
-      "bookLabel": "Plan with Dean"
+      "bookLabel": "Book with Dean",
+      "browse": "https://www.royalcaribbean.com/cruises"
     },
     {
       "id": "celebrity",
@@ -95,9 +96,9 @@
       "k": "Modern luxury · A quieter kind of escape",
       "img": "port-greece",
       "alt": "A Greek island coastline at sunset, a destination on Celebrity Cruises itineraries",
-      "d": "Thoughtful design, elevated dining, and destination-led itineraries create a polished, relaxed experience. Explore Celebrity’s ships and suites with Dean.",
+      "d": "Thoughtful design, elevated dining, and destination-led itineraries create a polished, relaxed experience.",
       "book": null,
-      "bookLabel": "Plan with Dean",
+      "bookLabel": "Book with Dean",
       "browse": "https://www.celebritycruises.com/cruises"
     },
     {
