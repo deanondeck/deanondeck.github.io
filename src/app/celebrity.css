@@ -78,3 +78,18 @@
  .celebrity-modal-copy .btn { width:100%; justify-content:center; margin-top:.35rem; }
 }
 @media(prefers-reduced-motion:reduce) { .celebrity-suite-item,.celebrity-suite-image img { transition:none; } }
+
+/* Keep the handoff from Royal Caribbean to Celebrity compact and visual. */
+#royal-caribbean { padding-bottom:clamp(1.8rem,3vw,2.8rem); }
+#celebrity { padding-top:clamp(1.8rem,3vw,2.8rem); }
+#celebrity .cl-grid { gap:clamp(1.1rem,2.1vw,1.8rem); }
+#celebrity .celebrity-intro { gap:clamp(1.4rem,4vw,3rem); }
+#celebrity .celebrity-intro-brand .log { margin-bottom:.75rem; }
+#celebrity .celebrity-intro-copy .cl-copy { margin-bottom:.7rem; line-height:1.55; }
+#celebrity .celebrity-transfer-note { margin-top:.7rem; padding:.55rem .8rem; line-height:1.45; }
+@media(max-width:600px) {
+ #royal-caribbean { padding-bottom:1.5rem; }
+ #celebrity { padding-top:1.5rem; }
+ #celebrity .cl-grid { gap:1rem; }
+ #celebrity .celebrity-intro { gap:.85rem; }
+}
