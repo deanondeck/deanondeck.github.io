@@ -208,3 +208,5 @@
  #celebrity .celebrity-suite-highlight { font-size:.7rem; }
  #celebrity .celebrity-suite-action { font-size:.58rem; letter-spacing:.07em; }
 }
+
+#celebrity .celebrity-suite-item:first-child .celebrity-suite-copy { align-content:start; gap:.36rem; padding:1rem 1.05rem 1.15rem; }
