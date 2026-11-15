@@ -31,6 +31,10 @@ export default function PlanVoyage({ id, content, site }: SectionProps) {
       setExtras("I’m interested in joining Dean on a future voyage. Please share upcoming sailing options.");
       setLine("Help me choose");
     }
+    const suite = query.get("suite");
+    if (suite && selected === "Celebrity Cruises") {
+      setExtras(`I’m interested in the ${suite} on Celebrity Cruises. Please help me confirm which ships offer it, the layout and benefits for my sailing, and current pricing.`);
+    }
     if (selected && site.cruiseLines.some((item) => item.name === selected)) {
       setLine(selected);
     }

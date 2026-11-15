@@ -3,6 +3,7 @@ import { Noto_Serif, Corinthia, Montserrat, Oswald, Cormorant_Garamond } from "n
 import StructuredData from "@/components/StructuredData";
 import { loadSite } from "@/lib/cms/loader";
 import "./globals.css";
+import "./celebrity.css";
 
 /* Deployment retry after transient Google font fetch error.\n   Reference pairing (happyjetsetter.com): Noto Serif carries every heading,
    Corinthia supplies the handwritten flourishes; body copy rides the system

@@ -1,0 +1,162 @@
+/* Celebrity editorial treatment: sea-glass, bronze and warm neutrals. */
+#celebrity .celebrity-opening-wordmark {
+  display: block;
+  width: min(100%, 430px);
+  height: auto;
+  margin: 0 0 1.1rem;
+  background: #fff;
+}
+#celebrity .cl-body > .display:has(.celebrity-opening-wordmark) { margin-bottom: 1.1rem; }
+.celebrity-editorial {
+  margin-top: clamp(3.2rem, 7vw, 6rem);
+  padding: clamp(.8rem, 2vw, 1.4rem);
+  border: 1px solid rgba(17, 70, 77, .18);
+  border-radius: 8px;
+  background: linear-gradient(145deg, #edf5f1 0%, #fbf7ee 54%, #f5ece3 100%);
+  box-shadow: 0 24px 58px -38px rgba(8, 40, 51, .45);
+}
+.celebrity-editorial-heading {
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  margin: 0 auto clamp(1.4rem, 3vw, 2.4rem);
+  padding: clamp(1.7rem, 5vw, 3.6rem) clamp(1rem, 4vw, 3rem);
+  border-radius: 5px;
+  color: #fffaf0;
+  background: radial-gradient(ellipse at 92% 5%, rgba(163, 193, 177, .34), transparent 34%), linear-gradient(120deg, #123b4a 0%, #155763 53%, #1b716e 100%);
+  text-align: left;
+}
+.celebrity-editorial-heading::after {
+  content: "";
+  position: absolute;
+  width: 11rem;
+  height: 11rem;
+  right: -3.6rem;
+  bottom: -7rem;
+  border: 1px solid rgba(237, 207, 150, .4);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.3rem rgba(237, 207, 150, .06), 0 0 0 2.6rem rgba(237, 207, 150, .04);
+  pointer-events: none;
+}
+.celebrity-editorial-heading .log { margin-bottom: .7rem; color: #e6c58b; }
+.celebrity-editorial-heading h3 {
+  max-width: 18ch;
+  margin: 0 0 1rem;
+  color: #fffaf0;
+  font-family: var(--font-silversea), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -.018em;
+  line-height: 1.08;
+}
+.celebrity-editorial-heading > p:last-child {
+  position: relative;
+  z-index: 1;
+  max-width: 62ch;
+  margin: 0;
+  color: rgba(255, 250, 240, .86);
+}
+.celebrity-suite-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+}
+.celebrity-suite-item {
+  display: grid;
+  grid-template-columns: 2.6rem 1fr;
+  align-items: start;
+  gap: .7rem;
+  min-height: 142px;
+  padding: 1.05rem 1rem .9rem;
+  border: 1px solid rgba(17, 70, 77, .17);
+  border-top: 3px solid var(--suite-accent, #1b716e);
+  border-radius: 4px;
+  color: var(--navy);
+  background: rgba(255, 255, 255, .84);
+  text-decoration: none;
+  box-shadow: 0 10px 24px -24px rgba(8, 40, 51, .6);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.celebrity-suite-item:hover,
+.celebrity-suite-item:focus-visible {
+  transform: translateY(-3px);
+  background: #fff;
+  box-shadow: 0 18px 34px -24px rgba(8, 40, 51, .55);
+  outline: none;
+}
+.celebrity-suite-item:focus-visible { box-shadow: 0 0 0 3px #e6c58b, 0 18px 34px -24px rgba(8, 40, 51, .55); }
+.celebrity-suite-item--ink { --suite-accent: #1b4558; }
+.celebrity-suite-item--bronze { --suite-accent: #b4804c; }
+.celebrity-suite-item--lagoon { --suite-accent: #318b87; }
+.celebrity-suite-item--wine { --suite-accent: #8a5260; }
+.celebrity-suite-item--sand { --suite-accent: #c0a06a; }
+.celebrity-suite-item--sea { --suite-accent: #5591a0; }
+.celebrity-suite-copy { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; }
+.celebrity-suite-action {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: .85rem;
+  color: var(--suite-accent, #1b716e);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.celebrity-suite-number {
+  display: grid;
+  width: 2.3rem;
+  height: 2.3rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--suite-accent, #1b716e), transparent 62%);
+  border-radius: 50%;
+  color: var(--suite-accent, #1b716e);
+  font-family: var(--font-silversea), Georgia, serif;
+  font-size: .95rem;
+}
+.celebrity-suite-family {
+  margin: .08rem 0 .35rem;
+  color: var(--mist-on-paper);
+  font-size: .62rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.celebrity-suite-name {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--font-silversea), Georgia, serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+.celebrity-accessible-note {
+  display: grid;
+  grid-template-columns: minmax(12rem, .7fr) 1.3fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 1.2rem;
+  padding: 1.3rem 1.4rem;
+  border-left: 3px solid #bc945a;
+  background: linear-gradient(110deg, rgba(20, 78, 87, .1), rgba(255, 255, 255, .72));
+}
+.celebrity-accessible-note .log { margin: .2rem 0 0; color: #1b716e; }
+.celebrity-accessible-note p:last-child { margin: 0; color: var(--mist-on-paper); }
+.celebrity-editorial-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem 1.7rem;
+  margin-top: 2rem;
+}
+@media (max-width: 900px) {
+  .celebrity-suite-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  #celebrity .celebrity-opening-wordmark { width: min(100%, 360px); margin-inline: auto; }
+  .celebrity-suite-list { grid-template-columns: 1fr; }
+  .celebrity-editorial { padding: .55rem; }
+  .celebrity-editorial-heading { padding: 1.55rem 1.15rem 1.7rem; }
+  .celebrity-editorial-heading h3 { max-width: 13ch; font-size: clamp(2rem, 9vw, 2.7rem); }
+  .celebrity-suite-item { min-height: 115px; grid-template-columns: 2.6rem 1fr; }
+  .celebrity-accessible-note { grid-template-columns: 1fr; gap: .6rem; }
+  .celebrity-editorial-actions { align-items: stretch; flex-direction: column; text-align: center; }
+}
