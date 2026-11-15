@@ -212,3 +212,5 @@
 #celebrity .celebrity-suite-item:first-child .celebrity-suite-copy { align-content:start; gap:.36rem; padding:1rem 1.05rem 1.15rem; }
 
 #celebrity .celebrity-suite-copy { text-align:left; }
+
+#celebrity .celebrity-suite-item:first-child .celebrity-suite-name { font-size:clamp(1.1rem,1.4vw,1.3rem); }
