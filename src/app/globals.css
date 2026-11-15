@@ -3555,3 +3555,16 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
   .atlantis-cta { align-items: flex-start; flex-direction: column; }
   .atlantis-heading { font-size: clamp(2.1rem, 9vw, 2.75rem); }
 }
+
+
+/* Match the mockup's slim ribbon at the start of the Atlantis band. */
+#atlantis::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #b32659 0 16.6%, #e46d42 16.6% 33.2%, #e9bd3c 33.2% 49.8%, #4c9d67 49.8% 66.4%, #397ca7 66.4% 83%, #7762aa 83% 100%);
+  opacity: .8;
+}
