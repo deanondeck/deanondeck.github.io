@@ -82,6 +82,43 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 <img src={img(flagship ? "virgin-sunset-sailing.jpg" : l.img)} alt={flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt} loading={i === 0 ? "eager" : "lazy"} />
               </figure>
               <div className="cl-body reveal d1">
+{l.id === "celebrity" ? (
+                  <div className="celebrity-intro">
+                    <div className="celebrity-intro-brand">
+                      <p className="log">{l.k}</p>
+                      <h3 className="display h-lg">
+                        <img
+                          className="celebrity-opening-wordmark"
+                          src={img("celebrity/celebrity-x-wordmark.png")}
+                          alt="Celebrity X Cruises"
+                          width={1524}
+                          height={325}
+                          loading="eager"
+                        />
+                      </h3>
+                      <h4 className="celebrity-intro-title">Modern design.<br />Room to unwind.</h4>
+                    </div>
+                    <div className="celebrity-intro-copy">
+                      <p className="cl-copy">{l.d}</p>
+                      <div className="cl-actions">
+                        <a className="btn btn-ink" href={`/plan/?line=${encodeURIComponent(l.name)}`}>
+                          {l.bookLabel} <span className="arrow">→</span>
+                        </a>
+                      </div>
+                      {l.browse && (
+                        <p className="celebrity-browse">
+                          <a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">
+                            Browse {l.name} itineraries ↗
+                          </a>
+                        </p>
+                      )}
+                      <p className="booking-note celebrity-transfer-note">
+                        Already booked directly? Ask Dean about transfer eligibility. Celebrity’s guest request form and deadlines apply.
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <>
                 <p className={flagship ? "log log--center" : l.id === "silversea" ? "log silversea-eyebrow" : "log"}>{l.k}</p>
                 {l.id === "silversea" && <a className="silversea-official-logo" href="https://go.deanondeck.com/Silversea" target="_blank" rel="noopener noreferrer" aria-label="Explore Silversea with Dean"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Silversea.png" alt="Silversea official wordmark" loading="lazy" /></a>}
                 <h3 className="display h-lg">
@@ -128,6 +165,8 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 {l.browse && l.id !== "silversea" && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 
                 {!l.book && !royal && <p className="booking-note">{l.id === "royal-caribbean" || l.id === "celebrity" ? "For a new booking, start with Dean so I can help plan your cruise. Already booked directly? Ask Dean whether your reservation qualifies to transfer to Dean On Deck. If eligible, the cruise line requires its own guest-submitted request form; deadlines and rules apply." : "Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation."}</p>}
+                  </>
+                )}
               </div>
               </div>
               )}

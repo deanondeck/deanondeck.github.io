@@ -1,28 +1,80 @@
-/* Celebrity editorial treatment: sea-glass, bronze and warm neutrals. */
+/* Celebrity editorial treatment: a full ship view leads; the logo and short invitation form a balanced second beat. */
 #celebrity .celebrity-opening-wordmark {
   display: block;
   width: min(100%, 430px);
   height: auto;
-  margin: 0 0 1.1rem;
+  margin: 0;
   background: #fff;
 }
-#celebrity .cl-body > .display:has(.celebrity-opening-wordmark) { margin-bottom: 1.1rem; }
 #celebrity .cl-grid {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2.5rem, 5vw, 4rem);
 }
 #celebrity .cl-grid .cl-media {
   grid-column: 1;
   grid-row: 1;
   order: 0;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 2.2 / 1;
+  max-height: 510px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+#celebrity .cl-grid .cl-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
 }
 #celebrity .cl-grid .cl-body {
-  grid-column: 2;
-  grid-row: 1;
+  grid-column: 1;
+  grid-row: 2;
   order: 0;
+  width: 100%;
 }
 #celebrity .cl-grid .celebrity-editorial {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  width: 100%;
+}
+.celebrity-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: .25rem clamp(.25rem, 2vw, 1.25rem) 0;
+}
+.celebrity-intro-brand .log { margin-bottom: 1rem; }
+.celebrity-intro-brand > h3 {
+  margin: 0 0 1.15rem;
+}
+.celebrity-intro-title {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--font-noto-serif), Georgia, serif;
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  font-weight: 500;
+  letter-spacing: -.025em;
+  line-height: 1.08;
+}
+.celebrity-intro-copy .cl-copy {
+  max-width: 48ch;
+  margin: 0 0 1.35rem;
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+  line-height: 1.7;
+}
+.celebrity-intro-copy .cl-actions { margin: 0; }
+.celebrity-browse { margin: 1rem 0 .8rem; }
+.celebrity-transfer-note {
+  max-width: 58ch;
+  margin: 0;
+  font-size: .78rem;
+  line-height: 1.5;
+}
+.celebrity-editorial {
   grid-column: 1 / -1;
   grid-row: 2;
   width: 100%;
@@ -171,11 +223,18 @@
   .celebrity-suite-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
-  #celebrity .cl-grid { grid-template-columns: 1fr; }
-  #celebrity .cl-grid .cl-media { grid-column: 1; grid-row: 1; aspect-ratio: 16 / 10; }
+  #celebrity .cl-grid { grid-template-columns: 1fr; gap: 2rem; }
+  #celebrity .cl-grid .cl-media { grid-column: 1; grid-row: 1; aspect-ratio: 16 / 10; max-height: none; }
   #celebrity .cl-grid .cl-body { grid-column: 1; grid-row: 2; }
   #celebrity .cl-grid .celebrity-editorial { grid-column: 1; grid-row: 3; }
+  .celebrity-intro { grid-template-columns: 1fr; gap: 1.25rem; padding: 0 .15rem; }
+  .celebrity-intro-brand { text-align: center; }
+  .celebrity-intro-brand .log { margin-bottom: .65rem; }
   #celebrity .celebrity-opening-wordmark { width: min(100%, 360px); margin-inline: auto; }
+  .celebrity-intro-brand > h3 { margin-bottom: .85rem; }
+  .celebrity-intro-title { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+  .celebrity-intro-copy .cl-copy { max-width: 58ch; margin-bottom: 1.1rem; }
+  #celebrity .celebrity-intro-copy .btn { width: 100%; }
   .celebrity-suite-list { grid-template-columns: 1fr; }
   .celebrity-editorial { padding: .55rem; }
   .celebrity-editorial-heading { padding: 1.55rem 1.15rem 1.7rem; }
