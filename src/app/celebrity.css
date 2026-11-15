@@ -144,3 +144,67 @@
 @media(max-width:600px) {
  #celebrity .celebrity-suite-item:first-child { height:auto; }
 }
+
+/* Six photographic suite covers: every option gets equal visual presence. */
+#celebrity .celebrity-suite-list { grid-template-columns:repeat(3,minmax(0,1fr)); align-items:stretch; gap:1.1rem; }
+#celebrity .celebrity-suite-item {
+ position:relative;
+ display:flex;
+ grid-column:auto;
+ height:auto;
+ min-height:0;
+ flex-direction:column;
+ border:1px solid rgba(156,121,62,.25);
+ border-radius:4px;
+ background:#fffefa;
+ box-shadow:0 16px 38px -32px rgba(20,34,48,.58);
+}
+#celebrity .celebrity-suite-item:first-child { display:flex; grid-column:auto; height:auto; min-height:0; }
+#celebrity .celebrity-suite-item .celebrity-suite-image,
+#celebrity .celebrity-suite-item:first-child .celebrity-suite-image {
+ display:block;
+ width:100%;
+ height:auto;
+ min-height:0;
+ aspect-ratio:4/3;
+}
+#celebrity .celebrity-suite-number {
+ position:absolute;
+ z-index:2;
+ top:.85rem;
+ left:.85rem;
+ display:grid;
+ width:2.55rem;
+ height:2.55rem;
+ place-items:center;
+ border:1px solid rgba(156,121,62,.5);
+ border-radius:50%;
+ color:#80652f;
+ background:rgba(255,254,250,.96);
+ font-family:var(--font-silversea),Georgia,serif;
+ font-size:.9rem;
+ letter-spacing:.1em;
+ box-shadow:0 4px 14px rgba(18,40,67,.12);
+}
+#celebrity .celebrity-suite-copy {
+ grid-template-columns:1fr;
+ gap:.36rem;
+ align-items:start;
+ padding:1rem 1.05rem 1.15rem;
+}
+#celebrity .celebrity-suite-name { grid-column:1; grid-row:auto; font-size:clamp(1.1rem,1.4vw,1.3rem); }
+#celebrity .celebrity-suite-highlight { grid-column:1; }
+#celebrity .celebrity-suite-action { grid-column:1; margin-top:.35rem; }
+@media(max-width:900px) {
+ #celebrity .celebrity-suite-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ #celebrity .celebrity-suite-item:first-child .celebrity-suite-image { min-height:0; }
+}
+@media(max-width:600px) {
+ #celebrity .celebrity-suite-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+ #celebrity .celebrity-suite-copy,
+ #celebrity .celebrity-suite-item:first-child .celebrity-suite-copy { gap:.32rem; padding:.8rem .72rem .85rem; }
+ #celebrity .celebrity-suite-number { top:.55rem; left:.55rem; width:2.1rem; height:2.1rem; font-size:.78rem; }
+ #celebrity .celebrity-suite-name { font-size:1rem; }
+ #celebrity .celebrity-suite-highlight { font-size:.7rem; }
+ #celebrity .celebrity-suite-action { font-size:.58rem; letter-spacing:.07em; }
+}
