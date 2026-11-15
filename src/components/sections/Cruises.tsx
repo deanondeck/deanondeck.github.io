@@ -119,7 +119,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 )}
                 {l.browse && l.id !== "silversea" && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 
-                {!l.book && <p className="booking-note">Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation.</p>}
+                {!l.book && <p className="booking-note">{l.id === "royal-caribbean" || l.id === "celebrity" ? "Want Dean as your travel advisor? Start with Dean before booking. Already booked directly? Contact Dean to ask whether the cruise line can add Dean Satterfield at Dean On Deck to your reservation; approval depends on the cruise line’s rules and your booking status." : "Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation."}</p>}
               </div>
               </div>
               )}
