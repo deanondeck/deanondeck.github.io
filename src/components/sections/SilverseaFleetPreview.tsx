@@ -34,6 +34,21 @@ const officialShipImages: Record<string, string> = {
 
 const deanSilverseaBookingUrl = "https://go.deanondeck.com/Silversea";
 
+const silverseaAccessibilityEmailBody = [
+  "Hello Silversea Special Services,",
+  "",
+  "I’m looking for accessible suite information for [ship and sailing].",
+  "",
+  "My travel advisor is Dean Satterfield at Dean On Deck Cruise Travel.",
+  "Phone: 617-899-9774",
+  "Email: deanondeck1@gmail.com",
+  "",
+  "Please confirm the suite layout, accessibility features, and availability, and copy Dean on your reply.",
+  "",
+  "Thank you,",
+].join("\\r\\n");
+const silverseaAccessibilityEmailUrl = `mailto:SpecialServices@silversea.com?cc=${encodeURIComponent("deanondeck1@gmail.com")}&subject=${encodeURIComponent("Accessible suite information — Dean On Deck")}&body=${encodeURIComponent(silverseaAccessibilityEmailBody)}`;
+
 const fleets = {
   classic: {
     title: "Classic Luxury Voyages",
@@ -204,8 +219,9 @@ export function SilverseaAccessibility() {
         <a href="https://www.silversea.com/other-resources/contact-us.html" target="_blank" rel="noopener noreferrer">Explore Accessible Suites <span aria-hidden="true">→</span></a>
         <details>
           <summary>Accessibility features</summary>
-          <p>Open the chosen ship’s official deck plan and look for the wheelchair-accessible symbol. Contact Silversea Special Services to confirm the cabin layout, features and availability for your sailing.</p>
-          <a href="mailto:SpecialServices@silversea.com?subject=Accessible%20suite%20information">Email Silversea Special Services <span aria-hidden="true">→</span></a>
+          <p>Use the chosen ship’s deck plan to find accessible suites. Dean can help confirm details, or you can email Silversea Special Services directly. The email draft includes Dean’s contact information and copies him.</p>
+          <a href="mailto:deanondeck1@gmail.com?subject=Help%20with%20an%20accessible%20suite">Contact Dean for help <span aria-hidden="true">→</span></a>
+          <a href={silverseaAccessibilityEmailUrl}>Email Silversea Special Services <span aria-hidden="true">→</span></a>
         </details>
       </div>
     </aside>
