@@ -180,8 +180,15 @@ export default function SilverseaFleetPreview() {
 
 export function SilverseaAccessibility() {
   return (
-    <div className="ss-accessible-original">
-      <img src="/img/silversea/silver-moon-silver-suite-living-area.webp" alt="Living area of the Silver Moon Silver Suite; wheelchair-accessible Silver Suite 931 is documented in the accompanying article." />
-    </div>
+    <aside className="ss-accessible-restored" aria-labelledby="ss-accessible-heading">
+      <div className="ss-accessible-photo">
+        <img src="/img/silversea/silver-moon-silver-suite-living-area.webp" alt="Living and dining area in a Silver Moon Silver Suite, with seating, a dining table and veranda access." loading="lazy" />
+        <span className="ss-accessible-symbol" aria-label="Accessible accommodations">♿</span>
+      </div>
+      <div className="ss-accessible-copy">
+        <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
+        <p>Thoughtfully designed suites with comfort, access and peace of mind.</p>
+      </div>
+    </aside>
   );
 }
