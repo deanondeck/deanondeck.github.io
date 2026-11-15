@@ -79,7 +79,11 @@ export default function Cruises({ id, content, site }: SectionProps) {
               ) : (
               <div className="cl-main">
               <figure className="cl-media reveal">
-                <img src={img(flagship ? "virgin-sunset-sailing.jpg" : l.img)} alt={flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt} loading={i === 0 ? "eager" : "lazy"} />
+                <img
+                  src={l.id === "celebrity" ? "https://www.celebritycruises.com/xcel/cms-images/10d72afd212e856da9af2c4850214faf_05_06_25_WEB_Xcel_Preview_Sailing_Microsite.jpg" : img(flagship ? "virgin-sunset-sailing.jpg" : l.img)}
+                  alt={l.id === "celebrity" ? "Celebrity Xcel sailing at sunset in a full side view" : flagship ? "Scarlet Lady sailing into a golden sunset, viewed from above with the full ship and its wake visible" : l.alt}
+                  loading={i === 0 || l.id === "celebrity" ? "eager" : "lazy"}
+                />
               </figure>
               <div className="cl-body reveal d1">
 {l.id === "celebrity" ? (
