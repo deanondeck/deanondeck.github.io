@@ -2250,11 +2250,7 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 .cl-grid--royal { align-items: center; gap: 2.5rem 3.5rem; }
 .cl-grid--royal .cl-media { margin: 0; align-self: stretch; aspect-ratio: auto; min-height: 340px; }
 .cl-grid--royal .cl-body h3 { font-family: var(--font-virgin-preview), Arial, sans-serif; font-size: clamp(2.1rem,3.5vw,3rem); font-weight: 700; letter-spacing: -.035em; }
-.royal-comparison { grid-column: 1 / -1; padding: 0; border: 0; background: transparent; }
-.royal-comparison h3 { font-style: normal; }
-.royal-comparison h4 { font-family: var(--font-virgin-preview),Arial,sans-serif; font-weight: 700; }
-.royal-comparison .btn { background: #1456a0; border-color: #1456a0; }
-.royal-staterooms p { margin: 0; font-size: .95rem; }
+.royal-comparison { grid-column: 1 / -1; min-width: 0; }
 @media (max-width: 900px) { .cl-grid--royal { grid-template-columns: 1fr; gap: 1.8rem; } .cl-grid--royal .cl-media { min-height: 0; aspect-ratio: 16 / 9; } }
 
 /* Silversea draft: restrained mineral accents and a spacious suite collection. */
@@ -3265,3 +3261,152 @@ body { background: var(--paper); color: var(--ink-on-paper); }
     padding: clamp(.8rem, 2.2vw, 1.8rem);
   }
 }
+
+
+/* Royal Caribbean layout and room picker from the approved saved review. */
+#royal-caribbean { background: #fdfcf9; }
+.royal-opening-wordmark { width: min(100%, 304px); height: auto; display: block; }
+.royal-comparison { grid-column: 1 / -1; min-width: 0; }
+.royal-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.2rem, 4vw, 3.5rem);
+  background: #fff;
+  border: 1px solid #ddd9ce;
+  border-radius: 20px;
+  padding: clamp(.85rem, 3vw, 2rem);
+}
+.royal-icon-feature { margin-bottom: clamp(1.1rem, 3vw, 2rem); }
+.royal-feature-photo { margin: 0; min-width: 0; }
+.royal-feature-photo img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.royal-feature-photo figcaption { color: #46556a; font-size: .77rem; margin-top: .55rem; }
+.royal-feature-copy { min-width: 0; color: var(--navy); }
+.royal-feature-copy .log, .royal-loyalty .log { color: #76602c; }
+.royal-feature-copy h3 {
+  margin: .6rem 0 .7rem;
+  font: 500 clamp(1.9rem, 4vw, 3.1rem)/1.08 var(--font-display);
+  letter-spacing: -.035em;
+}
+.royal-feature-copy > p:not(.log) { margin: .7rem 0 1.15rem; max-width: 43ch; }
+.royal-feature-copy > p.royal-rooms-note { color: #46556a; font-size: .82rem; margin: .65rem 0 0; }
+.royal-feature-copy a, .royal-loyalty a { text-decoration: underline; text-underline-offset: 3px; }
+.royal-rooms-trigger { white-space: normal; max-width: 100%; text-align: center; }
+.royal-loyalty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .65rem 1.5rem;
+  padding: 1.15rem clamp(.85rem, 3vw, 2rem);
+  margin-top: 1.2rem;
+  border-top: 1px solid #d9cfb9;
+  color: var(--navy);
+}
+.royal-loyalty h4 { margin: .2rem 0; font: 500 1.45rem/1.25 var(--font-display); }
+.royal-loyalty p { margin: 0; }
+.royal-loyalty a { font-size: .86rem; }
+
+html:has(.royal-rooms-dialog[open]),
+body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: none; }
+.royal-rooms-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(720px, calc(100% - 1.5rem));
+  max-width: none;
+  max-height: calc(100dvh - 1.25rem);
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  border: 1px solid #e2dac9;
+  border-radius: 16px;
+  color: var(--navy);
+  background: #fffdf9;
+  box-shadow: 0 16px 55px #08142466;
+}
+.royal-rooms-dialog::backdrop { background: #081424b8; }
+.royal-rooms-content { display: grid; gap: .72rem; padding: clamp(.75rem, 2.3vw, 1.35rem); }
+.royal-rooms-header { position: relative; padding-right: 2.8rem; }
+.royal-dialog-brand {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--navy);
+  font-size: .69rem;
+  font-weight: 750;
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+.royal-dialog-brand img { width: 30px; height: auto; flex-shrink: 0; }
+.royal-rooms-header h3 { margin: .35rem 0 0; font: 500 clamp(1.25rem, 4.6vw, 1.85rem)/1.18 var(--font-display); }
+.royal-rooms-close,
+.royal-room-nav button {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #ddd9ce;
+  border-radius: 50%;
+  color: var(--navy);
+  background: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.royal-rooms-close { position: absolute; top: 0; right: 0; }
+.royal-rooms-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .3rem; padding: .25rem; background: #eeece6; border-radius: 10px; }
+.royal-rooms-tabs button {
+  min-height: 2.45rem;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--navy);
+  font-size: .875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.royal-rooms-tabs button[aria-selected="true"] { color: #fff; background: #1456a0; }
+.royal-room-selection { display: grid; gap: .65rem; }
+.royal-room-photo {
+  display: block;
+  width: 100%;
+  height: min(45dvh, 370px);
+  object-fit: contain;
+}
+.royal-room-details h4 { margin: .15rem 0 .2rem; font: 500 clamp(1.3rem, 4.1vw, 1.85rem)/1.12 var(--font-display); }
+.royal-room-details p { margin: 0; color: #3b4c62; font-size: .87rem; line-height: 1.38; }
+.royal-room-details .royal-room-meta { color: #76602c; font-size: .77rem; font-weight: 700; }
+.royal-room-nav { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+.royal-room-nav span { min-width: 3ch; font-size: .8rem; text-align: center; }
+.royal-room-plan { justify-self: start; color: #1456a0; font-size: .875rem; font-weight: 750; text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 640px) {
+  .royal-feature { grid-template-columns: minmax(0, 1fr); }
+  .royal-room-photo { height: min(40dvh, calc((100vw - 3rem) * 2 / 3)); }
+}
+@media (max-height: 640px) and (orientation: portrait) {
+  .royal-rooms-content, .royal-room-selection { gap: .45rem; }
+  .royal-room-photo { height: min(34dvh, 205px); }
+}
+@media (max-height: 560px) and (orientation: landscape) {
+  .royal-rooms-content, .royal-room-selection { gap: .4rem; }
+  .royal-room-selection { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+  .royal-room-photo { height: min(42dvh, 225px); grid-row: 1 / span 2; }
+  .royal-room-nav { justify-content: flex-start; }
+}
+@media (max-height: 300px) {
+  .royal-rooms-dialog { overflow-y: auto; }
+}
+@media (max-height: 540px) and (orientation: portrait) {
+  .royal-rooms-content { gap: .35rem; padding: .6rem; }
+  .royal-rooms-header h3 { font-size: clamp(1rem, 4.4vw, 1.25rem); }
+  .royal-room-photo { height: clamp(65px, calc(100dvh - 345px), 175px); }
+}
+@media (max-height: 420px) and (orientation: landscape) {
+  .royal-rooms-content { gap: .35rem; padding: .6rem; }
+  .royal-room-photo { height: min(36dvh, 160px); }
+}
+
+/* Keep the complete supplier photograph visible at every viewport. */
+#royal-caribbean .cl-media { align-self: center; aspect-ratio: auto; min-height: 0; }
+#royal-caribbean .cl-media img { display: block; height: auto; }

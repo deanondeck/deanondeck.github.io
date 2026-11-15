@@ -83,12 +83,11 @@
       "id": "royal-caribbean",
       "name": "Royal Caribbean",
       "k": "For the whole crew",
-      "img": "port-caribbean",
-      "alt": "A white-sand Caribbean beach with turquoise water",
-      "d": "The biggest ships at sea and the easy answer for multi-generational trips — surf simulators, water slides, Broadway-scale shows, and Perfect Day at CocoCay. When grandparents, parents, and kids all sail together, this is the line I reach for. For Icon of the Seas, ask me for my personalized planning page; for other Royal Caribbean ships, I can help you compare options and request a booking.",
+      "img": "royal-caribbean/icon-at-cococay.jpg",
+      "alt": "Icon of the Seas docked at Perfect Day at CocoCay, with the beach and overwater cabanas in the foreground",
+      "d": "From surf simulators and Broadway-style shows to a beach day at Perfect Day at CocoCay, Royal Caribbean gives the whole crew something to look forward to. Explore Icon of the Seas or find a sailing that fits everyone.",
       "book": null,
-      "bookLabel": "Plan with Dean",
-      "browse": "https://www.royalcaribbean.com/cruises"
+      "bookLabel": "Plan with Dean"
     },
     {
       "id": "celebrity",

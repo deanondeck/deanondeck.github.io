@@ -2,6 +2,7 @@ import { img } from "@/lib/media";
 import VirginAccommodations from "./VirginAccommodations";
 import SilverseaFleetPreview, { SilverseaAccessibility } from "./SilverseaFleetPreview";
 import SilverseaSuites from "./SilverseaSuites";
+import RoyalAccommodations from "./RoyalAccommodations";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
@@ -51,6 +52,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
       {/* ---- one band per line ---- */}
       {lines.map((l, i) => {
         const flagship = l.id === "virgin";
+        const royal = l.id === "royal-caribbean";
         const band = flagship ? "band--ink" : i % 2 ? "band--shell" : "band--shell2";
         return (
           <section key={l.id} id={l.id} className={`band ${band} cl`}>
@@ -81,7 +83,11 @@ export default function Cruises({ id, content, site }: SectionProps) {
               <div className="cl-body reveal d1">
                 <p className={flagship ? "log log--center" : l.id === "silversea" ? "log silversea-eyebrow" : "log"}>{l.k}</p>
                 {l.id === "silversea" && <a className="silversea-official-logo" href="https://go.deanondeck.com/Silversea" target="_blank" rel="noopener noreferrer" aria-label="Explore Silversea with Dean"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Silversea.png" alt="Silversea official wordmark" loading="lazy" /></a>}
-                <h3 className="display h-lg">{l.name}</h3>
+                <h3 className="display h-lg">
+                  {l.id === "silversea" ? <img className="ss-opening-wordmark" src={img("silversea/wordmark.png")} alt={l.name} width={600} height={67} />
+                    : royal ? <img className="royal-opening-wordmark" src={img("royal-caribbean/wordmark.png")} alt="Royal Caribbean®" width={3746} height={1556} loading="lazy" />
+                    : l.name}
+                </h3>
                 <p className="cl-copy">{l.d}</p>
                 {l.points && (
                   <ul className="checklist">
@@ -119,7 +125,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 )}
                 {l.browse && l.id !== "silversea" && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 
-                {!l.book && <p className="booking-note">{l.id === "royal-caribbean" || l.id === "celebrity" ? "For a new booking, start with Dean so I can help plan your cruise. Already booked directly? Ask Dean whether your reservation qualifies to transfer to Dean On Deck. If eligible, the cruise line requires its own guest-submitted request form; deadlines and rules apply." : "Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation."}</p>}
+                {!l.book && !royal && <p className="booking-note">{l.id === "royal-caribbean" || l.id === "celebrity" ? "For a new booking, start with Dean so I can help plan your cruise. Already booked directly? Ask Dean whether your reservation qualifies to transfer to Dean On Deck. If eligible, the cruise line requires its own guest-submitted request form; deadlines and rules apply." : "Contact Dean before booking to confirm agency attribution. Browsing a cruise line’s website does not automatically attach Dean to a reservation."}</p>}
               </div>
               </div>
               )}
@@ -154,30 +160,42 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   </footer>
                 </aside>
               )}
-              {l.id === "royal-caribbean" && c.royal && (
-                <aside className="cl-rockstar royal-comparison" aria-label="Compare Royal Caribbean staterooms and suite classes">
-                  <header className="virgin-comparison-heading">
-                    <p className="log log--center">Your voyage, elevated</p>
-                    <h3 className="display h-md">{c.royal.heading}</h3>
-                    <p>{c.royal.intro}</p>
-                    <div className="cl-included">
-                      <h4>Included with every stateroom</h4>
-                      <ul className="virgin-checks">{c.royal.included.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
+              {royal && c.royal && (
+                <div className="royal-comparison">
+                  <section className="royal-feature royal-icon-feature" id="icon-of-the-seas" aria-labelledby="royal-icon-heading">
+                    <figure className="royal-feature-photo">
+                      <img src={img("royal-caribbean/icon-surfside.jpg")} alt="Families playing at Splashaway Bay in the Surfside neighborhood on Icon of the Seas" width={1499} height={1000} loading="lazy" />
+                      <figcaption>Splashaway Bay · Icon of the Seas</figcaption>
+                    </figure>
+                    <div className="royal-feature-copy">
+                      <p className="log">Family life on board</p>
+                      <h3 id="royal-icon-heading">Icon of the Seas</h3>
+                      <p>Spend the afternoon in Surfside, a neighborhood built for families. Kids can race down the slides at Splashaway Bay, and little ones have their own splash area at Baby Bay.</p>
+                      <p>The three-level <strong>Ultimate Family Townhouse</strong> even has a slide inside the suite. You’ll find it in <strong>Explore Rooms &amp; Suites</strong> below.</p>
                     </div>
-                  </header>
-                  <div className="virgin-tier-grid">
-                    {c.royal.tiers.map(tier => <div className="cl-rockstar-tier" key={tier.title}>
-                      <h4>{tier.title}</h4>
-                      <ul className="virgin-checks">{tier.items.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
-                    </div>)}
+                  </section>
+                  <section className="royal-feature" aria-labelledby="royal-accommodations-heading">
+                    <figure className="royal-feature-photo">
+                      <img src={img("royal-caribbean/crown-loft.jpg")} alt="Two-story Crown Loft Suite on Wonder of the Seas" width={1500} height={1000} loading="lazy" />
+                      <figcaption>Crown Loft Suite · Wonder of the Seas</figcaption>
+                    </figure>
+                    <div className="royal-feature-copy">
+                      <p className="log">Life on board</p>
+                      <h3 id="royal-accommodations-heading">A room worth sailing for</h3>
+                      <p>From a private balcony to a three-level family suite, discover a few of our favorite ways to stay at sea.</p>
+                      <RoyalAccommodations logo={site.brand.logo} />
+                      <p className="royal-rooms-note">Rooms and Royal Suite Class benefits vary by ship and suite. <a href="https://www.royalcaribbean.com/faq/questions/what-are-the-benefits-of-royal-suite-class" target="_blank" rel="noopener noreferrer">See suite benefits ↗</a></p>
+                    </div>
+                  </section>
+                  <div className="royal-loyalty">
+                    <div>
+                      <p className="log">Crown &amp; Anchor Society</p>
+                      <h4>Pinnacle Club</h4>
+                      <p>The highest loyalty tier, reached at 700 cruise points.</p>
+                    </div>
+                    <a href="https://www.royalcaribbean.com/faq/questions/loyalty-program-benefits" target="_blank" rel="noopener noreferrer">See loyalty benefits ↗</a>
                   </div>
-                  <div className="cl-included royal-staterooms"><h4>{c.royal.stateroomTitle}</h4><p>{c.royal.stateroomText}</p></div>
-                  <footer className="virgin-comparison-footer">
-                    <p className="booking-note">{c.royal.note}</p>
-                    <a className="btn btn-ink" href="/plan/?line=Royal%20Caribbean">Find my Royal experience <span aria-hidden="true">→</span></a>
-                    <p className="cl-rockstar-source"><a href="https://www.royalcaribbean.com/faq/questions/what-are-the-benefits-of-royal-suite-class" target="_blank" rel="noopener noreferrer">View Royal’s current suite benefits ↗</a></p>
-                  </footer>
-                </aside>
+                </div>
               )}
               {l.id === "silversea" && <SilverseaFleetPreview />}
               {l.id === "silversea" && <SilverseaAccessibility />}
@@ -214,3 +232,4 @@ export default function Cruises({ id, content, site }: SectionProps) {
     </>
   );
 }
+
