@@ -3,6 +3,7 @@ import VirginAccommodations from "./VirginAccommodations";
 import SilverseaFleetPreview, { SilverseaAccessibility } from "./SilverseaFleetPreview";
 import SilverseaSuites from "./SilverseaSuites";
 import RoyalAccommodations from "./RoyalAccommodations";
+import CelebritySuites from "./CelebritySuites";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
@@ -86,6 +87,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 <h3 className="display h-lg">
                   {l.id === "silversea" ? <img className="ss-opening-wordmark" src={img("silversea/wordmark.png")} alt={l.name} width={600} height={67} />
                     : royal ? <img className="royal-opening-wordmark" src={img("royal-caribbean/wordmark.png")} alt="Royal Caribbean®" width={3746} height={1556} loading="lazy" />
+                    : l.id === "celebrity" ? <img className="celebrity-opening-wordmark" src={img("celebrity/celebrity-x-wordmark.png")} alt="Celebrity X Cruises" width={1524} height={325} loading="lazy" />
                     : l.name}
                 </h3>
                 <p className="cl-copy">{l.d}</p>
@@ -200,6 +202,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
               {l.id === "silversea" && <SilverseaFleetPreview />}
               {l.id === "silversea" && <SilverseaAccessibility />}
               {l.id === "silversea" && c.silversea && <SilverseaSuites included={c.silversea.included} note={c.silversea.note} />}
+              {l.id === "celebrity" && <CelebritySuites />}
 
             </div>
           </section>

@@ -2877,6 +2877,112 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 #silversea .ss-fleet-heading .ss-fleet-brand::after { content: ""; display: inline-block; vertical-align: middle; width: 1.6rem; height: 1px; background: #e6c079; margin: 0 1rem; }
 @media (max-width: 700px) { #silversea .cl-media { min-height: 0; } #silversea .ss-fleet-heading .ss-fleet-brand::before, #silversea .ss-fleet-heading .ss-fleet-brand::after { width: .8rem; margin: 0 .45rem; } }
 
+/* Celebrity Cruises — modern-luxury editorial section */
+#celebrity .celebrity-opening-wordmark {
+  display: block;
+  width: min(100%, 430px);
+  height: auto;
+  margin: 0 0 1.1rem;
+  background: #fff;
+}
+#celebrity .cl-body > .display:has(.celebrity-opening-wordmark) {
+  margin-bottom: 1.1rem;
+}
+.celebrity-editorial {
+  margin-top: clamp(3.2rem, 7vw, 6rem);
+  padding: clamp(1.4rem, 4vw, 3.3rem);
+  border: 1px solid rgba(18, 40, 67, .16);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .56);
+}
+.celebrity-editorial-heading {
+  max-width: 70ch;
+  margin: 0 auto clamp(2rem, 4vw, 3.2rem);
+  text-align: center;
+}
+.celebrity-editorial-heading .log { margin-bottom: .7rem; }
+.celebrity-editorial-heading h3 {
+  max-width: 18ch;
+  margin: 0 auto 1rem;
+  color: var(--navy);
+  font-family: var(--font-silversea), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -.018em;
+  line-height: 1.08;
+}
+.celebrity-editorial-heading > p:last-child {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: var(--mist-on-paper);
+}
+.celebrity-suite-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(18, 40, 67, .18);
+  border-left: 1px solid rgba(18, 40, 67, .18);
+}
+.celebrity-suite-item {
+  display: grid;
+  grid-template-columns: 2.3rem 1fr auto;
+  align-items: center;
+  gap: .75rem;
+  min-height: 104px;
+  padding: 1.1rem 1rem;
+  border-right: 1px solid rgba(18, 40, 67, .18);
+  border-bottom: 1px solid rgba(18, 40, 67, .18);
+}
+.celebrity-suite-number {
+  color: var(--gold-dark, #9c793e);
+  font-size: .68rem;
+  letter-spacing: .12em;
+}
+.celebrity-suite-family {
+  margin: 0 0 .25rem;
+  color: var(--mist-on-paper);
+  font-size: .62rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.celebrity-suite-item h4 {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--font-silversea), Georgia, serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+.celebrity-suite-arrow { color: var(--gold-dark, #9c793e); font-size: 1rem; }
+.celebrity-accessible-note {
+  display: grid;
+  grid-template-columns: minmax(12rem, .7fr) 1.3fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 2rem;
+  padding: 1.3rem 1.4rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(18, 40, 67, .035);
+}
+.celebrity-accessible-note .log { margin: .2rem 0 0; }
+.celebrity-accessible-note p:last-child { margin: 0; color: var(--mist-on-paper); }
+.celebrity-editorial-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem 1.7rem;
+  margin-top: 2rem;
+}
+@media (max-width: 900px) {
+  .celebrity-suite-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  #celebrity .celebrity-opening-wordmark { width: min(100%, 360px); margin-inline: auto; }
+  .celebrity-suite-list { grid-template-columns: 1fr; }
+  .celebrity-suite-item { min-height: 82px; }
+  .celebrity-accessible-note { grid-template-columns: 1fr; gap: .6rem; }
+  .celebrity-editorial-actions { align-items: stretch; flex-direction: column; text-align: center; }
+}
+
 /* Silversea suite collection: compact editorial gallery; photography awaiting verified supplier files. */
 #silversea .ss-suite-collection{margin:1.5rem 0 0;padding:clamp(1rem,2.5vw,2rem);background:#faf8f3;border:1px solid #e4d9c4;border-radius:16px;text-align:center}
 #silversea .ss-suite-intro{max-width:740px;margin:0 auto 1.25rem}
