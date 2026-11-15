@@ -20,6 +20,13 @@ const groups = [
       { name: "Ocean View Stateroom", category: "Stateroom", ship: "Oasis of the Seas", photo: "ocean-view-stateroom.jpg", description: "A window brings in daylight and frames the sea." },
       { name: "Interior Stateroom", category: "Stateroom", ship: "Harmony of the Seas", photo: "interior-stateroom.jpg", description: "A comfortable, windowless room for unwinding after a day on board." }
     ]
+  },
+  {
+    label: "Accessible",
+    rooms: [
+      { name: "Accessible Junior Suite", category: "Cabin", ship: "Wonder of the Seas", photo: "accessible-junior-suite.jpg", description: "Bedroom and sitting area in Royal Caribbean’s accessible Junior Suite, cabin 14256." },
+      { name: "Bathroom features", category: "Accessible Junior Suite", ship: "Wonder of the Seas", photo: null, description: "Royal Caribbean lists a wide bathroom door, a roll-in shower, a fold-down shower bench, and a handheld showerhead." }
+    ]
   }
 ] as const;
 
@@ -32,7 +39,7 @@ export default function RoyalAccommodations({ logo }: { logo: string }) {
   const [group, setGroup] = useState(0);
   const [roomIndex, setRoomIndex] = useState(0);
   const rooms = groups[group].rooms;
-  const roomLabel = group === 0 ? "suite" : "stateroom";
+  const roomLabel = group === 0 ? "suite" : group === 1 ? "stateroom" : "accessible cabin detail";
   const room = rooms[roomIndex];
 
   function selectGroup(index: number) {
@@ -101,7 +108,7 @@ export default function RoyalAccommodations({ logo }: { logo: string }) {
             <div key={label} id={`royal-rooms-panel-${index}`} role="tabpanel" aria-labelledby={`royal-rooms-tab-${index}`} hidden={group !== index} tabIndex={0}>
               {group === index && (
                 <div className="royal-room-selection">
-                  <img className="royal-room-photo" src={photoPath(room.photo)} alt={`${room.name} on ${room.ship}`} width={1500} height={1000}  />
+                  {room.photo && <img className="royal-room-photo" src={photoPath(room.photo)} alt={`${room.name} on ${room.ship}`} width={1500} height={1000} />}
                   <div className="royal-room-details" aria-live="polite">
                     <p className="royal-room-meta">{room.category} <span aria-hidden="true">·</span> {room.ship}</p>
                     <h4>{room.name}</h4>

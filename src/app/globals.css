@@ -3354,7 +3354,7 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
   cursor: pointer;
 }
 .royal-rooms-close { position: absolute; top: 0; right: 0; }
-.royal-rooms-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .3rem; padding: .25rem; background: #eeece6; border-radius: 10px; }
+.royal-rooms-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .3rem; padding: .25rem; background: #eeece6; border-radius: 10px; }
 .royal-rooms-tabs button {
   min-height: 2.45rem;
   border: 0;
