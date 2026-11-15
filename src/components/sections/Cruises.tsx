@@ -116,7 +116,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                         </p>
                       )}
                       <p className="booking-note celebrity-transfer-note">
-                        Tell Dean what you’re looking for; he’ll handle the planning and send your official booking link. Already booked? Ask if your reservation can transfer so he can keep supporting you. You enter payment and personal booking details directly with Celebrity Cruises.
+                        Tell Dean what you’re looking for; he’ll handle the planning and send your official booking link. Already booked? Ask if your reservation can transfer so he can keep supporting you. You provide payment and booking details directly to Celebrity Cruises; Dean On Deck never collects them.
                       </p>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                 )}
                 {l.browse && l.id !== "silversea" && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 
-                {royal && <p className="booking-note royal-booking-note">Tell Dean what you’re looking for; he’ll handle the planning and send your official booking link. Already booked? Ask if your reservation can transfer so he can keep supporting you. You enter payment and personal booking details directly with Royal Caribbean.</p>}
+                {royal && <p className="booking-note royal-booking-note">Tell Dean what you’re looking for; he’ll handle the planning and send your official booking link. Already booked? Ask if your reservation can transfer so he can keep supporting you. You provide payment and booking details directly to Royal Caribbean; Dean On Deck never collects them.</p>}
                   </>
                 )}
               </div>
