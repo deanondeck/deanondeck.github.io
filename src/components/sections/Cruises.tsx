@@ -116,7 +116,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                         </p>
                       )}
                       <p className="booking-note celebrity-transfer-note">
-                        Tell Dean what you’re looking for; he’ll handle the planning and send your official booking link. Already booked? Ask if your reservation can transfer so he can keep supporting you. You provide payment and booking details directly to Celebrity Cruises; Dean On Deck never collects them.
+                        I’ll handle the planning and stand behind you throughout. Already booked? Ask if your reservation can transfer to me. You’ll enter payment and booking details directly with Celebrity.
                       </p>
                     </div>
                   </div>
