@@ -22,12 +22,32 @@ export default function SilverseaSuites({ included, note }: { included: string[]
   const closeRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (selected === null) return;
-    const overflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const body = document.body;
+    const scrollY = window.scrollY;
+    const previousStyles = {
+      position: body.style.position,
+      top: body.style.top,
+      left: body.style.left,
+      right: body.style.right,
+      width: body.style.width,
+      overflow: body.style.overflow,
+    };
+    Object.assign(body.style, {
+      position: "fixed",
+      top: `-${scrollY}px`,
+      left: "0",
+      right: "0",
+      width: "100%",
+      overflow: "hidden",
+    });
     closeRef.current?.focus();
     const keydown = (event: KeyboardEvent) => { if (event.key === "Escape") setSelected(null); };
     document.addEventListener("keydown", keydown);
-    return () => { document.body.style.overflow = overflow; document.removeEventListener("keydown", keydown); };
+    return () => {
+      Object.assign(body.style, previousStyles);
+      window.scrollTo(0, scrollY);
+      document.removeEventListener("keydown", keydown);
+    };
   }, [selected]);
   return (
     <aside className="ss-suite-collection" aria-label="Explore Silversea suite categories">

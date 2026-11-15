@@ -109,9 +109,28 @@ export default function SilverseaFleetPreview() {
   useEffect(() => {
     if (!active) return;
     closeButtonRef.current?.focus();
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = previousOverflow; };
+    const body = document.body;
+    const scrollY = window.scrollY;
+    const previousStyles = {
+      position: body.style.position,
+      top: body.style.top,
+      left: body.style.left,
+      right: body.style.right,
+      width: body.style.width,
+      overflow: body.style.overflow,
+    };
+    Object.assign(body.style, {
+      position: "fixed",
+      top: `-${scrollY}px`,
+      left: "0",
+      right: "0",
+      width: "100%",
+      overflow: "hidden",
+    });
+    return () => {
+      Object.assign(body.style, previousStyles);
+      window.scrollTo(0, scrollY);
+    };
   }, [active]);
 
   return (
@@ -161,8 +180,8 @@ export default function SilverseaFleetPreview() {
 
 export function SilverseaAccessibility() {
   return (
-    <a className="ss-accessible-original" href={deanSilverseaBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="Explore Accessible Accommodations with Dean">
+    <div className="ss-accessible-original">
       <img src="/img/silversea/silver-moon-silver-suite-living-area.webp" alt="Living area of the Silver Moon Silver Suite; wheelchair-accessible Silver Suite 931 is documented in the accompanying article." />
-    </a>
+    </div>
   );
 }
