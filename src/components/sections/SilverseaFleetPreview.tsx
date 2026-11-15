@@ -147,7 +147,7 @@ export default function SilverseaFleetPreview() {
             {!failedFleetImages[key] && <img className="ss-fleet-choice-photo" src={officialShipImages[key === "classic" ? "Silver Nova" : "Silver Endeavour"]} alt={key === "classic" ? "Silver Nova — official Silversea photograph" : "Silver Endeavour — official Silversea photograph"} loading="lazy" onError={() => setFailedFleetImages(prev => ({ ...prev, [key]: true }))} />}
             <h4>{key === "classic" ? "Classic Voyages" : "Expedition Voyages"}</h4>
             <p>{key === "classic" ? "Elegant ships to the world's most iconic destinations." : "Purpose-built ships for extraordinary, remote regions."}</p>
-            <button type="button" ref={node => { triggerRefs.current[key] = node; }} onClick={() => { activeTriggerRef.current = key; setSelectedShip(null); setActive(key); }}>Explore the Fleet <span aria-hidden="true">→</span></button>
+            <button type="button" ref={node => { triggerRefs.current[key] = node; }} onClick={() => { activeTriggerRef.current = key; setSelectedShip(null); setActive(key); }}>View Ships & Deck Plans <span aria-hidden="true">→</span></button>
           </article>
         ))}
       </div>
@@ -180,14 +180,33 @@ export default function SilverseaFleetPreview() {
 
 export function SilverseaAccessibility() {
   return (
-    <aside className="ss-accessible-restored" aria-labelledby="ss-accessible-heading">
-      <div className="ss-accessible-photo">
+    <aside id="silversea-accessible" className="ss-accessible-card" aria-labelledby="ss-accessible-heading">
+      <figure className="ss-accessible-photo">
         <img src="/img/silversea/silver-moon-silver-suite-living-area.webp" alt="Living and dining area in a Silver Moon Silver Suite, with seating, a dining table and veranda access." loading="lazy" />
         <span className="ss-accessible-symbol" aria-label="Accessible accommodations">♿</span>
-      </div>
-      <div className="ss-accessible-copy">
+        <figcaption>Silver Suite · Silver Moon</figcaption>
+      </figure>
+      <svg className="ss-accessible-swoop" viewBox="0 0 66 200" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="ss-accessible-gold" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+            <stop stopColor="#9a651b" />
+            <stop offset=".42" stopColor="#f8dfa1" />
+            <stop offset=".72" stopColor="#bb842d" />
+            <stop offset="1" stopColor="#efc66a" />
+          </linearGradient>
+        </defs>
+        <path d="M62 0C32 65 12 138 36 200H66V0Z" fill="#fffdf8" />
+        <path d="M51 0H62C32 65 12 138 36 200H27C3 138 24 65 51 0Z" fill="url(#ss-accessible-gold)" />
+      </svg>
+      <div className="ss-accessible-content">
         <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
         <p>Thoughtfully designed suites with comfort, access and peace of mind.</p>
+        <a href="https://www.silversea.com/other-resources/contact-us.html" target="_blank" rel="noopener noreferrer">Explore Accessible Suites <span aria-hidden="true">→</span></a>
+        <details>
+          <summary>Accessibility features</summary>
+          <p>Open the chosen ship’s official deck plan and look for the wheelchair-accessible symbol. Contact Silversea Special Services to confirm the cabin layout, features and availability for your sailing.</p>
+          <a href="mailto:SpecialServices@silversea.com?subject=Accessible%20suite%20information">Email Silversea Special Services <span aria-hidden="true">→</span></a>
+        </details>
       </div>
     </aside>
   );
