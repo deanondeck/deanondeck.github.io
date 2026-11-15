@@ -53,12 +53,58 @@ export default function Cruises({ id, content, site }: SectionProps) {
       {/* ---- one band per line ---- */}
       {lines.map((l, i) => {
         const flagship = l.id === "virgin";
+        const atlantis = l.id === "atlantis";
         const royal = l.id === "royal-caribbean";
         const band = flagship ? "band--ink" : i % 2 ? "band--shell" : "band--shell2";
         return (
           <section key={l.id} id={l.id} className={`band ${band} cl`}>
             <div className={`wrap cl-grid${flagship ? " cl-grid--virgin" : (l.id === "royal-caribbean" || l.id === "silversea") ? " cl-grid--royal" : ""}${i % 2 && l.id !== "royal-caribbean" && l.id !== "silversea" ? " flip" : ""}`}>
-              {flagship ? (
+              {atlantis ? (
+                <div className="atlantis-editorial">
+                  <div className="atlantis-editorial-grid">
+                    <figure className="atlantis-photo reveal">
+                      <img
+                        src="https://atlantisevents.com/wp-content/uploads/home-inline-Oasis-Tdance.jpg"
+                        alt="Atlantis Events daytime T-dance on a cruise ship pool deck"
+                        loading="eager"
+                      />
+                      <figcaption>Official Atlantis Events photo · onboard T-dance</figcaption>
+                    </figure>
+                    <div className="atlantis-content reveal d1">
+                      <p className="log">{l.k}</p>
+                      <div className="atlantis-brandline"><span aria-hidden="true">✦</span>{l.name}</div>
+                      <h2 className="display atlantis-heading">Your people.<em>Your kind of voyage.</em></h2>
+                      <p className="atlantis-lede">{l.d}</p>
+                      <div className="atlantis-highlights">
+                        <article className="atlantis-tile">
+                          <h3>Made to connect</h3>
+                          <p>Meet fellow travelers through shared experiences, from daytime deck events to evening shows.</p>
+                        </article>
+                        <article className="atlantis-tile">
+                          <h3>Big-stage energy</h3>
+                          <p>Atlantis charters add their own entertainment and celebrations to the shipboard experience.</p>
+                        </article>
+                      </div>
+                      <div className="atlantis-check">
+                        <span aria-hidden="true">✓</span>
+                        <p><strong>New to Atlantis?</strong> Contact Dean before booking so he can confirm whether advisor-assisted booking is available for your reservation.</p>
+                      </div>
+                      <div className="atlantis-check">
+                        <span aria-hidden="true">✓</span>
+                        <p><strong>Booked directly with Atlantis before?</strong> Atlantis generally requires guests who booked directly within the past four years to continue booking directly. Check with Dean before making a new reservation.</p>
+                      </div>
+                      <p className="atlantis-fine">Booking eligibility and agency attribution must be confirmed with Atlantis before you reserve. If eligible, request <strong>Dean Satterfield</strong> with <strong>On Deck Agency</strong>.</p>
+                      <div className="atlantis-cta">
+                        <div>
+                          <h3>Curious about an Atlantis sailing?</h3>
+                          <p>Tell Dean what you’re considering. He’ll help confirm the right booking path before you reserve.</p>
+                        </div>
+                        <a className="btn btn-ink" href="/#contact">{l.bookLabel} <span className="arrow">→</span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : flagship ? (
                 <div className="virgin-editorial">
                   <h2 className="virgin-editorial-eyebrow"><span>Specialty · Adults Only</span></h2>
                   <div className="virgin-editorial-grid">
