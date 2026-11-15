@@ -46,7 +46,7 @@ const silverseaAccessibilityEmailBody = [
   "Please confirm the suite layout, accessibility features, and availability, and copy Dean on your reply.",
   "",
   "Thank you,",
-].join("\\r\\n");
+].join("\r\n");
 const silverseaAccessibilityEmailUrl = `mailto:SpecialServices@silversea.com?cc=${encodeURIComponent("deanondeck1@gmail.com")}&subject=${encodeURIComponent("Accessible suite information — Dean On Deck")}&body=${encodeURIComponent(silverseaAccessibilityEmailBody)}`;
 
 const fleets = {
