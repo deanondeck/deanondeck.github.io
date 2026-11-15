@@ -216,12 +216,12 @@ export function SilverseaAccessibility() {
       <div className="ss-accessible-content">
         <h4 id="ss-accessible-heading">Accessible Accommodations</h4>
         <p>Thoughtfully designed suites with comfort, access and peace of mind.</p>
-        <a href="https://www.silversea.com/other-resources/contact-us.html" target="_blank" rel="noopener noreferrer">Explore Accessible Suites <span aria-hidden="true">→</span></a>
+        <a href={silverseaAccessibilityEmailUrl}>Ask Silversea About Accessible Suites <span aria-hidden="true">→</span></a>
         <details>
           <summary>Accessibility features</summary>
-          <p>Use the chosen ship’s deck plan to find accessible suites. Dean can help confirm details, or you can email Silversea Special Services directly. The email draft includes Dean’s contact information and copies him.</p>
+          <p>Use the chosen ship’s deck plan to find accessible suites. Dean can help confirm details, or use the button above to email Silversea Special Services directly. The draft includes Dean’s contact information and copies him.</p>
           <a href="mailto:deanondeck1@gmail.com?subject=Help%20with%20an%20accessible%20suite">Contact Dean for help <span aria-hidden="true">→</span></a>
-          <a href={silverseaAccessibilityEmailUrl}>Email Silversea Special Services <span aria-hidden="true">→</span></a>
+          <a href="https://www.silversea.com/other-resources/contact-us.html" target="_blank" rel="noopener noreferrer">Browse Silversea’s other contact options <span aria-hidden="true">→</span></a>
         </details>
       </div>
     </aside>
