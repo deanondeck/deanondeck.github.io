@@ -3053,3 +3053,53 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 /* Exact approved Silversea accessibility artwork: full-width, uncropped at every viewport. */
 #silversea .ss-accessible-original{display:block;width:100%;max-width:100%;margin:clamp(12px,2vw,24px) 0 0;padding:0;line-height:0;text-decoration:none;overflow:visible}
 #silversea .ss-accessible-original img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;border:0;border-radius:0}
+
+
+/* Keep Silversea dialogs fully in view on every screen size. */
+.ss-fleet-dialog {
+  max-height: calc(100dvh - 1.5rem);
+  overflow: hidden;
+  padding: clamp(.75rem, 2vw, 1.5rem);
+}
+.ss-fleet-dialog h3 { font-size: clamp(1.3rem, 3vw, 2.15rem); margin: .25rem 0; }
+.ss-fleet-dialog .ss-fleet-brand { margin: .2rem 0; font-size: .7rem; }
+.ss-fleet-dialog > p { margin: .35rem 0; line-height: 1.3; }
+.ss-fleet-ship-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; margin: .65rem 0; }
+.ss-fleet-ship-list button { padding: .45rem .55rem; min-height: 3.25rem; }
+.ss-fleet-ship-name { gap: .45rem; }
+.ss-fleet-ship-name img { width: 58px; height: 44px; }
+.ss-fleet-capacity { font-size: .67rem; margin-top: .1rem; }
+.ss-fleet-detail img { max-height: 24dvh; }
+.ss-fleet-dialog .ss-fleet-note { font-size: .74rem; margin: .35rem 0; }
+
+#silversea .ss-suite-dialog {
+  max-height: calc(100dvh - 1.5rem);
+  overflow: hidden;
+  padding: clamp(.75rem, 2vw, 1.5rem);
+}
+#silversea .ss-suite-dialog h3 { font-size: clamp(1.65rem, 3vw, 2.2rem); margin: .2rem 0; }
+#silversea .ss-suite-dialog h4 { margin: .3rem 0; }
+#silversea .ss-suite-dialog p { font-size: .9rem; line-height: 1.32; margin: .35rem 0; }
+#silversea .ss-suite-dialog-photo { max-height: min(24dvh, 180px); margin: .35rem 0; }
+#silversea .ss-suite-dialog .ss-suite-note { font-size: .73rem; line-height: 1.25; }
+#silversea .ss-suite-dialog .ss-suite-official { margin: .45rem 0; }
+#silversea .ss-suite-dialog .ss-suite-book { padding: .58rem 1rem; font-size: .7rem; }
+
+@media (max-width: 650px) {
+  .ss-fleet-ship-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .3rem; }
+  .ss-fleet-ship-list button { padding: .35rem .3rem; font-size: .72rem; }
+  .ss-fleet-ship-name { gap: .3rem; }
+  .ss-fleet-ship-name img { width: 42px; height: 34px; }
+  .ss-fleet-capacity { font-size: .58rem; }
+  #silversea .ss-suite-dialog { width: 100%; }
+}
+
+@media (max-height: 620px) {
+  .ss-fleet-ship-name img { width: 42px; height: 32px; }
+  .ss-fleet-capacity { display: none; }
+  .ss-fleet-dialog .ss-fleet-note { font-size: .66rem; }
+  #silversea .ss-suite-dialog-photo { max-height: 16dvh; }
+  #silversea .ss-suite-dialog p { font-size: .8rem; line-height: 1.2; margin: .22rem 0; }
+  #silversea .ss-suite-dialog .ss-suite-note { font-size: .64rem; }
+  #silversea .ss-suite-dialog .ss-suite-book { padding: .45rem .8rem; font-size: .62rem; }
+}
