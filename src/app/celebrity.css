@@ -135,3 +135,12 @@
  #celebrity .celebrity-suite-item:first-child .celebrity-suite-name { font-size:1.25rem; }
  #celebrity .celebrity-suite-item:first-child .celebrity-suite-highlight { font-size:.75rem; }
 }
+
+#celebrity .celebrity-suite-item:first-child { height:clamp(320px,34vw,440px); min-height:0; }
+#celebrity .celebrity-suite-item:first-child .celebrity-suite-image { min-height:0; }
+@media(max-width:900px) {
+ #celebrity .celebrity-suite-item:first-child { height:340px; }
+}
+@media(max-width:600px) {
+ #celebrity .celebrity-suite-item:first-child { height:auto; }
+}
