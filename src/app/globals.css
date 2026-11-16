@@ -2882,11 +2882,14 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   display: block;
   width: min(100%, 430px);
   height: auto;
-  margin: 0 0 1.1rem;
-  background: #fff;
+  margin: 0 auto 1.1rem;
+  background: transparent;
 }
 #celebrity .cl-body > .display:has(.celebrity-opening-wordmark) {
-  margin-bottom: 1.1rem;
+  width: 100%;
+  margin: 0 0 1.1rem;
+  padding: clamp(.85rem, 2vw, 1.2rem) .25rem;
+  background: linear-gradient(180deg, #f3efe6 0%, #faf8f3 18%, #fff 40%, #fff 60%, #faf8f3 82%, #f3efe6 100%);
 }
 .celebrity-editorial {
   margin-top: clamp(3.2rem, 7vw, 6rem);
@@ -3102,7 +3105,7 @@ body { background: var(--paper); color: var(--ink-on-paper); }
 @media(max-width:720px){#silversea .ss-suite-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}#silversea .ss-suite-tile{min-height:260px}}
 
 /* Silversea: one authentic wordmark in introductory panel, no duplicate text logo */
-#silversea .silversea-official-logo{display:block;max-width:240px;margin:0 0 14px}
+#silversea .silversea-official-logo{display:block;max-width:300px;margin:0 0 14px}
 #silversea .silversea-official-logo img{display:block;width:100%;height:auto;object-fit:contain}
 #silversea .cl-body:has(.silversea-official-logo)>h3.display{display:none}
 
@@ -3404,10 +3407,13 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   justify-content: space-between;
   flex-wrap: wrap;
   gap: .65rem 1.5rem;
-  padding: 1.15rem clamp(.85rem, 3vw, 2rem);
-  margin-top: 1.2rem;
-  border-top: 1px solid #d9cfb9;
+  padding: .85rem clamp(.85rem, 3vw, 1.3rem);
+  margin-top: .8rem;
+  border: 1px solid #e3dac8;
+  border-left: 3px solid #c8a45c;
+  border-radius: 14px;
   color: var(--navy);
+  background: linear-gradient(110deg, #faf8f2 0%, #fffdf9 54%, #f4efe5 100%);
 }
 .royal-loyalty h4 { margin: .2rem 0; font: 500 1.45rem/1.25 var(--font-display); }
 .royal-loyalty p { margin: 0; }
@@ -3690,30 +3696,6 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
 .fleet-offer-actions .btn { min-height: 3.1rem; }
 .fleet-offer-live-link { color: var(--burgundy); font-weight: 700; text-underline-offset: 4px; }
 .fleet-offer-fine { margin: 0; padding-top: .9rem; border-top: 1px solid #e9e2d6; color: #717880; font-size: .76rem; line-height: 1.5; }
-.fleet-section-nav {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: clamp(1.25rem, 3vw, 2rem);
-}
-.fleet-section-nav a {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  min-height: 2.2rem;
-  padding: .35rem .8rem;
-  border: 1px solid #d9d0c3;
-  border-radius: 999px;
-  color: #526071;
-  background: #ffffff8f;
-  font-size: .7rem;
-  font-weight: 650;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background .2s ease, border-color .2s ease, color .2s ease;
-}
-.fleet-section-nav a:hover { border-color: #b89b62; color: var(--navy); background: #fff; }
-.fleet-section-nav a > :first-child { font-size: 1rem; }
 .fleet-to-top {
   position: fixed;
   z-index: 30;
@@ -3747,4 +3729,35 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
 }
 @media (prefers-reduced-motion: reduce) {
   .fleet-offer-trigger, .fleet-section-nav a, .fleet-to-top { transition: none; }
+}
+
+
+/* Fleet refinements: balanced Royal Caribbean branding and restrained offer navigation. */
+#royal-caribbean .cl-body > .royal-eyebrow {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  #royal-caribbean .royal-opening-wordmark {
+    margin-inline: auto;
+  }
+}
+
+/* Keep Pinnacle Club within the Royal section as a compact loyalty note. */
+.royal-loyalty .log {
+  margin-bottom: .35rem;
+  font-size: .62rem;
+}
+.royal-loyalty h4 {
+  margin: .1rem 0 .25rem;
+}
+.royal-loyalty > div > p:last-child {
+  color: #46556a;
+  font-size: .88rem;
+}
+
+/* Blend the Celebrity wordmark into its warm editorial background without altering the mark. */
+#celebrity .cl-body > .display:has(.celebrity-opening-wordmark) {
+  border-radius: 10px;
 }

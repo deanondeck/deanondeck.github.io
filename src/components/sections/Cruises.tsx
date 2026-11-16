@@ -172,7 +172,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   </div>
                 ) : (
                   <>
-                <p className={flagship ? "log log--center" : l.id === "silversea" ? "log silversea-eyebrow" : "log"}>{l.k}</p>
+                <p className={flagship ? "log log--center" : royal ? "log log--center royal-eyebrow" : l.id === "silversea" ? "log silversea-eyebrow" : "log"}>{l.k}</p>
                 {l.id === "silversea" && <a className="silversea-official-logo" href="https://go.deanondeck.com/Silversea" target="_blank" rel="noopener noreferrer" aria-label="Explore Silversea with Dean"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Silversea.png" alt="Silversea official wordmark" loading="lazy" /></a>}
                 <h3 className="display h-lg">
                   {l.id === "silversea" ? <img className="ss-opening-wordmark" src={img("silversea/wordmark.png")} alt={l.name} width={600} height={67} />
@@ -288,9 +288,6 @@ export default function Cruises({ id, content, site }: SectionProps) {
               {l.id === "silversea" && <SilverseaAccessibility />}
               {l.id === "silversea" && c.silversea && <SilverseaSuites included={c.silversea.included} note={c.silversea.note} />}
               {l.id === "celebrity" && <CelebritySuites />}
-              <div className="fleet-section-nav">
-                <a href="#top-cruises" aria-label={`Back to the top of the Fleet page`}>↑ <span>Back to Fleet</span></a>
-              </div>
             </div>
           </section>
         );
