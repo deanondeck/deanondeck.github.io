@@ -3568,3 +3568,183 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
   background: linear-gradient(90deg, #b32659 0 16.6%, #e46d42 16.6% 33.2%, #e9bd3c 33.2% 49.8%, #4c9d67 49.8% 66.4%, #397ca7 66.4% 83%, #7762aa 83% 100%);
   opacity: .8;
 }
+
+
+/* The On Deck Offer Desk — current cruise-line offers and Fleet navigation. */
+#top-cruises { scroll-margin-top: 6rem; }
+.fleet-offer-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  min-height: 3.35rem;
+  margin-top: 1rem;
+  padding: .48rem 1rem .48rem .5rem;
+  border: 1px solid #d8caa9;
+  border-radius: 999px;
+  color: var(--navy);
+  background: linear-gradient(120deg, #fffdf8, #f4eee1);
+  box-shadow: 0 5px 16px #101e2b0d;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.fleet-offer-trigger:hover,
+.fleet-offer-trigger:focus-visible {
+  transform: translateY(-2px);
+  border-color: #b89b62;
+  box-shadow: 0 8px 22px #101e2b18;
+}
+.fleet-offer-trigger:focus-visible,
+.fleet-to-top:focus-visible,
+.fleet-offer-dialog :focus-visible { outline: 3px solid #b89b62; outline-offset: 3px; }
+.fleet-offer-trigger-mark {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, #bb4c76 0%, #d8944f 38%, #d2b45b 55%, #5b9a83 74%, #4c76a8 100%);
+  font-size: 1rem;
+}
+.fleet-offer-trigger-copy { display: grid; gap: .1rem; }
+.fleet-offer-trigger-copy strong { font-size: .82rem; letter-spacing: .015em; }
+.fleet-offer-trigger-copy small { color: #77746d; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; }
+.fleet-offer-trigger-arrow { margin-left: .2rem; color: #8b7141; font-size: 1.05rem; }
+.fleet-offer-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(560px, calc(100% - 1.25rem));
+  max-width: none;
+  max-height: min(90dvh, 690px);
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #e3dccf;
+  border-radius: 18px;
+  color: var(--navy);
+  background: #fffdf9;
+  box-shadow: 0 20px 70px #07152c70;
+}
+.fleet-offer-dialog::backdrop { background: #081424bd; }
+.fleet-offer-rainbow {
+  height: 5px;
+  background: linear-gradient(90deg, #c74d74 0 16.6%, #e08b5d 16.6% 33.2%, #e5bd5e 33.2% 49.8%, #6da382 49.8% 66.4%, #6094bc 66.4% 83%, #9a76aa 83% 100%);
+}
+.fleet-offer-content { display: grid; gap: 1rem; padding: clamp(1.15rem, 4vw, 1.8rem); }
+.fleet-offer-header { position: relative; padding-right: 3rem; }
+.fleet-offer-overline {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  margin: 0 0 .45rem;
+  color: #8b7141;
+  font-size: .68rem;
+  font-weight: 750;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.fleet-offer-overline span { font-size: 1rem; }
+.fleet-offer-header h3 { margin: 0 0 .5rem; font: 500 clamp(1.45rem, 5vw, 2rem)/1.16 var(--font-display); }
+.fleet-offer-header > p:last-child { margin: 0; color: #626b73; line-height: 1.55; }
+.fleet-offer-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 2.45rem;
+  height: 2.45rem;
+  border: 1px solid #e0d9ce;
+  border-radius: 50%;
+  color: var(--navy);
+  background: #fff;
+  font-size: 1.45rem;
+  cursor: pointer;
+}
+.fleet-offer-note {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  align-items: start;
+  gap: .75rem;
+  padding: 1rem;
+  border: 1px solid #e9e2d6;
+  border-radius: 12px;
+  background: #f8f5ef;
+}
+.fleet-offer-note-icon {
+  display: grid;
+  place-items: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border: 1px solid #d1bd8f;
+  border-radius: 50%;
+  color: #92743a;
+  background: #fff;
+}
+.fleet-offer-note p { margin: 0; color: #4f5a64; font-size: .92rem; line-height: 1.55; }
+.fleet-offer-schedule-note { margin: -.15rem 0 0; color: #69727a; font-size: .8rem; line-height: 1.5; }
+.fleet-offer-actions { display: grid; justify-items: start; gap: .8rem; }
+.fleet-offer-actions .btn { min-height: 3.1rem; }
+.fleet-offer-live-link { color: var(--burgundy); font-weight: 700; text-underline-offset: 4px; }
+.fleet-offer-fine { margin: 0; padding-top: .9rem; border-top: 1px solid #e9e2d6; color: #717880; font-size: .76rem; line-height: 1.5; }
+.fleet-section-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+.fleet-section-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 2.2rem;
+  padding: .35rem .8rem;
+  border: 1px solid #d9d0c3;
+  border-radius: 999px;
+  color: #526071;
+  background: #ffffff8f;
+  font-size: .7rem;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.fleet-section-nav a:hover { border-color: #b89b62; color: var(--navy); background: #fff; }
+.fleet-section-nav a > :first-child { font-size: 1rem; }
+.fleet-to-top {
+  position: fixed;
+  z-index: 30;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  gap: .38rem;
+  padding: .48rem .76rem;
+  border: 1px solid #d8caa9;
+  border-radius: 999px;
+  color: var(--navy);
+  background: #fffdf2ed;
+  box-shadow: 0 5px 20px #07152c24;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(.4rem);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+.fleet-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.fleet-to-top > :first-child { color: #8b7141; font-size: 1rem; }
+@media (max-width: 600px) {
+  .fleet-offer-trigger { min-height: 3rem; }
+  .fleet-offer-dialog { max-height: calc(100dvh - 1rem); border-radius: 16px; }
+  .fleet-section-nav { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fleet-offer-trigger, .fleet-section-nav a, .fleet-to-top { transition: none; }
+}

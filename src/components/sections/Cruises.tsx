@@ -4,6 +4,7 @@ import SilverseaFleetPreview, { SilverseaAccessibility } from "./SilverseaFleetP
 import SilverseaSuites from "./SilverseaSuites";
 import RoyalAccommodations from "./RoyalAccommodations";
 import CelebritySuites from "./CelebritySuites";
+import FleetOfferButton, { FleetPageTools } from "./FleetOfferButton";
 import { renderInline } from "@/lib/cms/markdown";
 import type { SectionProps } from "@/lib/cms/types";
 
@@ -94,6 +95,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                         <p><strong>Booked directly with Atlantis before?</strong> Atlantis generally requires guests who booked directly within the past four years to continue booking directly. Check with Dean before making a new reservation.</p>
                       </div>
                       <p className="atlantis-fine">Booking eligibility and agency attribution must be confirmed with Atlantis before you reserve. If eligible, request <strong>Dean Satterfield</strong> with <strong>On Deck Agency</strong>.</p>
+                      <FleetOfferButton cruiseLine={l.name} lineId={l.id} />
                       <div className="atlantis-cta">
                         <div>
                           <h3>Curious about an Atlantis sailing?</h3>
@@ -161,6 +163,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                           </a>
                         </p>
                       )}
+                      <FleetOfferButton cruiseLine={l.name} lineId={l.id} />
                       <p className="booking-note celebrity-transfer-note">
                         I’ll handle the planning and stand behind you throughout. Already booked? Ask if your reservation can transfer to me. You’ll enter payment and booking details directly with Celebrity.
                       </p>
@@ -203,14 +206,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                     </a>
                   )}
                 </div>}
-                {flagship && (
-                  <a className="virgin-offers" href="https://www.virginvoyages.com/?agentId=281761&agencyId=54480" target="_blank" rel="noopener noreferrer" aria-label="Explore Virgin’s latest offers">
-                    <h4>Explore Virgin’s Latest Offers</h4>
-                    <p>View current promotions and sailings.</p>
-                    <span className="virgin-offers-link">Explore Offers <span aria-hidden="true">→</span></span>
-                    <small>Offers and eligibility vary by sailing. Check current terms before booking.</small>
-                  </a>
-                )}
+                {!flagship && <FleetOfferButton cruiseLine={l.name} lineId={l.id} />}
                 {l.browse && l.id !== "silversea" && <p><a className="cl-alt" href={l.browse} target="_blank" rel="noopener noreferrer">Browse {l.name} itineraries ↗</a></p>}
                 
                 {royal && <p className="booking-note royal-booking-note">Tell Dean what you’re looking for; he’ll handle the planning and send your official booking link. Already booked? Ask if your reservation can transfer so he can keep supporting you. You provide payment and booking details directly to Royal Caribbean; Dean On Deck never collects them.</p>}
@@ -291,7 +287,9 @@ export default function Cruises({ id, content, site }: SectionProps) {
               {l.id === "silversea" && <SilverseaAccessibility />}
               {l.id === "silversea" && c.silversea && <SilverseaSuites included={c.silversea.included} note={c.silversea.note} />}
               {l.id === "celebrity" && <CelebritySuites />}
-
+              <div className="fleet-section-nav">
+                <a href="#top-cruises" aria-label={`Back to the top of the Fleet page`}>↑ <span>Back to Fleet</span></a>
+              </div>
             </div>
           </section>
         );
@@ -320,6 +318,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
           </div>
         </div>
       </section>
+      <FleetPageTools />
     </>
   );
 }
