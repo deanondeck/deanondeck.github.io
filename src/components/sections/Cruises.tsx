@@ -121,6 +121,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                         <a href="#virgin-non-rockstar" className="virgin-editorial-tier"><span className="virgin-editorial-symbol virgin-editorial-symbol--red" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="m32 5 8.6 17.6L60 25.4 46 39l3.3 19.2L32 49.1 14.7 58.2 18 39 4 25.4l19.4-2.8z"/></svg></span><span className="virgin-editorial-tier-copy"><strong>Cabins &amp; Sea Terraces</strong><em>Comfortable, modern cabins with all the signature Virgin inclusions.</em></span><span className="virgin-editorial-arrow">›</span></a>
                       </div>
                       <a className="virgin-editorial-cta" href="/plan/?line=Virgin%20Voyages">Explore Virgin Voyages with Dean <span aria-hidden="true">›</span></a>
+                      <FleetOfferButton cruiseLine="Virgin Voyages" lineId="virgin" />
                     </div>
                   </div>
                 </div>
