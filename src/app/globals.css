@@ -2884,12 +2884,26 @@ body { background: var(--paper); color: var(--ink-on-paper); }
   height: auto;
   margin: 0 auto 1.1rem;
   background: transparent;
+  /* Feather the white artwork plate and the X into the section above and below. */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
 }
 #celebrity .cl-body > .display:has(.celebrity-opening-wordmark) {
   width: 100%;
   margin: 0 0 1.1rem;
-  padding: clamp(.85rem, 2vw, 1.2rem) .25rem;
-  background: linear-gradient(180deg, #f3efe6 0%, #faf8f3 18%, #fff 40%, #fff 60%, #faf8f3 82%, #f3efe6 100%);
+  padding: clamp(.45rem, 1.2vw, .8rem) .25rem;
+  background: linear-gradient(
+    180deg,
+    #f3efe6 0%,
+    #e8e8e5 12%,
+    #f0efeb 24%,
+    #f8f7f3 38%,
+    #fff 50%,
+    #f8f7f3 62%,
+    #f0efeb 76%,
+    #e8e8e5 88%,
+    #f3efe6 100%
+  );
 }
 .celebrity-editorial {
   margin-top: clamp(3.2rem, 7vw, 6rem);
