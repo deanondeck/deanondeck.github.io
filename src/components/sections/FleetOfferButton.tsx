@@ -19,7 +19,7 @@ const destinations: Record<FleetLineId, {
     offerHref: "https://www.virginvoyages.com/cruise-deals",
     offerLabel: "See Virgin’s current offers",
     deanHref: "/plan/?line=Virgin%20Voyages",
-    note: "Find current savings, onboard extras, and eligible sailings. You can book with Dean as your First Mate or ask him to compare the options.",
+    note: "Ask Dean to check current promotions and any additional savings you may qualify for. Eligibility varies, and offers may not combine.",
   },
   silversea: {
     offerHref: "https://www.silversea.com/best-luxury-cruise-deals.html",
