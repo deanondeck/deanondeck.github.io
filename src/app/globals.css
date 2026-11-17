@@ -3802,3 +3802,11 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
 /* Keep Brand g's two-column editorial feature full-width inside the fleet grid on desktop. */
 #brand-g .brandg-editorial{grid-column:1 / -1;min-width:0;max-width:1180px;margin-inline:auto}
 #brand-g .brandg-photo,#brand-g .brandg-content{min-width:0}
+
+/* Brand g desktop layout: give its editorial feature the entire section grid. */
+@media (min-width: 901px) {
+  #brand-g > .cl-grid { display: block; }
+  #brand-g .brandg-editorial { display: grid; width: 100%; max-width: 1180px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(2rem, 4vw, 4rem); margin-inline: auto; }
+  #brand-g .brandg-photo { width: 100%; min-height: 520px; }
+  #brand-g .brandg-heading { overflow-wrap: normal; word-break: normal; }
+}
