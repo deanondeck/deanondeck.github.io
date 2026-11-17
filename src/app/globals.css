@@ -3814,3 +3814,42 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
 /* Compact advisor attribution below Brand g's two primary actions. */
 .brandg-advisor-note{margin:1.2rem 0 0;padding:.9rem 1rem;border-left:3px solid #c3a879;background:#fffaf2;color:var(--mist-on-paper);font-size:.84rem;line-height:1.65}
 .brandg-advisor-note strong{color:var(--navy)}
+
+
+/* Brand g: panoramic ship above centered editorial content (desktop and mobile). */
+#brand-g .brandg-editorial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 1180px;
+  margin-inline: auto;
+}
+#brand-g .brandg-photo {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 2.65 / 1;
+  align-self: auto;
+}
+#brand-g .brandg-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+#brand-g .brandg-content {
+  width: min(100%, 850px);
+  margin-inline: auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  text-align: center;
+  border-left: 0;
+  border-top: 5px solid transparent;
+  border-image: linear-gradient(90deg,#c65b7b,#e6b45d,#5ca486,#6977b6) 1;
+}
+#brand-g .brandg-lede { margin-inline: auto; }
+#brand-g .brandg-highlights { text-align: center; }
+#brand-g .brandg-discover-copy { text-align: left; }
+@media (max-width: 600px) {
+  #brand-g .brandg-photo { aspect-ratio: 16 / 9; }
+  #brand-g .brandg-content { padding-inline: .75rem; }
+}
