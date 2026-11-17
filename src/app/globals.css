@@ -3929,3 +3929,13 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
 @media(min-width:701px) and (max-width:980px) {
   #atlantis .atlantis-moments { flex-wrap: wrap; }
 }
+
+/* Atlantis final spacing: keep the three non-clickable highlights on a single line. */
+@media (min-width: 981px) {
+  #atlantis .atlantis-moments { display:flex; flex-wrap:nowrap; gap:.35rem; margin-top:.85rem; }
+  #atlantis .atlantis-moments span { flex:0 0 auto; font-size:.72rem; padding:.35rem .43rem; white-space:nowrap; }
+  #atlantis .atlantis-content { padding-top:0; }
+  #atlantis .atlantis-brandline { margin-bottom:.5rem; }
+  #atlantis .atlantis-lede { margin-bottom:.5rem; }
+  #atlantis .atlantis-editorial-grid { gap:clamp(1.25rem,3vw,2.5rem); }
+}
