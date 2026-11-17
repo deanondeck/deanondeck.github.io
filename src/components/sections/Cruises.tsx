@@ -110,7 +110,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
               ) : brandG ? (
                 <div className="brandg-editorial">
                   <div className="brandg-photo reveal">
-                    <img src={img("port-halong")} alt="Scenic destination landscape evoking Brand g's destination-focused journeys" loading="lazy" />
+                    <img src="https://www.amadeus-rivercruises.com/fileadmin/_processed_/0/d/csm_Lueftner_Cruises_AMADEUS_Nova_exterior_cruising_03_2d7f279e42.jpg" alt="AMADEUS Nova river cruise ship sailing on the river, photographed from above" loading="lazy" />
                     <span className="brandg-photo-caption">Discover destinations together</span>
                   </div>
                   <div className="brandg-content reveal d1">
