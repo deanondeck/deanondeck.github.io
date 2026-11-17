@@ -116,7 +116,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   <div className="brandg-content reveal d1">
                     <p className="log">LGBTQ+ journeys · Culture &amp; Connection</p>
                     <h2 className="display brandg-heading">Brand g Vacations <em>See more. Feel more. Belong.</em></h2>
-                    <p className="brandg-lede">Intimate river and ocean voyages, thoughtfully curated land adventures, and a welcoming LGBTQ+ community. Brand g puts the destination, local culture, and shared discovery at the heart of the journey.</p>
+                    <p className="brandg-lede">Designed for travelers 21 and older, Brand g brings the LGBTQ+ community together through intimate river cruises, ocean voyages, and curated land adventures. Discover remarkable destinations, local culture, and shared experiences.</p>
                     <div className="brandg-highlights">
                       <div><strong>River, sea &amp; land</strong><span>Luxury river cruises, intimate ocean voyages, and curated land adventures.</span></div>
                       <div><strong>Travel with community</strong><span>Connect through small-group experiences and shared adventures.</span></div>
