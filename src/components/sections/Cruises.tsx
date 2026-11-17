@@ -87,6 +87,9 @@ export default function Cruises({ id, content, site }: SectionProps) {
                           <p>Atlantis charters add their own entertainment and celebrations to the shipboard experience.</p>
                         </article>
                       </div>
+                    </div>
+                  </div>
+                  <div className="atlantis-booking reveal d1">
                       <div className="atlantis-check">
                         <span aria-hidden="true">✓</span>
                         <p><strong>New to Atlantis?</strong> Contact Dean before booking so he can confirm whether advisor-assisted booking is available for your reservation.</p>
@@ -104,7 +107,6 @@ export default function Cruises({ id, content, site }: SectionProps) {
                         </div>
                         <a className="btn btn-ink" href="/#contact">{l.bookLabel} <span className="arrow">→</span></a>
                       </div>
-                    </div>
                   </div>
                 </div>
               ) : brandG ? (
