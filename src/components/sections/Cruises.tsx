@@ -77,36 +77,21 @@ export default function Cruises({ id, content, site }: SectionProps) {
                       <div className="atlantis-brandline"><span aria-hidden="true">✦</span>{l.name}</div>
                       <h2 className="display atlantis-heading">Your people.<em>Your kind of voyage.</em></h2>
                       <p className="atlantis-lede">{l.d}</p>
-                      <div className="atlantis-highlights">
-                        <article className="atlantis-tile">
-                          <h3>Made to connect</h3>
-                          <p>Meet fellow travelers through shared experiences, from daytime deck events to evening shows.</p>
-                        </article>
-                        <article className="atlantis-tile">
-                          <h3>Big-stage energy</h3>
-                          <p>Atlantis charters add their own entertainment and celebrations to the shipboard experience.</p>
-                        </article>
-                      </div>
+                      <p className="atlantis-editorial-note">Shared experiences by day. Unforgettable entertainment by night.</p>
                     </div>
                   </div>
                   <div className="atlantis-booking reveal d1">
-                      <div className="atlantis-check">
-                        <span aria-hidden="true">✓</span>
-                        <p><strong>New to Atlantis?</strong> Contact Dean before booking so he can confirm whether advisor-assisted booking is available for your reservation.</p>
-                      </div>
-                      <div className="atlantis-check">
-                        <span aria-hidden="true">✓</span>
-                        <p><strong>Booked directly with Atlantis before?</strong> Atlantis generally requires guests who booked directly within the past four years to continue booking directly. Check with Dean before making a new reservation.</p>
-                      </div>
-                      <p className="atlantis-fine">Booking eligibility and agency attribution must be confirmed with Atlantis before you reserve. If eligible, request <strong>Dean Satterfield</strong> with <strong>On Deck Agency</strong>.</p>
+                    <div className="atlantis-booking-copy">
+                      <p className="atlantis-booking-kicker">— BEFORE YOU RESERVE</p>
+                      <h3>Find your way aboard.</h3>
+                      <p><strong>First Atlantis booking?</strong> Contact Dean first to confirm whether advisor-assisted booking is available.</p>
+                      <p><strong>Booked directly in the past four years?</strong> Atlantis generally requires you to continue booking directly. Check with Dean before reserving.</p>
+                      <p className="atlantis-fine">Eligibility and agency attribution must be confirmed with Atlantis. If eligible, request <strong>Dean Satterfield · On Deck Agency</strong>.</p>
+                    </div>
+                    <div className="atlantis-booking-actions">
                       <FleetOfferButton cruiseLine={l.name} lineId={l.id} />
-                      <div className="atlantis-cta">
-                        <div>
-                          <h3>Curious about an Atlantis sailing?</h3>
-                          <p>Tell Dean what you’re considering. He’ll help confirm the right booking path before you reserve.</p>
-                        </div>
-                        <a className="btn btn-ink" href="/#contact">{l.bookLabel} <span className="arrow">→</span></a>
-                      </div>
+                      <a className="btn btn-ink" href="/#contact">Ask About Atlantis <span className="arrow">→</span></a>
+                    </div>
                   </div>
                 </div>
               ) : brandG ? (
