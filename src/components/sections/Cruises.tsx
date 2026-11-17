@@ -77,7 +77,7 @@ export default function Cruises({ id, content, site }: SectionProps) {
                       <div className="atlantis-brandline"><span aria-hidden="true">✦</span>{l.name}</div>
                       <h2 className="display atlantis-heading">Your people.<em>Your kind of voyage.</em></h2>
                       <p className="atlantis-lede">{l.d}</p>
-                      <p className="atlantis-editorial-note">Shared experiences by day. Unforgettable entertainment by night.</p>
+                      <div className="atlantis-moments"><span>Deck parties</span><span>Live entertainment</span><span>LGBTQ+ community</span></div>
                     </div>
                   </div>
                   <div className="atlantis-booking reveal d1">
