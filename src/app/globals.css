@@ -3798,3 +3798,7 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
 .brandg-booking .brandg-fine{font-size:.77rem;margin-top:1rem}
 @media(max-width:900px){.brandg-editorial{grid-template-columns:1fr}.brandg-photo{min-height:0;aspect-ratio:16/10}.brandg-content{margin-left:.3rem}}
 @media(max-width:600px){.brandg-photo{aspect-ratio:4/3}.brandg-highlights{grid-template-columns:1fr}.brandg-heading{font-size:clamp(2rem,9vw,2.8rem)}}
+
+/* Keep Brand g's two-column editorial feature full-width inside the fleet grid on desktop. */
+#brand-g .brandg-editorial{grid-column:1 / -1;min-width:0;max-width:1180px;margin-inline:auto}
+#brand-g .brandg-photo,#brand-g .brandg-content{min-width:0}
