@@ -117,13 +117,21 @@ export default function FleetOfferButton({ cruiseLine, lineId }: OfferButtonProp
           )}
 
           <div className="fleet-offer-actions">
-            <a className="btn btn-ink" href={config.deanHref}>
-              {isAtlantis ? "Ask Dean about a sailing" : "Ask Dean to check an offer"}
-              <span className="arrow">→</span>
-            </a>
-            <a className="fleet-offer-live-link" href={config.offerHref} target="_blank" rel="noopener noreferrer">
-              {config.offerLabel} <span aria-hidden="true">↗</span>
-            </a>
+            {isBrandG ? (
+              <a className="btn btn-ink" href={config.offerHref} target="_blank" rel="noopener noreferrer">
+                View Brand g Vacations <span className="arrow">↗</span>
+              </a>
+            ) : (
+              <>
+                <a className="btn btn-ink" href={config.deanHref}>
+                  {isAtlantis ? "Ask Dean about a sailing" : "Ask Dean to check an offer"}
+                  <span className="arrow">→</span>
+                </a>
+                <a className="fleet-offer-live-link" href={config.offerHref} target="_blank" rel="noopener noreferrer">
+                  {config.offerLabel} <span aria-hidden="true">↗</span>
+                </a>
+              </>
+            )}
           </div>
           <p className="fleet-offer-fine">
             Offers, prices, eligibility, and availability can change. Confirm the details for your chosen sailing before booking.
