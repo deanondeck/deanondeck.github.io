@@ -43,7 +43,7 @@ const destinations: Record<FleetLineId, {
     offerHref: "https://www.brandgvacations.com/vacations/",
     offerLabel: "Browse Brand g journeys",
     deanHref: "/plan/?line=Brand%20g%20Vacations",
-    note: "Brand g confirms that guests may book directly, but must identify Dean On Deck Cruise Travel as their advisor, or Dean must contact Brand g to associate the reservation. The link itself does not assign advisor credit.",
+    note: "Booking directly? Please identify Dean Satterfield at Dean On Deck Cruise Travel as your travel advisor. This public link does not automatically associate your booking with Dean. If you need help with advisor attribution, contact Dean before reserving.",
   },
   atlantis: {
     offerHref: "https://res.atlantisevents.com/Booking/Trip/List",
