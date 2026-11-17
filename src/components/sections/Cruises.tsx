@@ -82,10 +82,10 @@ export default function Cruises({ id, content, site }: SectionProps) {
                   </div>
                   <div className="atlantis-booking reveal d1">
                     <div className="atlantis-booking-copy">
-                      <p className="atlantis-booking-kicker">— BEFORE YOU RESERVE</p>
-                      <h3>Find your way aboard.</h3>
-                      <p><strong>First Atlantis booking?</strong> Contact Dean first to confirm whether advisor-assisted booking is available.</p>
-                      <p><strong>Booked directly in the past four years?</strong> Atlantis generally requires you to continue booking directly. Check with Dean before reserving.</p>
+                      <p className="atlantis-booking-kicker">— BEFORE YOU RESERVE —</p>
+                      <h3>A quick booking note.</h3>
+                      <p><strong>First time?</strong> Contact Dean to confirm advisor-assisted booking eligibility.</p>
+                      <p><strong>Booked directly within four years?</strong> Atlantis generally requires you to continue booking directly. Check with Dean first.</p>
                       <p className="atlantis-fine">Eligibility and agency attribution must be confirmed with Atlantis. If eligible, request <strong>Dean Satterfield · On Deck Agency</strong>.</p>
                     </div>
                     <div className="atlantis-booking-actions">
