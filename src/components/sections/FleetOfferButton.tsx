@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type FleetLineId = "virgin" | "silversea" | "royal-caribbean" | "celebrity" | "atlantis";
+type FleetLineId = "virgin" | "silversea" | "royal-caribbean" | "celebrity" | "atlantis" | "brand-g";
 
 type OfferButtonProps = {
   cruiseLine: string;
@@ -39,6 +39,12 @@ const destinations: Record<FleetLineId, {
     deanHref: "/plan/?line=Celebrity%20Cruises",
     note: "Review current deals and eligible sailings, then ask Dean to compare the fare, cabin, and included benefits.",
   },
+  "brand-g": {
+    offerHref: "https://www.brandgvacations.com/vacations/",
+    offerLabel: "Browse Brand g journeys",
+    deanHref: "/plan/?line=Brand%20g%20Vacations",
+    note: "Brand g confirms that guests may book directly, but must identify Dean On Deck Cruise Travel as their advisor, or Dean must contact Brand g to associate the reservation. The link itself does not assign advisor credit.",
+  },
   atlantis: {
     offerHref: "https://res.atlantisevents.com/Booking/Trip/List",
     offerLabel: "Browse current Atlantis sailings",
@@ -53,6 +59,7 @@ export default function FleetOfferButton({ cruiseLine, lineId }: OfferButtonProp
   const config = destinations[lineId as FleetLineId];
   if (!config) return null;
   const isAtlantis = lineId === "atlantis";
+  const isBrandG = lineId === "brand-g";
 
   return (
     <>
@@ -65,7 +72,7 @@ export default function FleetOfferButton({ cruiseLine, lineId }: OfferButtonProp
       >
         <span className="fleet-offer-trigger-mark" aria-hidden="true">✦</span>
         <span className="fleet-offer-trigger-copy">
-          <strong>{isAtlantis ? "Sailings & offers" : "Current offers"}</strong>
+          <strong>{isAtlantis || isBrandG ? "Sailings & offers" : "Current offers"}</strong>
           <small>The On Deck Offer Desk</small>
         </span>
         <span className="fleet-offer-trigger-arrow" aria-hidden="true">↗</span>
@@ -90,11 +97,11 @@ export default function FleetOfferButton({ cruiseLine, lineId }: OfferButtonProp
               aria-label="Close offers"
               onClick={() => dialogRef.current?.close()}
             >×</button>
-            <h3 id={`fleet-offer-title-${lineId}`}>{isAtlantis ? "Explore Atlantis sailings" : `Latest ${cruiseLine} offers`}</h3>
+            <h3 id={`fleet-offer-title-${lineId}`}>{isAtlantis ? "Explore Atlantis sailings" : isBrandG ? "Explore Brand g journeys" : `Latest ${cruiseLine} offers`}</h3>
             <p>
               {isAtlantis
                 ? "Browse published sailings and itineraries from Atlantis Events."
-                : `Check ${cruiseLine}’s live offers and eligible sailings.`}
+                : isBrandG ? "Browse published Brand g river, ocean, and land journeys." : `Check ${cruiseLine}’s live offers and eligible sailings.`}
             </p>
           </header>
 
