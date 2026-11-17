@@ -3871,3 +3871,21 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
 @media (max-width: 640px) {
   #atlantis .atlantis-photo { aspect-ratio: 4 / 3; }
 }
+
+/* Atlantis: booking information spans below the editorial image/story. */
+#atlantis .atlantis-booking {
+  max-width: 1100px;
+  margin: clamp(1.4rem,3vw,2.5rem) auto 0;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 1rem 2rem;
+  align-items: start;
+}
+#atlantis .atlantis-booking .atlantis-check { margin: 0; }
+#atlantis .atlantis-booking .atlantis-fine { grid-column: 1 / -1; margin: 0; }
+#atlantis .atlantis-booking .atlantis-cta { grid-column: 1 / -1; }
+@media(max-width:700px) {
+  #atlantis .atlantis-booking { grid-template-columns: 1fr; }
+  #atlantis .atlantis-booking .atlantis-fine,
+  #atlantis .atlantis-booking .atlantis-cta { grid-column: auto; }
+}
