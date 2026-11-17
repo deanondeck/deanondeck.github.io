@@ -3889,3 +3889,17 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
   #atlantis .atlantis-booking .atlantis-fine,
   #atlantis .atlantis-booking .atlantis-cta { grid-column: auto; }
 }
+
+/* Atlantis magazine finish: concise story, quiet booking panel, balanced actions. */
+#atlantis .atlantis-editorial-grid { align-items: start; gap: clamp(1.5rem,4vw,4rem); }
+#atlantis .atlantis-photo { width: 100%; max-width: 560px; aspect-ratio: 4 / 3; margin: 0; }
+#atlantis .atlantis-content { align-self: center; }
+#atlantis .atlantis-editorial-note { color: #a57c35; font-family: Georgia,serif; font-style: italic; font-size: clamp(1rem,1.45vw,1.2rem); margin-top: 1rem; }
+#atlantis .atlantis-booking { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(220px,.85fr); gap: clamp(1.5rem,4vw,4rem); padding: clamp(1.25rem,3vw,2.3rem); margin-top: clamp(1.5rem,3vw,2.5rem); background: rgba(255,255,255,.55); border: 1px solid rgba(174,150,111,.22); border-radius: 18px; }
+#atlantis .atlantis-booking-copy h3 { font-family: Georgia,serif; font-size: clamp(1.45rem,2.5vw,2rem); margin: .25rem 0 1rem; color: #202b43; }
+#atlantis .atlantis-booking-copy > p { margin: 0 0 .75rem; line-height: 1.6; }
+#atlantis .atlantis-booking-kicker { color: #a57c35; font-size: .75rem; font-weight: 700; letter-spacing: .18em; }
+#atlantis .atlantis-booking-copy .atlantis-fine { font-size: .85rem; color: #60656d; margin-top: 1rem; }
+#atlantis .atlantis-booking-actions { display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 1rem; }
+#atlantis .atlantis-booking-actions .btn { text-align: center; justify-content: center; white-space: normal; }
+@media(max-width:700px) { #atlantis .atlantis-booking { grid-template-columns: 1fr; } #atlantis .atlantis-photo { max-width: none; } }
