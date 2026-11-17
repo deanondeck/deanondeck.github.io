@@ -31,13 +31,13 @@ const destinations: Record<FleetLineId, {
     offerHref: "https://www.royalcaribbean.com/cruise-deals",
     offerLabel: "See Royal Caribbean’s current offers",
     deanHref: "/plan/?line=Royal%20Caribbean",
-    note: "Browse live promotions and sailings. Send Dean a sailing you like and he can check the available cabin options and booking details.",
+    note: "Before reserving, ask Royal Caribbean to identify Dean Satterfield of On Deck Agency (Dean On Deck Cruise Travel) as your travel advisor, and confirm the booking will be credited to his agency. Already booked? Ask Dean to check whether your reservation is eligible for an agency transfer; restrictions and deadlines apply.",
   },
   celebrity: {
     offerHref: "https://www.celebritycruises.com/cruise-deals",
     offerLabel: "See Celebrity’s current offers",
     deanHref: "/plan/?line=Celebrity%20Cruises",
-    note: "Review current deals and eligible sailings, then ask Dean to compare the fare, cabin, and included benefits.",
+    note: "Before reserving, ask Celebrity Cruises to identify Dean Satterfield of On Deck Agency (Dean On Deck Cruise Travel) as your travel advisor, and confirm the booking will be credited to his agency. Already booked? Ask Dean to check whether an agency transfer is permitted for your reservation; restrictions and deadlines apply.",
   },
   "brand-g": {
     offerHref: "https://www.brandgvacations.com/vacations/",
@@ -49,7 +49,7 @@ const destinations: Record<FleetLineId, {
     offerHref: "https://res.atlantisevents.com/Booking/Trip/List",
     offerLabel: "Browse current Atlantis sailings",
     deanHref: "/#contact",
-    note: "Atlantis keeps its available trips and public details on its live sailing page. Share a sailing with Dean so he can confirm whether advisor-assisted booking is available.",
+    note: "New to Atlantis? Contact Dean before booking to confirm advisor eligibility. Guests who booked directly with Atlantis in the past four years generally must continue booking directly. If eligible, request Dean Satterfield of On Deck Agency (Dean On Deck Cruise Travel).",
   },
 };
 
