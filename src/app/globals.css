@@ -3810,3 +3810,7 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
   #brand-g .brandg-photo { width: 100%; min-height: 520px; }
   #brand-g .brandg-heading { overflow-wrap: normal; word-break: normal; }
 }
+
+/* Compact advisor attribution below Brand g's two primary actions. */
+.brandg-advisor-note{margin:1.2rem 0 0;padding:.9rem 1rem;border-left:3px solid #c3a879;background:#fffaf2;color:var(--mist-on-paper);font-size:.84rem;line-height:1.65}
+.brandg-advisor-note strong{color:var(--navy)}
