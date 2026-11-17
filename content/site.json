@@ -115,6 +115,17 @@
       ],
       "book": null,
       "bookLabel": "Ask About Atlantis"
+    },
+    {
+      "id": "brand-g",
+      "name": "Brand g Vacations",
+      "k": "LGBTQ+ journeys · Culture & Connection",
+      "img": "port-halong",
+      "alt": "Scenic destination landscape representing destination-led travel",
+      "d": "Intimate LGBTQ+ river and ocean journeys and curated land adventures, with meaningful cultural experiences and a welcoming sense of community.",
+      "book": null,
+      "bookLabel": "Ask Dean About Brand g",
+      "browse": "https://www.brandgvacations.com/vacations/"
     }
   ],
   "footer": {
@@ -157,7 +168,8 @@
       "Silversea",
       "Royal Caribbean",
       "Celebrity Cruises",
-      "Atlantis Events"
+      "Atlantis Events",
+      "Brand g Vacations"
     ],
     "disclaimer": "Dean On Deck Cruise Travel is an independently operated travel advisory business offering personalized cruise planning and booking assistance with multiple travel suppliers. This website is operated by Dean On Deck Cruise Travel and is not an official website of, owned by, or endorsed by the cruise lines or travel providers featured here. Supplier names and trademarks belong to their respective owners. Itineraries, fares, promotions, and availability are subject to change; supplier terms and conditions apply. VIRGIN and the Virgin Signature logo are trademarks of Virgin Enterprises Limited and are used under license."
   }
