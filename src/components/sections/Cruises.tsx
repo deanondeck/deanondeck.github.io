@@ -118,26 +118,18 @@ export default function Cruises({ id, content, site }: SectionProps) {
                     <h2 className="display brandg-heading">Brand g Vacations <em>See more. Feel more. Belong.</em></h2>
                     <p className="brandg-lede">Intimate river and ocean voyages, thoughtfully curated land adventures, and a welcoming LGBTQ+ community. Brand g puts the destination, local culture, and shared discovery at the heart of the journey.</p>
                     <div className="brandg-highlights">
-                      <div><strong>Immersive destinations</strong><span>River journeys and experiences that bring places and people closer.</span></div>
+                      <div><strong>River, sea &amp; land</strong><span>Luxury river cruises, intimate ocean voyages, and curated land adventures.</span></div>
                       <div><strong>Travel with community</strong><span>Connect through small-group experiences and shared adventures.</span></div>
                     </div>
                     <details className="brandg-discover">
                       <summary className="btn btn-ink">Discover the Experience <span aria-hidden="true">→</span></summary>
                       <div className="brandg-discover-copy">
                         <h3>Travel beyond the ordinary</h3>
-                        <p>Brand g offers LGBTQ+ travelers a destination-led alternative to large party charters: cultural discovery, welcoming company, and thoughtfully planned journeys by river, sea, and land.</p>
+                        <p>Brand g creates luxury all-LGBT+ journeys for adults 21 and older: full-ship river charters, intimate ocean cruises, and small-group land adventures. Explore the Rhine, Danube, Nile, Mekong and beyond, alongside ocean itineraries and immersive cultural tours. Each journey emphasizes shared discovery, welcoming community, and thoughtful planning.</p>
                       </div>
                     </details>
                     <FleetOfferButton cruiseLine={l.name} lineId={l.id} />
-                    <div className="brandg-booking">
-                      <h3>Ready to explore a Brand g vacation?</h3>
-                      <p>Browse Brand g's published journeys, or ask Dean to help with your plans. If you book directly, tell Brand g that <strong>Dean Satterfield at Dean On Deck Cruise Travel</strong> is your travel advisor—or contact Dean so he can request that your reservation be associated with his agency.</p>
-                      <div className="brandg-actions">
-                        <a className="btn btn-ink" href="/plan/?line=Brand%20g%20Vacations">Ask Dean About Brand g <span className="arrow">→</span></a>
-                        <a className="brandg-browse" href="https://www.brandgvacations.com/vacations/" target="_blank" rel="noopener noreferrer">Explore Brand g journeys ↗</a>
-                      </div>
-                      <p className="brandg-fine">The link alone does not automatically credit your reservation to Dean. Fares and availability may change until deposited. Ask Dean about travel protection options.</p>
-                    </div>
+                    <p className="brandg-advisor-note"><strong>Booking with Brand g?</strong> If booking directly, name <strong>Dean Satterfield · Dean On Deck Cruise Travel</strong> as your travel advisor, or contact Dean to arrange agency attribution. Rates and availability may change until deposited; travel protection options are available to discuss.</p>
                   </div>
                 </div>
               ) : flagship ? (
