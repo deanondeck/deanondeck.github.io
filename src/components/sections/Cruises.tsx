@@ -129,7 +129,6 @@ export default function Cruises({ id, content, site }: SectionProps) {
                       </div>
                     </details>
                     <FleetOfferButton cruiseLine={l.name} lineId={l.id} />
-                    <p className="brandg-advisor-note"><strong>Booking with Brand g?</strong> If booking directly, name <strong>Dean Satterfield · Dean On Deck Cruise Travel</strong> as your travel advisor, or contact Dean to arrange agency attribution. Rates and availability may change until deposited; travel protection options are available to discuss.</p>
                   </div>
                 </div>
               ) : flagship ? (
