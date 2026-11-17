@@ -3913,3 +3913,19 @@ body:has(.royal-rooms-dialog[open]) { overflow: hidden; overscroll-behavior: non
 #atlantis .atlantis-booking { position: relative; overflow: hidden; }
 #atlantis .atlantis-booking::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:linear-gradient(180deg,#e14f8a,#e3a337,#34a978,#6376d9); }
 @media(max-width:980px) { #atlantis .atlantis-editorial-grid { grid-template-columns: 1fr; } #atlantis .atlantis-content { padding-left: 1rem; } }
+
+/* Atlantis finishing pass: visually align ship photograph with headline and fit all three highlights. */
+@media(min-width:981px) {
+  #atlantis .atlantis-editorial-grid { align-items: center; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); gap: clamp(1.6rem,3.5vw,3rem); }
+  #atlantis .atlantis-photo { align-self: center; }
+  #atlantis .atlantis-content { align-self: center; }
+  #atlantis .atlantis-moments { flex-wrap: nowrap; gap: .4rem; }
+  #atlantis .atlantis-moments span { font-size: clamp(.67rem,.9vw,.78rem); padding: .4rem .52rem; white-space: nowrap; }
+}
+#atlantis .atlantis-heading { font-size: clamp(2.15rem,3.2vw,2.85rem); line-height: 1.1; }
+#atlantis .atlantis-booking { margin-top: clamp(1rem,2vw,1.7rem); padding-block: clamp(1.1rem,2vw,1.7rem); }
+#atlantis .atlantis-booking-copy h3 { font-size: clamp(1.3rem,2vw,1.7rem); margin-bottom: .6rem; }
+#atlantis .atlantis-booking-copy > p { margin-bottom: .5rem; }
+@media(min-width:701px) and (max-width:980px) {
+  #atlantis .atlantis-moments { flex-wrap: wrap; }
+}
