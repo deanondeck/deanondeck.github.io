@@ -68,7 +68,7 @@ export default function FleetOfferButton({ cruiseLine, lineId }: OfferButtonProp
         type="button"
         className="fleet-offer-trigger"
         aria-haspopup="dialog"
-        onClick={() => dialogRef.current?.showModal()}
+        onClick={() => { dialogRef.current?.showModal(); document.body.style.overflow = "hidden"; }}
       >
         <span className="fleet-offer-trigger-mark" aria-hidden="true">✦</span>
         <span className="fleet-offer-trigger-copy">
@@ -80,12 +80,12 @@ export default function FleetOfferButton({ cruiseLine, lineId }: OfferButtonProp
 
       <dialog
         ref={dialogRef}
-        className="fleet-offer-dialog"
+        className={`fleet-offer-dialog${isAtlantis ? " fleet-offer-atlantis" : ""}`}
         aria-labelledby={`fleet-offer-title-${lineId}`}
         onClick={(event) => {
           if (event.target === event.currentTarget) dialogRef.current?.close();
         }}
-        onClose={() => triggerRef.current?.focus()}
+        onClose={() => { document.body.style.overflow = ""; triggerRef.current?.focus(); }}
       >
         <div className="fleet-offer-rainbow" aria-hidden="true" />
         <div className="fleet-offer-content">
@@ -117,7 +117,16 @@ export default function FleetOfferButton({ cruiseLine, lineId }: OfferButtonProp
           )}
 
           <div className="fleet-offer-actions">
-            {isBrandG ? (
+            {isAtlantis ? (
+              <>
+                <a className="btn btn-ink" href={config.offerHref} target="_blank" rel="noopener noreferrer">
+                  Browse Current Atlantis Sailings <span className="arrow">↗</span>
+                </a>
+                <a className="fleet-offer-live-link" href={config.deanHref}>
+                  Ask Dean about a sailing <span aria-hidden="true">→</span>
+                </a>
+              </>
+            ) : isBrandG ? (
               <a className="btn btn-ink" href={config.offerHref} target="_blank" rel="noopener noreferrer">
                 View Brand g Vacations <span className="arrow">↗</span>
               </a>
