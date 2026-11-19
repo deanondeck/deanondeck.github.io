@@ -27,7 +27,22 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+      # Google Fonts downloads can fail transiently during next/font builds.
+      # Retry the unchanged build; do not replace the approved site fonts.
+      - name: Build site (retry transient font download errors)
+        shell: bash
+        run: |
+          for attempt in 1 2 3; do
+            echo "Build attempt ${attempt}/3"
+            if pnpm build; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Build failed after three attempts."
+              exit 1
+            fi
+            sleep 20
+          done
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
